@@ -1,0 +1,16 @@
+sp {propose*make-bid
+   (state <s> ^node <n>)
+   -{(<n> ^child <c>)
+     (<c> ^status visited)}
+   (<n> ^bid <b>)
+-->
+   (<s> ^operator <o> +)
+   (<o> ^bid <b>)
+}
+
+sp {apply*make-bid
+   (state <s> ^operator.bid <b>)
+-->
+   (write (crlf) | The bid selected is | <b>)
+   (halt)
+}

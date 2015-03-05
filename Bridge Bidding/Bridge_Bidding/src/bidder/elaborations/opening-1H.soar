@@ -1,0 +1,9 @@
+sp {expand*opening-1H
+   (state <s> ^name bidder ^node <n> ^myview <v>)
+   (<n> ^name opening-1H)
+   (<v> ^num-hearts {<numh> >= 5}
+        ^hcp {<hcp> >= 11} {<hcp> <= 23})
+-->
+   (<n> ^status visited ^bid 1H)
+   # No children as of now, otherwise would add the children attribute
+}

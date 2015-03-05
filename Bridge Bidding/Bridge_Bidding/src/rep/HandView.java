@@ -1,5 +1,7 @@
 package rep;
 
+import sml.Identifier;
+
 
 public class HandView {
 	
@@ -13,11 +15,15 @@ public class HandView {
 	}
 	
 	public HandView(HandView hv) {
-		//TODO: Copy into new view
+		// TODO: Copy into new view
 	}
 	
 	public HandView() {
 		// No info available to start with
 		// TODO: Initialize feature values
+	}
+	
+	public void addToSoarIdentifier(Identifier obj) {
+		// TODO: Add details of the view to the SOAR identifier
 	}
 }

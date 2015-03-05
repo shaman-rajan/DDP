@@ -1,22 +1,23 @@
 package rep;
 
 public class Deal {
+	
 	// Players
 	private Player north, south, east, west;
 	private TeamCombinedHands n_s, e_w;
 	private String dealer;
 	
 	// Auction details
-	// TODO: Details of auction history, current state, and future goals
-	Auction auction;
+	private Auction auction;
 	
-	public Deal(Hand n, Hand s, Hand e, Hand w) {
+	public Deal(Hand n, Hand s, Hand e, Hand w, String dealer) {
 		north = new Player(n, 0);
 		east = new Player(e, 1);
 		south = new Player(s, 2);
 		west = new Player(w, 3);
 		n_s = null;
 		e_w = null;
+		this.dealer = dealer;
 		completeHandReps();
 	}
 	
@@ -67,6 +68,21 @@ public class Deal {
 	
 	public Player getWest() {
 		return west;
+	}
+	
+	public Player getPlayer(int pos) {
+		switch(pos) {
+		case 0:
+			return north;
+		case 1:
+			return east;
+		case 2:
+			return south;
+		case 3:
+			return west;
+		default:
+			return null;
+		}
 	}
 	
 	public TeamCombinedHands getNorthSouth() {

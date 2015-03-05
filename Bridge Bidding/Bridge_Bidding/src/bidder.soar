@@ -1,0 +1,3 @@
+pushd bidder
+source bidder_source.soar
+popd

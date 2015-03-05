@@ -1,0 +1,7 @@
+sp {move*deeper*into*network
+   (state <s> ^name bidder ^node <n>)
+   (<n> ^child <c> ^status visited)
+-->
+   (<s> ^node <childnode>)
+   (<childnode> ^name <c>)
+}

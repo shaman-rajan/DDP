@@ -1,0 +1,18 @@
+sp {get*input*from*program
+   (state <s> ^io.input-link <i>)
+   (<i> ^myview <mv>
+        ^pview <pv>
+        ^lview <lv>
+        ^rview <rv>
+        ^tview <tv>
+        ^oview <ov>
+        ^bidhistory <bh>)
+-->
+   (<s> ^myview <mv>
+        ^pview <pv>
+        ^lview <lv>
+        ^rview <rv>
+        ^tview <tv>
+        ^oview <ov>
+        ^bidhistory <bh>)
+}

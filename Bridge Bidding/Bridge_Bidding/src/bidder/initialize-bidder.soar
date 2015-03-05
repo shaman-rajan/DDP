@@ -1,0 +1,17 @@
+sp {propose*initialize-bidder
+   (state <s> ^superstate nil
+             -^name)
+-->
+   (<s> ^operator <o> +)
+   (<o> ^name initialize-bidder)
+}
+
+sp {apply*initialize-bidder
+   (state <s> ^operator <op>)
+   (<op> ^name initialize-bidder)
+-->
+   (<s> ^name bidder ^node <n>)
+   (<n> ^name top-node ^status visited
+         ^child opening-1H
+         ^child opening-1NT)
+}

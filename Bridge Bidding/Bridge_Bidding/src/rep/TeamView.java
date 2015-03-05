@@ -1,5 +1,7 @@
 package rep;
 
+import sml.Identifier;
+
 public class TeamView {
 
 	/*
@@ -22,5 +24,9 @@ public class TeamView {
 	public TeamView() {
 		// No info available to start with
 		// TODO: Initialize feature values
+	}
+	
+	public void addToSoarIdentifier(Identifier obj) {
+		// TODO: Add details of the view to the SOAR identifier
 	}
 }

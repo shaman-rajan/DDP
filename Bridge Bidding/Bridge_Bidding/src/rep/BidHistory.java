@@ -3,6 +3,8 @@ package rep;
 import java.util.LinkedList;
 import java.util.HashMap;
 
+import sml.Identifier;
+
 public class BidHistory {
 	
 	/*
@@ -12,7 +14,6 @@ public class BidHistory {
 	 * 3 - west
 	 */
 	private int turn;
-	private String[] players;
 	private HashMap<String, Integer> player_map;
 
 	/*
@@ -22,6 +23,7 @@ public class BidHistory {
 	 */
 	private HashMap<String,LinkedList<Bid>> bids;
 	
+	private String[] players;
 	public BidHistory(String starter) {
 		players[0] = "north";
 		player_map.put("north", 0);
@@ -58,6 +60,10 @@ public class BidHistory {
 		return player_bids.pop();
 	}
 	
+	public void addToSoarIdentifier(Identifier history) {
+		// TODO: Add the auction history to the Identifier for SOAR input
+	}
+	
 	/*
 	 * Functions to use this bid history and return useful information
 	 */
@@ -71,4 +77,9 @@ public class BidHistory {
 	public boolean matchPattern(String pattern) {
 		return true;
 	}
+	
+	public int getTurn() {
+		return this.turn;
+	}
+
 }
