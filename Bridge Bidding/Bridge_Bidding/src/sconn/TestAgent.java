@@ -7,8 +7,6 @@ import sml.FloatElement;
 import sml.Identifier;
 import sml.IntElement;
 import sml.Kernel;
-import sml.StringElement;
-import sml.WMElement;
 import sml.smlPrintEventId;
 import sml.smlRunStepSize;
 import sml.Agent.PrintEventInterface;
