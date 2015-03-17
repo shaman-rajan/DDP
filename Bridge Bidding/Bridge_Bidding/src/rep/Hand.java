@@ -1,19 +1,55 @@
 package rep;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import rep.Card.Suit;
 import rep.Card.Value;
 
-public class Hand {
+public class Hand implements Cloneable {
 	private ArrayList<Card> cards;
+	
+	public Hand() {
+		points_hc = points_club = points_dia = points_heart = points_spade = 0;
+		controls = controls_club = controls_dia = controls_heart = controls_spade = 0;
+		highCards = highCards_club = highCards_dia = highCards_heart = highCards_spade = 0;
+		honors = honors_club = honors_dia = honors_heart = honors_spade = 0;
+		aces = ace_club = ace_dia = ace_heart = ace_spade = 0;
+		kings = king_club = king_dia = king_heart = king_spade = 0;
+		queens = queen_club = queen_dia = queen_heart = queen_spade = 0;
+		jacks = jack_club = jack_dia = jack_heart = jack_spade = 0;
+		tens = ten_club = ten_dia = ten_heart = ten_spade = 0;
+		rkcb_club = rkcb_dia = rkcb_heart = rkcb_spade = 0;
+		num_spade = num_heart = num_dia = num_club = 0;
+		
+		balanced = 0;
+		dp_sp_he = dp_sp_di = dp_sp_cl = dp_sp_ha = 0;
+		dp_he_sp = dp_he_di = dp_he_cl = dp_he_ha = 0;
+		dp_di_sp = dp_di_he = dp_di_cl = dp_di_ha = 0;
+		dp_cl_sp = dp_cl_he = dp_cl_di = dp_cl_ha = 0;
+		num_suits = 0;
+		lmaj = lmin = 0;
+		longest_sp = longest_he = longest_di = longest_cl = 0;
+		shortest_sp = shortest_he = shortest_di = shortest_cl = 0;
+		
+		intermediate_sp = intermediate_he = intermediate_di = intermediate_cl = intermediate_ha = 0;
+		
+		tr_stopper_sp_sp = tr_stopper_sp_he = tr_stopper_sp_di = tr_stopper_sp_cl =
+		tr_stopper_he_sp = tr_stopper_he_he = tr_stopper_he_di = tr_stopper_he_cl =
+		tr_stopper_di_sp = tr_stopper_di_he = tr_stopper_di_di = tr_stopper_di_cl =
+		tr_stopper_cl_sp = tr_stopper_cl_he = tr_stopper_cl_di = tr_stopper_cl_cl = 0;
+		
+		quality_sp = quality_he = quality_di = quality_cl = 0;
+		ratio = 0;
+	}
 	
 	public Hand(Card c) {
 		cards = new ArrayList<>(13);
 		cards.add(c);
 	}
 	
-	public Hand(ArrayList<Card> cl) {
+	public Hand(List<Card> cl) {
 		cards = new ArrayList<>(13);
 		if(cl.size() <= 13)
 			cards.addAll(cl);
@@ -49,22 +85,22 @@ public class Hand {
 	/*
 	 *  High card features 
 	 */
-	private int points_hc, points_spade, points_heart, points_dia, points_club;
-	private int controls, controls_spade, controls_heart, controls_dia, controls_club;
-	private int highCards, highCards_spade, highCards_heart, highCards_dia, highCards_club;
-	private int honors, honors_spade, honors_heart, honors_dia, honors_club;
-	private int aces, ace_spade, ace_heart, ace_dia, ace_club;
-	private int kings, king_spade, king_heart, king_dia, king_club;
-	private int queens, queen_spade, queen_heart, queen_dia, queen_club;
-	private int jacks, jack_spade, jack_heart, jack_dia, jack_club;
-	private int tens, ten_spade, ten_heart, ten_dia, ten_club;
-	private int rkcb_spade, rkcb_heart, rkcb_dia, rkcb_club;
-	private int num_spade, num_heart, num_dia, num_club;
+	public int points_hc, points_spade, points_heart, points_dia, points_club;
+	public int controls, controls_spade, controls_heart, controls_dia, controls_club;
+	public int highCards, highCards_spade, highCards_heart, highCards_dia, highCards_club;
+	public int honors, honors_spade, honors_heart, honors_dia, honors_club;
+	public int aces, ace_spade, ace_heart, ace_dia, ace_club;
+	public int kings, king_spade, king_heart, king_dia, king_club;
+	public int queens, queen_spade, queen_heart, queen_dia, queen_club;
+	public int jacks, jack_spade, jack_heart, jack_dia, jack_club;
+	public int tens, ten_spade, ten_heart, ten_dia, ten_club;
+	public int rkcb_spade, rkcb_heart, rkcb_dia, rkcb_club;
+	public int num_spade, num_heart, num_dia, num_club;
 	
 	/*
 	 *  Distribution
 	 */
-	private int balanced;
+	public int balanced;
 	public int dp_sp_he, dp_sp_di, dp_sp_cl, dp_sp_ha,
 				dp_he_sp, dp_he_di, dp_he_cl, dp_he_ha,
 				dp_di_sp, dp_di_he, dp_di_cl, dp_di_ha,
@@ -132,6 +168,9 @@ public class Hand {
 	
 	// Calculation function
 	private void calculateFeatureValues() {
+		
+		// Sort hand based on suit then value
+		Collections.sort(cards, Collections.reverseOrder());
 		
 		/*
 		 * Initialization
@@ -808,233 +847,12 @@ public class Hand {
 		
 	}
 	
-	/*
-	 *  Functions to get feature values
-	 */
-	
-	// Overall Hand
-	
-	public int getHCPoints() {
-		return points_hc;
+	public String toString() {
+		return this.cards.toString();
 	}
 	
-	public int getControls() {
-		return controls;
+	public Hand copy() throws CloneNotSupportedException {
+		return (Hand) this.clone();
 	}
-	
-	public int getHighCards() {
-		return highCards;
-	}
-	
-	public int getHonors() {
-		return honors;
-	}
-	
-	public int getAces() {
-		return aces;
-	}
-	
-	public int getKings() {
-		return kings;
-	}
-	
-	public int getQueens() {
-		return queens;
-	}
-	
-	public int getJacks() {
-		return jacks;
-	}
-	
-	public int getTens() {
-		return tens;
-	}
-	
-	// Spade features
-	
-	public int getNumSpades() {
-		return num_spade;
-	}
-	
-	public int getHCPointsSpade() {
-		return points_spade;
-	}
-	
-	public int getControlsSpade() {
-		return controls_spade;
-	}
-	
-	public int getHighCardsSpade() {
-		return highCards_spade;
-	}
-	
-	public int getHonorsSpade() {
-		return honors_spade;
-	}
-	
-	public int getAceSpade() {
-		return ace_spade;
-	}
-	
-	public int getKingSpade() {
-		return king_spade;
-	}
-	
-	public int getQueenSpade() {
-		return queen_spade;
-	}
-	
-	public int getJackSpade() {
-		return jack_spade;
-	}
-	
-	public int getTenSpade() {
-		return ten_spade;
-	}
-	
-	public int getRkcbSpade() {
-		return rkcb_spade;
-	}
-	
-	// Heart features
-	
-	public int getNumHearts() {
-		return num_heart;
-	}
-	
-	public int getHCPointsHeart() {
-		return points_heart;
-	}
-	
-	public int getControlsHeart() {
-		return controls_heart;
-	}
-	
-	public int getHighCardsHeart() {
-		return highCards_heart;
-	}
-	
-	public int getHonorsHeart() {
-		return honors_heart;
-	}
-	
-	public int getAceHeart() {
-		return ace_heart;
-	}
-	
-	public int getKingHeart() {
-		return king_heart;
-	}
-	
-	public int getQueenHeart() {
-		return queen_heart;
-	}
-	
-	public int getJackHeart() {
-		return jack_heart;
-	}
-	
-	public int getTenHeart() {
-		return ten_heart;
-	}
-	
-	public int getRkcbHeart() {
-		return rkcb_heart;
-	}
-	
-	// Diamond features
-	
-	public int getNumDias() {
-		return num_dia;
-	}
-	
-	public int getHCPointsDia() {
-		return points_dia;
-	}
-	
-	public int getControlsDia() {
-		return controls_dia;
-	}
-	
-	public int getHighCardsDia() {
-		return highCards_dia;
-	}
-	
-	public int getHonorsDia() {
-		return honors_dia;
-	}
-	
-	public int getAceDia() {
-		return ace_dia;
-	}
-	
-	public int getKingDia() {
-		return king_dia;
-	}
-	
-	public int getQueenDia() {
-		return queen_dia;
-	}
-	
-	public int getJackDia() {
-		return jack_dia;
-	}
-	
-	public int getTenDia() {
-		return ten_dia;
-	}
-	
-	public int getRkcbDia() {
-		return rkcb_dia;
-	}
-	
-	// Club features
-	
-	public int getNumClubs() {
-		return num_club;
-	}
-	
-	public int getHCPointsClub() {
-		return points_club;
-	}
-	
-	public int getControlsClub() {
-		return controls_club;
-	}
-	
-	public int getHighCardsClub() {
-		return highCards_club;
-	}
-	
-	public int getHonorsClub() {
-		return honors_club;
-	}
-	
-	public int getAceClub() {
-		return ace_club;
-	}
-	
-	public int getKingClub() {
-		return king_club;
-	}
-	
-	public int getQueenClub() {
-		return queen_club;
-	}
-	
-	public int getJackClub() {
-		return jack_club;
-	}
-	
-	public int getTenClub() {
-		return ten_club;
-	}
-	
-	public int getRkcbClub() {
-		return rkcb_club;
-	}
-	
-	public int getBalance() {
-		return balanced;
-	}
+
 }

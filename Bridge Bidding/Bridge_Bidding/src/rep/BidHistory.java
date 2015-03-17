@@ -23,15 +23,14 @@ public class BidHistory {
 	 */
 	private HashMap<String,LinkedList<Bid>> bids;
 	
-	private String[] players;
+	private static String[] players = {"north", "east", "south", "west"};
 	public BidHistory(String starter) {
-		players[0] = "north";
+		player_map = new HashMap<>();
+		bids = new HashMap<>();
+		
 		player_map.put("north", 0);
-		players[1] = "east";
 		player_map.put("east", 1);
-		players[2] = "south";
 		player_map.put("south", 2);
-		players[3] = "west";
 		player_map.put("west", 3);
 		
 		turn = player_map.get(starter);

@@ -15,18 +15,20 @@ public class Player {
 	private HandView selfView, partnerView, leftOppView, rightOppView;
 	private TeamView teamView, opponentsView;
 	
-	public Player(Hand h, int pos) {
+	public Player(Hand h, int pos, Deal d) {
 		hand = h;
 		posCode = pos;
 		position = Deal.getPosition(posCode);
+		deal = d;
 		
 		initializeViews();
 	}
 
-	public Player(Hand h, String pos) {
+	public Player(Hand h, String pos, Deal d) {
 		hand = h;
 		position = pos;
 		posCode = Deal.getPosition(position);
+		deal = d;
 		
 		initializeViews();
 	}
@@ -42,6 +44,8 @@ public class Player {
 	}
 	
 	public Bid askForBid() {
+		System.out.println("Asking " + this.position + " for bid");
+		
 		BiddingAgent agent = new BiddingAgent();
 		Identifier inLink = agent.getInputLink();
 		
@@ -108,5 +112,9 @@ public class Player {
 	
 	public Deal getDeal() {
 		return this.deal;
+	}
+	
+	public String toString() {
+		return this.position + ": " + this.hand.toString();
 	}
 }

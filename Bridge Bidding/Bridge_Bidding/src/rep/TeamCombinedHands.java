@@ -25,7 +25,7 @@ public class TeamCombinedHands {
 	public int getHCPoins() throws Exception {
 		if(points_hc < 0) {
 			if(hand1.isComplete() && hand2.isComplete())
-				points_hc = hand1.getHCPoints() + hand2.getHCPoints();
+				points_hc = hand1.points_hc + hand2.points_hc;
 			else
 				throw new Exception("Hands not complete");
 		}

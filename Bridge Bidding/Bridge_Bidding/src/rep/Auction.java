@@ -4,9 +4,9 @@ public class Auction {
 	private Deal deal;
 	private BidHistory bid_history;
 	
-	public Auction(Deal d) {
+	public Auction(Deal d, String dealer) {
 		deal = d;
-		bid_history = new BidHistory(this.deal.getDealer());
+		bid_history = new BidHistory(dealer);
 	}
 	
 	public int getNextTurn() {

@@ -1,5 +1,13 @@
 package rep;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+import rep.Card.Suit;
+import rep.Card.Value;
+
 public class Deal {
 	
 	// Players
@@ -11,14 +19,56 @@ public class Deal {
 	private Auction auction;
 	
 	public Deal(Hand n, Hand s, Hand e, Hand w, String dealer) {
-		north = new Player(n, 0);
-		east = new Player(e, 1);
-		south = new Player(s, 2);
-		west = new Player(w, 3);
+		north = new Player(n, 0, this);
+		east = new Player(e, 1, this);
+		south = new Player(s, 2, this);
+		west = new Player(w, 3, this);
 		n_s = null;
 		e_w = null;
 		this.dealer = dealer;
 		completeHandReps();
+		auction = new Auction(this, dealer);
+	}
+	
+	// Randomly generate a deal and hands
+	public Deal() {
+		List<Integer> card_nums = new LinkedList<>();
+		for(int i=0; i<52; ++i) card_nums.add(i);
+		Collections.shuffle(card_nums);
+		
+		ArrayList<Card> cards = new ArrayList<>();
+		for(int i=0; i<card_nums.size(); ++i) {
+			int suitint = card_nums.get(i) / 13, valueint = card_nums.get(i) % 13;
+			Suit s;
+			Value v;
+			
+			Suit[] suitvalues = Suit.values();
+			s = suitvalues[suitint];
+			Value[] cardvalues = Value.values();
+			v = cardvalues[valueint];
+			cards.add(new Card(s, v));
+		}
+		
+		Hand n = new Hand(cards.subList(0, 13));
+		Hand e = new Hand(cards.subList(13, 26));
+		Hand s = new Hand(cards.subList(26, 39));
+		Hand w = new Hand(cards.subList(39, 52));
+		
+		north = new Player(n, 0, this);
+		east = new Player(e, 1, this);
+		south = new Player(s, 2, this);
+		west = new Player(w, 3, this);
+		n_s = null;
+		e_w = null;
+		dealer = "north";
+		
+		completeHandReps();
+		auction = new Auction(this, dealer);
+		
+		System.out.println(north);
+		System.out.println(east);
+		System.out.println(south);
+		System.out.println(west);
 	}
 	
 	public boolean completeHandReps() {
@@ -52,6 +102,10 @@ public class Deal {
 		else if(pos.equals("south")) return 2;
 		else if(pos.equals("west")) return 3;
 		return -1;
+	}
+	
+	public void askForNextBid() {
+		this.auction.askForNextBid();
 	}
 	
 	public Player getNorth() {
