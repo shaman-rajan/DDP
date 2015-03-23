@@ -1,5 +1,7 @@
 package rep;
 
+import rep.Bid.BidSuit;
+import rep.Bid.BidValue;
 import sconn.BiddingAgent;
 import sml.Identifier;
 import sml.smlRunStepSize;
@@ -51,7 +53,7 @@ public class Player {
 		
 		Identifier myView = inLink.CreateIdWME("myview");
 		this.selfView.addToSoarIdentifier(myView);
-		Identifier partnerView = inLink.CreateIdWME("pviwew");
+		Identifier partnerView = inLink.CreateIdWME("pview");
 		this.partnerView.addToSoarIdentifier(partnerView);
 		Identifier leftView = inLink.CreateIdWME("lview");
 		this.leftOppView.addToSoarIdentifier(leftView);
@@ -71,11 +73,47 @@ public class Player {
 		
 		agent.getAgent().RunSelfTilOutput();
 		
-		// TODO: Retrieve bid and what can be inferred from it and send to auction
+		// Retrieve bid and what can be inferred from it and send to auction
+		Bid bid_returned = null;
+		int num_out = agent.getAgent().GetNumberCommands();
+		for(int i=0; i<num_out; ++i) {
+			Identifier iden = agent.getAgent().GetCommand(i);
+			
+			if(iden.GetAttribute().equals("bid")) {
+				String bidString = iden.GetValueAsString();
+				int bidval = bidString.charAt(0) - '1';
+				char bidsuit = bidString.charAt(1);
+				BidValue valueArray[] = BidValue.values();
+				
+				BidSuit bs = bidsuit == 'S' ? BidSuit.SPADE : 
+							(bidsuit == 'H' ? BidSuit.HEART : 
+							(bidsuit == 'D' ? BidSuit.DIAMOND :
+							(bidsuit == 'C' ? BidSuit.CLUB : 
+						     BidSuit.NOTRUMP)));
+				BidValue bv = valueArray[bidval];
+				bid_returned = new Bid(bs, bv);
+			} else {
+				this.deal.updateViews(iden, this.position);
+			}
+		}
 		
-		// TODO: In the auction, add the inferred part to others' views
+		return bid_returned;
+	}
+	
+
+	public boolean updateViews(Identifier iden, int bidder) {
+		HandView toUpdate;
+		if(this.posCode == (bidder+2) % 4)
+			toUpdate = partnerView;
+		else if(this.posCode == (bidder+1) % 4)
+			toUpdate = rightOppView;
+		else if(this.posCode == (bidder+3) % 4)
+			toUpdate = leftOppView;
+		else return false;
 		
-		return null;
+		if(toUpdate.updateView(iden))
+			return true;
+		else return false;
 	}
 	
 	public Hand getHand() {

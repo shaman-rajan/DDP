@@ -7,6 +7,7 @@ import java.util.List;
 
 import rep.Card.Suit;
 import rep.Card.Value;
+import sml.Identifier;
 
 public class Deal {
 	
@@ -80,6 +81,14 @@ public class Deal {
 			e_w = new TeamCombinedHands(east.getHand(), west.getHand());
 			return true;
 		} else return false;
+	}
+	
+	public void updateViews(Identifier iden, String bidder) {
+		int bidder_position = Deal.getPosition(bidder);
+		if(bidder != "north") this.north.updateViews(iden, bidder_position);
+		if(bidder != "east") this.east.updateViews(iden, bidder_position);
+		if(bidder != "south") this.south.updateViews(iden, bidder_position);
+		if(bidder != "west") this.west.updateViews(iden, bidder_position);
 	}
 	
 	public static String getPosition(int posCode) {

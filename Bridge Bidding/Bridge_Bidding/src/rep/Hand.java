@@ -35,11 +35,13 @@ public class Hand implements Cloneable {
 		
 		intermediate_sp = intermediate_he = intermediate_di = intermediate_cl = intermediate_ha = 0;
 		
+		stopper_sp = stopper_he = stopper_di = stopper_cl = 0;
+		
 		tr_stopper_sp_sp = tr_stopper_sp_he = tr_stopper_sp_di = tr_stopper_sp_cl =
 		tr_stopper_he_sp = tr_stopper_he_he = tr_stopper_he_di = tr_stopper_he_cl =
 		tr_stopper_di_sp = tr_stopper_di_he = tr_stopper_di_di = tr_stopper_di_cl =
 		tr_stopper_cl_sp = tr_stopper_cl_he = tr_stopper_cl_di = tr_stopper_cl_cl = 0;
-		
+	
 		quality_sp = quality_he = quality_di = quality_cl = 0;
 		ratio = 0;
 	}
@@ -100,7 +102,18 @@ public class Hand implements Cloneable {
 	/*
 	 *  Distribution
 	 */
+	
+	/*
+	 * 0 = 4333
+	 * 1 = 5332 / 4432
+	 * 2 = 5422
+	 * 3 = 6322 / 7222
+	 * 4 = 4441
+	 * 5 = unbalanced
+	 * 6 = at least 11 cards in the longest two suits.
+	 */
 	public int balanced;
+	
 	public int dp_sp_he, dp_sp_di, dp_sp_cl, dp_sp_ha,
 				dp_he_sp, dp_he_di, dp_he_cl, dp_he_ha,
 				dp_di_sp, dp_di_he, dp_di_cl, dp_di_ha,
@@ -113,6 +126,7 @@ public class Hand implements Cloneable {
 	/*
 	 * Suit quality
 	 */
+	
 	/*
 	 *  0 = not biddable 
 	 *  1 = biddble suit 
@@ -124,10 +138,6 @@ public class Hand implements Cloneable {
 	
 	public float intermediate_sp, intermediate_he, intermediate_di, intermediate_cl, intermediate_ha;
 	
-	public int losers_sp_he, losers_sp_di, losers_sp_cl, losers_sp_ha,
-				losers_he_sp, losers_he_di, losers_he_cl, losers_he_ha,
-				losers_di_sp, losers_di_he, losers_di_cl, losers_di_ha,
-				losers_cl_sp, losers_cl_he, losers_cl_di, losers_cl_ha;
 	/*
 	 * 4 = length + hcp > 8 
 	 * 3 = A, qjx or 5+ hcp 
@@ -135,7 +145,7 @@ public class Hand implements Cloneable {
 	 * 1 = Qx or Jxx.
 	 * 0 = no other values
 	 */
-	public int stopper_sp, stopper_he, stopper_di, stopper_cl;	
+	public int stopper_sp, stopper_he, stopper_di, stopper_cl;
 	/*
 	 * 4 = first and second round control [ AK or AQ ]
 	 * 3 = first round control  [ A or (void) ]
@@ -147,6 +157,12 @@ public class Hand implements Cloneable {
 				tr_stopper_he_sp, tr_stopper_he_he, tr_stopper_he_di, tr_stopper_he_cl,
 				tr_stopper_di_sp, tr_stopper_di_he, tr_stopper_di_di, tr_stopper_di_cl,
 				tr_stopper_cl_sp, tr_stopper_cl_he, tr_stopper_cl_di, tr_stopper_cl_cl;
+	
+	public int losers_sp_he, losers_sp_di, losers_sp_cl, losers_sp_ha,
+				losers_he_sp, losers_he_di, losers_he_cl, losers_he_ha,
+				losers_di_sp, losers_di_he, losers_di_cl, losers_di_ha,
+				losers_cl_sp, losers_cl_he, losers_cl_di, losers_cl_ha;
+	
 	/*
 	 * 9 = AKxxxxxxx or AKJxxxxx
 	 * 8 = AKQxxxx
@@ -164,7 +180,7 @@ public class Hand implements Cloneable {
 	/*
 	 * Hand quality
 	 */
-	public float ratio;
+	public double ratio;
 	
 	// Calculation function
 	private void calculateFeatureValues() {
@@ -198,6 +214,8 @@ public class Hand implements Cloneable {
 		shortest_sp = shortest_he = shortest_di = shortest_cl = 0;
 		
 		intermediate_sp = intermediate_he = intermediate_di = intermediate_cl = intermediate_ha = 0;
+
+		stopper_sp = stopper_he = stopper_di = stopper_cl = 0;
 		
 		tr_stopper_sp_sp = tr_stopper_sp_he = tr_stopper_sp_di = tr_stopper_sp_cl =
 		tr_stopper_he_sp = tr_stopper_he_he = tr_stopper_he_di = tr_stopper_he_cl =
@@ -512,12 +530,49 @@ public class Hand implements Cloneable {
 		if(num_dia == min) shortest_di = 1;
 		if(num_club == min) shortest_cl = 1;
 		
+		List<Integer> lenarr = new ArrayList<>(4);
+		lenarr.add(num_spade);
+		lenarr.add(num_heart);
+		lenarr.add(num_dia);
+		lenarr.add(num_club);
+		Collections.sort(lenarr, Collections.reverseOrder());
+		
+		if(lenarr.get(0) == 4 && lenarr.get(1) == 3 && lenarr.get(2) == 3 && lenarr.get(3) == 3)
+			balanced = 0;
+		else if((lenarr.get(0) == 5 && lenarr.get(1) == 3 && lenarr.get(2) == 3 && lenarr.get(3) == 2) ||
+				 lenarr.get(0) == 4 && lenarr.get(1) == 4 && lenarr.get(2) == 3 && lenarr.get(3) == 2)
+			balanced = 1;
+		else if((lenarr.get(0) == 5 && lenarr.get(1) == 4 && lenarr.get(2) == 2 && lenarr.get(3) == 2))
+			balanced = 2;
+		else if((lenarr.get(0) == 6 && lenarr.get(1) == 3 && lenarr.get(2) == 2 && lenarr.get(3) == 2) ||
+				 lenarr.get(0) == 7 && lenarr.get(1) == 2 && lenarr.get(2) == 2 && lenarr.get(3) == 2)
+			balanced = 3;
+		else if((lenarr.get(0) == 4 && lenarr.get(1) == 4 && lenarr.get(2) == 4 && lenarr.get(3) == 1))
+			balanced = 4;
+		else if(lenarr.get(3) < 2 && (lenarr.get(2) + lenarr.get(3) > 2))
+			balanced = 5;
+		else balanced = 6;
+
+		// Biddable (each suit)
+		if(honors_spade > 2 || points_spade > 4)
+			biddable_sp = num_spade - 3;
+		else biddable_sp = num_spade - 4;
+		
+		if(honors_heart > 2 || points_heart > 4)
+			biddable_he = num_heart - 3;
+		else biddable_he = num_heart - 4;
+		
+		if(honors_dia > 2 || points_dia > 4)
+			biddable_di = num_dia - 3;
+		else biddable_di = num_dia - 4;
+		
+		if(honors_club > 2 || points_club > 4)
+			biddable_cl = num_club - 3;
+		else biddable_cl = num_club - 4;
+		
 		intermediate_ha = intermediate_sp + intermediate_he+ intermediate_di + intermediate_cl;
 		
-		// TODO: Calculate losers
-		
 		// Stopper (NT)
-		
 		if(points_spade + num_spade > 8) 
 			stopper_sp = 4;
 		else if((points_spade > 4) ||
@@ -708,8 +763,9 @@ public class Hand implements Cloneable {
 			stopper_count = 0;
 		tr_stopper_cl_cl = stopper_count;
 		
-		// Quality
+		// TODO: losers
 		
+		// Quality
 		boolean flag = false;
 		if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.KING)) {
 			if(num_spade > 8) 
@@ -843,16 +899,35 @@ public class Hand implements Cloneable {
 			else quality_cl = 0;
 		}
 
-		// TODO: Ratio
-		
+		// Ratio
+		ArrayList<SuitToFindRatio> suitsForRatio = new ArrayList<>(4);
+		suitsForRatio.add(new SuitToFindRatio("spade", num_spade, points_spade));
+		suitsForRatio.add(new SuitToFindRatio("heart", num_heart, points_heart));
+		suitsForRatio.add(new SuitToFindRatio("dia", num_dia, points_dia));
+		suitsForRatio.add(new SuitToFindRatio("club", num_club, points_club));
+		Collections.sort(suitsForRatio);
+		ratio = (suitsForRatio.get(2).hcp + suitsForRatio.get(3).hcp) * 1.0 / points_hc;
 	}
 	
 	public String toString() {
 		return this.cards.toString();
 	}
-	
-	public Hand copy() throws CloneNotSupportedException {
-		return (Hand) this.clone();
-	}
+}
 
+class SuitToFindRatio implements Comparable<SuitToFindRatio> {
+	String name;
+	int len;
+	public int hcp;
+	
+	public SuitToFindRatio(String name, int len, int hcp) {
+		this.name = name;
+		this.len = len;
+		this.hcp = hcp;
+	}
+	
+	public int compareTo(SuitToFindRatio s2) {
+		if(this.len < s2.len) return -1;
+		else if(this.len == s2.len && this.hcp < s2.hcp) return -1;
+		else return 1;
+	}
 }

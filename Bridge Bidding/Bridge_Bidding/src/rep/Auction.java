@@ -21,7 +21,6 @@ public class Auction {
 		System.out.println(Deal.getPosition(nextPos) + " made bid " + bid);
 	}
 
-	// TODO: Think about who will call this function and from where
 	public boolean makeBid(int player, Bid bid) {
 		if(player == this.getNextTurn()) {
 			this.addInfoFromBid(player, bid);

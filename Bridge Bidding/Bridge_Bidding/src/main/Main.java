@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
 import rep.Deal;
+import sconn.TestAgent;
 
 public class Main {
 
@@ -19,5 +20,7 @@ public class Main {
 		
 		Deal d = new Deal();
 		d.askForNextBid();
+		
+		//TestAgent.createAndRunAgent();
 	}
 }
