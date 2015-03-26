@@ -1,9 +1,7 @@
 package rep;
 
 import sml.Identifier;
-import sml.IntElement;
 import sml.WMElement;
-
 
 public class HandView implements Cloneable {
 	
@@ -208,28 +206,54 @@ public class HandView implements Cloneable {
 		copyValues(this, hv);
 	}
 	
+	private static final int MAXVALUE = 50;
+	
 	public HandView() {
-		points_hc_low = points_hc_high = -1;
-		points_spade_low = points_spade_high = -1; 
-		points_heart_low = points_heart_high = -1;
-		points_dia_low = points_dia_high = -1;
-		points_club_low = points_club_high = -1;
-		controls_low = controls_high = -1;
-		controls_spade_low = controls_spade_high = -1; 
-		controls_heart_low = controls_heart_high = -1;
-		controls_dia_low = controls_dia_high = -1;
-		controls_club_low = controls_club_high = -1;;
-		highCards_low = highCards_high = -1;
-		highCards_spade_low = highCards_spade_high = -1; 
-		highCards_heart_low = highCards_heart_high = -1;
-		highCards_dia_low = highCards_dia_high = -1;
-		highCards_club_low = highCards_club_high = -1;;
+		
+		points_hc_low = -1;
+		points_hc_high = MAXVALUE;
+		points_spade_low = -1;
+		points_spade_high = MAXVALUE; 
+		points_heart_low = -1;
+		points_heart_high = MAXVALUE; 
+		points_dia_low = -1;
+		points_dia_high = MAXVALUE; 		
+		points_club_low = -1;
+		points_club_high = MAXVALUE; 
 				
-		honors_low = honors_high = -1;
-		honors_spade_low = honors_spade_high = -1; 
-		honors_heart_low = honors_heart_high = -1;
-		honors_dia_low = honors_dia_high = -1;
-		honors_club_low = honors_club_high = -1;
+		controls_low = -1;
+		controls_high = MAXVALUE;
+		controls_spade_low = -1;
+		controls_spade_high = MAXVALUE;
+		controls_heart_low = -1;
+		controls_heart_high = MAXVALUE;
+		controls_dia_low = -1;
+		controls_dia_high = MAXVALUE;
+		controls_club_low = -1;
+		controls_club_high = MAXVALUE;
+		
+		highCards_low = -1;
+		highCards_high = MAXVALUE;
+		highCards_spade_low = -1;
+		highCards_spade_high = MAXVALUE;
+		highCards_heart_low = -1;
+		highCards_heart_high = MAXVALUE;
+		highCards_dia_low = -1;
+		highCards_dia_high = MAXVALUE;
+		highCards_club_low = -1;
+		highCards_club_high = MAXVALUE;		
+		
+		honors_low = -1;
+		honors_high = MAXVALUE;
+		honors_spade_low = -1;
+		honors_spade_high = MAXVALUE;		
+		honors_heart_low = -1;
+		honors_heart_high = MAXVALUE;
+		honors_dia_low = -1;
+		honors_dia_high = MAXVALUE;
+		honors_club_low = -1;
+		honors_club_high = MAXVALUE;
+
 		aces = ace_spade = ace_heart = ace_dia = ace_club = -1;
 		kings = king_spade = king_heart = king_dia = king_club = -1;
 		queens = queen_spade = queen_heart = queen_dia = queen_club = -1;
@@ -237,29 +261,41 @@ public class HandView implements Cloneable {
 		tens = ten_spade = ten_heart = ten_dia = ten_club = -1;
 		rkcb_spade = rkcb_heart = rkcb_dia = rkcb_club = -1;
 		
-		num_spade_low = num_spade_high = 
-		num_heart_low = num_heart_high =
-		num_dia_low = num_dia_high =
-		num_club_low = num_club_high = -1;
-		
-		balanced_low = balanced_high = -1;
+		num_spade_low = -1;
+		num_spade_high = MAXVALUE;		
+		num_heart_low = -1;
+		num_heart_high = MAXVALUE;
+		num_dia_low = -1;
+		num_dia_high = MAXVALUE;
+		num_club_low = -1;
+		num_club_high = MAXVALUE;
+
+		balanced_low = -1;
+		balanced_high = MAXVALUE;
 		
 		dp_sp_he = dp_sp_di = dp_sp_cl = dp_sp_ha =
 		dp_he_sp = dp_he_di = dp_he_cl = dp_he_ha =
 		dp_di_sp = dp_di_he = dp_di_cl = dp_di_ha =
 		dp_cl_sp = dp_cl_he = dp_cl_di = dp_cl_ha = -1;
+		
 		num_suits = -1;
+		
 		lmaj = lmin = -1;
+		
 		longest_sp = longest_he = longest_di = longest_cl = -1;
+		
 		shortest_sp = shortest_he = shortest_di = shortest_cl = -1;
 		
 		biddable_sp = biddable_he = biddable_di = biddable_cl = -1;
 		
-		intermediate_sp_low = intermediate_sp_high =
-		intermediate_he_low = intermediate_he_high = 
-		intermediate_di_low = intermediate_di_high =
-		intermediate_cl_low = intermediate_cl_high =
-		intermediate_ha_low = intermediate_ha_high = -1;
+		intermediate_sp_low = -1;
+		intermediate_sp_high = MAXVALUE;		
+		intermediate_he_low = -1;
+		intermediate_he_high = MAXVALUE;
+		intermediate_di_low = -1;
+		intermediate_di_high = MAXVALUE;
+		intermediate_cl_low = -1;
+		intermediate_cl_high = MAXVALUE;
 
 		stopper_sp = stopper_he = stopper_di = stopper_cl = -1;
 		
@@ -275,7 +311,8 @@ public class HandView implements Cloneable {
 		
 		quality_sp = quality_he = quality_di = quality_cl = -1;
 		
-		ratio_low = ratio_high = -1;
+		ratio_low = -1;
+		ratio_high = MAXVALUE;
 	}
 	
 	/*
@@ -469,17 +506,151 @@ public class HandView implements Cloneable {
 			System.out.println(feature.GetAttribute() + ": " + feature.GetValueAsString());
 
 			if(feature.GetAttribute().equals("hcp_low")) {
-				if(this.points_hc_low < ((IntElement)feature).GetValue())
-					this.points_hc_low = (int) ((IntElement)feature).GetValue();
+				if(this.points_hc_low < feature.ConvertToIntElement().GetValue())
+					this.points_hc_low = (int) feature.ConvertToIntElement().GetValue();
 			}
 			
 			if(feature.GetAttribute().equals("hcp_high")) {
-				if(this.points_hc_high < ((IntElement)feature).GetValue())
-					this.points_hc_high = (int) ((IntElement)feature).GetValue();
+				if(this.points_hc_high < feature.ConvertToIntElement().GetValue())
+					this.points_hc_high = (int) feature.ConvertToIntElement().GetValue();
 			}
 		}
 		
 		return true;
+	}
+	
+	public boolean matchesView(Hand hand) {
+		if( (this.points_hc_low <= hand.points_hc && this.points_hc_high >= hand.points_hc) &&
+			(this.points_spade_low <= hand.points_spade && this.points_spade_high >= hand.points_spade) &&
+			(this.points_heart_low <= hand.points_heart && this.points_heart_high >= hand.points_heart) &&
+			(this.points_dia_low <= hand.points_dia && this.points_dia_high >= hand.points_dia) &&
+			(this.points_club_low <= hand.points_club && this.points_club_high >= hand.points_club) &&
+			(this.controls_low <= hand.controls && this.controls_high >= hand.controls) &&
+			(this.controls_spade_low <= hand.controls_spade && this.controls_spade_high >= hand.controls_spade) &&
+			(this.controls_heart_low <= hand.controls_heart && this.controls_heart_high >= hand.controls_heart) &&
+			(this.controls_dia_low <= hand.controls_dia && this.controls_dia_high >= hand.controls_dia) &&
+			(this.controls_club_low <= hand.controls_club && this.controls_club_high >= hand.controls_club) &&
+			(this.highCards_low <= hand.highCards && this.highCards_high >= hand.highCards) &&
+			(this.highCards_spade_low <= hand.highCards_spade && this.highCards_spade_high >= hand.highCards_spade) &&
+			(this.highCards_heart_low <= hand.highCards_heart && this.highCards_heart_high >= hand.highCards_heart) &&
+			(this.highCards_dia_low <= hand.highCards_dia && this.highCards_dia_high >= hand.highCards_dia) &&
+			(this.highCards_club_low <= hand.highCards_club && this.highCards_club_high >= hand.highCards_club) &&
+			(this.honors_low <= hand.honors && this.honors_high >= hand.honors) &&
+			(this.honors_spade_low <= hand.honors_spade && this.honors_spade_high >= hand.honors_spade) &&
+			(this.honors_heart_low <= hand.honors_heart && this.honors_heart_high >= hand.honors_heart) &&
+			(this.honors_dia_low <= hand.honors_dia && this.honors_dia_high >= hand.honors_dia) &&
+			(this.honors_club_low <= hand.honors_club && this.honors_club_high >= hand.honors_club) &&
+			(this.aces == hand.aces) &&
+			(this.ace_spade == -1 || this.ace_spade == hand.ace_spade) &&
+			(this.ace_heart == -1 || this.ace_heart == hand.ace_heart) &&
+			(this.ace_dia == -1 || this.ace_dia == hand.ace_dia) &&
+			(this.ace_club == -1 || this.ace_club == hand.ace_club) &&
+			(this.kings == hand.kings) &&
+			(this.king_spade == -1 || this.king_spade == hand.king_spade) &&
+			(this.king_heart == -1 || this.king_heart == hand.king_heart) &&
+			(this.king_dia == -1 || this.king_dia == hand.king_dia) &&
+			(this.king_club == -1 || this.king_club == hand.king_club) &&
+			(this.queens == hand.queens) &&
+			(this.queen_spade == -1 || this.queen_spade == hand.queen_spade) &&
+			(this.queen_heart == -1 || this.queen_heart == hand.queen_heart) &&
+			(this.queen_dia == -1 || this.queen_dia == hand.queen_dia) &&
+			(this.queen_club == -1 || this.queen_club == hand.queen_club) &&
+			(this.jacks == hand.jacks) &&
+			(this.jack_spade == -1 || this.jack_spade == hand.jack_spade) &&
+			(this.jack_heart == -1 || this.jack_heart == hand.jack_heart) &&
+			(this.jack_dia == -1 || this.jack_dia == hand.jack_dia) &&
+			(this.jack_club == -1 || this.jack_club == hand.jack_club) &&
+			(this.tens == hand.tens) &&
+			(this.ten_spade == -1 || this.ten_spade == hand.ten_spade) &&
+			(this.ten_heart == -1 || this.ten_heart == hand.ten_heart) &&
+			(this.ten_dia == -1 || this.ten_dia == hand.ten_dia) &&
+			(this.ten_club == -1 || this.ten_club == hand.ten_club) &&
+			(this.rkcb_spade == -1 || this.rkcb_spade == hand.rkcb_spade) &&
+			(this.rkcb_heart == -1 || this.rkcb_heart == hand.rkcb_heart) &&
+			(this.rkcb_dia == -1 || this.rkcb_dia == hand.rkcb_dia) &&
+			(this.rkcb_club == -1 || this.rkcb_club == hand.rkcb_club) &&
+			(this.num_spade_low <= hand.num_spade && this.num_spade_high >= hand.num_spade) &&
+			(this.num_heart_low <= hand.num_heart && this.num_heart_high >= hand.num_heart) &&
+			(this.num_dia_low <= hand.num_dia && this.num_dia_high >= hand.num_dia) &&
+			(this.num_club_low <= hand.num_club && this.num_club_high >= hand.num_club) &&
+			(this.balanced_low <= hand.balanced && this.balanced_high >= hand.balanced) &&
+			(this.dp_sp_he == -1 || this.dp_sp_he == hand.dp_sp_he) &&
+			(this.dp_sp_di == -1 || this.dp_sp_di == hand.dp_sp_di) &&
+			(this.dp_sp_cl == -1 || this.dp_sp_cl == hand.dp_sp_cl) &&
+			(this.dp_sp_ha == -1 || this.dp_sp_ha == hand.dp_sp_ha) &&
+			(this.dp_he_sp == -1 || this.dp_he_sp == hand.dp_he_sp) &&
+			(this.dp_he_di == -1 || this.dp_he_di == hand.dp_he_di) &&
+			(this.dp_he_cl == -1 || this.dp_he_cl == hand.dp_he_cl) &&
+			(this.dp_he_ha == -1 || this.dp_he_ha == hand.dp_he_ha) &&
+			(this.dp_di_sp == -1 || this.dp_di_sp == hand.dp_di_sp) &&
+			(this.dp_di_he == -1 || this.dp_di_he == hand.dp_di_he) &&
+			(this.dp_di_cl == -1 || this.dp_di_cl == hand.dp_di_cl) &&
+			(this.dp_di_ha == -1 || this.dp_di_ha == hand.dp_di_ha) &&
+			(this.dp_cl_sp == -1 || this.dp_cl_sp == hand.dp_cl_sp) &&
+			(this.dp_cl_he == -1 || this.dp_cl_he == hand.dp_cl_he) &&
+			(this.dp_cl_di == -1 || this.dp_cl_di == hand.dp_cl_di) &&
+			(this.dp_cl_ha == -1 || this.dp_cl_ha == hand.dp_cl_ha) &&
+			(this.num_suits == -1 || this.num_suits == hand.num_suits) &&
+			(this.lmaj == -1 || this.lmaj == hand.lmaj) &&
+			(this.lmin == -1 || this.lmin == hand.lmin) &&
+			(this.longest_sp == -1 || this.longest_sp == hand.longest_sp) &&
+			(this.longest_he == -1 || this.longest_he == hand.longest_he) &&
+			(this.longest_di == -1 || this.longest_di == hand.longest_di) &&
+			(this.longest_cl == -1 || this.longest_cl == hand.longest_cl) &&
+			(this.shortest_sp == -1 || this.shortest_sp == hand.shortest_sp) &&
+			(this.shortest_he == -1 || this.shortest_he == hand.shortest_he) &&
+			(this.shortest_di == -1 || this.shortest_di == hand.shortest_di) &&
+			(this.shortest_cl == -1 || this.shortest_cl == hand.shortest_cl) &&
+			(this.biddable_sp == -1 || this.biddable_sp == hand.biddable_sp) &&
+			(this.biddable_he == -1 || this.biddable_he == hand.biddable_he) &&
+			(this.biddable_di == -1 || this.biddable_di == hand.biddable_di) &&
+			(this.biddable_cl == -1 || this.biddable_cl == hand.biddable_cl) &&
+			(this.intermediate_ha_low <= hand.intermediate_ha && this.intermediate_ha_high >= hand.intermediate_ha) &&
+			(this.intermediate_sp_low <= hand.intermediate_sp && this.intermediate_sp_high >= hand.intermediate_sp) &&
+			(this.intermediate_he_low <= hand.intermediate_he && this.intermediate_he_high >= hand.intermediate_he) &&
+			(this.intermediate_di_low <= hand.intermediate_di && this.intermediate_di_high >= hand.intermediate_di) &&
+			(this.intermediate_cl_low <= hand.intermediate_cl && this.intermediate_cl_high >= hand.intermediate_cl) &&
+			(this.stopper_sp == -1 || this.stopper_sp == hand.stopper_sp) &&
+			(this.stopper_he == -1 || this.stopper_he == hand.stopper_he) &&
+			(this.stopper_di == -1 || this.stopper_di == hand.stopper_di) &&
+			(this.stopper_cl == -1 || this.stopper_cl == hand.stopper_cl) &&
+			(this.tr_stopper_sp_he == -1 || this.tr_stopper_sp_he == hand.tr_stopper_sp_he) &&
+			(this.tr_stopper_sp_di == -1 || this.tr_stopper_sp_di == hand.tr_stopper_sp_di) &&
+			(this.tr_stopper_sp_cl == -1 || this.tr_stopper_sp_cl == hand.tr_stopper_sp_cl) &&
+			(this.tr_stopper_he_sp == -1 || this.tr_stopper_he_sp == hand.tr_stopper_he_sp) &&
+			(this.tr_stopper_he_di == -1 || this.tr_stopper_he_di == hand.tr_stopper_he_di) &&
+			(this.tr_stopper_he_cl == -1 || this.tr_stopper_he_cl == hand.tr_stopper_he_cl) &&
+			(this.tr_stopper_di_sp == -1 || this.tr_stopper_di_sp == hand.tr_stopper_di_sp) &&
+			(this.tr_stopper_di_he == -1 || this.tr_stopper_di_he == hand.tr_stopper_di_he) &&
+			(this.tr_stopper_di_cl == -1 || this.tr_stopper_di_cl == hand.tr_stopper_di_cl) &&
+			(this.tr_stopper_cl_sp == -1 || this.tr_stopper_cl_sp == hand.tr_stopper_cl_sp) &&
+			(this.tr_stopper_cl_he == -1 || this.tr_stopper_cl_he == hand.tr_stopper_cl_he) &&
+			(this.tr_stopper_cl_di == -1 || this.tr_stopper_cl_di == hand.tr_stopper_cl_di) &&
+			(this.losers_sp_he == -1 || this.losers_sp_he == hand.losers_sp_he) &&
+			(this.losers_sp_di == -1 || this.losers_sp_di == hand.losers_sp_di) &&
+			(this.losers_sp_cl == -1 || this.losers_sp_cl == hand.losers_sp_cl) &&
+			(this.losers_sp_ha == -1 || this.losers_sp_ha == hand.losers_sp_ha) &&
+			(this.losers_he_sp == -1 || this.losers_he_sp == hand.losers_he_sp) &&
+			(this.losers_he_di == -1 || this.losers_he_di == hand.losers_he_di) &&
+			(this.losers_he_cl == -1 || this.losers_he_cl == hand.losers_he_cl) &&
+			(this.losers_he_ha == -1 || this.losers_he_ha == hand.losers_he_ha) &&
+			(this.losers_di_sp == -1 || this.losers_di_sp == hand.losers_di_sp) &&
+			(this.losers_di_he == -1 || this.losers_di_he == hand.losers_di_he) &&
+			(this.losers_di_cl == -1 || this.losers_di_cl == hand.losers_di_cl) &&
+			(this.losers_di_ha == -1 || this.losers_di_ha == hand.losers_di_ha) &&
+			(this.losers_cl_sp == -1 || this.losers_cl_sp == hand.losers_cl_sp) &&
+			(this.losers_cl_he == -1 || this.losers_cl_he == hand.losers_cl_he) &&
+			(this.losers_cl_di == -1 || this.losers_cl_di == hand.losers_cl_di) &&
+			(this.losers_cl_ha == -1 || this.losers_cl_ha == hand.losers_cl_ha) &&
+			(this.quality_sp == -1 || this.quality_sp == hand.quality_sp) &&
+			(this.quality_he == -1 || this.quality_he == hand.quality_he) &&
+			(this.quality_di == -1 || this.quality_di == hand.quality_di) &&
+			(this.quality_cl == -1 || this.quality_cl == hand.quality_cl) &&
+			(this.ratio_low <= hand.ratio && this.ratio_high >= hand.ratio)
+		)
+			return true;
+		else
+			return false;
 	}
 	
 	private void copyValues(HandView to, HandView from) {

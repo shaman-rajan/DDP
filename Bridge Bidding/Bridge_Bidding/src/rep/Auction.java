@@ -23,16 +23,11 @@ public class Auction {
 
 	public boolean makeBid(int player, Bid bid) {
 		if(player == this.getNextTurn()) {
-			this.addInfoFromBid(player, bid);
 			this.bid_history.addBid(bid);
 			return true;
 		} else return false;
 	}
 
-	private void addInfoFromBid(int player, Bid bid) {
-		// TODO: Infer information from newly made bid
-	}
-	
 	public Deal getDeal() {
 		return this.deal;
 	}

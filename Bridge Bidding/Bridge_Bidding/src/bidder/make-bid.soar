@@ -9,10 +9,9 @@ sp {propose*make-bid
 }
 
 sp {apply*make-bid
-   (state <s> ^operator.bid <b> ^io.output-link <o>)
+   (state <s> ^operator.bid <b> ^io.output-link <out>)
    (<b> ^short-form <bn> ^meaning <m>)
 -->
-   (<o> ^bid <bn> ^meaning <m>)
+   (<out> ^bid <b>)
    (write (crlf) | The bid selected is | <bn>)
-   (halt)
 }

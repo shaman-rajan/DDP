@@ -16,7 +16,7 @@ public class BiddingAgent {
 		a = k.CreateAgent("soar");
 		
 		a.RegisterForPrintEvent(smlPrintEventId.smlEVENT_PRINT, myPrinter, null);
-		a.LoadProductions("C:/Users/Rajan/Desktop/acad stuff/sem10/DDP/SOAR/bidder/bidder.soar");
+		a.LoadProductions("C:/Users/Rajan/git/DDP backup/Bridge Bidding/Bridge_Bidding/src/bidder.soar");
 		
 		a.ExecuteCommandLine("watch 5");
 		a.ExecuteCommandLine("watch --fullwmes");

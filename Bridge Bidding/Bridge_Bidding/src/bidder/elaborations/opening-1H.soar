@@ -1,9 +1,9 @@
 sp {expand*opening-1H
-   (state <s> ^name bidder ^node <n>)
+   (state <s> ^name bidder ^node <n> ^myview <v>)
    (<n> ^name opening-1H)
-   #(<v> ^num_hearts_low {<numh> >= 5}
-   #     ^hcp_low {<hcp-low> >= 11}
-   #     ^hcp_high {<hcp-high> <= 23})
+   (<v> ^num_hearts_low {<numh> >= 5}
+        ^hcp_low {<hcp-low> >= 11}
+        ^hcp_high {<hcp-high> <= 23})
 -->
    (<n> ^status visited ^bid <b>)
    (<b> ^short-form 1H ^meaning <m>)

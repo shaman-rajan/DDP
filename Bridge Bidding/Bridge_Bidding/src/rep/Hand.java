@@ -768,7 +768,7 @@ public class Hand implements Cloneable {
 		// Quality
 		boolean flag = false;
 		if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.KING)) {
-			if(num_spade > 8) 
+			if(num_spade > 8)
 				quality_sp = 9;
 			else if(num_spade > 7  && (this.contains(Suit.SPADE, Value.QUEEN) || this.contains(Suit.SPADE, Value.JACK)))
 				quality_sp = 9;

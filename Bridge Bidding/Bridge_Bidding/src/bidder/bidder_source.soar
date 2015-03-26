@@ -7,3 +7,4 @@ source elaborations_source.soar
 popd
 source initialize-bidder.soar
 source make-bid.soar
+source pass-if-no-change.soar

@@ -1,9 +1,8 @@
 package rep;
 
-import rep.Bid.BidSuit;
-import rep.Bid.BidValue;
 import sconn.BiddingAgent;
 import sml.Identifier;
+import sml.WMElement;
 import sml.smlRunStepSize;
 
 
@@ -71,29 +70,27 @@ public class Player {
 		// Proceed past the input phase
 		agent.getAgent().RunSelf(1, smlRunStepSize.sml_PHASE);
 		
+		
 		agent.getAgent().RunSelfTilOutput();
 		
+		
 		// Retrieve bid and what can be inferred from it and send to auction
+		
 		Bid bid_returned = null;
 		int num_out = agent.getAgent().GetNumberCommands();
+		
 		for(int i=0; i<num_out; ++i) {
-			Identifier iden = agent.getAgent().GetCommand(i);
+			Identifier command = agent.getAgent().GetCommand(i);
 			
-			if(iden.GetAttribute().equals("bid")) {
-				String bidString = iden.GetValueAsString();
-				int bidval = bidString.charAt(0) - '1';
-				char bidsuit = bidString.charAt(1);
-				BidValue valueArray[] = BidValue.values();
-				
-				BidSuit bs = bidsuit == 'S' ? BidSuit.SPADE : 
-							(bidsuit == 'H' ? BidSuit.HEART : 
-							(bidsuit == 'D' ? BidSuit.DIAMOND :
-							(bidsuit == 'C' ? BidSuit.CLUB : 
-						     BidSuit.NOTRUMP)));
-				BidValue bv = valueArray[bidval];
-				bid_returned = new Bid(bs, bv);
-			} else {
-				this.deal.updateViews(iden, this.position);
+			int children = command.GetNumberChildren();
+			for(int j=0; j<children; ++j) {
+				WMElement child = command.GetChild(j);
+				if(child.GetAttribute().equals("short-form")) {
+					String bidString = child.GetValueAsString();
+					bid_returned = new Bid(bidString);
+				} else {
+					this.deal.updateViews(child.ConvertToIdentifier(), this.position);
+				}
 			}
 		}
 		
