@@ -1,0 +1,17 @@
+sp {propose*pass*if*no*change
+    (state <s> ^impasse no-change 
+               ^attribute state
+               ^quiescence t)
+-->
+    (<s> ^operator <o>)
+    (<o> ^name suggest-pass-bid ^bid PASS)
+}
+
+sp {apply*pass*if*no*change
+    (state <s> ^operator <o> ^superstate.io.output-link <out>)
+    (<o> ^name suggest-pass-bid ^bid <bn>) 
+-->
+    (<out> ^bid <b>)
+    (<b> ^short-form PASS ^meaning <m>)
+    (write (crlf) | The bid selected is PASS |)
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soaragent sourceCommandChangesDirectory="true">
+  <startfile path="bidder.soar" />
+  <members>
+    <member path="bidder.soar" />
+    <member path="bidder/all" />
+    <member path="bidder/elaborations/_all.soar" />
+    <member path="bidder/elaborations/elaborations_source.soar" />
+    <member path="bidder/elaborations/expand-node.soar" />
+    <member path="bidder/elaborations/input-views.soar" />
+    <member path="bidder/elaborations/opening-1NT.soar" />
+    <member path="bidder/elaborations/top-state.soar" />
+    <member path="bidder/_firstload.soar" />
+    <member path="bidder/bidder_source.soar" />
+    <member path="bidder/initialize-bidder.soar" />
+    <member path="bidder/make-bid.soar" />
+    <member path="bidder/check-pattern.soar" />
+    <member path="bidder/elaborations/input-pattern-check-result.soar" />
+    <member path="bidder/elaborations/opening-1M.soar" />
+    <member path="bidder/pass-if-no-change.soar" />
+  </members>
+</soaragent>
+

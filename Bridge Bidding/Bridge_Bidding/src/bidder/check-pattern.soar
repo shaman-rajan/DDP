@@ -1,0 +1,23 @@
+sp {propose*pattern*check
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^pattern <p>
+         -^pattern-checked)
+-->
+    (<s> ^operator <o> +
+         ^operator <o> =)
+    (<o> ^name pattern-check-operator 
+         ^pattern <p>
+         ^node-being-checked <n>)
+}
+
+sp {apply*pattern*check
+    (state <s> ^name bidder ^operator <o> ^io.output-link <out>)
+    (<o> ^name pattern-check-operator
+         ^pattern <p>
+         ^node-being-checked <node>)
+    (<node> ^name <node-name>)
+-->
+    (<s> ^node-being-checked <node>)
+    (<out> ^pattern-check <pat>)
+    (<pat> ^pattern <p> ^node-name <node-name>)
+}
