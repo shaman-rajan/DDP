@@ -1,7 +1,14 @@
+sp {expand*opening-1NT*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-1NT)
+-->
+    (<n> ^pattern *)
+}
+
 sp {expand*opening-1NT
    (state <s> ^name bidder ^node <n> ^myview <v>)
-   (<n> ^name opening-1NT)
-   (<v> ^balanced_high {<b> <= 1} 
+   (<n> ^name opening-1NT ^pattern-checked true)
+   (<v> ^balanced_high {<bal> <= 1} 
         ^hcp_low {<hcp> >= 15} 
         ^hcp_high {<hcp> <= 17})
 -->

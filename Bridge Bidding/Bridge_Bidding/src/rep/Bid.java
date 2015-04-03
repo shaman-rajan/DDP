@@ -59,6 +59,16 @@ public class Bid implements Comparable<Bid> {
 	
 	@Override
 	public int compareTo(Bid bid) {
+		if(bid.pass) return 1;
+		if(bid.redbl) {
+			if(this.dbl) return 1;
+			else return -1;
+		}
+		if(bid.dbl) {
+			if(!this.dbl) return 1;
+			else return -1;
+		}
+		
 		int temp_BidSuit = this.bidSuit.compareTo(bid.bidSuit);
 		if(this.bidValue.level < bid.bidValue.level)
 			return -1;

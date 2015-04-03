@@ -12,6 +12,6 @@ sp {apply*initialize-bidder
 -->
    (<s> ^name bidder ^node <n>)
    (<n> ^name top-node ^status visited
-         ^child opening-1H
-         ^child opening-1NT)
+         ^child opening-1NT
+         ^child opening-1M)
 }

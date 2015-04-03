@@ -319,91 +319,134 @@ public class HandView implements Cloneable {
 	 * Interface with SOAR
 	 */
 	public void addToSoarIdentifier(Identifier view) {
+		
 		view.CreateIntWME("hcp_low", this.points_hc_low);
 		view.CreateIntWME("hcp_high", this.points_hc_high);
-		view.CreateIntWME("hcp_sp_low", this.points_spade_low);
-		view.CreateIntWME("hcp_sp_high", this.points_spade_high);
-		view.CreateIntWME("hcp_he_low", this.points_heart_low);
-		view.CreateIntWME("hcp_he_high", this.points_heart_high);
-		view.CreateIntWME("hcp_di_low", this.points_dia_low);
-		view.CreateIntWME("hcp_di_high", this.points_dia_high);
-		view.CreateIntWME("hcp_cl_low", this.points_club_low);
-		view.CreateIntWME("hcp_cl_high", this.points_club_high);
-
+		
 		view.CreateIntWME("controls_low", this.controls_low);
 		view.CreateIntWME("controls_high", this.controls_high);
-		view.CreateIntWME("controls_sp_low", this.controls_spade_low);
-		view.CreateIntWME("controls_sp_high", this.controls_spade_high);
-		view.CreateIntWME("controls_he_low", this.controls_heart_low);
-		view.CreateIntWME("controls_he_high", this.controls_heart_high);
-		view.CreateIntWME("controls_di_low", this.controls_dia_low);
-		view.CreateIntWME("controls_di_high", this.controls_dia_high);
-		view.CreateIntWME("controls_cl_low", this.controls_club_low);
-		view.CreateIntWME("controls_cl_high", this.controls_club_high);
-
+		
 		view.CreateIntWME("hc_low", this.highCards_low);
 		view.CreateIntWME("hc_high", this.highCards_high);
-		view.CreateIntWME("hc_sp_low", this.highCards_spade_low);
-		view.CreateIntWME("hc_sp_high", this.highCards_spade_high);
-		view.CreateIntWME("hc_he_low", this.highCards_heart_low);
-		view.CreateIntWME("hc_he_high", this.highCards_heart_high);
-		view.CreateIntWME("hc_di_low", this.highCards_dia_low);
-		view.CreateIntWME("hc_di_high", this.highCards_dia_high);
-		view.CreateIntWME("hc_cl_low", this.highCards_club_low);
-		view.CreateIntWME("hc_cl_high", this.highCards_club_high);
 		
 		view.CreateIntWME("honors_low", this.honors_low);
 		view.CreateIntWME("honors_high", this.honors_high);
-		view.CreateIntWME("honors_sp_low", this.honors_spade_low);
-		view.CreateIntWME("honors_sp_high", this.honors_spade_high);
-		view.CreateIntWME("honors_he_low", this.honors_heart_low);
-		view.CreateIntWME("honors_he_high", this.honors_heart_high);
-		view.CreateIntWME("honors_di_low", this.honors_dia_low);
-		view.CreateIntWME("honors_di_high", this.honors_dia_high);
-		view.CreateIntWME("honors_cl_low", this.honors_club_low);
-		view.CreateIntWME("honors_cl_high", this.honors_club_high);
 		
 		view.CreateIntWME("aces", this.aces);
 		view.CreateIntWME("kings", this.kings);
 		view.CreateIntWME("queens", this.queens);
 		view.CreateIntWME("jacks", this.jacks);
 		view.CreateIntWME("tens", this.tens);
-		view.CreateIntWME("ace_sp", this.ace_spade);
-		view.CreateIntWME("king_sp", this.king_spade);
-		view.CreateIntWME("queen_sp", this.queen_spade);
-		view.CreateIntWME("jack_sp", this.jack_spade);
-		view.CreateIntWME("ten_he", this.ten_heart);
-		view.CreateIntWME("ace_he", this.ace_heart);
-		view.CreateIntWME("king_he", this.king_heart);
-		view.CreateIntWME("queen_he", this.queen_heart);
-		view.CreateIntWME("jack_he", this.jack_heart);
-		view.CreateIntWME("ten_he", this.ten_heart);
-		view.CreateIntWME("ace_di", this.ace_dia);
-		view.CreateIntWME("king_di", this.king_dia);
-		view.CreateIntWME("queen_di", this.queen_dia);
-		view.CreateIntWME("jack_di", this.jack_dia);
-		view.CreateIntWME("ten_di", this.ten_dia);
-		view.CreateIntWME("ace_cl", this.ace_club);
-		view.CreateIntWME("king_cl", this.king_club);
-		view.CreateIntWME("queen_cl", this.queen_club);
-		view.CreateIntWME("jack_cl", this.jack_club);
-		view.CreateIntWME("ten_cl", this.ten_club);
-		view.CreateIntWME("rkcb_sp", this.rkcb_spade);
-		view.CreateIntWME("rkcb_he", this.rkcb_heart);
-		view.CreateIntWME("rkcb_di", this.rkcb_dia);
-		view.CreateIntWME("rkcb_cl", this.rkcb_club);
 		
-		view.CreateIntWME("num_sp_low", this.num_spade_low);
-		view.CreateIntWME("num_sp_high", this.num_spade_high);
-		view.CreateIntWME("num_he_low", this.num_heart_low);
-		view.CreateIntWME("num_he_high", this.num_heart_high);
-		view.CreateIntWME("num_di_low", this.num_dia_low);
-		view.CreateIntWME("num_di_high", this.num_dia_high);
-		view.CreateIntWME("num_cl_low", this.num_club_low);
-		view.CreateIntWME("num_cl_high", this.num_club_high);
-
 		view.CreateIntWME("balanced_low", this.balanced_low);
 		view.CreateIntWME("balanced_high", this.balanced_high);
+
+		view.CreateIntWME("num_suits", this.num_suits);
+		view.CreateIntWME("lmaj", this.lmaj);
+		view.CreateIntWME("lmin", this.lmin);
+				
+		view.CreateFloatWME("ratio_low", this.ratio_low);
+		view.CreateFloatWME("ratio_high", this.ratio_high);
+
+		Identifier spade = view.CreateIdWME("spade");
+		spade.CreateIntWME("hcp_low", points_spade_low);
+		spade.CreateIntWME("hcp_high", points_spade_high);
+		spade.CreateIntWME("controls_low", controls_spade_low);
+		spade.CreateIntWME("controls_high", controls_spade_high);
+		spade.CreateIntWME("hc_low", highCards_spade_low);
+		spade.CreateIntWME("hc_high", highCards_spade_high);
+		spade.CreateIntWME("honors_low", honors_spade_low);
+		spade.CreateIntWME("honors_high", honors_spade_high);
+		spade.CreateIntWME("ace", ace_spade);
+		spade.CreateIntWME("king", king_spade);
+		spade.CreateIntWME("quen", queen_spade);
+		spade.CreateIntWME("jack", jack_spade);
+		spade.CreateIntWME("ten", ten_spade);
+		spade.CreateIntWME("rkcb", rkcb_spade);
+		spade.CreateIntWME("num_low", num_spade_low);
+		spade.CreateIntWME("num_high", num_spade_high);
+		spade.CreateIntWME("longest", this.longest_sp);
+		spade.CreateIntWME("shortest", this.shortest_sp);
+		spade.CreateIntWME("biddable", this.biddable_sp);
+		spade.CreateFloatWME("intermediate_low", this.intermediate_sp_low);
+		spade.CreateFloatWME("intermediate_high", this.intermediate_sp_high);
+		spade.CreateFloatWME("stopper", this.stopper_sp);
+		spade.CreateFloatWME("quality", this.quality_sp);
+
+		Identifier heart = view.CreateIdWME("heart");
+		heart.CreateIntWME("hcp_low", points_heart_low);
+		heart.CreateIntWME("hcp_high", points_heart_high);
+		heart.CreateIntWME("controls_low", controls_heart_low);
+		heart.CreateIntWME("controls_high", controls_heart_high);
+		heart.CreateIntWME("hc_low", highCards_heart_low);
+		heart.CreateIntWME("hc_high", highCards_heart_high);
+		heart.CreateIntWME("honors_low", honors_heart_low);
+		heart.CreateIntWME("honors_high", honors_heart_high);
+		heart.CreateIntWME("ace", ace_heart);
+		heart.CreateIntWME("king", king_heart);
+		heart.CreateIntWME("quen", queen_heart);
+		heart.CreateIntWME("jack", jack_heart);
+		heart.CreateIntWME("ten", ten_heart);
+		heart.CreateIntWME("rkcb", rkcb_heart);
+		heart.CreateIntWME("num_low", num_heart_low);
+		heart.CreateIntWME("num_high", num_heart_high);
+		heart.CreateIntWME("longest", this.longest_he);
+		heart.CreateIntWME("shortest", this.shortest_he);
+		heart.CreateIntWME("biddable", this.biddable_he);
+		heart.CreateFloatWME("intermediate_low", this.intermediate_he_low);
+		heart.CreateFloatWME("intermediate_high", this.intermediate_he_high);
+		heart.CreateFloatWME("stopper", this.stopper_he);
+		heart.CreateFloatWME("quality", this.quality_he);
+
+		Identifier dia = view.CreateIdWME("dia");
+		dia.CreateIntWME("hcp_low", points_dia_low);
+		dia.CreateIntWME("hcp_high", points_dia_high);
+		dia.CreateIntWME("controls_low", controls_dia_low);
+		dia.CreateIntWME("controls_high", controls_dia_high);
+		dia.CreateIntWME("hc_low", highCards_dia_low);
+		dia.CreateIntWME("hc_high", highCards_dia_high);
+		dia.CreateIntWME("honors_low", honors_dia_low);
+		dia.CreateIntWME("honors_high", honors_dia_high);
+		dia.CreateIntWME("ace", ace_dia);
+		dia.CreateIntWME("king", king_dia);
+		dia.CreateIntWME("quen", queen_dia);
+		dia.CreateIntWME("jack", jack_dia);
+		dia.CreateIntWME("ten", ten_dia);
+		dia.CreateIntWME("rkcb", rkcb_dia);
+		dia.CreateIntWME("num_low", num_dia_low);
+		dia.CreateIntWME("num_high", num_dia_high);
+		dia.CreateIntWME("longest", this.longest_di);
+		dia.CreateIntWME("shortest", this.shortest_di);
+		dia.CreateIntWME("biddable", this.biddable_di);
+		dia.CreateFloatWME("intermediate_low", this.intermediate_di_low);
+		dia.CreateFloatWME("intermediate_high", this.intermediate_di_high);
+		dia.CreateFloatWME("stopper", this.stopper_di);
+		dia.CreateFloatWME("quality", this.quality_di);
+
+		Identifier club = view.CreateIdWME("club");
+		club.CreateIntWME("hcp_low", points_club_low);
+		club.CreateIntWME("hcp_high", points_club_high);
+		club.CreateIntWME("controls_low", controls_club_low);
+		club.CreateIntWME("controls_high", controls_club_high);
+		club.CreateIntWME("hc_low", highCards_club_low);
+		club.CreateIntWME("hc_high", highCards_club_high);
+		club.CreateIntWME("honors_low", honors_club_low);
+		club.CreateIntWME("honors_high", honors_club_high);
+		club.CreateIntWME("ace", ace_club);
+		club.CreateIntWME("king", king_club);
+		club.CreateIntWME("quen", queen_club);
+		club.CreateIntWME("jack", jack_club);
+		club.CreateIntWME("ten", ten_club);
+		club.CreateIntWME("rkcb", rkcb_club);
+		club.CreateIntWME("num_low", num_club_low);
+		club.CreateIntWME("num_high", num_club_high);
+		club.CreateIntWME("longest", this.longest_cl);
+		club.CreateIntWME("shortest", this.shortest_cl);
+		club.CreateIntWME("biddable", this.biddable_cl);
+		club.CreateFloatWME("intermediate_low", this.intermediate_cl_low);
+		club.CreateFloatWME("intermediate_high", this.intermediate_cl_high);
+		club.CreateFloatWME("stopper", this.stopper_cl);
+		club.CreateFloatWME("quality", this.quality_cl);
 		
 		view.CreateIntWME("dp_sp_he", this.dp_sp_he); 
 		view.CreateIntWME("dp_sp_di", this.dp_sp_di);
@@ -422,33 +465,6 @@ public class HandView implements Cloneable {
 		view.CreateIntWME("dp_cl_di", this.dp_cl_di);
 		view.CreateIntWME("dp_cl_ha", this.dp_cl_ha);
 		
-		view.CreateIntWME("num_suits", this.num_suits);
-		view.CreateIntWME("lmaj", this.lmaj);
-		view.CreateIntWME("lmin", this.lmin);
-		
-		view.CreateIntWME("longest_sp", this.longest_sp);
-		view.CreateIntWME("longest_he", this.longest_he);
-		view.CreateIntWME("longest_di", this.longest_di);
-		view.CreateIntWME("longest_cl", this.longest_cl);
-		view.CreateIntWME("shortest_sp", this.shortest_sp);
-		view.CreateIntWME("shortest_he", this.shortest_he);
-		view.CreateIntWME("shortest_di", this.shortest_di);
-		view.CreateIntWME("shortest_cl", this.shortest_cl);
-		
-		view.CreateIntWME("biddable_sp", this.biddable_sp);
-		view.CreateIntWME("biddable_he", this.biddable_he);
-		view.CreateIntWME("biddable_di", this.biddable_di);
-		view.CreateIntWME("biddable_cl", this.biddable_cl);
-
-		view.CreateFloatWME("intermediate_sp_low", this.intermediate_sp_low);
-		view.CreateFloatWME("intermediate_sp_high", this.intermediate_sp_high);
-		view.CreateFloatWME("intermediate_he_low", this.intermediate_he_low);
-		view.CreateFloatWME("intermediate_he_high", this.intermediate_he_high);
-		view.CreateFloatWME("intermediate_di_low", this.intermediate_di_low);
-		view.CreateFloatWME("intermediate_di_high", this.intermediate_di_high);
-		view.CreateFloatWME("intermediate_cl_low", this.intermediate_cl_low);
-		view.CreateFloatWME("intermediate_cl_high", this.intermediate_cl_high);
-		
 		view.CreateIntWME("losers_sp_he", this.losers_sp_he); 
 		view.CreateIntWME("losers_sp_di", this.losers_sp_di);
 		view.CreateIntWME("losers_sp_cl", this.losers_sp_cl);
@@ -466,11 +482,6 @@ public class HandView implements Cloneable {
 		view.CreateIntWME("losers_cl_di", this.losers_cl_di);
 		view.CreateIntWME("losers_cl_ha", this.losers_cl_ha);
 		
-		view.CreateFloatWME("stopper_sp", this.stopper_sp);
-		view.CreateFloatWME("stopper_he", this.stopper_he);
-		view.CreateFloatWME("stopper_di", this.stopper_di);
-		view.CreateFloatWME("stopper_cl", this.stopper_cl);
-
 		view.CreateIntWME("tr_stopper_sp_ha", this.tr_stopper_sp_sp);
 		view.CreateIntWME("tr_stopper_sp_he", this.tr_stopper_sp_he); 
 		view.CreateIntWME("tr_stopper_sp_di", this.tr_stopper_sp_di);
@@ -487,16 +498,9 @@ public class HandView implements Cloneable {
 		view.CreateIntWME("tr_stopper_cl_he", this.tr_stopper_cl_he);
 		view.CreateIntWME("tr_stopper_cl_di", this.tr_stopper_cl_di);
 		view.CreateIntWME("tr_stopper_cl_ha", this.tr_stopper_cl_cl);
-		
-		view.CreateFloatWME("quality_sp", this.quality_sp);
-		view.CreateFloatWME("quality_he", this.quality_he);
-		view.CreateFloatWME("quality_di", this.quality_di);
-		view.CreateFloatWME("quality_cl", this.quality_cl);
-		
-		view.CreateFloatWME("ratio_low", this.ratio_low);
-		view.CreateFloatWME("ratio_high", this.ratio_high);
 	}
 	
+	// TODO: Complete this function
 	public boolean updateView(Identifier iden) {
 		System.out.println("Updates sent by SOAR:");
 		int numUpdates = iden.GetNumberChildren();

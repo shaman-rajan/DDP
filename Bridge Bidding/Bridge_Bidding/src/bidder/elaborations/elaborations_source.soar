@@ -1,6 +1,7 @@
 source _all.soar
 source expand-node.soar
 source input-views.soar
-source opening-1H.soar
+source input-pattern-check-result.soar
 source opening-1NT.soar
+source opening-1M.soar
 source top-state.soar

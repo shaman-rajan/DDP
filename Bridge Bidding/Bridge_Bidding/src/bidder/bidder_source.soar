@@ -8,3 +8,4 @@ popd
 source initialize-bidder.soar
 source make-bid.soar
 source pass-if-no-change.soar
+source check-pattern.soar

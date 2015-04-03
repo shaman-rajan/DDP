@@ -70,26 +70,56 @@ public class Player {
 		// Proceed past the input phase
 		agent.getAgent().RunSelf(1, smlRunStepSize.sml_PHASE);
 		
-		
-		agent.getAgent().RunSelfTilOutput();
-		
-		
-		// Retrieve bid and what can be inferred from it and send to auction
-		
+		boolean is_output_a_bid = false;
 		Bid bid_returned = null;
-		int num_out = agent.getAgent().GetNumberCommands();
-		
-		for(int i=0; i<num_out; ++i) {
-			Identifier command = agent.getAgent().GetCommand(i);
+		while(!is_output_a_bid) {
 			
-			int children = command.GetNumberChildren();
-			for(int j=0; j<children; ++j) {
-				WMElement child = command.GetChild(j);
-				if(child.GetAttribute().equals("short-form")) {
-					String bidString = child.GetValueAsString();
-					bid_returned = new Bid(bidString);
-				} else {
-					this.deal.updateViews(child.ConvertToIdentifier(), this.position);
+			// Run till next output (either the pattern or the bid)
+			agent.getAgent().RunSelfTilOutput();
+			
+			// System.out.println(agent.getAgent().ExecuteCommandLine("print s1 --depth 4"));
+			
+			int num_out = agent.getAgent().GetNumberCommands(); System.out.println("commands" + num_out);
+
+			for(int i=0; i<num_out; ++i) {
+				Identifier command = agent.getAgent().GetCommand(i);
+				
+				// Output is a bid
+				if(command.GetAttribute().equals("bid")) {
+					int children = command.GetNumberChildren();
+					for(int j=0; j<children; ++j) {
+						WMElement child = command.GetChild(j);
+						if(child.GetAttribute().equals("short-form")) {
+							String bidString = child.GetValueAsString();
+							bid_returned = new Bid(bidString);
+						} else {
+							this.deal.updateViews(child.ConvertToIdentifier(), this.position);
+						}
+					}
+					is_output_a_bid = true;
+					command.AddStatusComplete();
+				}
+				
+				// Output is a pattern that needs to be checked
+				else if(command.GetAttribute().equals("pattern-check")) {
+					if(command.GetParameterValue("status") == null || 
+							!command.GetParameterValue("status").equals("complete")) {
+						System.out.println("Checking pattern for " + command.GetParameterValue("node-name"));
+						
+						Identifier link_for_next_input = agent.getInputLink();
+						int children = command.GetNumberChildren();
+						for(int j=0; j<children; ++j) {
+							WMElement child = command.GetChild(j);
+							if(child.GetAttribute().equals("pattern")) {
+								if(this.deal.getAuction().getBidHistory().matchPattern(child.GetValueAsString(), link_for_next_input))
+									link_for_next_input.CreateStringWME("result", "true");
+								else 
+									link_for_next_input.CreateStringWME("result", "false");
+							}
+						}
+						
+						command.AddStatusComplete();
+					}
 				}
 			}
 		}

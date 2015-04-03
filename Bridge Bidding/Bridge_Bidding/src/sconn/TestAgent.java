@@ -32,6 +32,8 @@ public class TestAgent {
 		Identifier iden = inLink.CreateIdWME("iden");
 		FloatElement fl = inLink.CreateFloatWME("pi", 3.1416);
 		IntElement il = iden.CreateIntWME("integer", 20);
+		iden.CreateStringWME("M", "spade");
+		iden.CreateStringWME("M", "heart");
 		a.RunSelf(1, smlRunStepSize.sml_PHASE);
 		System.out.println(a.ExecuteCommandLine("print --depth 10 s1"));
 		
