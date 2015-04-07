@@ -36,6 +36,7 @@ public class TestAgent {
 		iden.CreateStringWME("M", "heart");
 		a.RunSelf(1, smlRunStepSize.sml_PHASE);
 		System.out.println(a.ExecuteCommandLine("print --depth 10 s1"));
+		System.out.println(il.GetValueType() + " " + fl.GetValueType() + iden.GetValueType());
 		
 		String inp = "";
 		while(!inp.equals("no")) {

@@ -35,10 +35,10 @@ public class Player {
 	}
 	
 	private void initializeViews() {
-		this.selfView = new HandView(hand);
-		this.partnerView = new HandView();
-		this.leftOppView = new HandView();
-		this.rightOppView = new HandView();
+		this.selfView = new HandView(hand, this);
+		this.partnerView = new HandView(this);
+		this.leftOppView = new HandView(this);
+		this.rightOppView = new HandView(this);
 		
 		this.teamView = new TeamView(hand);
 		this.opponentsView = new TeamView();

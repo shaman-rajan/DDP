@@ -5,6 +5,15 @@ import sml.WMElement;
 
 public class HandView implements Cloneable {
 	
+	private static final int MAXVALUE = 50;
+	private static final int TOTALPOINTS = 40;
+	private static final int TOTALPOINTS_SUIT = 10;
+	private static final int NUMCARDSINHAND = 13;
+	private static final int NUMCARDSINSUIT = 13;
+	
+	// Player who owns this view
+	private Player player;
+	
 	public int points_hc_low, points_hc_high, 
 				points_spade_low, points_spade_high, 
 				points_heart_low, points_heart_high, 
@@ -50,7 +59,7 @@ public class HandView implements Cloneable {
 	
 	public int biddable_sp, biddable_he, biddable_di, biddable_cl;
 	
-	public float intermediate_sp_low, intermediate_sp_high,
+	public double intermediate_sp_low, intermediate_sp_high,
 				intermediate_he_low, intermediate_he_high, 
 				intermediate_di_low, intermediate_di_high,
 				intermediate_cl_low, intermediate_cl_high,
@@ -72,7 +81,9 @@ public class HandView implements Cloneable {
 	
 	public double ratio_low, ratio_high;
 	
-	public HandView(Hand fullHand) {
+	public HandView(Hand fullHand, Player p) {
+		this.player = p;
+		
 		this.points_hc_low = this.points_hc_high = fullHand.points_hc;
 		this.points_spade_low = this.points_spade_high = fullHand.points_spade;
 		this.points_heart_low = this.points_heart_high = fullHand.points_heart;
@@ -202,13 +213,13 @@ public class HandView implements Cloneable {
 		ratio_low = ratio_high = fullHand.ratio;
 	}
 	
-	public HandView(HandView hv) {
+	public HandView(HandView hv, Player p) {
 		copyValues(this, hv);
+		this.player = p;
 	}
 	
-	private static final int MAXVALUE = 50;
-	
-	public HandView() {
+	public HandView(Player p) {
+		this.player = p;
 		
 		points_hc_low = -1;
 		points_hc_high = MAXVALUE;
@@ -288,6 +299,8 @@ public class HandView implements Cloneable {
 		
 		biddable_sp = biddable_he = biddable_di = biddable_cl = -1;
 		
+		intermediate_ha_low = -1;
+		intermediate_ha_high = MAXVALUE;
 		intermediate_sp_low = -1;
 		intermediate_sp_high = MAXVALUE;		
 		intermediate_he_low = -1;
@@ -340,6 +353,9 @@ public class HandView implements Cloneable {
 		
 		view.CreateIntWME("balanced_low", this.balanced_low);
 		view.CreateIntWME("balanced_high", this.balanced_high);
+		
+		view.CreateFloatWME("intermediate_low", intermediate_ha_low);
+		view.CreateFloatWME("intermediate_ha_high", intermediate_ha_high);
 
 		view.CreateIntWME("num_suits", this.num_suits);
 		view.CreateIntWME("lmaj", this.lmaj);
@@ -359,7 +375,7 @@ public class HandView implements Cloneable {
 		spade.CreateIntWME("honors_high", honors_spade_high);
 		spade.CreateIntWME("ace", ace_spade);
 		spade.CreateIntWME("king", king_spade);
-		spade.CreateIntWME("quen", queen_spade);
+		spade.CreateIntWME("queen", queen_spade);
 		spade.CreateIntWME("jack", jack_spade);
 		spade.CreateIntWME("ten", ten_spade);
 		spade.CreateIntWME("rkcb", rkcb_spade);
@@ -384,7 +400,7 @@ public class HandView implements Cloneable {
 		heart.CreateIntWME("honors_high", honors_heart_high);
 		heart.CreateIntWME("ace", ace_heart);
 		heart.CreateIntWME("king", king_heart);
-		heart.CreateIntWME("quen", queen_heart);
+		heart.CreateIntWME("queen", queen_heart);
 		heart.CreateIntWME("jack", jack_heart);
 		heart.CreateIntWME("ten", ten_heart);
 		heart.CreateIntWME("rkcb", rkcb_heart);
@@ -409,7 +425,7 @@ public class HandView implements Cloneable {
 		dia.CreateIntWME("honors_high", honors_dia_high);
 		dia.CreateIntWME("ace", ace_dia);
 		dia.CreateIntWME("king", king_dia);
-		dia.CreateIntWME("quen", queen_dia);
+		dia.CreateIntWME("queen", queen_dia);
 		dia.CreateIntWME("jack", jack_dia);
 		dia.CreateIntWME("ten", ten_dia);
 		dia.CreateIntWME("rkcb", rkcb_dia);
@@ -434,7 +450,7 @@ public class HandView implements Cloneable {
 		club.CreateIntWME("honors_high", honors_club_high);
 		club.CreateIntWME("ace", ace_club);
 		club.CreateIntWME("king", king_club);
-		club.CreateIntWME("quen", queen_club);
+		club.CreateIntWME("queen", queen_club);
 		club.CreateIntWME("jack", jack_club);
 		club.CreateIntWME("ten", ten_club);
 		club.CreateIntWME("rkcb", rkcb_club);
@@ -500,7 +516,6 @@ public class HandView implements Cloneable {
 		view.CreateIntWME("tr_stopper_cl_ha", this.tr_stopper_cl_cl);
 	}
 	
-	// TODO: Complete this function
 	public boolean updateView(Identifier iden) {
 		System.out.println("Updates sent by SOAR:");
 		int numUpdates = iden.GetNumberChildren();
@@ -509,14 +524,24 @@ public class HandView implements Cloneable {
 			WMElement feature = iden.GetChild(i);
 			System.out.println(feature.GetAttribute() + ": " + feature.GetValueAsString());
 
-			if(feature.GetAttribute().equals("hcp_low")) {
-				if(this.points_hc_low < feature.ConvertToIntElement().GetValue())
-					this.points_hc_low = (int) feature.ConvertToIntElement().GetValue();
-			}
-			
-			if(feature.GetAttribute().equals("hcp_high")) {
-				if(this.points_hc_high < feature.ConvertToIntElement().GetValue())
-					this.points_hc_high = (int) feature.ConvertToIntElement().GetValue();
+			boolean returned = false;
+			if(feature.GetValueType().equalsIgnoreCase("double"))
+				returned = this.updateFeature(feature.GetAttribute(), feature.ConvertToFloatElement().GetValue());
+			else if(feature.GetValueType().equals("int"))
+				returned = this.updateFeature(feature.GetAttribute(), feature.ConvertToIntElement().GetValue());
+			else if(feature.GetValueType().equals("id")) {
+				Identifier suit = feature.ConvertToIdentifier();
+				int numSuitUpdates = suit.GetNumberChildren();
+				
+				for(int j=0; j<numSuitUpdates; ++j) {
+					WMElement suit_feature = suit.GetChild(j);
+					
+					boolean suit_returned = false;
+					if(suit_feature.GetValueType().equals("int"))
+						suit_returned = this.updateFeature("spade " + suit_feature.GetAttribute(), suit_feature.ConvertToIntElement().GetValue());
+					else if(suit_feature.GetValueType().equals("double"))
+						suit_returned = this.updateFeature("spade " + suit_feature.GetAttribute(), suit_feature.ConvertToFloatElement().GetValue());
+				}
 			}
 		}
 		
@@ -655,6 +680,1416 @@ public class HandView implements Cloneable {
 			return true;
 		else
 			return false;
+	}
+	
+	public boolean updateFeature(String feature, long val) {
+		int value = (int) val;
+		
+		if(feature.equals("hcp_low"))
+			if(this.points_hc_low < value) {
+				this.points_hc_low = value;
+				
+				int total = this.player.getSelfView().points_hc_low +
+						this.player.getPartnerView().points_hc_low +
+						this.player.getLeftOppView().points_hc_low +
+						this.player.getRightOppView().points_hc_low;
+				
+				this.player.getPartnerView().updateFeature("hcp_high", TOTALPOINTS - (total - this.player.getPartnerView().points_hc_low));
+				this.player.getLeftOppView().updateFeature("hcp_high", TOTALPOINTS - (total - this.player.getLeftOppView().points_hc_low));
+				this.player.getRightOppView().updateFeature("hcp_high", TOTALPOINTS - (total - this.player.getRightOppView().points_hc_low));
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("hcp_high"))
+			if(this.points_hc_high > value) {
+				this.points_hc_high = value;
+				
+				int total = this.player.getSelfView().points_hc_high +
+						this.player.getPartnerView().points_hc_high +
+						this.player.getLeftOppView().points_hc_high +
+						this.player.getRightOppView().points_hc_high;
+				
+				this.player.getPartnerView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getPartnerView().points_hc_high));
+				this.player.getLeftOppView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getLeftOppView().points_hc_high));
+				this.player.getRightOppView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getRightOppView().points_hc_high));
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("controls_low"))
+			if(this.controls_low < value) {
+				this.controls_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("controls_high"))
+			if(this.controls_high > value) {
+				this.controls_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("hc_low"))
+			if(this.highCards_low < value) {
+				this.highCards_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("hc_high"))
+			if(this.highCards_high > value) {
+				this.highCards_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("honors_low"))
+			if(this.honors_low < value) {
+				this.honors_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("honors_high"))
+			if(this.honors_high > value) {
+				this.honors_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("aces"))
+			if(this.aces == -1) {
+				this.aces = value;
+				
+				if(this.aces == 0) {
+					this.updateFeature("spade ace", 0);
+					this.updateFeature("heart ace", 0);
+					this.updateFeature("dia ace", 0);
+					this.updateFeature("club ace", 0);
+				} else if(this.aces == 4) {
+					this.updateFeature("spade ace", 1);
+					this.updateFeature("heart ace", 1);
+					this.updateFeature("dia ace", 1);
+					this.updateFeature("club ace", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("aces", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("aces", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("aces", 0);
+				}
+				
+				return true;
+			} else if(this.aces == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("kings"))
+			if(this.kings == -1) {
+				this.kings = value;
+				
+				if(this.kings == 0) {
+					this.updateFeature("spade king", 0);
+					this.updateFeature("heart king", 0);
+					this.updateFeature("dia king", 0);
+					this.updateFeature("club king", 0);
+				} else if(this.kings == 4) {
+					this.updateFeature("spade king", 1);
+					this.updateFeature("heart king", 1);
+					this.updateFeature("dia king", 1);
+					this.updateFeature("club king", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("kings", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("kings", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("kings", 0);
+				}
+				
+				return true;
+			} else if(this.kings == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("queens"))
+			if(this.queens == -1) {
+				this.queens = value;
+				
+				if(this.queens == 0) {
+					this.updateFeature("spade queen", 0);
+					this.updateFeature("heart queen", 0);
+					this.updateFeature("dia queen", 0);
+					this.updateFeature("club queen", 0);
+				} else if(this.queens == 4) {
+					this.updateFeature("spade queen", 1);
+					this.updateFeature("heart queen", 1);
+					this.updateFeature("dia queen", 1);
+					this.updateFeature("club queen", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("queens", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("queens", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("queens", 0);
+				}
+				
+				return true;
+			} else if(this.queens == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("jacks"))
+			if(this.jacks == -1) {
+				this.jacks = value;
+				
+				if(this.jacks == 0) {
+					this.updateFeature("spade jack", 0);
+					this.updateFeature("heart jack", 0);
+					this.updateFeature("dia jack", 0);
+					this.updateFeature("club jack", 0);
+				} else if(this.jacks == 4) {
+					this.updateFeature("spade jack", 1);
+					this.updateFeature("heart jack", 1);
+					this.updateFeature("dia jack", 1);
+					this.updateFeature("club jack", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("jacks", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("jacks", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("jacks", 0);
+				}
+				
+				return true;
+			} else if(this.jacks == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("tens"))
+			if(this.tens == -1) {
+				this.tens = value;
+				
+				if(this.tens == 0) {
+					this.updateFeature("spade ten", 0);
+					this.updateFeature("heart ten", 0);
+					this.updateFeature("dia ten", 0);
+					this.updateFeature("club ten", 0);
+				} else if(this.tens == 4) {
+					this.updateFeature("spade ten", 1);
+					this.updateFeature("heart ten", 1);
+					this.updateFeature("dia ten", 1);
+					this.updateFeature("club ten", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("tens", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("tens", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("tens", 0);
+				}
+				
+				return true;
+			} else if(this.tens == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("balanced_low"))
+			if(this.balanced_low < value) {
+				this.balanced_low = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("balanced_high"))
+			if(this.balanced_high > value) {
+				this.balanced_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("num_suits"))
+			if(this.num_suits == -1) {
+				this.num_suits = value;
+				return true;
+			} else if(this.num_suits != value)
+				this.contradiction();
+			else return false;
+
+		if(feature.equals("lmaj"))
+			; // Can't really do anything from here, feature is updated in the inference part
+		if(feature.equals("lmin"))
+			; // Can't really do anything from here, feature is updated in the inference part
+
+		/*
+		 * Spade updates
+		 */
+		
+		if(feature.equals("spade hcp_low"))
+			if(this.points_spade_low < value) {
+				this.points_spade_low = value;
+				
+				int total = this.player.getSelfView().points_spade_low +
+						this.player.getPartnerView().points_spade_low +
+						this.player.getLeftOppView().points_spade_low +
+						this.player.getRightOppView().points_spade_low;
+				
+				this.player.getPartnerView().updateFeature("spade hcp_high", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_spade_low));
+				this.player.getLeftOppView().updateFeature("spade hcp_high", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_spade_low));
+				this.player.getRightOppView().updateFeature("spade hcp_high", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_spade_low));
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade hcp_high"))
+			if(this.points_spade_high > value) {
+				this.points_spade_high = value;
+				
+				int total = this.player.getSelfView().points_spade_high +
+						this.player.getPartnerView().points_spade_high +
+						this.player.getLeftOppView().points_spade_high +
+						this.player.getRightOppView().points_spade_high;
+				
+				this.player.getPartnerView().updateFeature("spade hcp_low", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_spade_high));
+				this.player.getLeftOppView().updateFeature("spade hcp_low", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_spade_high));
+				this.player.getRightOppView().updateFeature("spade hcp_low", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_spade_high));
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("spade controls_low"))
+			if(this.controls_spade_low < value) {
+				this.controls_spade_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade controls_high"))
+			if(this.controls_spade_high > value) {
+				this.controls_spade_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("spade hc_low"))
+			if(this.highCards_spade_low < value) {
+				this.highCards_spade_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade hc_high"))
+			if(this.highCards_spade_high > value) {
+				this.highCards_spade_high = value;
+				return true;
+			} else return false;
+
+		
+		if(feature.equals("spade honors_low"))
+			if(this.honors_spade_low < value) {
+				this.honors_spade_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade honors_high"))
+			if(this.honors_spade_high > value) {
+				this.honors_spade_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("spade ace"))
+			if(this.ace_spade == -1) {
+				this.ace_spade = value;
+				
+				return true;
+			} else if(this.ace_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("spade king"))
+			if(this.king_spade == -1) {
+				this.king_spade = value;
+				return true;
+			} else if(this.king_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("spade queen"))
+			if(this.queen_spade == -1) {
+				this.queen_spade = value;
+				return true;
+			} else if(this.queen_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("spade jack"))
+			if(this.jack_spade == -1) {
+				this.jack_spade = value;
+				return true;
+			} else if(this.jack_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("spade ten"))
+			if(this.ten_spade == -1) {
+				this.ten_spade = value;
+				return true;
+			} else if(this.ten_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+
+		if(feature.equals("spade rkcb"))
+			if(this.rkcb_spade == -1) {
+				this.rkcb_spade = value;
+				return true;
+			} else if(this.rkcb_spade == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("spade num_low"))
+			if(this.num_spade_low < value) {
+				
+				this.updateFeature("heart num_high", NUMCARDSINHAND - this.num_spade_low);
+				this.updateFeature("dia num_high", NUMCARDSINHAND - this.num_spade_low);
+				this.updateFeature("club num_high", NUMCARDSINHAND - this.num_spade_low);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("spade num_high", NUMCARDSINSUIT - this.num_spade_low);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("spade num_high", NUMCARDSINSUIT - this.num_spade_low);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("spade num_high", NUMCARDSINSUIT - this.num_spade_low);
+				
+				this.num_spade_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade num_high"))
+			if(this.num_spade_high > value) {
+				this.num_spade_high = value;
+				
+				this.updateFeature("heart num_low", NUMCARDSINHAND - this.num_spade_high);
+				this.updateFeature("dia num_low", NUMCARDSINHAND - this.num_spade_high);
+				this.updateFeature("club num_low", NUMCARDSINHAND - this.num_spade_high);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("spade num_low", NUMCARDSINSUIT - this.num_spade_high);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("spade num_low", NUMCARDSINSUIT - this.num_spade_high);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("spade num_low", NUMCARDSINSUIT - this.num_spade_high);
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("spade longest")) {
+			if(this.longest_sp == -1) {
+				this.longest_sp = value;
+				
+				if(this.longest_sp == 1) {
+					this.updateFeature("heart longest", 0);
+					this.updateFeature("dia longest", 0);
+					this.updateFeature("club longest", 0);
+				}
+				
+				return true;
+			} else if(longest_sp == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("spade shortest")) {
+			if(this.shortest_sp == -1) {
+				this.shortest_sp = value;
+				
+				if(this.shortest_sp == 1) {
+					this.updateFeature("heart shortest", 0);
+					this.updateFeature("dia shortest", 0);
+					this.updateFeature("club shortest", 0);
+				}
+				
+				return true;
+			} else if(shortest_sp == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("spade biddable")) {
+			if(this.biddable_sp == -1) {
+				this.biddable_sp = value;
+				return true;
+			} else if(biddable_sp == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+
+		if(feature.equals("spade stopper")) {
+			if(this.stopper_sp == -1) {
+				this.stopper_sp = value;
+				return true;
+			} else if(stopper_sp == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("spade quality")) {
+			if(this.quality_sp == -1) {
+				this.quality_sp = value;
+				return true;
+			} else if(quality_sp == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		/*
+		 * Heart updates
+		 */
+		
+		if(feature.equals("heart hcp_low"))
+			if(this.points_heart_low < value) {
+				this.points_heart_low = value;
+				
+				int total = this.player.getSelfView().points_heart_low +
+						this.player.getPartnerView().points_heart_low +
+						this.player.getLeftOppView().points_heart_low +
+						this.player.getRightOppView().points_heart_low;
+				
+				this.player.getPartnerView().updateFeature("heart hcp_high", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_heart_low));
+				this.player.getLeftOppView().updateFeature("heart hcp_high", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_heart_low));
+				this.player.getRightOppView().updateFeature("heart hcp_high", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_heart_low));
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart hcp_high"))
+			if(this.points_heart_high > value) {
+				this.points_heart_high = value;
+				
+				int total = this.player.getSelfView().points_heart_high +
+						this.player.getPartnerView().points_heart_high +
+						this.player.getLeftOppView().points_heart_high +
+						this.player.getRightOppView().points_heart_high;
+				
+				this.player.getPartnerView().updateFeature("heart hcp_low", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_heart_high));
+				this.player.getLeftOppView().updateFeature("heart hcp_low", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_heart_high));
+				this.player.getRightOppView().updateFeature("heart hcp_low", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_heart_high));
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("heart controls_low"))
+			if(this.controls_heart_low < value) {
+				this.controls_heart_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart controls_high"))
+			if(this.controls_heart_high > value) {
+				this.controls_heart_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("heart hc_low"))
+			if(this.highCards_heart_low < value) {
+				this.highCards_heart_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart hc_high"))
+			if(this.highCards_heart_high > value) {
+				this.highCards_heart_high = value;
+				return true;
+			} else return false;
+
+		
+		if(feature.equals("heart honors_low"))
+			if(this.honors_heart_low < value) {
+				this.honors_heart_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart honors_high"))
+			if(this.honors_heart_high > value) {
+				this.honors_heart_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("heart ace"))
+			if(this.ace_heart == -1) {
+				this.ace_heart = value;
+				
+				return true;
+			} else if(this.ace_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("heart king"))
+			if(this.king_heart == -1) {
+				this.king_heart = value;
+				return true;
+			} else if(this.king_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("heart queen"))
+			if(this.queen_heart == -1) {
+				this.queen_heart = value;
+				return true;
+			} else if(this.queen_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("heart jack"))
+			if(this.jack_heart == -1) {
+				this.jack_heart = value;
+				return true;
+			} else if(this.jack_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("heart ten"))
+			if(this.ten_heart == -1) {
+				this.ten_heart = value;
+				return true;
+			} else if(this.ten_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+
+		if(feature.equals("heart rkcb"))
+			if(this.rkcb_heart == -1) {
+				this.rkcb_heart = value;
+				return true;
+			} else if(this.rkcb_heart == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("heart num_low"))
+			if(this.num_heart_low < value) {
+				
+				this.updateFeature("spade num_high", NUMCARDSINHAND - this.num_heart_low);
+				this.updateFeature("dia num_high", NUMCARDSINHAND - this.num_heart_low);
+				this.updateFeature("club num_high", NUMCARDSINHAND - this.num_heart_low);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("heart num_high", NUMCARDSINSUIT - this.num_heart_low);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("heart num_high", NUMCARDSINSUIT - this.num_heart_low);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("heart num_high", NUMCARDSINSUIT - this.num_heart_low);
+				
+				this.num_heart_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart num_high"))
+			if(this.num_heart_high > value) {
+				this.num_heart_high = value;
+				
+				this.updateFeature("spade num_low", NUMCARDSINHAND - this.num_heart_high);
+				this.updateFeature("dia num_low", NUMCARDSINHAND - this.num_heart_high);
+				this.updateFeature("club num_low", NUMCARDSINHAND - this.num_heart_high);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("heart num_low", NUMCARDSINSUIT - this.num_heart_high);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("heart num_low", NUMCARDSINSUIT - this.num_heart_high);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("heart num_low", NUMCARDSINSUIT - this.num_heart_high);
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("heart longest")) {
+			if(this.longest_he == -1) {
+				this.longest_he = value;
+				
+				if(this.longest_he == 1) {
+					this.updateFeature("spade longest", 0);
+					this.updateFeature("dia longest", 0);
+					this.updateFeature("club longest", 0);
+				}
+				
+				return true;
+			} else if(longest_he == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("heart shortest")) {
+			if(this.shortest_he == -1) {
+				this.shortest_he = value;
+				
+				if(this.shortest_he == 1) {
+					this.updateFeature("spade shortest", 0);
+					this.updateFeature("dia shortest", 0);
+					this.updateFeature("club shortest", 0);
+				}
+				
+				
+				return true;
+			} else if(shortest_he == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("heart biddable")) {
+			if(this.biddable_he == -1) {
+				this.biddable_he = value;
+				return true;
+			} else if(biddable_he == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+
+		if(feature.equals("heart stopper")) {
+			if(this.stopper_he == -1) {
+				this.stopper_he = value;
+				return true;
+			} else if(stopper_he == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("heart quality")) {
+			if(this.quality_he == -1) {
+				this.quality_he = value;
+				return true;
+			} else if(quality_he == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		/*
+		 * Diamond updates
+		 */
+		
+		if(feature.equals("dia hcp_low"))
+			if(this.points_dia_low < value) {
+				this.points_dia_low = value;
+				
+				int total = this.player.getSelfView().points_dia_low +
+						this.player.getPartnerView().points_dia_low +
+						this.player.getLeftOppView().points_dia_low +
+						this.player.getRightOppView().points_dia_low;
+				
+				this.player.getPartnerView().updateFeature("dia hcp_high", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_dia_low));
+				this.player.getLeftOppView().updateFeature("dia hcp_high", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_dia_low));
+				this.player.getRightOppView().updateFeature("dia hcp_high", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_dia_low));
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia hcp_high"))
+			if(this.points_dia_high > value) {
+				this.points_dia_high = value;
+				
+				int total = this.player.getSelfView().points_dia_high +
+						this.player.getPartnerView().points_dia_high +
+						this.player.getLeftOppView().points_dia_high +
+						this.player.getRightOppView().points_dia_high;
+				
+				this.player.getPartnerView().updateFeature("dia hcp_low", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_dia_high));
+				this.player.getLeftOppView().updateFeature("dia hcp_low", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_dia_high));
+				this.player.getRightOppView().updateFeature("dia hcp_low", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_dia_high));
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("dia controls_low"))
+			if(this.controls_dia_low < value) {
+				this.controls_dia_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia controls_high"))
+			if(this.controls_dia_high > value) {
+				this.controls_dia_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("dia hc_low"))
+			if(this.highCards_dia_low < value) {
+				this.highCards_dia_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia hc_high"))
+			if(this.highCards_dia_high > value) {
+				this.highCards_dia_high = value;
+				return true;
+			} else return false;
+
+		
+		if(feature.equals("dia honors_low"))
+			if(this.honors_dia_low < value) {
+				this.honors_dia_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia honors_high"))
+			if(this.honors_dia_high > value) {
+				this.honors_dia_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("dia ace"))
+			if(this.ace_dia == -1) {
+				this.ace_dia = value;
+				
+				return true;
+			} else if(this.ace_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("dia king"))
+			if(this.king_dia == -1) {
+				this.king_dia = value;
+				return true;
+			} else if(this.king_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("dia queen"))
+			if(this.queen_dia == -1) {
+				this.queen_dia = value;
+				return true;
+			} else if(this.queen_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("dia jack"))
+			if(this.jack_dia == -1) {
+				this.jack_dia = value;
+				return true;
+			} else if(this.jack_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("dia ten"))
+			if(this.ten_dia == -1) {
+				this.ten_dia = value;
+				return true;
+			} else if(this.ten_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+
+		if(feature.equals("dia rkcb"))
+			if(this.rkcb_dia == -1) {
+				this.rkcb_dia = value;
+				return true;
+			} else if(this.rkcb_dia == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("dia num_low"))
+			if(this.num_dia_low < value) {
+				
+				this.updateFeature("spade num_high", NUMCARDSINHAND - this.num_dia_low);
+				this.updateFeature("heart num_high", NUMCARDSINHAND - this.num_dia_low);
+				this.updateFeature("club num_high", NUMCARDSINHAND - this.num_dia_low);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("dia num_high", NUMCARDSINSUIT - this.num_dia_low);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("dia num_high", NUMCARDSINSUIT - this.num_dia_low);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("dia num_high", NUMCARDSINSUIT - this.num_dia_low);
+				
+				this.num_dia_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia num_high"))
+			if(this.num_dia_high > value) {
+				this.num_dia_high = value;
+				
+				this.updateFeature("spade num_low", NUMCARDSINHAND - this.num_dia_high);
+				this.updateFeature("heart num_low", NUMCARDSINHAND - this.num_dia_high);
+				this.updateFeature("club num_low", NUMCARDSINHAND - this.num_dia_high);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("dia num_low", NUMCARDSINSUIT - this.num_dia_high);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("dia num_low", NUMCARDSINSUIT - this.num_dia_high);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("dia num_low", NUMCARDSINSUIT - this.num_dia_high);
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("dia longest")) {
+			if(this.longest_di == -1) {
+				this.longest_di = value;
+				
+				if(this.longest_di == 1) {
+					this.updateFeature("spade longest", 0);
+					this.updateFeature("heart longest", 0);
+					this.updateFeature("club longest", 0);
+				}
+				
+				return true;
+			} else if(longest_di == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("dia shortest")) {
+			if(this.shortest_di == -1) {
+				this.shortest_di = value;
+				
+				if(this.shortest_di == 1) {
+					this.updateFeature("spade shortest", 0);
+					this.updateFeature("heart shortest", 0);
+					this.updateFeature("club shortest", 0);
+				}
+				
+				return true;
+			} else if(shortest_di == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("dia biddable")) {
+			if(this.biddable_di == -1) {
+				this.biddable_di = value;
+				return true;
+			} else if(biddable_di == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+
+		if(feature.equals("dia stopper")) {
+			if(this.stopper_di == -1) {
+				this.stopper_di = value;
+				return true;
+			} else if(stopper_di == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("dia quality")) {
+			if(this.quality_di == -1) {
+				this.quality_di = value;
+				return true;
+			} else if(quality_di == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		/*
+		 * Club updates
+		 */
+		
+		if(feature.equals("club hcp_low"))
+			if(this.points_club_low < value) {
+				this.points_club_low = value;
+				
+				int total = this.player.getSelfView().points_club_low +
+						this.player.getPartnerView().points_club_low +
+						this.player.getLeftOppView().points_club_low +
+						this.player.getRightOppView().points_club_low;
+				
+				this.player.getPartnerView().updateFeature("club hcp_high", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_club_low));
+				this.player.getLeftOppView().updateFeature("club hcp_high", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_club_low));
+				this.player.getRightOppView().updateFeature("club hcp_high", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_club_low));
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("club hcp_high"))
+			if(this.points_club_high > value) {
+				this.points_club_high = value;
+				
+				int total = this.player.getSelfView().points_club_high +
+						this.player.getPartnerView().points_club_high +
+						this.player.getLeftOppView().points_club_high +
+						this.player.getRightOppView().points_club_high;
+				
+				this.player.getPartnerView().updateFeature("club hcp_low", TOTALPOINTS_SUIT - (total - this.player.getPartnerView().points_club_high));
+				this.player.getLeftOppView().updateFeature("club hcp_low", TOTALPOINTS_SUIT - (total - this.player.getLeftOppView().points_club_high));
+				this.player.getRightOppView().updateFeature("club hcp_low", TOTALPOINTS_SUIT - (total - this.player.getRightOppView().points_club_high));
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("club controls_low"))
+			if(this.controls_club_low < value) {
+				this.controls_club_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club controls_high"))
+			if(this.controls_club_high > value) {
+				this.controls_club_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("club hc_low"))
+			if(this.highCards_club_low < value) {
+				this.highCards_club_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club hc_high"))
+			if(this.highCards_club_high > value) {
+				this.highCards_club_high = value;
+				return true;
+			} else return false;
+
+		
+		if(feature.equals("club honors_low"))
+			if(this.honors_club_low < value) {
+				this.honors_club_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club honors_high"))
+			if(this.honors_club_high > value) {
+				this.honors_club_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("club ace"))
+			if(this.ace_club == -1) {
+				this.ace_club = value;
+				
+				return true;
+			} else if(this.ace_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("club king"))
+			if(this.king_club == -1) {
+				this.king_club = value;
+				return true;
+			} else if(this.king_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("club queen"))
+			if(this.queen_club == -1) {
+				this.queen_club = value;
+				return true;
+			} else if(this.queen_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("club jack"))
+			if(this.jack_club == -1) {
+				this.jack_club = value;
+				return true;
+			} else if(this.jack_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+
+		if(feature.equals("club ten"))
+			if(this.ten_club == -1) {
+				this.ten_club = value;
+				return true;
+			} else if(this.ten_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+
+		if(feature.equals("club rkcb"))
+			if(this.rkcb_club == -1) {
+				this.rkcb_club = value;
+				return true;
+			} else if(this.rkcb_club == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		
+		if(feature.equals("club num_low"))
+			if(this.num_club_low < value) {
+				
+				this.updateFeature("spade num_high", NUMCARDSINHAND - this.num_club_low);
+				this.updateFeature("heart num_high", NUMCARDSINHAND - this.num_club_low);
+				this.updateFeature("dia num_high", NUMCARDSINHAND - this.num_club_low);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("club num_high", NUMCARDSINSUIT - this.num_club_low);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("club num_high", NUMCARDSINSUIT - this.num_club_low);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("club num_high", NUMCARDSINSUIT - this.num_club_low);
+				
+				this.num_club_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club num_high"))
+			if(this.num_club_high > value) {
+				this.num_club_high = value;
+				
+				this.updateFeature("spade num_low", NUMCARDSINHAND - this.num_club_high);
+				this.updateFeature("heart num_low", NUMCARDSINHAND - this.num_club_high);
+				this.updateFeature("dia num_low", NUMCARDSINHAND - this.num_club_high);
+				
+				if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("club num_low", NUMCARDSINSUIT - this.num_club_high);
+				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("club num_low", NUMCARDSINSUIT - this.num_club_high);
+				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("club num_low", NUMCARDSINSUIT - this.num_club_high);
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("club longest")) {
+			if(this.longest_cl == -1) {
+				this.longest_cl = value;
+				
+				if(this.longest_cl == 1) {
+					this.updateFeature("spade longest", 0);
+					this.updateFeature("heart longest", 0);
+					this.updateFeature("dia longest", 0);
+				}
+				
+				return true;
+			} else if(longest_cl == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("club shortest")) {
+			if(this.shortest_cl == -1) {
+				this.shortest_cl = value;
+				
+				if(this.shortest_cl == 1) {
+					this.updateFeature("spade shortest", 0);
+					this.updateFeature("heart shortest", 0);
+					this.updateFeature("dia shortest", 0);
+				}
+				
+				return true;
+			} else if(shortest_cl == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("club biddable")) {
+			if(this.biddable_cl == -1) {
+				this.biddable_cl = value;
+				return true;
+			} else if(biddable_cl == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+
+		if(feature.equals("club stopper")) {
+			if(this.stopper_cl == -1) {
+				this.stopper_cl = value;
+				return true;
+			} else if(stopper_cl == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("club quality")) {
+			if(this.quality_cl == -1) {
+				this.quality_cl = value;
+				return true;
+			} else if(quality_cl == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		/* TODO: view.CreateIntWME("dp_sp_he", this.dp_sp_he); 
+		view.CreateIntWME("dp_sp_di", this.dp_sp_di);
+		view.CreateIntWME("dp_sp_cl", this.dp_sp_cl);
+		view.CreateIntWME("dp_sp_ha", this.dp_sp_ha);
+		view.CreateIntWME("dp_he_sp", this.dp_he_sp);
+		view.CreateIntWME("dp_he_di", this.dp_he_di);
+		view.CreateIntWME("dp_he_cl", this.dp_he_cl);
+		view.CreateIntWME("dp_he_ha", this.dp_he_ha);
+		view.CreateIntWME("dp_di_sp", this.dp_di_sp);
+		view.CreateIntWME("dp_di_he", this.dp_di_he);
+		view.CreateIntWME("dp_di_cl", this.dp_di_cl);
+		view.CreateIntWME("dp_di_ha", this.dp_di_ha);
+		view.CreateIntWME("dp_cl_sp", this.dp_cl_sp);
+		view.CreateIntWME("dp_cl_he", this.dp_cl_he);
+		view.CreateIntWME("dp_cl_di", this.dp_cl_di);
+		view.CreateIntWME("dp_cl_ha", this.dp_cl_ha);
+		
+		view.CreateIntWME("losers_sp_he", this.losers_sp_he); 
+		view.CreateIntWME("losers_sp_di", this.losers_sp_di);
+		view.CreateIntWME("losers_sp_cl", this.losers_sp_cl);
+		view.CreateIntWME("losers_sp_ha", this.losers_sp_ha);
+		view.CreateIntWME("losers_he_sp", this.losers_he_sp);
+		view.CreateIntWME("losers_he_di", this.losers_he_di);
+		view.CreateIntWME("losers_he_cl", this.losers_he_cl);
+		view.CreateIntWME("losers_he_ha", this.losers_he_ha);
+		view.CreateIntWME("losers_di_sp", this.losers_di_sp);
+		view.CreateIntWME("losers_di_he", this.losers_di_he);
+		view.CreateIntWME("losers_di_cl", this.losers_di_cl);
+		view.CreateIntWME("losers_di_ha", this.losers_di_ha);
+		view.CreateIntWME("losers_cl_sp", this.losers_cl_sp);
+		view.CreateIntWME("losers_cl_he", this.losers_cl_he);
+		view.CreateIntWME("losers_cl_di", this.losers_cl_di);
+		view.CreateIntWME("losers_cl_ha", this.losers_cl_ha);
+		
+		view.CreateIntWME("tr_stopper_sp_ha", this.tr_stopper_sp_sp);
+		view.CreateIntWME("tr_stopper_sp_he", this.tr_stopper_sp_he); 
+		view.CreateIntWME("tr_stopper_sp_di", this.tr_stopper_sp_di);
+		view.CreateIntWME("tr_stopper_sp_cl", this.tr_stopper_sp_cl);
+		view.CreateIntWME("tr_stopper_he_sp", this.tr_stopper_he_sp);
+		view.CreateIntWME("tr_stopper_he_ha", this.tr_stopper_he_he);
+		view.CreateIntWME("tr_stopper_he_di", this.tr_stopper_he_di);
+		view.CreateIntWME("tr_stopper_he_cl", this.tr_stopper_he_cl);
+		view.CreateIntWME("tr_stopper_di_sp", this.tr_stopper_di_sp);
+		view.CreateIntWME("tr_stopper_di_he", this.tr_stopper_di_he);
+		view.CreateIntWME("tr_stopper_di_ha", this.tr_stopper_di_di);
+		view.CreateIntWME("tr_stopper_di_cl", this.tr_stopper_di_cl);
+		view.CreateIntWME("tr_stopper_cl_sp", this.tr_stopper_cl_sp);
+		view.CreateIntWME("tr_stopper_cl_he", this.tr_stopper_cl_he);
+		view.CreateIntWME("tr_stopper_cl_di", this.tr_stopper_cl_di);
+		view.CreateIntWME("tr_stopper_cl_ha", this.tr_stopper_cl_cl);
+		*/
+		
+		return false;
+	}
+	
+	public boolean updateFeature(String feature, double value) {
+		
+		if(feature.equals("ratio_low"))
+			if(this.ratio_low < value) {
+				this.ratio_low = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("ratio_high"))
+			if(this.ratio_high > value) {
+				this.ratio_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("intermediate_low"))
+			if(this.intermediate_ha_low < value) {
+				this.intermediate_ha_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("intermediate_high"))
+			if(this.intermediate_ha_high > value) {
+				this.intermediate_ha_high = value;
+				return true;
+			} else return false;
+
+		if(feature.equals("spade intermediate_low"))
+			if(this.intermediate_sp_low < value) {
+				this.intermediate_sp_low = value;
+				
+				if(this.intermediate_sp_low >= 2) {
+					this.updateFeature("spade ten", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("spade ten", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("spade ten", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("spade ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade intermediate_high"))
+			if(this.intermediate_sp_high > value) {
+				this.intermediate_sp_high = value;
+
+				if(this.intermediate_sp_high < 2) {
+					this.updateFeature("spade ten", 0);
+				}
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("heart intermediate_low"))
+			if(this.intermediate_he_low < value) {
+				this.intermediate_he_low = value;
+
+				if(this.intermediate_he_low >= 2) {
+					this.updateFeature("heart ten", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("heart ten", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("heart ten", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("heart ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart intermediate_high"))
+			if(this.intermediate_he_high > value) {
+				this.intermediate_he_high = value;
+
+				if(this.intermediate_he_high < 2) {
+					this.updateFeature("heart ten", 0);
+				}
+				
+				return true;
+			} else return false;
+
+		if(feature.equals("dia intermediate_low"))
+			if(this.intermediate_di_low < value) {
+				this.intermediate_di_low = value;
+
+				if(this.intermediate_di_low >= 2) {
+					this.updateFeature("dia ten", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("dia ten", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("dia ten", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("dia ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia intermediate_high"))
+			if(this.intermediate_di_high > value) {
+				this.intermediate_di_high = value;
+
+				if(this.intermediate_di_high < 2) {
+					this.updateFeature("dia ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+
+		if(feature.equals("club intermediate_low"))
+			if(this.intermediate_cl_low < value) {
+				this.intermediate_cl_low = value;
+
+				if(this.intermediate_cl_low >= 2) {
+					this.updateFeature("club ten", 1);
+					
+					if(!this.equals(this.player.getPartnerView())) this.player.getPartnerView().updateFeature("club ten", 0);
+					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("club ten", 0);
+					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("club ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("club intermediate_high"))
+			if(this.intermediate_cl_high > value) {
+				this.intermediate_cl_high = value;
+
+				if(this.intermediate_cl_high < 2) {
+					this.updateFeature("club ten", 0);
+				}
+				
+				return true;
+			} else return false;
+		
+		return false;
+	}
+	
+	private void contradiction() {
+		
 	}
 	
 	private void copyValues(HandView to, HandView from) {

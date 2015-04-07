@@ -75,7 +75,7 @@ public class BidHistory {
 	}
 	
 	public void addToSoarIdentifier(Identifier history) {
-		// TODO: Once datatype is decided, add everything to the identifier here
+		// TODO: Once data-type is decided, add everything to the identifier here
 		if(bids_made > 0) history.CreateStringWME("last-bid", this.getBid(0).toString());
 	}
 	
