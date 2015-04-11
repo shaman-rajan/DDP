@@ -2,6 +2,9 @@ source _all.soar
 source expand-node.soar
 source input-views.soar
 source input-pattern-check-result.soar
+source top-level-nodes.soar
 source opening-1NT.soar
 source opening-1M.soar
+source opening-2level.soar
+source opening-3level.soar
 source top-state.soar

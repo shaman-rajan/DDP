@@ -7,6 +7,7 @@ import sml.FloatElement;
 import sml.Identifier;
 import sml.IntElement;
 import sml.Kernel;
+import sml.StringElement;
 import sml.smlPrintEventId;
 import sml.smlRunStepSize;
 import sml.Agent.PrintEventInterface;
@@ -23,20 +24,21 @@ public class TestAgent {
 		a.ExecuteCommandLine("watch --fullwmes");
 		
 		a.ExecuteCommandLine("sp {out (state <s> ^io.input-link <in> ^io.output-link <out>) \n" +
-				"(<in> ^pi <pival> ^iden.integer <intval>) \n" +
+				"(<in> ^pi <pival> ^iden.integer <intval> ^iden.pi <pistring>) \n" +
 				"--> \n" +
 				"(<out> ^misery <one>) \n" +
-				"(<one> ^mulval (* <pival> <intval>))}");
+				"(<one> ^mulval (* <pival> <intval>)) \n" +
+				"(<one> ^testattr (concat 1 <pistring>))}");
 
 		Identifier inLink = a.GetInputLink();
 		Identifier iden = inLink.CreateIdWME("iden");
 		FloatElement fl = inLink.CreateFloatWME("pi", 3.1416);
 		IntElement il = iden.CreateIntWME("integer", 20);
+		StringElement sl = iden.CreateStringWME("pi", "pi");
 		iden.CreateStringWME("M", "spade");
 		iden.CreateStringWME("M", "heart");
 		a.RunSelf(1, smlRunStepSize.sml_PHASE);
 		System.out.println(a.ExecuteCommandLine("print --depth 10 s1"));
-		System.out.println(il.GetValueType() + " " + fl.GetValueType() + iden.GetValueType());
 		
 		String inp = "";
 		while(!inp.equals("no")) {

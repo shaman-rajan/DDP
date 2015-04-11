@@ -91,6 +91,7 @@ public class Player {
 						WMElement child = command.GetChild(j);
 						if(child.GetAttribute().equals("short-form")) {
 							String bidString = child.GetValueAsString();
+							// System.out.println("Bid string returned by SOAR: " + bidString);
 							bid_returned = new Bid(bidString);
 						} else {
 							this.deal.updateViews(child.ConvertToIdentifier(), this.position);

@@ -1,0 +1,20 @@
+sp {expand*opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening)
+-->
+    (<n> ^pattern *)
+}
+
+sp {expand*opening
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child opening-1N
+         ^child opening-1M
+         ^child opening-2C
+         ^child opening-2H
+         ^child opening-2S
+         ^child opening-2N)
+}    

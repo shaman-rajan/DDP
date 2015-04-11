@@ -182,6 +182,11 @@ public class Hand implements Cloneable {
 	 */
 	public double ratio;
 	
+	/*
+	 * Estimated number of losers in the hand without partner support for the longest suit
+	 */
+	public double unlos_sp, unlos_he, unlos_di, unlos_cl;
+	
 	// Calculation function
 	private void calculateFeatureValues() {
 		
@@ -224,6 +229,8 @@ public class Hand implements Cloneable {
 		
 		quality_sp = quality_he = quality_di = quality_cl = 0;
 		ratio = 0;
+		
+		unlos_sp = unlos_he = unlos_di = unlos_cl = 0;
 		
 		/*
 		 * HC Cards and Points (full hand)
@@ -907,6 +914,226 @@ public class Hand implements Cloneable {
 		suitsForRatio.add(new SuitToFindRatio("club", num_club, points_club));
 		Collections.sort(suitsForRatio);
 		ratio = (suitsForRatio.get(2).hcp + suitsForRatio.get(3).hcp) * 1.0 / points_hc;
+		
+		// Unlos
+		
+		double temp_unlos = 0;
+		
+		if(this.num_spade == 0) {
+			temp_unlos = 0;
+		} else if(this.num_spade == 1) {
+			if(this.contains(Suit.SPADE, Value.ACE)) temp_unlos = 0;
+			else temp_unlos = 1;
+		} else if(this.num_spade == 2) {
+			if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.KING)) temp_unlos = 0;
+			else if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.QUEEN)) temp_unlos = 0.5;
+			else if(this.contains(Suit.SPADE, Value.ACE)) temp_unlos = 1;
+			else if(this.contains(Suit.SPADE, Value.KING)) temp_unlos = 1.5;
+		} else if(this.num_spade == 3) {
+			if(this.contains(Suit.SPADE, Value.ACE)) {
+				if(this.contains(Suit.SPADE, Value.KING)) {
+					if(this.contains(Suit.SPADE, Value.QUEEN)) temp_unlos = 0;
+					else if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 0.75;
+					else temp_unlos = 1;
+				} else if(this.contains(Suit.SPADE, Value.QUEEN)) {
+					if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1;
+					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.25;
+					else temp_unlos = 1.5;
+				} else if(this.contains(Suit.SPADE, Value.JACK)) {
+					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1.25;
+					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.5;
+					else temp_unlos = 1.75;
+				} else {
+					temp_unlos = 2;
+				}
+			} else if(this.contains(Suit.SPADE, Value.KING)) {
+				if(this.contains(Suit.SPADE, Value.QUEEN)) {
+					if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 1;
+					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1;
+					else temp_unlos = 1.25;
+				} else if(this.contains(Suit.SPADE, Value.JACK)) {
+					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1.5;
+					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.75;
+					else temp_unlos = 2;
+				} else if(this.contains(Suit.SPADE, Value.TEN) && this.contains(Suit.SPADE, Value.NINE))
+					temp_unlos = 2.25;
+				else
+					temp_unlos = 2.5;
+			} else if(this.contains(Suit.SPADE, Value.QUEEN)) {
+				if(this.contains(Suit.SPADE, Value.JACK)) {
+					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 2;
+					else temp_unlos = 2.25;
+				} else if(this.contains(Suit.SPADE, Value.TEN) && this.contains(Suit.SPADE, Value.NINE))
+					temp_unlos = 2.5;
+				else temp_unlos = 2.75;
+			}
+		} else {
+			// TODO: If length > 3
+		} this.unlos_sp = temp_unlos;
+		
+		if(this.num_heart == 0) {
+			temp_unlos = 0;
+		} else if(this.num_heart == 1) {
+			if(this.contains(Suit.HEART, Value.ACE)) temp_unlos = 0;
+			else temp_unlos = 1;
+		} else if(this.num_heart == 2) {
+			if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.KING)) temp_unlos = 0;
+			else if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.QUEEN)) temp_unlos = 0.5;
+			else if(this.contains(Suit.HEART, Value.ACE)) temp_unlos = 1;
+			else if(this.contains(Suit.HEART, Value.KING)) temp_unlos = 1.5;
+		} else if(this.num_heart == 3) {
+			if(this.contains(Suit.HEART, Value.ACE)) {
+				if(this.contains(Suit.HEART, Value.KING)) {
+					if(this.contains(Suit.HEART, Value.QUEEN)) temp_unlos = 0;
+					else if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 0.75;
+					else temp_unlos = 1;
+				} else if(this.contains(Suit.HEART, Value.QUEEN)) {
+					if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1;
+					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.25;
+					else temp_unlos = 1.5;
+				} else if(this.contains(Suit.HEART, Value.JACK)) {
+					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1.25;
+					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.5;
+					else temp_unlos = 1.75;
+				} else {
+					temp_unlos = 2;
+				}
+			} else if(this.contains(Suit.HEART, Value.KING)) {
+				if(this.contains(Suit.HEART, Value.QUEEN)) {
+					if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 1;
+					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1;
+					else temp_unlos = 1.25;
+				} else if(this.contains(Suit.HEART, Value.JACK)) {
+					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1.5;
+					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.75;
+					else temp_unlos = 2;
+				} else if(this.contains(Suit.HEART, Value.TEN) && this.contains(Suit.HEART, Value.NINE))
+					temp_unlos = 2.25;
+				else
+					temp_unlos = 2.5;
+			} else if(this.contains(Suit.HEART, Value.QUEEN)) {
+				if(this.contains(Suit.HEART, Value.JACK)) {
+					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 2;
+					else temp_unlos = 2.25;
+				} else if(this.contains(Suit.HEART, Value.TEN) && this.contains(Suit.HEART, Value.NINE))
+					temp_unlos = 2.5;
+				else temp_unlos = 2.75;
+			}
+		} else {
+			// TODO: If length > 3
+		} this.unlos_he = temp_unlos;
+	
+		if(this.num_dia == 0) {
+			temp_unlos = 0;
+		} else if(this.num_dia == 1) {
+			if(this.contains(Suit.DIAMOND, Value.ACE)) temp_unlos = 0;
+			else temp_unlos = 1;
+		} else if(this.num_dia == 2) {
+			if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.KING)) temp_unlos = 0;
+			else if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.QUEEN)) temp_unlos = 0.5;
+			else if(this.contains(Suit.DIAMOND, Value.ACE)) temp_unlos = 1;
+			else if(this.contains(Suit.DIAMOND, Value.KING)) temp_unlos = 1.5;
+		} else if(this.num_dia == 3) {
+			if(this.contains(Suit.DIAMOND, Value.ACE)) {
+				if(this.contains(Suit.DIAMOND, Value.KING)) {
+					if(this.contains(Suit.DIAMOND, Value.QUEEN)) temp_unlos = 0;
+					else if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 0.75;
+					else temp_unlos = 1;
+				} else if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
+					if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1;
+					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.25;
+					else temp_unlos = 1.5;
+				} else if(this.contains(Suit.DIAMOND, Value.JACK)) {
+					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1.25;
+					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.5;
+					else temp_unlos = 1.75;
+				} else {
+					temp_unlos = 2;
+				}
+			} else if(this.contains(Suit.DIAMOND, Value.KING)) {
+				if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
+					if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 1;
+					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1;
+					else temp_unlos = 1.25;
+				} else if(this.contains(Suit.DIAMOND, Value.JACK)) {
+					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1.5;
+					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.75;
+					else temp_unlos = 2;
+				} else if(this.contains(Suit.DIAMOND, Value.TEN) && this.contains(Suit.DIAMOND, Value.NINE))
+					temp_unlos = 2.25;
+				else
+					temp_unlos = 2.5;
+			} else if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
+				if(this.contains(Suit.DIAMOND, Value.JACK)) {
+					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 2;
+					else temp_unlos = 2.25;
+				} else if(this.contains(Suit.DIAMOND, Value.TEN) && this.contains(Suit.DIAMOND, Value.NINE))
+					temp_unlos = 2.5;
+				else temp_unlos = 2.75;
+			}
+		} else {
+			// TODO: If length > 3
+		} this.unlos_di = temp_unlos;
+		
+		if(this.num_club == 0) {
+			temp_unlos = 0;
+		} else if(this.num_club == 1) {
+			if(this.contains(Suit.CLUB, Value.ACE)) temp_unlos = 0;
+			else temp_unlos = 1;
+		} else if(this.num_club == 2) {
+			if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.KING)) temp_unlos = 0;
+			else if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.QUEEN)) temp_unlos = 0.5;
+			else if(this.contains(Suit.CLUB, Value.ACE)) temp_unlos = 1;
+			else if(this.contains(Suit.CLUB, Value.KING)) temp_unlos = 1.5;
+		} else if(this.num_club == 3) {
+			if(this.contains(Suit.CLUB, Value.ACE)) {
+				if(this.contains(Suit.CLUB, Value.KING)) {
+					if(this.contains(Suit.CLUB, Value.QUEEN)) temp_unlos = 0;
+					else if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 0.75;
+					else temp_unlos = 1;
+				} else if(this.contains(Suit.CLUB, Value.QUEEN)) {
+					if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 0.5;
+					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1;
+					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.25;
+					else temp_unlos = 1.5;
+				} else if(this.contains(Suit.CLUB, Value.JACK)) {
+					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1.25;
+					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.5;
+					else temp_unlos = 1.75;
+				} else {
+					temp_unlos = 2;
+				}
+			} else if(this.contains(Suit.CLUB, Value.KING)) {
+				if(this.contains(Suit.CLUB, Value.QUEEN)) {
+					if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 1;
+					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1;
+					else temp_unlos = 1.25;
+				} else if(this.contains(Suit.CLUB, Value.JACK)) {
+					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1.5;
+					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.75;
+					else temp_unlos = 2;
+				} else if(this.contains(Suit.CLUB, Value.TEN) && this.contains(Suit.CLUB, Value.NINE))
+					temp_unlos = 2.25;
+				else
+					temp_unlos = 2.5;
+			} else if(this.contains(Suit.CLUB, Value.QUEEN)) {
+				if(this.contains(Suit.CLUB, Value.JACK)) {
+					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 2;
+					else temp_unlos = 2.25;
+				} else if(this.contains(Suit.CLUB, Value.TEN) && this.contains(Suit.CLUB, Value.NINE))
+					temp_unlos = 2.5;
+				else temp_unlos = 2.75;
+			}
+		} else {
+			// TODO: If length > 3
+		} this.unlos_cl = temp_unlos;
 	}
 	
 	public String toString() {

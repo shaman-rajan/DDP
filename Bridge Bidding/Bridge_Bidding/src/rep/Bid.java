@@ -32,15 +32,16 @@ public class Bid implements Comparable<Bid> {
 	}
 	
 	/*
-	 * Send string in uppercase letters
+	 * Send string in the form 1<suit>
+	 * <suit> is either full name of the suit or the first letter of the suit name
 	 */
 	public Bid(String bid) {
 		this.pass = false;
 		this.dbl = false;
 		this.redbl = false;
-		if(bid.length() == 2) {
+		if(Character.isDigit(bid.charAt(0))) {
 			int bidval = bid.charAt(0) - '1';
-			char bidsuit = bid.charAt(1);
+			char bidsuit = Character.toUpperCase(bid.charAt(1));
 			BidValue valueArray[] = BidValue.values();
 			this.bidSuit = bidsuit == 'S' ? BidSuit.SPADE : 
 						(bidsuit == 'H' ? BidSuit.HEART : 
@@ -53,7 +54,7 @@ public class Bid implements Comparable<Bid> {
 			this.bidValue = BidValue.NONE;
 			if(bid.equals("PASS")) this.pass = true;
 			else if(bid.equals("DBL")) this.dbl = true;
-			else if(bid.equals("redbl")) this.redbl = true;
+			else if(bid.equals("REDBL")) this.redbl = true;
 		}
 	}
 	

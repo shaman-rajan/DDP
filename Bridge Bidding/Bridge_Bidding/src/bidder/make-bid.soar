@@ -4,7 +4,8 @@ sp {propose*make-bid
      (<c> ^status visited)}
    (<n> ^bid <b>)
 -->
-   (<s> ^operator <o> +)
+   (<s> ^operator <o> +
+        ^operator <o> <)
    (<o> ^bid <b>)
 }
 

@@ -1,0 +1,131 @@
+sp {expand*opening-2C*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-2C)
+-->
+    (<n> ^pattern *)
+}
+
+sp {expand*opening-2H*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-2H)
+-->
+    (<n> ^pattern *)
+}
+
+sp {expand*opening-2S*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-2S)
+-->
+    (<n> ^pattern *)
+}
+
+sp {expand*opening-2N*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-2N)
+-->
+    (<n> ^pattern *)
+}
+
+
+sp {expand*opening-2C
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2C
+         ^pattern-checked true)
+    (<v> ^hcp_low 23)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2C ^meaning <mean>)
+    (<mean> ^hcp_low 23)
+    # No children as of now, otherwise would add children here
+}
+
+sp {expand*opening-2H
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2H
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^heart.num_low 5
+         ^heart.num_high 5
+         ^spade.num_low {<snl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^heart.num_low 5)
+}
+
+sp {expand*opening-2H
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2H
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^heart.num_low 5
+         ^heart.num_high 5
+         ^dia.num_low {<dnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^heart.num_low 5)
+}
+
+sp {expand*opening-2H
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2H
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^heart.num_low 5
+         ^heart.num_high 5
+         ^club.num_low {<cnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^heart.num_low 5)
+}
+
+sp {expand*opening-2S
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2S
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^spade.num_low 5
+         ^spade.num_high 5
+         ^club.num_low {<cnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^spade.num_low 5)
+}
+
+sp {expand*opening-2S
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2S
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^spade.num_low 5
+         ^spade.num_high 5
+         ^dia.num_low {<dnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^spade.num_low 5)
+}
+
+sp {expand*opening-2N
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-2N
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 20}
+         ^hcp_high {<hcp_high> <= 22}
+         ^balanced_high {<b_high> <= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^hcp_low 20
+            ^hcp_high 22
+            ^balanced_high 1)
+    # No children as of now, otherwise would add the children attribute
+}

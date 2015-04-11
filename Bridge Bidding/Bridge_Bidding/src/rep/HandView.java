@@ -16,7 +16,7 @@ public class HandView implements Cloneable {
 	
 	public int points_hc_low, points_hc_high, 
 				points_spade_low, points_spade_high, 
-				points_heart_low, points_heart_high, 
+				points_heart_low, points_heart_high,
 				points_dia_low, points_dia_high, 
 				points_club_low, points_club_high;
 	public int controls_low, controls_high,
@@ -53,7 +53,7 @@ public class HandView implements Cloneable {
 				dp_di_sp, dp_di_he, dp_di_cl, dp_di_ha,
 				dp_cl_sp, dp_cl_he, dp_cl_di, dp_cl_ha;
 	public int num_suits;
-	public int lmaj, lmin;
+	public int lmaj_low, lmaj_high, lmin_low, lmin_high;
 	public int longest_sp, longest_he, longest_di, longest_cl;
 	public int shortest_sp, shortest_he, shortest_di, shortest_cl;
 	
@@ -80,6 +80,11 @@ public class HandView implements Cloneable {
 	public int quality_sp, quality_he, quality_di, quality_cl;
 	
 	public double ratio_low, ratio_high;
+	
+	public double unlos_sp_low, unlos_sp_high,
+					unlos_he_low, unlos_he_high, 
+					unlos_di_low, unlos_di_high,
+					unlos_cl_low, unlos_cl_high;
 	
 	public HandView(Hand fullHand, Player p) {
 		this.player = p;
@@ -168,8 +173,8 @@ public class HandView implements Cloneable {
 		this.dp_cl_ha = fullHand.dp_cl_ha;
 		
 		this.num_suits = fullHand.num_suits;
-		this.lmaj = fullHand.lmaj;
-		this.lmin = fullHand.lmin;
+		this.lmaj_low = lmaj_high = fullHand.lmaj;
+		this.lmin_low = lmin_high = fullHand.lmin;
 		
 		this.longest_sp = fullHand.longest_sp;
 		this.longest_he = fullHand.longest_he;
@@ -180,6 +185,11 @@ public class HandView implements Cloneable {
 		this.shortest_he = fullHand.shortest_he;
 		this.shortest_di = fullHand.shortest_di;
 		this.shortest_cl = fullHand.shortest_cl;
+		
+		this.biddable_sp = fullHand.biddable_sp;
+		this.biddable_he = fullHand.biddable_he;
+		this.biddable_di = fullHand.biddable_di;
+		this.biddable_cl = fullHand.biddable_cl;
 		
 		this.intermediate_ha_low = this.intermediate_ha_high = fullHand.intermediate_ha;
 		this.intermediate_sp_low = this.intermediate_sp_high = fullHand.intermediate_sp;
@@ -204,13 +214,31 @@ public class HandView implements Cloneable {
 		this.tr_stopper_cl_sp = fullHand.tr_stopper_cl_sp;
 		this.tr_stopper_cl_he = fullHand.tr_stopper_cl_he;
 		this.tr_stopper_cl_di = fullHand.tr_stopper_cl_di;
+		
+		this.losers_sp_he = fullHand.losers_sp_he;
+		this.losers_sp_di = fullHand.losers_sp_di;
+		this.losers_sp_cl = fullHand.losers_sp_cl;
+		this.losers_he_sp = fullHand.losers_he_sp;
+		this.losers_he_di = fullHand.losers_he_di;
+		this.losers_he_cl = fullHand.losers_he_cl;
+		this.losers_di_sp = fullHand.losers_di_sp;
+		this.losers_di_he = fullHand.losers_di_he;
+		this.losers_di_cl = fullHand.losers_di_cl;
+		this.losers_cl_sp = fullHand.losers_cl_sp;
+		this.losers_cl_he = fullHand.losers_cl_he;
+		this.losers_cl_di = fullHand.losers_cl_di;
 			
 		this.quality_sp = fullHand.quality_sp;
 		this.quality_he = fullHand.quality_he;
 		this.quality_di = fullHand.quality_di;
 		this.quality_cl = fullHand.quality_cl;
 		
-		ratio_low = ratio_high = fullHand.ratio;
+		this.ratio_low = this.ratio_high = fullHand.ratio;
+
+		this.unlos_sp_low = this.unlos_sp_high = fullHand.unlos_sp;
+		this.unlos_he_low = this.unlos_he_high = fullHand.unlos_he;
+		this.unlos_di_low = this.unlos_di_high = fullHand.unlos_di;
+		this.unlos_cl_low = this.unlos_cl_high = fullHand.unlos_cl;
 	}
 	
 	public HandView(HandView hv, Player p) {
@@ -291,7 +319,8 @@ public class HandView implements Cloneable {
 		
 		num_suits = -1;
 		
-		lmaj = lmin = -1;
+		lmaj_low = lmin_low = -1;
+		lmaj_high = lmin_high = MAXVALUE;
 		
 		longest_sp = longest_he = longest_di = longest_cl = -1;
 		
@@ -326,6 +355,15 @@ public class HandView implements Cloneable {
 		
 		ratio_low = -1;
 		ratio_high = MAXVALUE;
+		
+		unlos_sp_low = -1;
+		unlos_sp_high = MAXVALUE;		
+		unlos_he_low = -1;
+		unlos_he_high = MAXVALUE;
+		unlos_di_low = -1;
+		unlos_di_high = MAXVALUE;
+		unlos_cl_low = -1;
+		unlos_cl_high = MAXVALUE;
 	}
 	
 	/*
@@ -358,8 +396,11 @@ public class HandView implements Cloneable {
 		view.CreateFloatWME("intermediate_ha_high", intermediate_ha_high);
 
 		view.CreateIntWME("num_suits", this.num_suits);
-		view.CreateIntWME("lmaj", this.lmaj);
-		view.CreateIntWME("lmin", this.lmin);
+		
+		view.CreateIntWME("lmaj_low", this.lmaj_low);
+		view.CreateIntWME("lmaj_high", this.lmaj_high);
+		view.CreateIntWME("lmin_low", this.lmin_low);
+		view.CreateIntWME("lmin_high", this.lmin_high);
 				
 		view.CreateFloatWME("ratio_low", this.ratio_low);
 		view.CreateFloatWME("ratio_high", this.ratio_high);
@@ -388,6 +429,8 @@ public class HandView implements Cloneable {
 		spade.CreateFloatWME("intermediate_high", this.intermediate_sp_high);
 		spade.CreateFloatWME("stopper", this.stopper_sp);
 		spade.CreateFloatWME("quality", this.quality_sp);
+		spade.CreateFloatWME("unlos_low", this.unlos_sp_low);
+		spade.CreateFloatWME("unlos_high", this.unlos_sp_high);
 
 		Identifier heart = view.CreateIdWME("heart");
 		heart.CreateIntWME("hcp_low", points_heart_low);
@@ -413,6 +456,8 @@ public class HandView implements Cloneable {
 		heart.CreateFloatWME("intermediate_high", this.intermediate_he_high);
 		heart.CreateFloatWME("stopper", this.stopper_he);
 		heart.CreateFloatWME("quality", this.quality_he);
+		heart.CreateFloatWME("unlos_low", this.unlos_he_low);
+		heart.CreateFloatWME("unlos_high", this.unlos_he_high);
 
 		Identifier dia = view.CreateIdWME("dia");
 		dia.CreateIntWME("hcp_low", points_dia_low);
@@ -438,6 +483,8 @@ public class HandView implements Cloneable {
 		dia.CreateFloatWME("intermediate_high", this.intermediate_di_high);
 		dia.CreateFloatWME("stopper", this.stopper_di);
 		dia.CreateFloatWME("quality", this.quality_di);
+		dia.CreateFloatWME("unlos_low", this.unlos_di_low);
+		dia.CreateFloatWME("unlos_high", this.unlos_di_high);
 
 		Identifier club = view.CreateIdWME("club");
 		club.CreateIntWME("hcp_low", points_club_low);
@@ -463,6 +510,8 @@ public class HandView implements Cloneable {
 		club.CreateFloatWME("intermediate_high", this.intermediate_cl_high);
 		club.CreateFloatWME("stopper", this.stopper_cl);
 		club.CreateFloatWME("quality", this.quality_cl);
+		club.CreateFloatWME("unlos_low", this.unlos_cl_low);
+		club.CreateFloatWME("unlos_high", this.unlos_cl_high);
 		
 		view.CreateIntWME("dp_sp_he", this.dp_sp_he); 
 		view.CreateIntWME("dp_sp_di", this.dp_sp_di);
@@ -548,7 +597,7 @@ public class HandView implements Cloneable {
 		return true;
 	}
 	
-	public boolean matchesView(Hand hand) {
+	public boolean matchesHand(Hand hand) {
 		if( (this.points_hc_low <= hand.points_hc && this.points_hc_high >= hand.points_hc) &&
 			(this.points_spade_low <= hand.points_spade && this.points_spade_high >= hand.points_spade) &&
 			(this.points_heart_low <= hand.points_heart && this.points_heart_high >= hand.points_heart) &&
@@ -569,27 +618,27 @@ public class HandView implements Cloneable {
 			(this.honors_heart_low <= hand.honors_heart && this.honors_heart_high >= hand.honors_heart) &&
 			(this.honors_dia_low <= hand.honors_dia && this.honors_dia_high >= hand.honors_dia) &&
 			(this.honors_club_low <= hand.honors_club && this.honors_club_high >= hand.honors_club) &&
-			(this.aces == hand.aces) &&
+			(this.aces == -1 || this.aces == hand.aces) &&
 			(this.ace_spade == -1 || this.ace_spade == hand.ace_spade) &&
 			(this.ace_heart == -1 || this.ace_heart == hand.ace_heart) &&
 			(this.ace_dia == -1 || this.ace_dia == hand.ace_dia) &&
 			(this.ace_club == -1 || this.ace_club == hand.ace_club) &&
-			(this.kings == hand.kings) &&
+			(this.kings == -1 || this.kings == hand.kings) &&
 			(this.king_spade == -1 || this.king_spade == hand.king_spade) &&
 			(this.king_heart == -1 || this.king_heart == hand.king_heart) &&
 			(this.king_dia == -1 || this.king_dia == hand.king_dia) &&
 			(this.king_club == -1 || this.king_club == hand.king_club) &&
-			(this.queens == hand.queens) &&
+			(this.queens == -1 || this.queens == hand.queens) &&
 			(this.queen_spade == -1 || this.queen_spade == hand.queen_spade) &&
 			(this.queen_heart == -1 || this.queen_heart == hand.queen_heart) &&
 			(this.queen_dia == -1 || this.queen_dia == hand.queen_dia) &&
 			(this.queen_club == -1 || this.queen_club == hand.queen_club) &&
-			(this.jacks == hand.jacks) &&
+			(this.jacks == -1 || this.jacks == hand.jacks) &&
 			(this.jack_spade == -1 || this.jack_spade == hand.jack_spade) &&
 			(this.jack_heart == -1 || this.jack_heart == hand.jack_heart) &&
 			(this.jack_dia == -1 || this.jack_dia == hand.jack_dia) &&
 			(this.jack_club == -1 || this.jack_club == hand.jack_club) &&
-			(this.tens == hand.tens) &&
+			(this.tens == -1 || this.tens == hand.tens) &&
 			(this.ten_spade == -1 || this.ten_spade == hand.ten_spade) &&
 			(this.ten_heart == -1 || this.ten_heart == hand.ten_heart) &&
 			(this.ten_dia == -1 || this.ten_dia == hand.ten_dia) &&
@@ -620,8 +669,8 @@ public class HandView implements Cloneable {
 			(this.dp_cl_di == -1 || this.dp_cl_di == hand.dp_cl_di) &&
 			(this.dp_cl_ha == -1 || this.dp_cl_ha == hand.dp_cl_ha) &&
 			(this.num_suits == -1 || this.num_suits == hand.num_suits) &&
-			(this.lmaj == -1 || this.lmaj == hand.lmaj) &&
-			(this.lmin == -1 || this.lmin == hand.lmin) &&
+			(this.lmaj_low <= hand.lmaj && this.lmaj_high >= hand.lmaj) &&
+			(this.lmin_low <= hand.lmin && this.lmin_high >= hand.lmin) &&
 			(this.longest_sp == -1 || this.longest_sp == hand.longest_sp) &&
 			(this.longest_he == -1 || this.longest_he == hand.longest_he) &&
 			(this.longest_di == -1 || this.longest_di == hand.longest_di) &&
@@ -675,14 +724,18 @@ public class HandView implements Cloneable {
 			(this.quality_he == -1 || this.quality_he == hand.quality_he) &&
 			(this.quality_di == -1 || this.quality_di == hand.quality_di) &&
 			(this.quality_cl == -1 || this.quality_cl == hand.quality_cl) &&
-			(this.ratio_low <= hand.ratio && this.ratio_high >= hand.ratio)
+			(this.ratio_low <= hand.ratio && this.ratio_high >= hand.ratio) &&
+			(this.unlos_sp_low <= hand.unlos_sp && this.unlos_sp_high >= hand.unlos_sp) &&
+			(this.unlos_he_low <= hand.unlos_he && this.unlos_he_high >= hand.unlos_he) &&
+			(this.unlos_di_low <= hand.unlos_di && this.unlos_di_high >= hand.unlos_di) &&
+			(this.unlos_cl_low <= hand.unlos_cl && this.unlos_cl_high >= hand.unlos_cl)
 		)
 			return true;
 		else
 			return false;
 	}
 	
-	public boolean updateFeature(String feature, long val) {
+	private boolean updateFeature(String feature, long val) {
 		int value = (int) val;
 		
 		if(feature.equals("hcp_low"))
@@ -713,6 +766,11 @@ public class HandView implements Cloneable {
 				this.player.getPartnerView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getPartnerView().points_hc_high));
 				this.player.getLeftOppView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getLeftOppView().points_hc_high));
 				this.player.getRightOppView().updateFeature("hcp_low", TOTALPOINTS - (total - this.player.getRightOppView().points_hc_high));
+				
+				this.updateFeature("spade hcp_high", this.points_hc_high);
+				this.updateFeature("heart hcp_high", this.points_hc_high);
+				this.updateFeature("dia hcp_high", this.points_hc_high);
+				this.updateFeature("club hcp_high", this.points_hc_high);
 				
 				return true;
 			} else return false;
@@ -773,6 +831,8 @@ public class HandView implements Cloneable {
 					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("aces", 0);
 				}
 				
+				this.updateFeature("hc_low", this.aces);
+				
 				return true;
 			} else if(this.aces == value)
 				return false;
@@ -801,6 +861,8 @@ public class HandView implements Cloneable {
 					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("kings", 0);
 				}
 				
+				this.updateFeature("hc_low", this.kings);
+				
 				return true;
 			} else if(this.kings == value)
 				return false;
@@ -828,6 +890,8 @@ public class HandView implements Cloneable {
 					if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("queens", 0);
 					if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("queens", 0);
 				}
+				
+				this.updateFeature("hc_low", this.queens);
 				
 				return true;
 			} else if(this.queens == value)
@@ -913,10 +977,49 @@ public class HandView implements Cloneable {
 				this.contradiction();
 			else return false;
 
-		if(feature.equals("lmaj"))
-			; // Can't really do anything from here, feature is updated in the inference part
-		if(feature.equals("lmin"))
-			; // Can't really do anything from here, feature is updated in the inference part
+		if(feature.equals("lmaj_low"))
+			if(this.lmaj_low < value) {
+				this.lmaj_low = value;
+				
+				if(this.num_spade_high < this.lmaj_low)
+					this.updateFeature("heart num_low", this.lmaj_low);
+				if(this.num_heart_high < this.lmaj_low)
+					this.updateFeature("spade num_low", this.lmaj_low);
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("lmaj_high"))
+			if(this.lmaj_high > value) {
+				this.lmaj_high = value;
+				
+				this.updateFeature("spade num_high", this.lmaj_high);
+				this.updateFeature("heart num_high", this.lmaj_high);
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("lmin_low"))
+			if(this.lmin_low < value) {
+				this.lmin_low = value;
+				
+				if(this.num_dia_high < this.lmin_low)
+					this.updateFeature("club num_low", this.lmin_low);
+				if(this.num_club_high < this.lmin_low)
+					this.updateFeature("dia num_low", this.lmin_low);
+				
+				return true;
+			} else return false;
+		
+		if(feature.equals("lmin_high"))
+			if(this.lmin_high > value) {
+				this.lmin_high = value;
+				
+				this.updateFeature("dia num_high", this.lmin_high);
+				this.updateFeature("club num_high", this.lmaj_high);
+			
+				return true;
+			} else return false;
 
 		/*
 		 * Spade updates
@@ -1954,7 +2057,7 @@ public class HandView implements Cloneable {
 		return false;
 	}
 	
-	public boolean updateFeature(String feature, double value) {
+	private boolean updateFeature(String feature, double value) {
 		
 		if(feature.equals("ratio_low"))
 			if(this.ratio_low < value) {
@@ -2082,6 +2185,54 @@ public class HandView implements Cloneable {
 					this.updateFeature("club ten", 0);
 				}
 				
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade unlos_low"))
+			if(this.unlos_sp_low < value) {
+				this.unlos_sp_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("spade unlos_high"))
+			if(this.unlos_sp_high > value) {
+				this.unlos_sp_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart unlos_low"))
+			if(this.unlos_he_low < value) {
+				this.unlos_he_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("heart unlos_high"))
+			if(this.unlos_he_high > value) {
+				this.unlos_he_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia unlos_low"))
+			if(this.unlos_di_low < value) {
+				this.unlos_di_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("dia unlos_high"))
+			if(this.unlos_di_high > value) {
+				this.unlos_di_high = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club unlos_low"))
+			if(this.unlos_cl_low < value) {
+				this.unlos_cl_low = value;
+				return true;
+			} else return false;
+		
+		if(feature.equals("club unlos_high"))
+			if(this.unlos_cl_high > value) {
+				this.unlos_cl_high = value;
 				return true;
 			} else return false;
 		

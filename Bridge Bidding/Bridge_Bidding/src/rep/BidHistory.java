@@ -99,56 +99,56 @@ public class BidHistory {
 		char M = 0, m = 0, OM = 0, om = 0;
 		
 		int i = 0;
-		for(String pBid : patternBids) {
-			if(pBid.charAt(0) == '*') {
+		for(String bidInPattern : patternBids) {
+			if(bidInPattern.charAt(0) == '*') {
 				while(i < this.bids_made) {
 					if(!this.getBid(i).toString().equals("PASS"))
 						return false;
 					i++;
 				}
 			} else {
-				String bidString = this.getBid(i).toString();
-				if(Character.isDigit(pBid.charAt(0))) {
-					if(!(pBid.charAt(0) == bidString.charAt(0)))
+				String previousBidString = this.getBid(i).toString();
+				if(Character.isDigit(bidInPattern.charAt(0))) {
+					if(!(bidInPattern.charAt(0) == previousBidString.charAt(0)))
 						return false;
 					else {
-						switch(pBid.charAt(1)) {
+						switch(bidInPattern.charAt(1)) {
 						case 'M':
-							if(M == 0 && (bidString.charAt(1) == 'S' || bidString.charAt(1) == 'H')) {
-								M = bidString.charAt(1);
+							if(M == 0 && (previousBidString.charAt(1) == 'S' || previousBidString.charAt(1) == 'H')) {
+								M = previousBidString.charAt(1);
 								OM = M == 'S' ? 'H' : 'S';
 							}
-							else if(M != 0 && bidString.charAt(1) == M)
+							else if(M != 0 && previousBidString.charAt(1) == M)
 								;
 							else
 								return false;
 							break;
 						case 'm':
-							if(m == 0 && (bidString.charAt(1) == 'D' || bidString.charAt(1) == 'C')) {
-								m = bidString.charAt(1);
+							if(m == 0 && (previousBidString.charAt(1) == 'D' || previousBidString.charAt(1) == 'C')) {
+								m = previousBidString.charAt(1);
 								om = m == 'D' ? 'C' : 'D';
 							}
-							else if(m != 0 && bidString.charAt(1) == m)
+							else if(m != 0 && previousBidString.charAt(1) == m)
 								;
 							else
 								return false;
 							break;
 						case 'O':
-							if(OM == 0 && (bidString.charAt(1) == 'S' || bidString.charAt(1) == 'H')) {
-								OM = bidString.charAt(1);
+							if(OM == 0 && (previousBidString.charAt(1) == 'S' || previousBidString.charAt(1) == 'H')) {
+								OM = previousBidString.charAt(1);
 								M = OM == 'S' ? 'H' : 'S';
 							}
-							else if(OM != 0 && bidString.charAt(1) == OM)
+							else if(OM != 0 && previousBidString.charAt(1) == OM)
 								;
 							else
 								return false;
 							break;
 						case 'o':
-							if(om == 0 && (bidString.charAt(1) == 'D' || bidString.charAt(1) == 'C')) {
-								om = bidString.charAt(1);
+							if(om == 0 && (previousBidString.charAt(1) == 'D' || previousBidString.charAt(1) == 'C')) {
+								om = previousBidString.charAt(1);
 								m = om == 'D' ? 'C' : 'D';
 							}
-							else if(om == 1 && bidString.charAt(1) == om)
+							else if(om == 1 && previousBidString.charAt(1) == om)
 								;
 							else
 								return false;
@@ -156,7 +156,7 @@ public class BidHistory {
 						}
 					}
 				} else {
-					if(!bidString.equals(pBid))
+					if(!previousBidString.equals(bidInPattern))
 						return false;
 				}
 				
