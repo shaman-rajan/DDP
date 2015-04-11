@@ -27,6 +27,8 @@ public class Main {
 		Deal d = new Deal();
 		
 		HandView h = new HandView(null);
+		h.num_heart_low = 5;
+		h.points_hc_low = 11;
 		
 		while(!h.matchesHand(d.getNorth().getHand()) && !inp.equals("no")) {
 			System.out.println("Did not match HCP: " + d.getNorth().getHand().points_hc + " NumSpade: " + d.getNorth().getHand().num_spade);

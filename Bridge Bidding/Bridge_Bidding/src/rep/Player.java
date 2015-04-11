@@ -105,19 +105,23 @@ public class Player {
 				else if(command.GetAttribute().equals("pattern-check")) {
 					if(command.GetParameterValue("status") == null || 
 							!command.GetParameterValue("status").equals("complete")) {
-						System.out.println("Checking pattern for " + command.GetParameterValue("node-name"));
 						
-						Identifier link_for_next_input = agent.getInputLink();
-						int children = command.GetNumberChildren();
-						for(int j=0; j<children; ++j) {
-							WMElement child = command.GetChild(j);
-							if(child.GetAttribute().equals("pattern")) {
-								if(this.deal.getAuction().getBidHistory().matchPattern(child.GetValueAsString(), link_for_next_input))
-									link_for_next_input.CreateStringWME("result", "true");
-								else 
-									link_for_next_input.CreateStringWME("result", "false");
-							}
+						WMElement child_pattern = command.GetChild(0);
+						WMElement child_node = command.GetChild(1);
+						
+						if(child_pattern.GetAttribute().equals("node")) {
+							WMElement temp = child_node;
+							child_node = child_pattern;
+							child_pattern = temp;
 						}
+						
+						Identifier node = child_node.ConvertToIdentifier();
+						System.out.println("Checking pattern for " + node.GetParameterValue("name"));
+						
+						if(this.deal.getAuction().getBidHistory().matchPattern(child_pattern.GetValueAsString(), node))
+							node.CreateStringWME("pattern-checked", "true");
+						else
+							node.CreateStringWME("pattern-checked", "false");
 						
 						command.AddStatusComplete();
 					}

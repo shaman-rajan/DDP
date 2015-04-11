@@ -15,9 +15,10 @@
     <member path="bidder/initialize-bidder.soar" />
     <member path="bidder/make-bid.soar" />
     <member path="bidder/check-pattern.soar" />
-    <member path="bidder/elaborations/input-pattern-check-result.soar" />
     <member path="bidder/elaborations/opening-1M.soar" />
     <member path="bidder/pass-if-no-change.soar" />
+    <member path="bidder/elaborations/opening-3level.soar" />
+    <member path="bidder/elaborations/opening-2level.soar" />
   </members>
 </soaragent>
 

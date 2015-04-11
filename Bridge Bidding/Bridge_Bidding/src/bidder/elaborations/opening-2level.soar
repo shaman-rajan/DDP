@@ -54,7 +54,7 @@ sp {expand*opening-2H
     (<mean> ^heart.num_low 5)
 }
 
-sp {expand*opening-2H
+sp {expand*opening-2H*1
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name opening-2H
          ^pattern-checked true)
@@ -69,7 +69,7 @@ sp {expand*opening-2H
     (<mean> ^heart.num_low 5)
 }
 
-sp {expand*opening-2H
+sp {expand*opening-2H*2
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name opening-2H
          ^pattern-checked true)
@@ -99,7 +99,7 @@ sp {expand*opening-2S
     (<mean> ^spade.num_low 5)
 }
 
-sp {expand*opening-2S
+sp {expand*opening-2S*1
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name opening-2S
          ^pattern-checked true)

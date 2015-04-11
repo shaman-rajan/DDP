@@ -929,6 +929,7 @@ public class Hand implements Cloneable {
 			else if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.QUEEN)) temp_unlos = 0.5;
 			else if(this.contains(Suit.SPADE, Value.ACE)) temp_unlos = 1;
 			else if(this.contains(Suit.SPADE, Value.KING)) temp_unlos = 1.5;
+			else temp_unlos = 2;
 		} else if(this.num_spade == 3) {
 			if(this.contains(Suit.SPADE, Value.ACE)) {
 				if(this.contains(Suit.SPADE, Value.KING)) {
@@ -967,9 +968,12 @@ public class Hand implements Cloneable {
 					else temp_unlos = 2.25;
 				} else if(this.contains(Suit.SPADE, Value.TEN) && this.contains(Suit.SPADE, Value.NINE))
 					temp_unlos = 2.5;
-				else temp_unlos = 2.75;
-			}
+				else 
+					temp_unlos = 2.75;
+			} else
+				temp_unlos = 3;
 		} else {
+			temp_unlos = 0;
 			// TODO: If length > 3
 		} this.unlos_sp = temp_unlos;
 		
@@ -983,6 +987,7 @@ public class Hand implements Cloneable {
 			else if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.QUEEN)) temp_unlos = 0.5;
 			else if(this.contains(Suit.HEART, Value.ACE)) temp_unlos = 1;
 			else if(this.contains(Suit.HEART, Value.KING)) temp_unlos = 1.5;
+			else temp_unlos = 2;
 		} else if(this.num_heart == 3) {
 			if(this.contains(Suit.HEART, Value.ACE)) {
 				if(this.contains(Suit.HEART, Value.KING)) {
@@ -1021,9 +1026,12 @@ public class Hand implements Cloneable {
 					else temp_unlos = 2.25;
 				} else if(this.contains(Suit.HEART, Value.TEN) && this.contains(Suit.HEART, Value.NINE))
 					temp_unlos = 2.5;
-				else temp_unlos = 2.75;
-			}
+				else 
+					temp_unlos = 2.75;
+			} else 
+				temp_unlos = 3;
 		} else {
+			temp_unlos = 0;
 			// TODO: If length > 3
 		} this.unlos_he = temp_unlos;
 	
@@ -1037,6 +1045,7 @@ public class Hand implements Cloneable {
 			else if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.QUEEN)) temp_unlos = 0.5;
 			else if(this.contains(Suit.DIAMOND, Value.ACE)) temp_unlos = 1;
 			else if(this.contains(Suit.DIAMOND, Value.KING)) temp_unlos = 1.5;
+			else temp_unlos = 2;
 		} else if(this.num_dia == 3) {
 			if(this.contains(Suit.DIAMOND, Value.ACE)) {
 				if(this.contains(Suit.DIAMOND, Value.KING)) {
@@ -1075,9 +1084,12 @@ public class Hand implements Cloneable {
 					else temp_unlos = 2.25;
 				} else if(this.contains(Suit.DIAMOND, Value.TEN) && this.contains(Suit.DIAMOND, Value.NINE))
 					temp_unlos = 2.5;
-				else temp_unlos = 2.75;
-			}
+				else 
+					temp_unlos = 2.75;
+			} else
+				temp_unlos = 3;
 		} else {
+			temp_unlos = 0;
 			// TODO: If length > 3
 		} this.unlos_di = temp_unlos;
 		
@@ -1091,6 +1103,7 @@ public class Hand implements Cloneable {
 			else if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.QUEEN)) temp_unlos = 0.5;
 			else if(this.contains(Suit.CLUB, Value.ACE)) temp_unlos = 1;
 			else if(this.contains(Suit.CLUB, Value.KING)) temp_unlos = 1.5;
+			else temp_unlos = 2;
 		} else if(this.num_club == 3) {
 			if(this.contains(Suit.CLUB, Value.ACE)) {
 				if(this.contains(Suit.CLUB, Value.KING)) {
@@ -1129,9 +1142,12 @@ public class Hand implements Cloneable {
 					else temp_unlos = 2.25;
 				} else if(this.contains(Suit.CLUB, Value.TEN) && this.contains(Suit.CLUB, Value.NINE))
 					temp_unlos = 2.5;
-				else temp_unlos = 2.75;
-			}
+				else 
+					temp_unlos = 2.75;
+			} else
+				temp_unlos = 3;
 		} else {
+			temp_unlos = 0;
 			// TODO: If length > 3
 		} this.unlos_cl = temp_unlos;
 	}

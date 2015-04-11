@@ -19,5 +19,5 @@ sp {apply*pattern*check
 -->
     (<s> ^node-being-checked <node>)
     (<out> ^pattern-check <pat>)
-    (<pat> ^pattern <p> ^node-name <node-name>)
+    (<pat> ^pattern <p> ^node <node>)
 }
