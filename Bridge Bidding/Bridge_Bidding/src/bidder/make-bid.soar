@@ -5,7 +5,7 @@ sp {propose*make-bid
    (<n> ^bid <b>)
 -->
    (<s> ^operator <o> +
-        ^operator <o> <)
+        ^operator <o> < =)
    (<o> ^bid <b>)
 }
 

@@ -19,6 +19,7 @@
     <member path="bidder/pass-if-no-change.soar" />
     <member path="bidder/elaborations/opening-3level.soar" />
     <member path="bidder/elaborations/opening-2level.soar" />
+    <member path="bidder/elaborations/opening-4level.soar" />
   </members>
 </soaragent>
 

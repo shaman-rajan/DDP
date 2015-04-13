@@ -1,0 +1,292 @@
+#################### Pattern checking ####################
+
+sp {expand*too-weak-to-bid*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name too-weak-to-bid)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*1S-over-1H*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1S-over-1H)
+-->
+    (<n> ^pattern |PASS 1H *|)
+}
+
+sp {expand*1N-over-1M*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1N-over-1M)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*2m-over-1M*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 2m-over-1M)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*2H-over-1S*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 2H-over-1S)
+-->
+    (<n> ^pattern |PASS 1S *|)
+}
+
+sp {expand*jump-shift-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name jump-shift-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*simple-raise-major-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name simple-raise-major-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*2N-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 2N-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*jump-raise-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name jump-raise-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*3N-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 3N-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*game-raise-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name game-raise-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+sp {expand*splinter-over-1M-opening*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name splinter-over-1M-opening)
+-->
+    (<n> ^pattern |PASS 1M *|)
+}
+
+################### Constraint checking ###################
+    
+sp {expand*too-weak-to-bid
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name too-weak-to-bid
+         ^pattern-checked true)
+    (<v> ^hcp_high {<hcp_high> <= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form PASS ^meaning <mean>)
+    (<mean> ^hcp_high 5)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*1S-over-1H
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 1S-over-1H
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^spade.num_low {<snl> >= 4}
+         ^heart.num_high {<hnh> <= 2})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1S ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^spade.num_low 4
+            ^heart.num_high 2)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*1N-over-1M
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 1N-over-1M
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^hcp_high {<hcp_high> <= 10}
+         ^<major>.num_high {<mnh> <= 2})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1N ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^hcp_high 10
+            ^<major>.num_high 2)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*2m-over-1M
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 2m-over-1M
+         ^pattern-checked true
+         ^M <major>
+         ^m <minor>)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^<minor>.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 2 <minor>) ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^<minor>.longest 1)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*2H-over-1S
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 2H-over-1S
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^heart.num_low {<hnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^heart.num_low 5)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*jump-shift-over-1M-opening*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name jump-shift-over-1M-opening
+         ^pattern-checked true
+         ^M spade)
+    (<v> ^hcp_low {<hcp_low> >= 17}
+         ^{<suit> <> spade}.num_low {<snl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^<suit>.num_low 5)
+}
+
+sp {expand*jump-shift-over-1M-opening*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name jump-shift-over-1M-opening
+         ^pattern-checked true
+         ^M heart)
+    (<v> ^hcp_low {<hcp_low> >= 17}
+         ^spade.num_low {<snl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^spade.num_low 5)
+}
+
+sp {expand*jump-shift-over-1M-opening*3
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name jump-shift-over-1M-opening
+         ^pattern-checked true
+         ^M heart)
+    (<v> ^hcp_low {<hcp_low> >= 17}
+         ^{<suit> << dia club >>}.num_low {<snl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^<suit>.num_low 5)
+}
+
+sp {expand*simple-raise-major-opening
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name simple-raise-major-opening
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^<major>.hcp_low {<mhcp_low> >= 6}
+         ^hcp_high {<hcp_high> <= 10}
+         ^<major>.num_low {<mnum_low> >= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 2 <major>) ^meaning <mean>)
+    (<mean> ^<major>.hcp_low 6
+            ^hcp_high 10
+            ^<major>.num_low 3)
+}
+
+sp {expand*2N-over-1M-opening
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 2N-over-1M-opening
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 13}
+         ^<major>.num_low {<mnl> >= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^hcp_low 13
+            ^<major>.num_low 3)
+}
+
+sp {expand*jump-raise-over-1M-opening
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name jump-raise-over-1M-opening
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 10}
+         ^hcp_high {<hcp_high> <= 12}
+         ^<major>.num_low {<mnl> >= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
+    (<mean> ^hcp_low 10
+            ^hcp_high 12
+            ^<major>.num_low 3)
+}
+    
+sp {expand*3N-over-1M-opening
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 3N-over-1M-opening
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 15}
+         ^hcp_high {<hcp_high> >= 17}
+         ^balanced_high {<balh> <= 1}
+         ^<major>.num_low 2
+         ^<major>.num_high 2)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^hcp_low 15
+            ^hcp_high 17
+            ^balanced_high 1
+            ^<major>.num_low 2
+            ^<major>.num_high 2)
+}
+
+sp {expand*game-raise-over-1M-opening
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name game-raise-over-1M-opening
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_high {<hcp_high> <= 10}
+         ^<major>.num_low {<mnl> >= 5}
+         ^<major>.dp {<mdp> >= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
+    (<mean> ^hcp_high 10
+            ^<major>.num_low 5)
+}
+
+#sp {expand*splinter-over-1M-opening
+#    (state <s> ^name bidder ^node <n> ^myview <v>)
+#    (<n> ^name splinter-over-1M-opening
+#         ^pattern-checked true
+#         ^M <major>)
+#    (<v>

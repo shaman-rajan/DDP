@@ -1,0 +1,61 @@
+sp {expand*opengin-4m*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-4m)
+-->
+    (<n> ^pattern *)
+}
+
+sp {expand*opengin-4M*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-4M)
+-->
+    (<n> ^pattern *)
+}
+
+
+sp {expand*opening-4m
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-4m
+         ^pattern-checked true
+         ^m <minor>)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^<minor>.num_low 8
+         ^<minor>.num_high 8
+         ^lmaj_high {<lmaj_high> <= 3}
+         ^<minor>.unlos_high {<un_h> <= 2})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 4 <minor>) ^meaning <mean>)
+    (<mean> ^hcp_low 5
+            ^hcp_high 10
+            ^<minor>.num_low 8
+            ^<minor>.num_high 8
+            ^lmaj_high 3
+            ^<minor>.unlos_high 2)
+}
+
+sp {expand*opening-4M
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name opening-4M
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 10}
+         ^<major>.num_low 8
+         ^<major>.num_high 8
+         ^M {<other-major> <> <major>}
+         ^<other-major>.num_high {<other-high> <= 3}
+         ^<major>.unlos_high {<un_h> <= 2})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
+    (<mean> ^hcp_low 5
+            ^hcp_high 10
+            ^<major>.num_low 8
+            ^<major>.num_high 8
+            ^lmaj_low 8
+            ^lmaj_high 8
+            ^<major>.unlos_high 2)
+    # No children as of now, otherwise would add the children attribute
+}

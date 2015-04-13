@@ -1,0 +1,5067 @@
+north: [SPADE SIX, HEART ACE, HEART KING, HEART TEN, DIAMOND ACE, DIAMOND KING, DIAMOND SIX, DIAMOND FIVE, DIAMOND FOUR, CLUB JACK, CLUB NINE, CLUB EIGHT, CLUB FIVE]
+east: [SPADE KING, SPADE QUEEN, SPADE JACK, SPADE FOUR, HEART EIGHT, HEART FOUR, HEART THREE, HEART TWO, DIAMOND JACK, DIAMOND SEVEN, DIAMOND TWO, CLUB QUEEN, CLUB TWO]
+south: [SPADE ACE, SPADE TEN, SPADE NINE, SPADE SEVEN, HEART QUEEN, HEART FIVE, DIAMOND TEN, DIAMOND NINE, DIAMOND THREE, CLUB KING, CLUB TEN, CLUB SIX, CLUB FOUR]
+west: [SPADE EIGHT, SPADE FIVE, SPADE THREE, SPADE TWO, HEART JACK, HEART NINE, HEART SEVEN, HEART SIX, DIAMOND QUEEN, DIAMOND EIGHT, CLUB ACE, CLUB SEVEN, CLUB THREE]
+Did not match HCP: 15 NumSpade: 1
+north: [SPADE JACK, HEART KING, HEART NINE, HEART EIGHT, HEART SEVEN, HEART SIX, HEART FOUR, DIAMOND KING, DIAMOND TEN, DIAMOND FIVE, DIAMOND TWO, CLUB QUEEN, CLUB SIX]
+east: [SPADE KING, SPADE TEN, SPADE SEVEN, SPADE THREE, HEART QUEEN, HEART THREE, DIAMOND ACE, DIAMOND QUEEN, DIAMOND THREE, CLUB TEN, CLUB NINE, CLUB SEVEN, CLUB FOUR]
+south: [SPADE ACE, SPADE QUEEN, SPADE NINE, SPADE SIX, SPADE TWO, HEART JACK, HEART FIVE, DIAMOND NINE, DIAMOND EIGHT, DIAMOND SIX, CLUB KING, CLUB EIGHT, CLUB THREE]
+west: [SPADE EIGHT, SPADE FIVE, SPADE FOUR, HEART ACE, HEART TEN, HEART TWO, DIAMOND JACK, DIAMOND SEVEN, DIAMOND FOUR, CLUB ACE, CLUB JACK, CLUB FIVE, CLUB TWO]
+Did not match HCP: 9 NumSpade: 1
+north: [SPADE QUEEN, SPADE NINE, SPADE SEVEN, HEART SEVEN, HEART FIVE, HEART FOUR, HEART THREE, DIAMOND JACK, DIAMOND EIGHT, DIAMOND FIVE, DIAMOND THREE, CLUB QUEEN, CLUB SEVEN]
+east: [SPADE THREE, HEART ACE, HEART QUEEN, HEART TEN, HEART EIGHT, HEART TWO, DIAMOND ACE, DIAMOND QUEEN, DIAMOND SEVEN, DIAMOND FOUR, CLUB TEN, CLUB FIVE, CLUB TWO]
+south: [SPADE ACE, SPADE EIGHT, SPADE FIVE, SPADE FOUR, SPADE TWO, DIAMOND KING, DIAMOND NINE, DIAMOND SIX, CLUB JACK, CLUB NINE, CLUB EIGHT, CLUB SIX, CLUB THREE]
+west: [SPADE KING, SPADE JACK, SPADE TEN, SPADE SIX, HEART KING, HEART JACK, HEART NINE, HEART SIX, DIAMOND TEN, DIAMOND TWO, CLUB ACE, CLUB KING, CLUB FOUR]
+Did not match HCP: 5 NumSpade: 3
+north: [SPADE QUEEN, SPADE TEN, SPADE FOUR, HEART ACE, HEART KING, HEART JACK, HEART NINE, HEART SIX, DIAMOND EIGHT, CLUB EIGHT, CLUB SEVEN, CLUB FOUR, CLUB THREE]
+east: [SPADE ACE, SPADE KING, SPADE EIGHT, SPADE TWO, HEART FIVE, HEART FOUR, DIAMOND ACE, DIAMOND JACK, DIAMOND THREE, DIAMOND TWO, CLUB ACE, CLUB NINE, CLUB SIX]
+south: [SPADE JACK, SPADE SEVEN, SPADE THREE, DIAMOND KING, DIAMOND TEN, DIAMOND NINE, DIAMOND SEVEN, DIAMOND SIX, DIAMOND FIVE, DIAMOND FOUR, CLUB KING, CLUB JACK, CLUB TWO]
+west: [SPADE NINE, SPADE SIX, SPADE FIVE, HEART QUEEN, HEART TEN, HEART EIGHT, HEART SEVEN, HEART THREE, HEART TWO, DIAMOND QUEEN, CLUB QUEEN, CLUB TEN, CLUB FIVE]
+Did not match HCP: 10 NumSpade: 3
+north: [SPADE ACE, SPADE KING, SPADE QUEEN, HEART TEN, HEART FIVE, HEART THREE, DIAMOND ACE, DIAMOND QUEEN, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND THREE, CLUB ACE, CLUB FOUR]
+east: [SPADE NINE, SPADE FIVE, SPADE FOUR, HEART KING, HEART SEVEN, DIAMOND JACK, DIAMOND TEN, DIAMOND FOUR, CLUB QUEEN, CLUB TEN, CLUB NINE, CLUB EIGHT, CLUB TWO]
+south: [SPADE TEN, SPADE THREE, HEART ACE, HEART QUEEN, HEART JACK, HEART EIGHT, HEART TWO, DIAMOND KING, DIAMOND NINE, DIAMOND TWO, CLUB KING, CLUB SEVEN, CLUB SIX]
+west: [SPADE JACK, SPADE EIGHT, SPADE SEVEN, SPADE SIX, SPADE TWO, HEART NINE, HEART SIX, HEART FOUR, DIAMOND SIX, DIAMOND FIVE, CLUB JACK, CLUB FIVE, CLUB THREE]
+Did not match HCP: 19 NumSpade: 3
+north: [SPADE KING, SPADE JACK, SPADE NINE, SPADE SEVEN, SPADE FIVE, HEART NINE, HEART SEVEN, HEART TWO, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND TWO, CLUB ACE, CLUB EIGHT]
+east: [SPADE TEN, SPADE SIX, SPADE FOUR, HEART JACK, HEART FIVE, DIAMOND JACK, DIAMOND TEN, DIAMOND SIX, DIAMOND FOUR, DIAMOND THREE, CLUB SEVEN, CLUB FIVE, CLUB FOUR]
+south: [SPADE ACE, SPADE EIGHT, SPADE THREE, HEART ACE, HEART KING, HEART QUEEN, HEART SIX, HEART THREE, DIAMOND KING, CLUB KING, CLUB QUEEN, CLUB NINE, CLUB SIX]
+west: [SPADE QUEEN, SPADE TWO, HEART TEN, HEART EIGHT, HEART FOUR, DIAMOND ACE, DIAMOND QUEEN, DIAMOND NINE, DIAMOND FIVE, CLUB JACK, CLUB TEN, CLUB THREE, CLUB TWO]
+Did not match HCP: 8 NumSpade: 5
+north: [SPADE KING, SPADE TEN, SPADE SEVEN, SPADE SIX, HEART JACK, HEART FIVE, HEART FOUR, DIAMOND JACK, DIAMOND SEVEN, CLUB JACK, CLUB SEVEN, CLUB FIVE, CLUB FOUR]
+east: [SPADE QUEEN, SPADE NINE, SPADE EIGHT, HEART NINE, HEART EIGHT, HEART THREE, DIAMOND KING, DIAMOND TEN, DIAMOND NINE, DIAMOND FIVE, DIAMOND FOUR, DIAMOND TWO, CLUB THREE]
+south: [SPADE JACK, SPADE FOUR, HEART ACE, HEART KING, HEART QUEEN, HEART TWO, DIAMOND ACE, DIAMOND EIGHT, DIAMOND SIX, CLUB KING, CLUB EIGHT, CLUB SIX, CLUB TWO]
+west: [SPADE ACE, SPADE FIVE, SPADE THREE, SPADE TWO, HEART TEN, HEART SEVEN, HEART SIX, DIAMOND QUEEN, DIAMOND THREE, CLUB ACE, CLUB QUEEN, CLUB TEN, CLUB NINE]
+Did not match HCP: 6 NumSpade: 4
+north: [SPADE NINE, SPADE SIX, SPADE FOUR, SPADE THREE, HEART ACE, HEART EIGHT, HEART SIX, DIAMOND SEVEN, CLUB JACK, CLUB TEN, CLUB EIGHT, CLUB FOUR, CLUB TWO]
+east: [SPADE ACE, SPADE EIGHT, HEART KING, HEART TEN, HEART NINE, HEART FOUR, HEART THREE, HEART TWO, DIAMOND TEN, DIAMOND EIGHT, DIAMOND SIX, DIAMOND THREE, CLUB NINE]
+south: [SPADE SEVEN, SPADE FIVE, SPADE TWO, DIAMOND KING, DIAMOND QUEEN, DIAMOND JACK, DIAMOND NINE, DIAMOND FIVE, DIAMOND FOUR, CLUB KING, CLUB QUEEN, CLUB FIVE, CLUB THREE]
+west: [SPADE KING, SPADE QUEEN, SPADE JACK, SPADE TEN, HEART QUEEN, HEART JACK, HEART SEVEN, HEART FIVE, DIAMOND ACE, DIAMOND TWO, CLUB ACE, CLUB SEVEN, CLUB SIX]
+Did not match HCP: 5 NumSpade: 4
+north: [SPADE FIVE, SPADE THREE, HEART KING, HEART JACK, HEART SEVEN, HEART SIX, DIAMOND KING, DIAMOND JACK, DIAMOND TEN, DIAMOND SIX, CLUB KING, CLUB SEVEN, CLUB FOUR]
+east: [SPADE QUEEN, SPADE NINE, SPADE SEVEN, SPADE SIX, HEART ACE, HEART FIVE, HEART THREE, DIAMOND EIGHT, DIAMOND FIVE, CLUB JACK, CLUB SIX, CLUB THREE, CLUB TWO]
+south: [SPADE KING, SPADE TEN, SPADE EIGHT, SPADE FOUR, SPADE TWO, HEART TEN, HEART NINE, HEART FOUR, DIAMOND THREE, DIAMOND TWO, CLUB TEN, CLUB EIGHT, CLUB FIVE]
+west: [SPADE ACE, SPADE JACK, HEART QUEEN, HEART EIGHT, HEART TWO, DIAMOND ACE, DIAMOND QUEEN, DIAMOND NINE, DIAMOND SEVEN, DIAMOND FOUR, CLUB ACE, CLUB QUEEN, CLUB NINE]
+Did not match HCP: 11 NumSpade: 2
+north: [SPADE NINE, SPADE FIVE, SPADE TWO, HEART ACE, HEART FIVE, DIAMOND KING, DIAMOND JACK, DIAMOND NINE, CLUB KING, CLUB JACK, CLUB SEVEN, CLUB FIVE, CLUB FOUR]
+east: [SPADE ACE, SPADE KING, SPADE QUEEN, SPADE EIGHT, SPADE FOUR, HEART NINE, HEART SEVEN, HEART FOUR, HEART THREE, DIAMOND TEN, DIAMOND FIVE, DIAMOND TWO, CLUB QUEEN]
+south: [SPADE SIX, SPADE THREE, HEART QUEEN, HEART TEN, HEART EIGHT, HEART TWO, DIAMOND ACE, DIAMOND EIGHT, DIAMOND FOUR, DIAMOND THREE, CLUB ACE, CLUB TEN, CLUB NINE]
+west: [SPADE JACK, SPADE TEN, SPADE SEVEN, HEART KING, HEART JACK, HEART SIX, DIAMOND QUEEN, DIAMOND SEVEN, DIAMOND SIX, CLUB EIGHT, CLUB SIX, CLUB THREE, CLUB TWO]
+Did not match HCP: 12 NumSpade: 3
+north: [SPADE QUEEN, SPADE JACK, SPADE NINE, SPADE TWO, HEART ACE, HEART KING, HEART NINE, HEART TWO, DIAMOND TEN, DIAMOND SIX, CLUB QUEEN, CLUB JACK, CLUB FIVE]
+east: [SPADE FIVE, SPADE THREE, HEART QUEEN, HEART JACK, HEART FIVE, HEART FOUR, DIAMOND QUEEN, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND FIVE, CLUB SEVEN, CLUB SIX, CLUB TWO]
+south: [SPADE KING, HEART EIGHT, HEART THREE, DIAMOND ACE, DIAMOND KING, DIAMOND THREE, DIAMOND TWO, CLUB ACE, CLUB KING, CLUB TEN, CLUB NINE, CLUB EIGHT, CLUB FOUR]
+west: [SPADE ACE, SPADE TEN, SPADE EIGHT, SPADE SEVEN, SPADE SIX, SPADE FOUR, HEART TEN, HEART SEVEN, HEART SIX, DIAMOND JACK, DIAMOND NINE, DIAMOND FOUR, CLUB THREE]
+Did not match HCP: 13 NumSpade: 4
+north: [SPADE QUEEN, SPADE JACK, SPADE THREE, HEART JACK, HEART SIX, HEART FIVE, DIAMOND NINE, DIAMOND SIX, DIAMOND FIVE, DIAMOND FOUR, DIAMOND THREE, DIAMOND TWO, CLUB KING]
+east: [SPADE NINE, SPADE EIGHT, SPADE SIX, SPADE FIVE, HEART QUEEN, HEART NINE, HEART THREE, DIAMOND KING, DIAMOND EIGHT, CLUB QUEEN, CLUB NINE, CLUB FOUR, CLUB TWO]
+south: [SPADE TWO, HEART ACE, HEART KING, HEART SEVEN, HEART FOUR, DIAMOND QUEEN, DIAMOND TEN, CLUB ACE, CLUB JACK, CLUB TEN, CLUB SIX, CLUB FIVE, CLUB THREE]
+west: [SPADE ACE, SPADE KING, SPADE TEN, SPADE SEVEN, SPADE FOUR, HEART TEN, HEART EIGHT, HEART TWO, DIAMOND ACE, DIAMOND JACK, DIAMOND SEVEN, CLUB EIGHT, CLUB SEVEN]
+Did not match HCP: 7 NumSpade: 3
+north: [SPADE KING, SPADE SEVEN, SPADE TWO, HEART KING, HEART TEN, HEART SEVEN, HEART FIVE, DIAMOND JACK, DIAMOND THREE, CLUB KING, CLUB JACK, CLUB SIX, CLUB FIVE]
+east: [SPADE QUEEN, SPADE JACK, SPADE SIX, HEART TWO, DIAMOND NINE, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND SIX, DIAMOND FOUR, CLUB TEN, CLUB NINE, CLUB SEVEN, CLUB FOUR]
+south: [SPADE ACE, SPADE NINE, HEART QUEEN, HEART JACK, HEART NINE, HEART THREE, DIAMOND ACE, DIAMOND QUEEN, DIAMOND FIVE, DIAMOND TWO, CLUB ACE, CLUB QUEEN, CLUB THREE]
+west: [SPADE TEN, SPADE EIGHT, SPADE FIVE, SPADE FOUR, SPADE THREE, HEART ACE, HEART EIGHT, HEART SIX, HEART FOUR, DIAMOND KING, DIAMOND TEN, CLUB EIGHT, CLUB TWO]
+Did not match HCP: 11 NumSpade: 3
+north: [SPADE JACK, SPADE TEN, SPADE SEVEN, HEART QUEEN, HEART TWO, DIAMOND JACK, DIAMOND EIGHT, DIAMOND SIX, DIAMOND TWO, CLUB TEN, CLUB SIX, CLUB FIVE, CLUB FOUR]
+east: [SPADE KING, SPADE QUEEN, SPADE EIGHT, HEART KING, HEART FOUR, DIAMOND ACE, DIAMOND QUEEN, DIAMOND TEN, DIAMOND NINE, DIAMOND FOUR, CLUB QUEEN, CLUB THREE, CLUB TWO]
+south: [SPADE NINE, SPADE FOUR, SPADE THREE, SPADE TWO, HEART TEN, HEART FIVE, DIAMOND KING, DIAMOND SEVEN, CLUB ACE, CLUB KING, CLUB JACK, CLUB NINE, CLUB SEVEN]
+west: [SPADE ACE, SPADE SIX, SPADE FIVE, HEART ACE, HEART JACK, HEART NINE, HEART EIGHT, HEART SEVEN, HEART SIX, HEART THREE, DIAMOND FIVE, DIAMOND THREE, CLUB EIGHT]
+Did not match HCP: 4 NumSpade: 3
+north: [SPADE SIX, SPADE FIVE, SPADE TWO, HEART TEN, HEART FOUR, DIAMOND ACE, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND SIX, DIAMOND FIVE, DIAMOND TWO, CLUB QUEEN, CLUB JACK]
+east: [SPADE ACE, SPADE JACK, SPADE NINE, SPADE THREE, HEART JACK, HEART NINE, HEART EIGHT, DIAMOND QUEEN, DIAMOND THREE, CLUB ACE, CLUB FOUR, CLUB THREE, CLUB TWO]
+south: [SPADE TEN, HEART KING, HEART QUEEN, HEART SEVEN, HEART SIX, HEART FIVE, HEART TWO, DIAMOND FOUR, CLUB KING, CLUB NINE, CLUB EIGHT, CLUB SIX, CLUB FIVE]
+west: [SPADE KING, SPADE QUEEN, SPADE EIGHT, SPADE SEVEN, SPADE FOUR, HEART ACE, HEART THREE, DIAMOND KING, DIAMOND JACK, DIAMOND TEN, DIAMOND NINE, CLUB TEN, CLUB SEVEN]
+Did not match HCP: 7 NumSpade: 3
+north: [SPADE ACE, SPADE QUEEN, SPADE JACK, SPADE TEN, SPADE EIGHT, SPADE FOUR, HEART TEN, HEART TWO, DIAMOND SIX, DIAMOND FOUR, CLUB SEVEN, CLUB SIX, CLUB FOUR]
+east: [SPADE KING, SPADE FIVE, HEART ACE, HEART KING, HEART SIX, HEART FIVE, DIAMOND KING, DIAMOND QUEEN, DIAMOND TEN, CLUB ACE, CLUB KING, CLUB JACK, CLUB TWO]
+south: [SPADE SIX, SPADE THREE, SPADE TWO, HEART JACK, HEART NINE, HEART EIGHT, HEART SEVEN, HEART THREE, DIAMOND ACE, DIAMOND NINE, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND THREE]
+west: [SPADE NINE, SPADE SEVEN, HEART QUEEN, HEART FOUR, DIAMOND JACK, DIAMOND FIVE, DIAMOND TWO, CLUB QUEEN, CLUB TEN, CLUB NINE, CLUB EIGHT, CLUB FIVE, CLUB THREE]
+Did not match HCP: 7 NumSpade: 6
+north: [SPADE JACK, SPADE SIX, SPADE TWO, HEART ACE, HEART FOUR, DIAMOND JACK, DIAMOND TEN, DIAMOND EIGHT, DIAMOND FOUR, DIAMOND TWO, CLUB KING, CLUB JACK, CLUB THREE]
+east: [SPADE ACE, SPADE NINE, SPADE SEVEN, SPADE FOUR, HEART KING, HEART QUEEN, HEART NINE, HEART EIGHT, HEART FIVE, DIAMOND ACE, DIAMOND KING, CLUB TEN, CLUB EIGHT]
+south: [SPADE QUEEN, SPADE EIGHT, SPADE FIVE, SPADE THREE, HEART JACK, HEART TEN, HEART SEVEN, HEART SIX, DIAMOND QUEEN, DIAMOND SEVEN, CLUB ACE, CLUB SIX, CLUB FIVE]
+west: [SPADE KING, SPADE TEN, HEART THREE, HEART TWO, DIAMOND NINE, DIAMOND SIX, DIAMOND FIVE, DIAMOND THREE, CLUB QUEEN, CLUB NINE, CLUB SEVEN, CLUB FOUR, CLUB TWO]
+Did not match HCP: 10 NumSpade: 3
+north: [SPADE ACE, SPADE EIGHT, HEART QUEEN, HEART FOUR, HEART THREE, HEART TWO, DIAMOND KING, DIAMOND TEN, DIAMOND NINE, DIAMOND FIVE, DIAMOND TWO, CLUB FIVE, CLUB TWO]
+east: [SPADE TEN, SPADE SEVEN, SPADE FIVE, HEART SIX, HEART FIVE, DIAMOND ACE, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND SIX, DIAMOND FOUR, CLUB TEN, CLUB EIGHT, CLUB FOUR]
+south: [SPADE KING, SPADE SIX, SPADE THREE, SPADE TWO, HEART NINE, DIAMOND QUEEN, DIAMOND JACK, DIAMOND THREE, CLUB ACE, CLUB KING, CLUB QUEEN, CLUB JACK, CLUB SIX]
+west: [SPADE QUEEN, SPADE JACK, SPADE NINE, SPADE FOUR, HEART ACE, HEART KING, HEART JACK, HEART TEN, HEART EIGHT, HEART SEVEN, CLUB NINE, CLUB SEVEN, CLUB THREE]
+Did not match HCP: 9 NumSpade: 2
+north: [SPADE ACE, SPADE JACK, SPADE FIVE, HEART TEN, HEART NINE, HEART FIVE, HEART FOUR, DIAMOND QUEEN, DIAMOND JACK, DIAMOND EIGHT, DIAMOND FIVE, CLUB QUEEN, CLUB FOUR]
+east: [SPADE KING, HEART ACE, HEART KING, HEART QUEEN, HEART JACK, HEART SIX, HEART TWO, DIAMOND KING, DIAMOND TWO, CLUB ACE, CLUB KING, CLUB NINE, CLUB SIX]
+south: [SPADE NINE, SPADE EIGHT, SPADE SEVEN, SPADE FOUR, SPADE THREE, HEART EIGHT, HEART THREE, DIAMOND TEN, DIAMOND NINE, DIAMOND SEVEN, DIAMOND THREE, CLUB JACK, CLUB TWO]
+west: [SPADE QUEEN, SPADE TEN, SPADE SIX, SPADE TWO, HEART SEVEN, DIAMOND ACE, DIAMOND SIX, DIAMOND FOUR, CLUB TEN, CLUB EIGHT, CLUB SEVEN, CLUB FIVE, CLUB THREE]
+Did not match HCP: 10 NumSpade: 3
+north: [SPADE TEN, SPADE SIX, SPADE TWO, HEART JACK, HEART TEN, HEART NINE, HEART EIGHT, HEART SIX, DIAMOND JACK, DIAMOND EIGHT, DIAMOND SEVEN, DIAMOND TWO, CLUB FOUR]
+east: [SPADE KING, SPADE SEVEN, HEART ACE, HEART KING, HEART FOUR, HEART TWO, DIAMOND ACE, DIAMOND TEN, DIAMOND NINE, DIAMOND THREE, CLUB QUEEN, CLUB SEVEN, CLUB THREE]
+south: [SPADE ACE, SPADE QUEEN, SPADE FIVE, SPADE FOUR, HEART SEVEN, HEART FIVE, HEART THREE, DIAMOND SIX, CLUB KING, CLUB NINE, CLUB EIGHT, CLUB SIX, CLUB FIVE]
+west: [SPADE JACK, SPADE NINE, SPADE EIGHT, SPADE THREE, HEART QUEEN, DIAMOND KING, DIAMOND QUEEN, DIAMOND FIVE, DIAMOND FOUR, CLUB ACE, CLUB JACK, CLUB TEN, CLUB TWO]
+Did not match HCP: 2 NumSpade: 3
+north: [SPADE KING, HEART NINE, HEART EIGHT, HEART FIVE, DIAMOND KING, DIAMOND QUEEN, DIAMOND JACK, DIAMOND TEN, DIAMOND NINE, DIAMOND FOUR, CLUB EIGHT, CLUB SEVEN, CLUB TWO]
+east: [SPADE QUEEN, SPADE SIX, SPADE FIVE, HEART KING, HEART SIX, HEART FOUR, HEART TWO, DIAMOND SIX, DIAMOND THREE, CLUB KING, CLUB SIX, CLUB FOUR, CLUB THREE]
+south: [SPADE ACE, SPADE JACK, SPADE NINE, SPADE EIGHT, SPADE SEVEN, SPADE FOUR, SPADE THREE, HEART SEVEN, HEART THREE, DIAMOND ACE, DIAMOND SEVEN, CLUB JACK, CLUB NINE]
+west: [SPADE TEN, SPADE TWO, HEART ACE, HEART QUEEN, HEART JACK, HEART TEN, DIAMOND EIGHT, DIAMOND FIVE, DIAMOND TWO, CLUB ACE, CLUB QUEEN, CLUB TEN, CLUB FIVE]
+Did not match HCP: 9 NumSpade: 1
+north: [SPADE QUEEN, SPADE SEVEN, HEART QUEEN, HEART THREE, HEART TWO, DIAMOND NINE, DIAMOND FIVE, DIAMOND FOUR, DIAMOND THREE, CLUB ACE, CLUB KING, CLUB EIGHT, CLUB TWO]
+east: [SPADE JACK, SPADE EIGHT, SPADE FOUR, SPADE TWO, HEART ACE, HEART SIX, HEART FIVE, HEART FOUR, DIAMOND ACE, DIAMOND KING, DIAMOND TEN, DIAMOND SEVEN, CLUB JACK]
+south: [SPADE NINE, SPADE FIVE, SPADE THREE, HEART KING, HEART JACK, HEART SEVEN, DIAMOND JACK, DIAMOND SIX, DIAMOND TWO, CLUB QUEEN, CLUB NINE, CLUB SEVEN, CLUB THREE]
+west: [SPADE ACE, SPADE KING, SPADE TEN, SPADE SIX, HEART TEN, HEART NINE, HEART EIGHT, DIAMOND QUEEN, DIAMOND EIGHT, CLUB TEN, CLUB SIX, CLUB FIVE, CLUB FOUR]
+Did not match HCP: 11 NumSpade: 2
+north: [SPADE KING, SPADE JACK, SPADE NINE, SPADE EIGHT, HEART QUEEN, HEART EIGHT, HEART SIX, DIAMOND KING, DIAMOND EIGHT, DIAMOND FIVE, CLUB ACE, CLUB TEN, CLUB FIVE]
+east: [SPADE QUEEN, SPADE TEN, SPADE SIX, SPADE TWO, HEART ACE, HEART KING, HEART SEVEN, HEART FOUR, DIAMOND QUEEN, DIAMOND TWO, CLUB NINE, CLUB THREE, CLUB TWO]
+south: [SPADE FOUR, SPADE THREE, HEART THREE, DIAMOND ACE, DIAMOND JACK, DIAMOND TEN, DIAMOND NINE, DIAMOND SEVEN, DIAMOND FOUR, CLUB KING, CLUB QUEEN, CLUB JACK, CLUB SEVEN]
+west: [SPADE ACE, SPADE SEVEN, SPADE FIVE, HEART JACK, HEART TEN, HEART NINE, HEART FIVE, HEART TWO, DIAMOND SIX, DIAMOND THREE, CLUB EIGHT, CLUB SIX, CLUB FOUR]
+Did not match HCP: 13 NumSpade: 4
+north: [SPADE ACE, SPADE TEN, SPADE NINE, SPADE THREE, HEART QUEEN, HEART SEVEN, DIAMOND ACE, DIAMOND SEVEN, DIAMOND FIVE, DIAMOND TWO, CLUB KING, CLUB NINE, CLUB FIVE]
+east: [SPADE KING, SPADE QUEEN, SPADE EIGHT, SPADE SEVEN, SPADE TWO, HEART NINE, HEART SIX, DIAMOND TEN, DIAMOND SIX, CLUB QUEEN, CLUB TEN, CLUB EIGHT, CLUB FOUR]
+south: [SPADE JACK, SPADE FOUR, HEART JACK, HEART EIGHT, HEART FOUR, DIAMOND EIGHT, DIAMOND FOUR, DIAMOND THREE, CLUB JACK, CLUB SEVEN, CLUB SIX, CLUB THREE, CLUB TWO]
+west: [SPADE SIX, SPADE FIVE, HEART ACE, HEART KING, HEART TEN, HEART FIVE, HEART THREE, HEART TWO, DIAMOND KING, DIAMOND QUEEN, DIAMOND JACK, DIAMOND NINE, CLUB ACE]
+Did not match HCP: 13 NumSpade: 4
+north: [SPADE KING, SPADE JACK, SPADE SEVEN, SPADE FIVE, SPADE THREE, HEART ACE, DIAMOND TEN, DIAMOND FIVE, CLUB KING, CLUB NINE, CLUB SEVEN, CLUB SIX, CLUB FOUR]
+east: [SPADE ACE, SPADE NINE, SPADE SIX, SPADE FOUR, HEART QUEEN, HEART TEN, HEART NINE, HEART THREE, DIAMOND ACE, DIAMOND KING, DIAMOND NINE, DIAMOND SIX, CLUB TWO]
+south: [SPADE EIGHT, SPADE TWO, HEART JACK, HEART EIGHT, HEART SIX, HEART FOUR, DIAMOND JACK, DIAMOND SEVEN, DIAMOND FOUR, DIAMOND THREE, CLUB JACK, CLUB TEN, CLUB THREE]
+west: [SPADE QUEEN, SPADE TEN, HEART KING, HEART SEVEN, HEART FIVE, HEART TWO, DIAMOND QUEEN, DIAMOND EIGHT, DIAMOND TWO, CLUB ACE, CLUB QUEEN, CLUB EIGHT, CLUB FIVE]
+Asking north for bid
+Soar said:
+--- Input Phase --- 
+=>WM: (728: I2 ^bidhistory B1)
+=>WM: (727: I2 ^oview O1)
+=>WM: (726: I2 ^tview T1)
+=>WM: (725: R4 ^tr_stopper_cl_ha -1)
+=>WM: (724: R4 ^tr_stopper_cl_di -1)
+=>WM: (723: R4 ^tr_stopper_cl_he -1)
+=>WM: (722: R4 ^tr_stopper_cl_sp -1)
+=>WM: (721: R4 ^tr_stopper_di_cl -1)
+=>WM: (720: R4 ^tr_stopper_di_ha -1)
+=>WM: (719: R4 ^tr_stopper_di_he -1)
+=>WM: (718: R4 ^tr_stopper_di_sp -1)
+=>WM: (717: R4 ^tr_stopper_he_cl -1)
+=>WM: (716: R4 ^tr_stopper_he_di -1)
+=>WM: (715: R4 ^tr_stopper_he_ha -1)
+=>WM: (714: R4 ^tr_stopper_he_sp -1)
+=>WM: (713: R4 ^tr_stopper_sp_cl -1)
+=>WM: (712: R4 ^tr_stopper_sp_di -1)
+=>WM: (711: R4 ^tr_stopper_sp_he -1)
+=>WM: (710: R4 ^tr_stopper_sp_ha -1)
+=>WM: (709: R4 ^losers_cl_ha -1)
+=>WM: (708: R4 ^losers_cl_di -1)
+=>WM: (707: R4 ^losers_cl_he -1)
+=>WM: (706: R4 ^losers_cl_sp -1)
+=>WM: (705: R4 ^losers_di_ha -1)
+=>WM: (704: R4 ^losers_di_cl -1)
+=>WM: (703: R4 ^losers_di_he -1)
+=>WM: (702: R4 ^losers_di_sp -1)
+=>WM: (701: R4 ^losers_he_ha -1)
+=>WM: (700: R4 ^losers_he_cl -1)
+=>WM: (699: R4 ^losers_he_di -1)
+=>WM: (698: R4 ^losers_he_sp -1)
+=>WM: (697: R4 ^losers_sp_ha -1)
+=>WM: (696: R4 ^losers_sp_cl -1)
+=>WM: (695: R4 ^losers_sp_di -1)
+=>WM: (694: R4 ^losers_sp_he -1)
+=>WM: (693: R4 ^dp_cl_ha -1)
+=>WM: (692: R4 ^dp_cl_di -1)
+=>WM: (691: R4 ^dp_cl_he -1)
+=>WM: (690: R4 ^dp_cl_sp -1)
+=>WM: (689: R4 ^dp_di_ha -1)
+=>WM: (688: R4 ^dp_di_cl -1)
+=>WM: (687: R4 ^dp_di_he -1)
+=>WM: (686: R4 ^dp_di_sp -1)
+=>WM: (685: R4 ^dp_he_ha -1)
+=>WM: (684: R4 ^dp_he_cl -1)
+=>WM: (683: R4 ^dp_he_di -1)
+=>WM: (682: R4 ^dp_he_sp -1)
+=>WM: (681: R4 ^dp_sp_ha -1)
+=>WM: (680: R4 ^dp_sp_cl -1)
+=>WM: (679: R4 ^dp_sp_di -1)
+=>WM: (678: R4 ^dp_sp_he -1)
+=>WM: (677: C7 ^unlos_high 50.)
+=>WM: (676: C7 ^unlos_low -1.)
+=>WM: (675: C7 ^quality -1.)
+=>WM: (674: C7 ^stopper -1.)
+=>WM: (673: C7 ^intermediate_high 50.)
+=>WM: (672: C7 ^intermediate_low -1.)
+=>WM: (671: C7 ^biddable -1)
+=>WM: (670: C7 ^shortest -1)
+=>WM: (669: C7 ^longest -1)
+=>WM: (668: C7 ^num_high 50)
+=>WM: (667: C7 ^num_low -1)
+=>WM: (666: C7 ^rkcb -1)
+=>WM: (665: C7 ^ten -1)
+=>WM: (664: C7 ^jack -1)
+=>WM: (663: C7 ^queen -1)
+=>WM: (662: C7 ^king -1)
+=>WM: (661: C7 ^ace -1)
+=>WM: (660: C7 ^honors_high 50)
+=>WM: (659: C7 ^honors_low -1)
+=>WM: (658: C7 ^hc_high 50)
+=>WM: (657: C7 ^hc_low -1)
+=>WM: (656: C7 ^controls_high 50)
+=>WM: (655: C7 ^controls_low -1)
+=>WM: (654: C7 ^hcp_high 50)
+=>WM: (653: C7 ^hcp_low -1)
+=>WM: (652: R4 ^club C7)
+=>WM: (651: D4 ^unlos_high 50.)
+=>WM: (650: D4 ^unlos_low -1.)
+=>WM: (649: D4 ^quality -1.)
+=>WM: (648: D4 ^stopper -1.)
+=>WM: (647: D4 ^intermediate_high 50.)
+=>WM: (646: D4 ^intermediate_low -1.)
+=>WM: (645: D4 ^biddable -1)
+=>WM: (644: D4 ^shortest -1)
+=>WM: (643: D4 ^longest -1)
+=>WM: (642: D4 ^num_high 50)
+=>WM: (641: D4 ^num_low -1)
+=>WM: (640: D4 ^rkcb -1)
+=>WM: (639: D4 ^ten -1)
+=>WM: (638: D4 ^jack -1)
+=>WM: (637: D4 ^queen -1)
+=>WM: (636: D4 ^king -1)
+=>WM: (635: D4 ^ace -1)
+=>WM: (634: D4 ^honors_high 50)
+=>WM: (633: D4 ^honors_low -1)
+=>WM: (632: D4 ^hc_high 50)
+=>WM: (631: D4 ^hc_low -1)
+=>WM: (630: D4 ^controls_high 50)
+=>WM: (629: D4 ^controls_low -1)
+=>WM: (628: D4 ^hcp_high 50)
+=>WM: (627: D4 ^hcp_low -1)
+=>WM: (626: R4 ^dia D4)
+=>WM: (625: H4 ^unlos_high 50.)
+=>WM: (624: H4 ^unlos_low -1.)
+=>WM: (623: H4 ^quality -1.)
+=>WM: (622: H4 ^stopper -1.)
+=>WM: (621: H4 ^intermediate_high 50.)
+=>WM: (620: H4 ^intermediate_low -1.)
+=>WM: (619: H4 ^biddable -1)
+=>WM: (618: H4 ^shortest -1)
+=>WM: (617: H4 ^longest -1)
+=>WM: (616: H4 ^num_high 50)
+=>WM: (615: H4 ^num_low -1)
+=>WM: (614: H4 ^rkcb -1)
+=>WM: (613: H4 ^ten -1)
+=>WM: (612: H4 ^jack -1)
+=>WM: (611: H4 ^queen -1)
+=>WM: (610: H4 ^king -1)
+=>WM: (609: H4 ^ace -1)
+=>WM: (608: H4 ^honors_high 50)
+=>WM: (607: H4 ^honors_low -1)
+=>WM: (606: H4 ^hc_high 50)
+=>WM: (605: H4 ^hc_low -1)
+=>WM: (604: H4 ^controls_high 50)
+=>WM: (603: H4 ^controls_low -1)
+=>WM: (602: H4 ^hcp_high 50)
+=>WM: (601: H4 ^hcp_low -1)
+=>WM: (600: R4 ^heart H4)
+=>WM: (599: S8 ^unlos_high 50.)
+=>WM: (598: S8 ^unlos_low -1.)
+=>WM: (597: S8 ^quality -1.)
+=>WM: (596: S8 ^stopper -1.)
+=>WM: (595: S8 ^intermediate_high 50.)
+=>WM: (594: S8 ^intermediate_low -1.)
+=>WM: (593: S8 ^biddable -1)
+=>WM: (592: S8 ^shortest -1)
+=>WM: (591: S8 ^longest -1)
+=>WM: (590: S8 ^num_high 50)
+=>WM: (589: S8 ^num_low -1)
+=>WM: (588: S8 ^rkcb -1)
+=>WM: (587: S8 ^ten -1)
+=>WM: (586: S8 ^jack -1)
+=>WM: (585: S8 ^queen -1)
+=>WM: (584: S8 ^king -1)
+=>WM: (583: S8 ^ace -1)
+=>WM: (582: S8 ^honors_high 50)
+=>WM: (581: S8 ^honors_low -1)
+=>WM: (580: S8 ^hc_high 50)
+=>WM: (579: S8 ^hc_low -1)
+=>WM: (578: S8 ^controls_high 50)
+=>WM: (577: S8 ^controls_low -1)
+=>WM: (576: S8 ^hcp_high 50)
+=>WM: (575: S8 ^hcp_low -1)
+=>WM: (574: R4 ^spade S8)
+=>WM: (573: R4 ^ratio_high 50.)
+=>WM: (572: R4 ^ratio_low -1.)
+=>WM: (571: R4 ^lmin_high 50)
+=>WM: (570: R4 ^lmin_low -1)
+=>WM: (569: R4 ^lmaj_high 50)
+=>WM: (568: R4 ^lmaj_low -1)
+=>WM: (567: R4 ^num_suits -1)
+=>WM: (566: R4 ^intermediate_ha_high 50.)
+=>WM: (565: R4 ^intermediate_low -1.)
+=>WM: (564: R4 ^balanced_high 50)
+=>WM: (563: R4 ^balanced_low -1)
+=>WM: (562: R4 ^tens -1)
+=>WM: (561: R4 ^jacks -1)
+=>WM: (560: R4 ^queens -1)
+=>WM: (559: R4 ^kings -1)
+=>WM: (558: R4 ^aces -1)
+=>WM: (557: R4 ^honors_high 50)
+=>WM: (556: R4 ^honors_low -1)
+=>WM: (555: R4 ^hc_high 50)
+=>WM: (554: R4 ^hc_low -1)
+=>WM: (553: R4 ^controls_high 50)
+=>WM: (552: R4 ^controls_low -1)
+=>WM: (551: R4 ^hcp_high 50)
+=>WM: (550: R4 ^hcp_low -1)
+=>WM: (549: I2 ^rview R4)
+=>WM: (548: L1 ^tr_stopper_cl_ha -1)
+=>WM: (547: L1 ^tr_stopper_cl_di -1)
+=>WM: (546: L1 ^tr_stopper_cl_he -1)
+=>WM: (545: L1 ^tr_stopper_cl_sp -1)
+=>WM: (544: L1 ^tr_stopper_di_cl -1)
+=>WM: (543: L1 ^tr_stopper_di_ha -1)
+=>WM: (542: L1 ^tr_stopper_di_he -1)
+=>WM: (541: L1 ^tr_stopper_di_sp -1)
+=>WM: (540: L1 ^tr_stopper_he_cl -1)
+=>WM: (539: L1 ^tr_stopper_he_di -1)
+=>WM: (538: L1 ^tr_stopper_he_ha -1)
+=>WM: (537: L1 ^tr_stopper_he_sp -1)
+=>WM: (536: L1 ^tr_stopper_sp_cl -1)
+=>WM: (535: L1 ^tr_stopper_sp_di -1)
+=>WM: (534: L1 ^tr_stopper_sp_he -1)
+=>WM: (533: L1 ^tr_stopper_sp_ha -1)
+=>WM: (532: L1 ^losers_cl_ha -1)
+=>WM: (531: L1 ^losers_cl_di -1)
+=>WM: (530: L1 ^losers_cl_he -1)
+=>WM: (529: L1 ^losers_cl_sp -1)
+=>WM: (528: L1 ^losers_di_ha -1)
+=>WM: (527: L1 ^losers_di_cl -1)
+=>WM: (526: L1 ^losers_di_he -1)
+=>WM: (525: L1 ^losers_di_sp -1)
+=>WM: (524: L1 ^losers_he_ha -1)
+=>WM: (523: L1 ^losers_he_cl -1)
+=>WM: (522: L1 ^losers_he_di -1)
+=>WM: (521: L1 ^losers_he_sp -1)
+=>WM: (520: L1 ^losers_sp_ha -1)
+=>WM: (519: L1 ^losers_sp_cl -1)
+=>WM: (518: L1 ^losers_sp_di -1)
+=>WM: (517: L1 ^losers_sp_he -1)
+=>WM: (516: L1 ^dp_cl_ha -1)
+=>WM: (515: L1 ^dp_cl_di -1)
+=>WM: (514: L1 ^dp_cl_he -1)
+=>WM: (513: L1 ^dp_cl_sp -1)
+=>WM: (512: L1 ^dp_di_ha -1)
+=>WM: (511: L1 ^dp_di_cl -1)
+=>WM: (510: L1 ^dp_di_he -1)
+=>WM: (509: L1 ^dp_di_sp -1)
+=>WM: (508: L1 ^dp_he_ha -1)
+=>WM: (507: L1 ^dp_he_cl -1)
+=>WM: (506: L1 ^dp_he_di -1)
+=>WM: (505: L1 ^dp_he_sp -1)
+=>WM: (504: L1 ^dp_sp_ha -1)
+=>WM: (503: L1 ^dp_sp_cl -1)
+=>WM: (502: L1 ^dp_sp_di -1)
+=>WM: (501: L1 ^dp_sp_he -1)
+=>WM: (500: C6 ^unlos_high 50.)
+=>WM: (499: C6 ^unlos_low -1.)
+=>WM: (498: C6 ^quality -1.)
+=>WM: (497: C6 ^stopper -1.)
+=>WM: (496: C6 ^intermediate_high 50.)
+=>WM: (495: C6 ^intermediate_low -1.)
+=>WM: (494: C6 ^biddable -1)
+=>WM: (493: C6 ^shortest -1)
+=>WM: (492: C6 ^longest -1)
+=>WM: (491: C6 ^num_high 50)
+=>WM: (490: C6 ^num_low -1)
+=>WM: (489: C6 ^rkcb -1)
+=>WM: (488: C6 ^ten -1)
+=>WM: (487: C6 ^jack -1)
+=>WM: (486: C6 ^queen -1)
+=>WM: (485: C6 ^king -1)
+=>WM: (484: C6 ^ace -1)
+=>WM: (483: C6 ^honors_high 50)
+=>WM: (482: C6 ^honors_low -1)
+=>WM: (481: C6 ^hc_high 50)
+=>WM: (480: C6 ^hc_low -1)
+=>WM: (479: C6 ^controls_high 50)
+=>WM: (478: C6 ^controls_low -1)
+=>WM: (477: C6 ^hcp_high 50)
+=>WM: (476: C6 ^hcp_low -1)
+=>WM: (475: L1 ^club C6)
+=>WM: (474: D3 ^unlos_high 50.)
+=>WM: (473: D3 ^unlos_low -1.)
+=>WM: (472: D3 ^quality -1.)
+=>WM: (471: D3 ^stopper -1.)
+=>WM: (470: D3 ^intermediate_high 50.)
+=>WM: (469: D3 ^intermediate_low -1.)
+=>WM: (468: D3 ^biddable -1)
+=>WM: (467: D3 ^shortest -1)
+=>WM: (466: D3 ^longest -1)
+=>WM: (465: D3 ^num_high 50)
+=>WM: (464: D3 ^num_low -1)
+=>WM: (463: D3 ^rkcb -1)
+=>WM: (462: D3 ^ten -1)
+=>WM: (461: D3 ^jack -1)
+=>WM: (460: D3 ^queen -1)
+=>WM: (459: D3 ^king -1)
+=>WM: (458: D3 ^ace -1)
+=>WM: (457: D3 ^honors_high 50)
+=>WM: (456: D3 ^honors_low -1)
+=>WM: (455: D3 ^hc_high 50)
+=>WM: (454: D3 ^hc_low -1)
+=>WM: (453: D3 ^controls_high 50)
+=>WM: (452: D3 ^controls_low -1)
+=>WM: (451: D3 ^hcp_high 50)
+=>WM: (450: D3 ^hcp_low -1)
+=>WM: (449: L1 ^dia D3)
+=>WM: (448: H3 ^unlos_high 50.)
+=>WM: (447: H3 ^unlos_low -1.)
+=>WM: (446: H3 ^quality -1.)
+=>WM: (445: H3 ^stopper -1.)
+=>WM: (444: H3 ^intermediate_high 50.)
+=>WM: (443: H3 ^intermediate_low -1.)
+=>WM: (442: H3 ^biddable -1)
+=>WM: (441: H3 ^shortest -1)
+=>WM: (440: H3 ^longest -1)
+=>WM: (439: H3 ^num_high 50)
+=>WM: (438: H3 ^num_low -1)
+=>WM: (437: H3 ^rkcb -1)
+=>WM: (436: H3 ^ten -1)
+=>WM: (435: H3 ^jack -1)
+=>WM: (434: H3 ^queen -1)
+=>WM: (433: H3 ^king -1)
+=>WM: (432: H3 ^ace -1)
+=>WM: (431: H3 ^honors_high 50)
+=>WM: (430: H3 ^honors_low -1)
+=>WM: (429: H3 ^hc_high 50)
+=>WM: (428: H3 ^hc_low -1)
+=>WM: (427: H3 ^controls_high 50)
+=>WM: (426: H3 ^controls_low -1)
+=>WM: (425: H3 ^hcp_high 50)
+=>WM: (424: H3 ^hcp_low -1)
+=>WM: (423: L1 ^heart H3)
+=>WM: (422: S7 ^unlos_high 50.)
+=>WM: (421: S7 ^unlos_low -1.)
+=>WM: (420: S7 ^quality -1.)
+=>WM: (419: S7 ^stopper -1.)
+=>WM: (418: S7 ^intermediate_high 50.)
+=>WM: (417: S7 ^intermediate_low -1.)
+=>WM: (416: S7 ^biddable -1)
+=>WM: (415: S7 ^shortest -1)
+=>WM: (414: S7 ^longest -1)
+=>WM: (413: S7 ^num_high 50)
+=>WM: (412: S7 ^num_low -1)
+=>WM: (411: S7 ^rkcb -1)
+=>WM: (410: S7 ^ten -1)
+=>WM: (409: S7 ^jack -1)
+=>WM: (408: S7 ^queen -1)
+=>WM: (407: S7 ^king -1)
+=>WM: (406: S7 ^ace -1)
+=>WM: (405: S7 ^honors_high 50)
+=>WM: (404: S7 ^honors_low -1)
+=>WM: (403: S7 ^hc_high 50)
+=>WM: (402: S7 ^hc_low -1)
+=>WM: (401: S7 ^controls_high 50)
+=>WM: (400: S7 ^controls_low -1)
+=>WM: (399: S7 ^hcp_high 50)
+=>WM: (398: S7 ^hcp_low -1)
+=>WM: (397: L1 ^spade S7)
+=>WM: (396: L1 ^ratio_high 50.)
+=>WM: (395: L1 ^ratio_low -1.)
+=>WM: (394: L1 ^lmin_high 50)
+=>WM: (393: L1 ^lmin_low -1)
+=>WM: (392: L1 ^lmaj_high 50)
+=>WM: (391: L1 ^lmaj_low -1)
+=>WM: (390: L1 ^num_suits -1)
+=>WM: (389: L1 ^intermediate_ha_high 50.)
+=>WM: (388: L1 ^intermediate_low -1.)
+=>WM: (387: L1 ^balanced_high 50)
+=>WM: (386: L1 ^balanced_low -1)
+=>WM: (385: L1 ^tens -1)
+=>WM: (384: L1 ^jacks -1)
+=>WM: (383: L1 ^queens -1)
+=>WM: (382: L1 ^kings -1)
+=>WM: (381: L1 ^aces -1)
+=>WM: (380: L1 ^honors_high 50)
+=>WM: (379: L1 ^honors_low -1)
+=>WM: (378: L1 ^hc_high 50)
+=>WM: (377: L1 ^hc_low -1)
+=>WM: (376: L1 ^controls_high 50)
+=>WM: (375: L1 ^controls_low -1)
+=>WM: (374: L1 ^hcp_high 50)
+=>WM: (373: L1 ^hcp_low -1)
+=>WM: (372: I2 ^lview L1)
+=>WM: (371: P1 ^tr_stopper_cl_ha -1)
+=>WM: (370: P1 ^tr_stopper_cl_di -1)
+=>WM: (369: P1 ^tr_stopper_cl_he -1)
+=>WM: (368: P1 ^tr_stopper_cl_sp -1)
+=>WM: (367: P1 ^tr_stopper_di_cl -1)
+=>WM: (366: P1 ^tr_stopper_di_ha -1)
+=>WM: (365: P1 ^tr_stopper_di_he -1)
+=>WM: (364: P1 ^tr_stopper_di_sp -1)
+=>WM: (363: P1 ^tr_stopper_he_cl -1)
+=>WM: (362: P1 ^tr_stopper_he_di -1)
+=>WM: (361: P1 ^tr_stopper_he_ha -1)
+=>WM: (360: P1 ^tr_stopper_he_sp -1)
+=>WM: (359: P1 ^tr_stopper_sp_cl -1)
+=>WM: (358: P1 ^tr_stopper_sp_di -1)
+=>WM: (357: P1 ^tr_stopper_sp_he -1)
+=>WM: (356: P1 ^tr_stopper_sp_ha -1)
+=>WM: (355: P1 ^losers_cl_ha -1)
+=>WM: (354: P1 ^losers_cl_di -1)
+=>WM: (353: P1 ^losers_cl_he -1)
+=>WM: (352: P1 ^losers_cl_sp -1)
+=>WM: (351: P1 ^losers_di_ha -1)
+=>WM: (350: P1 ^losers_di_cl -1)
+=>WM: (349: P1 ^losers_di_he -1)
+=>WM: (348: P1 ^losers_di_sp -1)
+=>WM: (347: P1 ^losers_he_ha -1)
+=>WM: (346: P1 ^losers_he_cl -1)
+=>WM: (345: P1 ^losers_he_di -1)
+=>WM: (344: P1 ^losers_he_sp -1)
+=>WM: (343: P1 ^losers_sp_ha -1)
+=>WM: (342: P1 ^losers_sp_cl -1)
+=>WM: (341: P1 ^losers_sp_di -1)
+=>WM: (340: P1 ^losers_sp_he -1)
+=>WM: (339: P1 ^dp_cl_ha -1)
+=>WM: (338: P1 ^dp_cl_di -1)
+=>WM: (337: P1 ^dp_cl_he -1)
+=>WM: (336: P1 ^dp_cl_sp -1)
+=>WM: (335: P1 ^dp_di_ha -1)
+=>WM: (334: P1 ^dp_di_cl -1)
+=>WM: (333: P1 ^dp_di_he -1)
+=>WM: (332: P1 ^dp_di_sp -1)
+=>WM: (331: P1 ^dp_he_ha -1)
+=>WM: (330: P1 ^dp_he_cl -1)
+=>WM: (329: P1 ^dp_he_di -1)
+=>WM: (328: P1 ^dp_he_sp -1)
+=>WM: (327: P1 ^dp_sp_ha -1)
+=>WM: (326: P1 ^dp_sp_cl -1)
+=>WM: (325: P1 ^dp_sp_di -1)
+=>WM: (324: P1 ^dp_sp_he -1)
+=>WM: (323: C5 ^unlos_high 50.)
+=>WM: (322: C5 ^unlos_low -1.)
+=>WM: (321: C5 ^quality -1.)
+=>WM: (320: C5 ^stopper -1.)
+=>WM: (319: C5 ^intermediate_high 50.)
+=>WM: (318: C5 ^intermediate_low -1.)
+=>WM: (317: C5 ^biddable -1)
+=>WM: (316: C5 ^shortest -1)
+=>WM: (315: C5 ^longest -1)
+=>WM: (314: C5 ^num_high 50)
+=>WM: (313: C5 ^num_low -1)
+=>WM: (312: C5 ^rkcb -1)
+=>WM: (311: C5 ^ten -1)
+=>WM: (310: C5 ^jack -1)
+=>WM: (309: C5 ^queen -1)
+=>WM: (308: C5 ^king -1)
+=>WM: (307: C5 ^ace -1)
+=>WM: (306: C5 ^honors_high 50)
+=>WM: (305: C5 ^honors_low -1)
+=>WM: (304: C5 ^hc_high 50)
+=>WM: (303: C5 ^hc_low -1)
+=>WM: (302: C5 ^controls_high 50)
+=>WM: (301: C5 ^controls_low -1)
+=>WM: (300: C5 ^hcp_high 50)
+=>WM: (299: C5 ^hcp_low -1)
+=>WM: (298: P1 ^club C5)
+=>WM: (297: D2 ^unlos_high 50.)
+=>WM: (296: D2 ^unlos_low -1.)
+=>WM: (295: D2 ^quality -1.)
+=>WM: (294: D2 ^stopper -1.)
+=>WM: (293: D2 ^intermediate_high 50.)
+=>WM: (292: D2 ^intermediate_low -1.)
+=>WM: (291: D2 ^biddable -1)
+=>WM: (290: D2 ^shortest -1)
+=>WM: (289: D2 ^longest -1)
+=>WM: (288: D2 ^num_high 50)
+=>WM: (287: D2 ^num_low -1)
+=>WM: (286: D2 ^rkcb -1)
+=>WM: (285: D2 ^ten -1)
+=>WM: (284: D2 ^jack -1)
+=>WM: (283: D2 ^queen -1)
+=>WM: (282: D2 ^king -1)
+=>WM: (281: D2 ^ace -1)
+=>WM: (280: D2 ^honors_high 50)
+=>WM: (279: D2 ^honors_low -1)
+=>WM: (278: D2 ^hc_high 50)
+=>WM: (277: D2 ^hc_low -1)
+=>WM: (276: D2 ^controls_high 50)
+=>WM: (275: D2 ^controls_low -1)
+=>WM: (274: D2 ^hcp_high 50)
+=>WM: (273: D2 ^hcp_low -1)
+=>WM: (272: P1 ^dia D2)
+=>WM: (271: H2 ^unlos_high 50.)
+=>WM: (270: H2 ^unlos_low -1.)
+=>WM: (269: H2 ^quality -1.)
+=>WM: (268: H2 ^stopper -1.)
+=>WM: (267: H2 ^intermediate_high 50.)
+=>WM: (266: H2 ^intermediate_low -1.)
+=>WM: (265: H2 ^biddable -1)
+=>WM: (264: H2 ^shortest -1)
+=>WM: (263: H2 ^longest -1)
+=>WM: (262: H2 ^num_high 50)
+=>WM: (261: H2 ^num_low -1)
+=>WM: (260: H2 ^rkcb -1)
+=>WM: (259: H2 ^ten -1)
+=>WM: (258: H2 ^jack -1)
+=>WM: (257: H2 ^queen -1)
+=>WM: (256: H2 ^king -1)
+=>WM: (255: H2 ^ace -1)
+=>WM: (254: H2 ^honors_high 50)
+=>WM: (253: H2 ^honors_low -1)
+=>WM: (252: H2 ^hc_high 50)
+=>WM: (251: H2 ^hc_low -1)
+=>WM: (250: H2 ^controls_high 50)
+=>WM: (249: H2 ^controls_low -1)
+=>WM: (248: H2 ^hcp_high 50)
+=>WM: (247: H2 ^hcp_low -1)
+=>WM: (246: P1 ^heart H2)
+=>WM: (245: S6 ^unlos_high 50.)
+=>WM: (244: S6 ^unlos_low -1.)
+=>WM: (243: S6 ^quality -1.)
+=>WM: (242: S6 ^stopper -1.)
+=>WM: (241: S6 ^intermediate_high 50.)
+=>WM: (240: S6 ^intermediate_low -1.)
+=>WM: (239: S6 ^biddable -1)
+=>WM: (238: S6 ^shortest -1)
+=>WM: (237: S6 ^longest -1)
+=>WM: (236: S6 ^num_high 50)
+=>WM: (235: S6 ^num_low -1)
+=>WM: (234: S6 ^rkcb -1)
+=>WM: (233: S6 ^ten -1)
+=>WM: (232: S6 ^jack -1)
+=>WM: (231: S6 ^queen -1)
+=>WM: (230: S6 ^king -1)
+=>WM: (229: S6 ^ace -1)
+=>WM: (228: S6 ^honors_high 50)
+=>WM: (227: S6 ^honors_low -1)
+=>WM: (226: S6 ^hc_high 50)
+=>WM: (225: S6 ^hc_low -1)
+=>WM: (224: S6 ^controls_high 50)
+=>WM: (223: S6 ^controls_low -1)
+=>WM: (222: S6 ^hcp_high 50)
+=>WM: (221: S6 ^hcp_low -1)
+=>WM: (220: P1 ^spade S6)
+=>WM: (219: P1 ^ratio_high 50.)
+=>WM: (218: P1 ^ratio_low -1.)
+=>WM: (217: P1 ^lmin_high 50)
+=>WM: (216: P1 ^lmin_low -1)
+=>WM: (215: P1 ^lmaj_high 50)
+=>WM: (214: P1 ^lmaj_low -1)
+=>WM: (213: P1 ^num_suits -1)
+=>WM: (212: P1 ^intermediate_ha_high 50.)
+=>WM: (211: P1 ^intermediate_low -1.)
+=>WM: (210: P1 ^balanced_high 50)
+=>WM: (209: P1 ^balanced_low -1)
+=>WM: (208: P1 ^tens -1)
+=>WM: (207: P1 ^jacks -1)
+=>WM: (206: P1 ^queens -1)
+=>WM: (205: P1 ^kings -1)
+=>WM: (204: P1 ^aces -1)
+=>WM: (203: P1 ^honors_high 50)
+=>WM: (202: P1 ^honors_low -1)
+=>WM: (201: P1 ^hc_high 50)
+=>WM: (200: P1 ^hc_low -1)
+=>WM: (199: P1 ^controls_high 50)
+=>WM: (198: P1 ^controls_low -1)
+=>WM: (197: P1 ^hcp_high 50)
+=>WM: (196: P1 ^hcp_low -1)
+=>WM: (195: I2 ^pview P1)
+=>WM: (194: M1 ^tr_stopper_cl_ha 0)
+=>WM: (193: M1 ^tr_stopper_cl_di 3)
+=>WM: (192: M1 ^tr_stopper_cl_he 3)
+=>WM: (191: M1 ^tr_stopper_cl_sp 2)
+=>WM: (190: M1 ^tr_stopper_di_cl 2)
+=>WM: (189: M1 ^tr_stopper_di_ha 0)
+=>WM: (188: M1 ^tr_stopper_di_he 3)
+=>WM: (187: M1 ^tr_stopper_di_sp 2)
+=>WM: (186: M1 ^tr_stopper_he_cl 2)
+=>WM: (185: M1 ^tr_stopper_he_di 3)
+=>WM: (184: M1 ^tr_stopper_he_ha 0)
+=>WM: (183: M1 ^tr_stopper_he_sp 2)
+=>WM: (182: M1 ^tr_stopper_sp_cl 2)
+=>WM: (181: M1 ^tr_stopper_sp_di 3)
+=>WM: (180: M1 ^tr_stopper_sp_he 3)
+=>WM: (179: M1 ^tr_stopper_sp_ha 0)
+=>WM: (178: M1 ^losers_cl_ha 0)
+=>WM: (177: M1 ^losers_cl_di 0)
+=>WM: (176: M1 ^losers_cl_he 0)
+=>WM: (175: M1 ^losers_cl_sp 0)
+=>WM: (174: M1 ^losers_di_ha 0)
+=>WM: (173: M1 ^losers_di_cl 0)
+=>WM: (172: M1 ^losers_di_he 0)
+=>WM: (171: M1 ^losers_di_sp 0)
+=>WM: (170: M1 ^losers_he_ha 0)
+=>WM: (169: M1 ^losers_he_cl 0)
+=>WM: (168: M1 ^losers_he_di 0)
+=>WM: (167: M1 ^losers_he_sp 0)
+=>WM: (166: M1 ^losers_sp_ha 0)
+=>WM: (165: M1 ^losers_sp_cl 0)
+=>WM: (164: M1 ^losers_sp_di 0)
+=>WM: (163: M1 ^losers_sp_he 0)
+=>WM: (162: M1 ^dp_cl_ha 3)
+=>WM: (161: M1 ^dp_cl_di 1)
+=>WM: (160: M1 ^dp_cl_he 2)
+=>WM: (159: M1 ^dp_cl_sp 0)
+=>WM: (158: M1 ^dp_di_ha 2)
+=>WM: (157: M1 ^dp_di_cl 0)
+=>WM: (156: M1 ^dp_di_he 2)
+=>WM: (155: M1 ^dp_di_sp 0)
+=>WM: (154: M1 ^dp_he_ha 1)
+=>WM: (153: M1 ^dp_he_cl 0)
+=>WM: (152: M1 ^dp_he_di 1)
+=>WM: (151: M1 ^dp_he_sp 0)
+=>WM: (150: M1 ^dp_sp_ha 3)
+=>WM: (149: M1 ^dp_sp_cl 0)
+=>WM: (148: M1 ^dp_sp_di 1)
+=>WM: (147: M1 ^dp_sp_he 2)
+=>WM: (146: C4 ^unlos_high 3.25)
+=>WM: (145: C4 ^unlos_low 3.25)
+=>WM: (144: C4 ^quality 0.)
+=>WM: (143: C4 ^stopper 2.)
+=>WM: (142: C4 ^intermediate_high 1.)
+=>WM: (141: C4 ^intermediate_low 1.)
+=>WM: (140: C4 ^biddable 1)
+=>WM: (139: C4 ^shortest 0)
+=>WM: (138: C4 ^longest 0)
+=>WM: (137: C4 ^num_high 5)
+=>WM: (136: C4 ^num_low 5)
+=>WM: (135: C4 ^rkcb 6)
+=>WM: (134: C4 ^ten 0)
+=>WM: (133: C4 ^jack 0)
+=>WM: (132: C4 ^queen 0)
+=>WM: (131: C4 ^king 1)
+=>WM: (130: C4 ^ace 0)
+=>WM: (129: C4 ^honors_high 1)
+=>WM: (128: C4 ^honors_low 1)
+=>WM: (127: C4 ^hc_high 1)
+=>WM: (126: C4 ^hc_low 1)
+=>WM: (125: C4 ^controls_high 1)
+=>WM: (124: C4 ^controls_low 1)
+=>WM: (123: C4 ^hcp_high 3)
+=>WM: (122: C4 ^hcp_low 3)
+=>WM: (121: M1 ^club C4)
+=>WM: (120: D1 ^unlos_high 2.)
+=>WM: (119: D1 ^unlos_low 2.)
+=>WM: (118: D1 ^quality 0.)
+=>WM: (117: D1 ^stopper 0.)
+=>WM: (116: D1 ^intermediate_high 2.)
+=>WM: (115: D1 ^intermediate_low 2.)
+=>WM: (114: D1 ^biddable -2)
+=>WM: (113: D1 ^shortest 0)
+=>WM: (112: D1 ^longest 1)
+=>WM: (111: D1 ^num_high 2)
+=>WM: (110: D1 ^num_low 2)
+=>WM: (109: D1 ^rkcb 5)
+=>WM: (108: D1 ^ten 1)
+=>WM: (107: D1 ^jack 0)
+=>WM: (106: D1 ^queen 0)
+=>WM: (105: D1 ^king 0)
+=>WM: (104: D1 ^ace 0)
+=>WM: (103: D1 ^honors_high 1)
+=>WM: (102: D1 ^honors_low 1)
+=>WM: (101: D1 ^hc_high 0)
+=>WM: (100: D1 ^hc_low 0)
+=>WM: (99: D1 ^controls_high 0)
+=>WM: (98: D1 ^controls_low 0)
+=>WM: (97: D1 ^hcp_high 0)
+=>WM: (96: D1 ^hcp_low 0)
+=>WM: (95: M1 ^dia D1)
+=>WM: (94: H1 ^unlos_high 0.)
+=>WM: (93: H1 ^unlos_low 0.)
+=>WM: (92: H1 ^quality 0.)
+=>WM: (91: H1 ^stopper 3.)
+=>WM: (90: H1 ^intermediate_high 0.)
+=>WM: (89: H1 ^intermediate_low 0.)
+=>WM: (88: H1 ^biddable -3)
+=>WM: (87: H1 ^shortest 1)
+=>WM: (86: H1 ^longest 0)
+=>WM: (85: H1 ^num_high 1)
+=>WM: (84: H1 ^num_low 1)
+=>WM: (83: H1 ^rkcb 5)
+=>WM: (82: H1 ^ten 0)
+=>WM: (81: H1 ^jack 0)
+=>WM: (80: H1 ^queen 0)
+=>WM: (79: H1 ^king 0)
+=>WM: (78: H1 ^ace 1)
+=>WM: (77: H1 ^honors_high 1)
+=>WM: (76: H1 ^honors_low 1)
+=>WM: (75: H1 ^hc_high 1)
+=>WM: (74: H1 ^hc_low 1)
+=>WM: (73: H1 ^controls_high 2)
+=>WM: (72: H1 ^controls_low 2)
+=>WM: (71: H1 ^hcp_high 4)
+=>WM: (70: H1 ^hcp_low 4)
+=>WM: (69: M1 ^heart H1)
+=>WM: (68: S5 ^unlos_high 2.75)
+=>WM: (67: S5 ^unlos_low 2.75)
+=>WM: (66: S5 ^quality 0.)
+=>WM: (65: S5 ^stopper 4.)
+=>WM: (64: S5 ^intermediate_high 0.)
+=>WM: (63: S5 ^intermediate_low 0.)
+=>WM: (62: S5 ^biddable 1)
+=>WM: (61: S5 ^shortest 0)
+=>WM: (60: S5 ^longest 1)
+=>WM: (59: S5 ^num_high 5)
+=>WM: (58: S5 ^num_low 5)
+=>WM: (57: S5 ^rkcb 6)
+=>WM: (56: S5 ^ten 0)
+=>WM: (55: S5 ^jack 1)
+=>WM: (54: S5 ^queen 0)
+=>WM: (53: S5 ^king 1)
+=>WM: (52: S5 ^ace 0)
+=>WM: (51: S5 ^honors_high 2)
+=>WM: (50: S5 ^honors_low 2)
+=>WM: (49: S5 ^hc_high 1)
+=>WM: (48: S5 ^hc_low 1)
+=>WM: (47: S5 ^controls_high 1)
+=>WM: (46: S5 ^controls_low 1)
+=>WM: (45: S5 ^hcp_high 4)
+=>WM: (44: S5 ^hcp_low 4)
+=>WM: (43: M1 ^spade S5)
+=>WM: (42: M1 ^ratio_high 0.6363636363636364)
+=>WM: (41: M1 ^ratio_low 0.6363636363636364)
+=>WM: (40: M1 ^lmin_high 5)
+=>WM: (39: M1 ^lmin_low 5)
+=>WM: (38: M1 ^lmaj_high 5)
+=>WM: (37: M1 ^lmaj_low 5)
+=>WM: (36: M1 ^num_suits 2)
+=>WM: (35: M1 ^intermediate_ha_high 3.)
+=>WM: (34: M1 ^intermediate_low 3.)
+=>WM: (33: M1 ^balanced_high 5)
+=>WM: (32: M1 ^balanced_low 5)
+=>WM: (31: M1 ^tens 1)
+=>WM: (30: M1 ^jacks 1)
+=>WM: (29: M1 ^queens 0)
+=>WM: (28: M1 ^kings 2)
+=>WM: (27: M1 ^aces 1)
+=>WM: (26: M1 ^honors_high 5)
+=>WM: (25: M1 ^honors_low 5)
+=>WM: (24: M1 ^hc_high 3)
+=>WM: (23: M1 ^hc_low 3)
+=>WM: (22: M1 ^controls_high 4)
+=>WM: (21: M1 ^controls_low 4)
+=>WM: (20: M1 ^hcp_high 11)
+=>WM: (19: M1 ^hcp_low 11)
+=>WM: (18: I2 ^myview M1)
+
+--- END Input Phase --- 
+
+Soar said:
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing get*input*from*program
+ 15 16 728 727 726 549 372 195 18 -->
+ (S1 ^bidhistory B1 +)
+ (S1 ^oview O1 +)
+ (S1 ^tview T1 +)
+ (S1 ^rview R4 +)
+ (S1 ^lview L1 +)
+ (S1 ^pview P1 +)
+ (S1 ^myview M1 +)
+
+Firing propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+
+Firing elaborate*top-state*top-state
+ 2 -->
+ (S1 ^top-state S1 +)
+ inner elaboration loop at bottom goal.
+=>WM: (738: S1 ^operator O2 +)
+=>WM: (737: S1 ^top-state S1)
+=>WM: (736: O2 ^name initialize-bidder)
+=>WM: (735: S1 ^bidhistory B1)
+=>WM: (734: S1 ^oview O1)
+=>WM: (733: S1 ^tview T1)
+=>WM: (732: S1 ^rview R4)
+=>WM: (731: S1 ^lview L1)
+=>WM: (730: S1 ^pview P1)
+=>WM: (729: S1 ^myview M1)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (739: S1 ^operator O2)
+
+     1:    O: O2 (initialize-bidder)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*initialize-bidder
+ 739 736 -->
+ (N1 ^child 1Mfollowup +  :O )
+ (N1 ^child opening +  :O )
+ (N1 ^status visited +  :O )
+ (N1 ^name top-node +  :O )
+ (S1 ^node N1 +  :O )
+ (S1 ^name bidder +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (745: N1 ^child opening)
+=>WM: (744: N1 ^child 1Mfollowup)
+=>WM: (743: N1 ^status visited)
+=>WM: (742: N1 ^name top-node)
+=>WM: (741: S1 ^node N1)
+=>WM: (740: S1 ^name bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing move*deeper*into*network
+ 740 741 743 745 -->
+ (C8 ^name opening +)
+ (S1 ^node C8 +)
+
+Firing move*deeper*into*network
+ 740 741 743 744 -->
+ (C9 ^name 1Mfollowup +)
+ (S1 ^node C9 +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+	--- Change Working Memory (IE) ---
+=>WM: (749: C9 ^name 1Mfollowup)
+=>WM: (748: S1 ^node C8)
+=>WM: (747: S1 ^node C9)
+=>WM: (746: C8 ^name opening)
+<=WM: (738: S1 ^operator O2 +)
+<=WM: (739: S1 ^operator O2)
+<=WM: (736: O2 ^name initialize-bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening*pattern
+ 740 748 746 -->
+ (C8 ^pattern * +)
+
+Firing expand*1Mfollowup*pattern
+ 740 747 749 -->
+ (C9 ^pattern |PASS 1M *| +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (751: C9 ^pattern |PASS 1M *|)
+=>WM: (750: C8 ^pattern *)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*pattern*check
+ 740 748 750 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+
+Firing propose*pattern*check
+ 740 747 751 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (759: S1 ^operator O4 +)
+=>WM: (758: S1 ^operator O3 +)
+=>WM: (757: O4 ^node-being-checked C9)
+=>WM: (756: O4 ^pattern |PASS 1M *|)
+=>WM: (755: O4 ^name pattern-check-operator)
+=>WM: (754: O3 ^node-being-checked C8)
+=>WM: (753: O3 ^pattern *)
+=>WM: (752: O3 ^name pattern-check-operator)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+--- Input Phase --- 
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (760: S1 ^operator O4)
+
+     2:    O: O4 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 760 755 757 756 749 15 17 -->
+ (P2 ^node C9 +  :O )
+ (P2 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P2 +  :O )
+ (S1 ^node-being-checked C9 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (764: P2 ^node C9)
+=>WM: (763: P2 ^pattern |PASS 1M *|)
+=>WM: (762: I3 ^pattern-check P2)
+=>WM: (761: S1 ^node-being-checked C9)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands1
+Checking pattern for 1Mfollowup
+Soar said:
+--- Input Phase --- 
+=>WM: (766: P2 ^status complete)
+=>WM: (765: C9 ^pattern-checked false)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 747 751 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+<=WM: (759: S1 ^operator O4 +)
+<=WM: (760: S1 ^operator O4)
+<=WM: (757: O4 ^node-being-checked C9)
+<=WM: (756: O4 ^pattern |PASS 1M *|)
+<=WM: (755: O4 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (767: S1 ^operator O3)
+
+     3:    O: O3 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 767 752 754 753 746 15 17 -->
+ (P3 ^node C8 +  :O )
+ (P3 ^pattern * +  :O )
+ (I3 ^pattern-check P3 +  :O )
+ (S1 ^node-being-checked C8 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (771: P3 ^node C8)
+=>WM: (770: P3 ^pattern *)
+=>WM: (769: I3 ^pattern-check P3)
+=>WM: (768: S1 ^node-being-checked C8)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening
+Soar said:
+--- Input Phase --- 
+=>WM: (777: P3 ^status complete)
+=>WM: (776: C8 ^pattern-checked true)
+=>WM: (775: C8 ^m club)
+=>WM: (774: C8 ^m dia)
+=>WM: (773: C8 ^M heart)
+=>WM: (772: C8 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening
+ 740 748 776 746 -->
+ (C8 ^child opening-4M +)
+ (C8 ^child opening-4m +)
+ (C8 ^child opening-3N +)
+ (C8 ^child opening-3M +)
+ (C8 ^child opening-3m +)
+ (C8 ^child opening-2N +)
+ (C8 ^child opening-2S +)
+ (C8 ^child opening-2H +)
+ (C8 ^child opening-2C +)
+ (C8 ^child opening-1M +)
+ (C8 ^child opening-1NT +)
+ (C8 ^status visited +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 748 750 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+=>WM: (789: C8 ^child opening-1NT)
+=>WM: (788: C8 ^child opening-1M)
+=>WM: (787: C8 ^child opening-2C)
+=>WM: (786: C8 ^child opening-2H)
+=>WM: (785: C8 ^child opening-2S)
+=>WM: (784: C8 ^child opening-2N)
+=>WM: (783: C8 ^child opening-3m)
+=>WM: (782: C8 ^child opening-3M)
+=>WM: (781: C8 ^child opening-3N)
+=>WM: (780: C8 ^child opening-4m)
+=>WM: (779: C8 ^child opening-4M)
+=>WM: (778: C8 ^status visited)
+<=WM: (758: S1 ^operator O3 +)
+<=WM: (767: S1 ^operator O3)
+<=WM: (754: O3 ^node-being-checked C8)
+<=WM: (753: O3 ^pattern *)
+<=WM: (752: O3 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing move*deeper*into*network
+ 740 748 778 789 -->
+ (C10 ^name opening-1NT +)
+ (S1 ^node C10 +)
+
+Firing move*deeper*into*network
+ 740 748 778 788 -->
+ (C11 ^name opening-1M +)
+ (S1 ^node C11 +)
+
+Firing move*deeper*into*network
+ 740 748 778 787 -->
+ (C12 ^name opening-2C +)
+ (S1 ^node C12 +)
+
+Firing move*deeper*into*network
+ 740 748 778 786 -->
+ (C13 ^name opening-2H +)
+ (S1 ^node C13 +)
+
+Firing move*deeper*into*network
+ 740 748 778 785 -->
+ (C14 ^name opening-2S +)
+ (S1 ^node C14 +)
+
+Firing move*deeper*into*network
+ 740 748 778 784 -->
+ (C15 ^name opening-2N +)
+ (S1 ^node C15 +)
+
+Firing move*deeper*into*network
+ 740 748 778 783 -->
+ (C16 ^name opening-3m +)
+ (S1 ^node C16 +)
+
+Firing move*deeper*into*network
+ 740 748 778 782 -->
+ (C17 ^name opening-3M +)
+ (S1 ^node C17 +)
+
+Firing move*deeper*into*network
+ 740 748 778 781 -->
+ (C18 ^name opening-3N +)
+ (S1 ^node C18 +)
+
+Firing move*deeper*into*network
+ 740 748 778 780 -->
+ (C19 ^name opening-4m +)
+ (S1 ^node C19 +)
+
+Firing move*deeper*into*network
+ 740 748 778 779 -->
+ (C20 ^name opening-4M +)
+ (S1 ^node C20 +)
+ inner elaboration loop at bottom goal.
+=>WM: (811: C20 ^name opening-4M)
+=>WM: (810: S1 ^node C10)
+=>WM: (809: S1 ^node C11)
+=>WM: (808: S1 ^node C12)
+=>WM: (807: S1 ^node C13)
+=>WM: (806: S1 ^node C14)
+=>WM: (805: S1 ^node C15)
+=>WM: (804: S1 ^node C16)
+=>WM: (803: S1 ^node C17)
+=>WM: (802: S1 ^node C18)
+=>WM: (801: S1 ^node C19)
+=>WM: (800: S1 ^node C20)
+=>WM: (799: C19 ^name opening-4m)
+=>WM: (798: C18 ^name opening-3N)
+=>WM: (797: C17 ^name opening-3M)
+=>WM: (796: C16 ^name opening-3m)
+=>WM: (795: C15 ^name opening-2N)
+=>WM: (794: C14 ^name opening-2S)
+=>WM: (793: C13 ^name opening-2H)
+=>WM: (792: C12 ^name opening-2C)
+=>WM: (791: C11 ^name opening-1M)
+=>WM: (790: C10 ^name opening-1NT)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening-1NT*pattern
+ 740 810 790 -->
+ (C10 ^pattern * +)
+
+Firing expand*opening-1M*pattern
+ 740 809 791 -->
+ (C11 ^pattern * +)
+
+Firing expand*opening-2C*pattern
+ 740 808 792 -->
+ (C12 ^pattern * +)
+
+Firing expand*opening-2H*pattern
+ 740 807 793 -->
+ (C13 ^pattern * +)
+
+Firing expand*opening-2S*pattern
+ 740 806 794 -->
+ (C14 ^pattern * +)
+
+Firing expand*opening-2N*pattern
+ 740 805 795 -->
+ (C15 ^pattern * +)
+
+Firing expand*opening-3m*pattern
+ 740 804 796 -->
+ (C16 ^pattern * +)
+
+Firing expand*opening-3M*pattern
+ 740 803 797 -->
+ (C17 ^pattern * +)
+
+Firing expand*opengin-3N*pattern
+ 740 802 798 -->
+ (C18 ^pattern * +)
+
+Firing expand*opengin-4m*pattern
+ 740 801 799 -->
+ (C19 ^pattern * +)
+
+Firing expand*opengin-4M*pattern
+ 740 800 811 -->
+ (C20 ^pattern * +)
+ inner elaboration loop at bottom goal.
+=>WM: (822: C20 ^pattern *)
+=>WM: (821: C19 ^pattern *)
+=>WM: (820: C18 ^pattern *)
+=>WM: (819: C17 ^pattern *)
+=>WM: (818: C16 ^pattern *)
+=>WM: (817: C15 ^pattern *)
+=>WM: (816: C14 ^pattern *)
+=>WM: (815: C13 ^pattern *)
+=>WM: (814: C12 ^pattern *)
+=>WM: (813: C11 ^pattern *)
+=>WM: (812: C10 ^pattern *)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*pattern*check
+ 740 810 812 -->
+ (O5 ^node-being-checked C10 +)
+ (O5 ^pattern * +)
+ (O5 ^name pattern-check-operator +)
+ (S1 ^operator O5 =)
+ (S1 ^operator O5 +)
+
+Firing propose*pattern*check
+ 740 809 813 -->
+ (O6 ^node-being-checked C11 +)
+ (O6 ^pattern * +)
+ (O6 ^name pattern-check-operator +)
+ (S1 ^operator O6 =)
+ (S1 ^operator O6 +)
+
+Firing propose*pattern*check
+ 740 808 814 -->
+ (O7 ^node-being-checked C12 +)
+ (O7 ^pattern * +)
+ (O7 ^name pattern-check-operator +)
+ (S1 ^operator O7 =)
+ (S1 ^operator O7 +)
+
+Firing propose*pattern*check
+ 740 807 815 -->
+ (O8 ^node-being-checked C13 +)
+ (O8 ^pattern * +)
+ (O8 ^name pattern-check-operator +)
+ (S1 ^operator O8 =)
+ (S1 ^operator O8 +)
+
+Firing propose*pattern*check
+ 740 806 816 -->
+ (O9 ^node-being-checked C14 +)
+ (O9 ^pattern * +)
+ (O9 ^name pattern-check-operator +)
+ (S1 ^operator O9 =)
+ (S1 ^operator O9 +)
+
+Firing propose*pattern*check
+ 740 805 817 -->
+ (O10 ^node-being-checked C15 +)
+ (O10 ^pattern * +)
+ (O10 ^name pattern-check-operator +)
+ (S1 ^operator O10 =)
+ (S1 ^operator O10 +)
+
+Firing propose*pattern*check
+ 740 804 818 -->
+ (O11 ^node-being-checked C16 +)
+ (O11 ^pattern * +)
+ (O11 ^name pattern-check-operator +)
+ (S1 ^operator O11 =)
+ (S1 ^operator O11 +)
+
+Firing propose*pattern*check
+ 740 803 819 -->
+ (O12 ^node-being-checked C17 +)
+ (O12 ^pattern * +)
+ (O12 ^name pattern-check-operator +)
+ (S1 ^operator O12 =)
+ (S1 ^operator O12 +)
+
+Firing propose*pattern*check
+ 740 802 820 -->
+ (O13 ^node-being-checked C18 +)
+ (O13 ^pattern * +)
+ (O13 ^name pattern-check-operator +)
+ (S1 ^operator O13 =)
+ (S1 ^operator O13 +)
+
+Firing propose*pattern*check
+ 740 801 821 -->
+ (O14 ^node-being-checked C19 +)
+ (O14 ^pattern * +)
+ (O14 ^name pattern-check-operator +)
+ (S1 ^operator O14 =)
+ (S1 ^operator O14 +)
+
+Firing propose*pattern*check
+ 740 800 822 -->
+ (O15 ^node-being-checked C20 +)
+ (O15 ^pattern * +)
+ (O15 ^name pattern-check-operator +)
+ (S1 ^operator O15 =)
+ (S1 ^operator O15 +)
+ inner elaboration loop at bottom goal.
+=>WM: (866: S1 ^operator O15 +)
+=>WM: (865: S1 ^operator O14 +)
+=>WM: (864: S1 ^operator O13 +)
+=>WM: (863: S1 ^operator O12 +)
+=>WM: (862: S1 ^operator O11 +)
+=>WM: (861: S1 ^operator O10 +)
+=>WM: (860: S1 ^operator O9 +)
+=>WM: (859: S1 ^operator O8 +)
+=>WM: (858: S1 ^operator O7 +)
+=>WM: (857: S1 ^operator O6 +)
+=>WM: (856: S1 ^operator O5 +)
+=>WM: (855: O15 ^node-being-checked C20)
+=>WM: (854: O15 ^pattern *)
+=>WM: (853: O15 ^name pattern-check-operator)
+=>WM: (852: O14 ^node-being-checked C19)
+=>WM: (851: O14 ^pattern *)
+=>WM: (850: O14 ^name pattern-check-operator)
+=>WM: (849: O13 ^node-being-checked C18)
+=>WM: (848: O13 ^pattern *)
+=>WM: (847: O13 ^name pattern-check-operator)
+=>WM: (846: O12 ^node-being-checked C17)
+=>WM: (845: O12 ^pattern *)
+=>WM: (844: O12 ^name pattern-check-operator)
+=>WM: (843: O11 ^node-being-checked C16)
+=>WM: (842: O11 ^pattern *)
+=>WM: (841: O11 ^name pattern-check-operator)
+=>WM: (840: O10 ^node-being-checked C15)
+=>WM: (839: O10 ^pattern *)
+=>WM: (838: O10 ^name pattern-check-operator)
+=>WM: (837: O9 ^node-being-checked C14)
+=>WM: (836: O9 ^pattern *)
+=>WM: (835: O9 ^name pattern-check-operator)
+=>WM: (834: O8 ^node-being-checked C13)
+=>WM: (833: O8 ^pattern *)
+=>WM: (832: O8 ^name pattern-check-operator)
+=>WM: (831: O7 ^node-being-checked C12)
+=>WM: (830: O7 ^pattern *)
+=>WM: (829: O7 ^name pattern-check-operator)
+=>WM: (828: O6 ^node-being-checked C11)
+=>WM: (827: O6 ^pattern *)
+=>WM: (826: O6 ^name pattern-check-operator)
+=>WM: (825: O5 ^node-being-checked C10)
+=>WM: (824: O5 ^pattern *)
+=>WM: (823: O5 ^name pattern-check-operator)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (867: S1 ^operator O12)
+
+     4:    O: O12 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 867 844 846 845 797 15 17 -->
+ (P4 ^node C17 +  :O )
+ (P4 ^pattern * +  :O )
+ (I3 ^pattern-check P4 +  :O )
+ (S1 ^node-being-checked C17 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (871: P4 ^node C17)
+=>WM: (870: P4 ^pattern *)
+=>WM: (869: I3 ^pattern-check P4)
+=>WM: (868: S1 ^node-being-checked C17)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-3M
+Soar said:
+--- Input Phase --- 
+=>WM: (877: P4 ^status complete)
+=>WM: (876: C17 ^pattern-checked true)
+=>WM: (875: C17 ^m club)
+=>WM: (874: C17 ^m dia)
+=>WM: (873: C17 ^M heart)
+=>WM: (872: C17 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 803 819 -->
+ (O12 ^node-being-checked C17 +)
+ (O12 ^pattern * +)
+ (O12 ^name pattern-check-operator +)
+ (S1 ^operator O12 =)
+ (S1 ^operator O12 +)
+<=WM: (863: S1 ^operator O12 +)
+<=WM: (867: S1 ^operator O12)
+<=WM: (846: O12 ^node-being-checked C17)
+<=WM: (845: O12 ^pattern *)
+<=WM: (844: O12 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (878: S1 ^operator O10)
+
+     5:    O: O10 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 878 838 840 839 795 15 17 -->
+ (P5 ^node C15 +  :O )
+ (P5 ^pattern * +  :O )
+ (I3 ^pattern-check P5 +  :O )
+ (S1 ^node-being-checked C15 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (882: P5 ^node C15)
+=>WM: (881: P5 ^pattern *)
+=>WM: (880: I3 ^pattern-check P5)
+=>WM: (879: S1 ^node-being-checked C15)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-2N
+Soar said:
+--- Input Phase --- 
+=>WM: (888: P5 ^status complete)
+=>WM: (887: C15 ^pattern-checked true)
+=>WM: (886: C15 ^m club)
+=>WM: (885: C15 ^m dia)
+=>WM: (884: C15 ^M heart)
+=>WM: (883: C15 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 805 817 -->
+ (O10 ^node-being-checked C15 +)
+ (O10 ^pattern * +)
+ (O10 ^name pattern-check-operator +)
+ (S1 ^operator O10 =)
+ (S1 ^operator O10 +)
+<=WM: (861: S1 ^operator O10 +)
+<=WM: (878: S1 ^operator O10)
+<=WM: (840: O10 ^node-being-checked C15)
+<=WM: (839: O10 ^pattern *)
+<=WM: (838: O10 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (889: S1 ^operator O9)
+
+     6:    O: O9 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 889 835 837 836 794 15 17 -->
+ (P6 ^node C14 +  :O )
+ (P6 ^pattern * +  :O )
+ (I3 ^pattern-check P6 +  :O )
+ (S1 ^node-being-checked C14 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (893: P6 ^node C14)
+=>WM: (892: P6 ^pattern *)
+=>WM: (891: I3 ^pattern-check P6)
+=>WM: (890: S1 ^node-being-checked C14)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-2S
+Soar said:
+--- Input Phase --- 
+=>WM: (899: P6 ^status complete)
+=>WM: (898: C14 ^pattern-checked true)
+=>WM: (897: C14 ^m club)
+=>WM: (896: C14 ^m dia)
+=>WM: (895: C14 ^M heart)
+=>WM: (894: C14 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 806 816 -->
+ (O9 ^node-being-checked C14 +)
+ (O9 ^pattern * +)
+ (O9 ^name pattern-check-operator +)
+ (S1 ^operator O9 =)
+ (S1 ^operator O9 +)
+<=WM: (860: S1 ^operator O9 +)
+<=WM: (889: S1 ^operator O9)
+<=WM: (837: O9 ^node-being-checked C14)
+<=WM: (836: O9 ^pattern *)
+<=WM: (835: O9 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (900: S1 ^operator O13)
+
+     7:    O: O13 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 900 847 849 848 798 15 17 -->
+ (P7 ^node C18 +  :O )
+ (P7 ^pattern * +  :O )
+ (I3 ^pattern-check P7 +  :O )
+ (S1 ^node-being-checked C18 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (904: P7 ^node C18)
+=>WM: (903: P7 ^pattern *)
+=>WM: (902: I3 ^pattern-check P7)
+=>WM: (901: S1 ^node-being-checked C18)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-3N
+Soar said:
+--- Input Phase --- 
+=>WM: (910: P7 ^status complete)
+=>WM: (909: C18 ^pattern-checked true)
+=>WM: (908: C18 ^m club)
+=>WM: (907: C18 ^m dia)
+=>WM: (906: C18 ^M heart)
+=>WM: (905: C18 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 802 820 -->
+ (O13 ^node-being-checked C18 +)
+ (O13 ^pattern * +)
+ (O13 ^name pattern-check-operator +)
+ (S1 ^operator O13 =)
+ (S1 ^operator O13 +)
+<=WM: (864: S1 ^operator O13 +)
+<=WM: (900: S1 ^operator O13)
+<=WM: (849: O13 ^node-being-checked C18)
+<=WM: (848: O13 ^pattern *)
+<=WM: (847: O13 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (911: S1 ^operator O8)
+
+     8:    O: O8 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 911 832 834 833 793 15 17 -->
+ (P8 ^node C13 +  :O )
+ (P8 ^pattern * +  :O )
+ (I3 ^pattern-check P8 +  :O )
+ (S1 ^node-being-checked C13 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (915: P8 ^node C13)
+=>WM: (914: P8 ^pattern *)
+=>WM: (913: I3 ^pattern-check P8)
+=>WM: (912: S1 ^node-being-checked C13)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-2H
+Soar said:
+--- Input Phase --- 
+=>WM: (921: P8 ^status complete)
+=>WM: (920: C13 ^pattern-checked true)
+=>WM: (919: C13 ^m club)
+=>WM: (918: C13 ^m dia)
+=>WM: (917: C13 ^M heart)
+=>WM: (916: C13 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 807 815 -->
+ (O8 ^node-being-checked C13 +)
+ (O8 ^pattern * +)
+ (O8 ^name pattern-check-operator +)
+ (S1 ^operator O8 =)
+ (S1 ^operator O8 +)
+<=WM: (859: S1 ^operator O8 +)
+<=WM: (911: S1 ^operator O8)
+<=WM: (834: O8 ^node-being-checked C13)
+<=WM: (833: O8 ^pattern *)
+<=WM: (832: O8 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (922: S1 ^operator O7)
+
+     9:    O: O7 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 922 829 831 830 792 15 17 -->
+ (P9 ^node C12 +  :O )
+ (P9 ^pattern * +  :O )
+ (I3 ^pattern-check P9 +  :O )
+ (S1 ^node-being-checked C12 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (926: P9 ^node C12)
+=>WM: (925: P9 ^pattern *)
+=>WM: (924: I3 ^pattern-check P9)
+=>WM: (923: S1 ^node-being-checked C12)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-2C
+Soar said:
+--- Input Phase --- 
+=>WM: (932: P9 ^status complete)
+=>WM: (931: C12 ^pattern-checked true)
+=>WM: (930: C12 ^m club)
+=>WM: (929: C12 ^m dia)
+=>WM: (928: C12 ^M heart)
+=>WM: (927: C12 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 808 814 -->
+ (O7 ^node-being-checked C12 +)
+ (O7 ^pattern * +)
+ (O7 ^name pattern-check-operator +)
+ (S1 ^operator O7 =)
+ (S1 ^operator O7 +)
+<=WM: (858: S1 ^operator O7 +)
+<=WM: (922: S1 ^operator O7)
+<=WM: (831: O7 ^node-being-checked C12)
+<=WM: (830: O7 ^pattern *)
+<=WM: (829: O7 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (933: S1 ^operator O5)
+
+    10:    O: O5 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 933 823 825 824 790 15 17 -->
+ (P10 ^node C10 +  :O )
+ (P10 ^pattern * +  :O )
+ (I3 ^pattern-check P10 +  :O )
+ (S1 ^node-being-checked C10 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (937: P10 ^node C10)
+=>WM: (936: P10 ^pattern *)
+=>WM: (935: I3 ^pattern-check P10)
+=>WM: (934: S1 ^node-being-checked C10)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-1NT
+Soar said:
+--- Input Phase --- 
+=>WM: (943: P10 ^status complete)
+=>WM: (942: C10 ^pattern-checked true)
+=>WM: (941: C10 ^m club)
+=>WM: (940: C10 ^m dia)
+=>WM: (939: C10 ^M heart)
+=>WM: (938: C10 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 810 812 -->
+ (O5 ^node-being-checked C10 +)
+ (O5 ^pattern * +)
+ (O5 ^name pattern-check-operator +)
+ (S1 ^operator O5 =)
+ (S1 ^operator O5 +)
+<=WM: (856: S1 ^operator O5 +)
+<=WM: (933: S1 ^operator O5)
+<=WM: (825: O5 ^node-being-checked C10)
+<=WM: (824: O5 ^pattern *)
+<=WM: (823: O5 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (944: S1 ^operator O11)
+
+    11:    O: O11 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 944 841 843 842 796 15 17 -->
+ (P11 ^node C16 +  :O )
+ (P11 ^pattern * +  :O )
+ (I3 ^pattern-check P11 +  :O )
+ (S1 ^node-being-checked C16 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (948: P11 ^node C16)
+=>WM: (947: P11 ^pattern *)
+=>WM: (946: I3 ^pattern-check P11)
+=>WM: (945: S1 ^node-being-checked C16)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-3m
+Soar said:
+--- Input Phase --- 
+=>WM: (954: P11 ^status complete)
+=>WM: (953: C16 ^pattern-checked true)
+=>WM: (952: C16 ^m club)
+=>WM: (951: C16 ^m dia)
+=>WM: (950: C16 ^M heart)
+=>WM: (949: C16 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 804 818 -->
+ (O11 ^node-being-checked C16 +)
+ (O11 ^pattern * +)
+ (O11 ^name pattern-check-operator +)
+ (S1 ^operator O11 =)
+ (S1 ^operator O11 +)
+<=WM: (862: S1 ^operator O11 +)
+<=WM: (944: S1 ^operator O11)
+<=WM: (843: O11 ^node-being-checked C16)
+<=WM: (842: O11 ^pattern *)
+<=WM: (841: O11 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (955: S1 ^operator O15)
+
+    12:    O: O15 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 955 853 855 854 811 15 17 -->
+ (P12 ^node C20 +  :O )
+ (P12 ^pattern * +  :O )
+ (I3 ^pattern-check P12 +  :O )
+ (S1 ^node-being-checked C20 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (959: P12 ^node C20)
+=>WM: (958: P12 ^pattern *)
+=>WM: (957: I3 ^pattern-check P12)
+=>WM: (956: S1 ^node-being-checked C20)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-4M
+Soar said:
+--- Input Phase --- 
+=>WM: (965: P12 ^status complete)
+=>WM: (964: C20 ^pattern-checked true)
+=>WM: (963: C20 ^m club)
+=>WM: (962: C20 ^m dia)
+=>WM: (961: C20 ^M heart)
+=>WM: (960: C20 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 800 822 -->
+ (O15 ^node-being-checked C20 +)
+ (O15 ^pattern * +)
+ (O15 ^name pattern-check-operator +)
+ (S1 ^operator O15 =)
+ (S1 ^operator O15 +)
+<=WM: (866: S1 ^operator O15 +)
+<=WM: (955: S1 ^operator O15)
+<=WM: (855: O15 ^node-being-checked C20)
+<=WM: (854: O15 ^pattern *)
+<=WM: (853: O15 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (966: S1 ^operator O6)
+
+    13:    O: O6 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 966 826 828 827 791 15 17 -->
+ (P13 ^node C11 +  :O )
+ (P13 ^pattern * +  :O )
+ (I3 ^pattern-check P13 +  :O )
+ (S1 ^node-being-checked C11 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (970: P13 ^node C11)
+=>WM: (969: P13 ^pattern *)
+=>WM: (968: I3 ^pattern-check P13)
+=>WM: (967: S1 ^node-being-checked C11)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-1M
+Soar said:
+--- Input Phase --- 
+=>WM: (976: P13 ^status complete)
+=>WM: (975: C11 ^pattern-checked true)
+=>WM: (974: C11 ^m club)
+=>WM: (973: C11 ^m dia)
+=>WM: (972: C11 ^M heart)
+=>WM: (971: C11 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening-1M
+ 740 809 975 791 971 729 20 19 43 58 -->
+ (M3 ^num_low 5 +)
+ (M2 ^spade M3 +)
+ (M2 ^hcp_high 23 +)
+ (M2 ^hcp_low 11 +)
+ (B2 ^meaning M2 +)
+ (B2 ^short-form 1spade +)
+ (C11 ^bid B2 +)
+ (C11 ^status visited +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 809 813 -->
+ (O6 ^node-being-checked C11 +)
+ (O6 ^pattern * +)
+ (O6 ^name pattern-check-operator +)
+ (S1 ^operator O6 =)
+ (S1 ^operator O6 +)
+=>WM: (984: M3 ^num_low 5)
+=>WM: (983: M2 ^spade M3)
+=>WM: (982: M2 ^hcp_high 23)
+=>WM: (981: M2 ^hcp_low 11)
+=>WM: (980: B2 ^meaning M2)
+=>WM: (979: B2 ^short-form 1spade)
+=>WM: (978: C11 ^bid B2)
+=>WM: (977: C11 ^status visited)
+<=WM: (857: S1 ^operator O6 +)
+<=WM: (966: S1 ^operator O6)
+<=WM: (828: O6 ^node-being-checked C11)
+<=WM: (827: O6 ^pattern *)
+<=WM: (826: O6 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*make-bid
+ 809 978 -->
+ (O16 ^bid B2 +)
+ (S1 ^operator O16 <)
+ (S1 ^operator O16 +)
+ inner elaboration loop at bottom goal.
+=>WM: (986: S1 ^operator O16 +)
+=>WM: (985: O16 ^bid B2)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (987: S1 ^operator O14)
+
+    14:    O: O14 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 740 987 850 852 851 799 15 17 -->
+ (P14 ^node C19 +  :O )
+ (P14 ^pattern * +  :O )
+ (I3 ^pattern-check P14 +  :O )
+ (S1 ^node-being-checked C19 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (991: P14 ^node C19)
+=>WM: (990: P14 ^pattern *)
+=>WM: (989: I3 ^pattern-check P14)
+=>WM: (988: S1 ^node-being-checked C19)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening-4m
+Soar said:
+--- Input Phase --- 
+=>WM: (997: P14 ^status complete)
+=>WM: (996: C19 ^pattern-checked true)
+=>WM: (995: C19 ^m club)
+=>WM: (994: C19 ^m dia)
+=>WM: (993: C19 ^M heart)
+=>WM: (992: C19 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 740 801 821 -->
+ (O14 ^node-being-checked C19 +)
+ (O14 ^pattern * +)
+ (O14 ^name pattern-check-operator +)
+ (S1 ^operator O14 =)
+ (S1 ^operator O14 +)
+<=WM: (865: S1 ^operator O14 +)
+<=WM: (987: S1 ^operator O14)
+<=WM: (852: O14 ^node-being-checked C19)
+<=WM: (851: O14 ^pattern *)
+<=WM: (850: O14 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (998: S1 ^operator O16)
+
+    15:    O: O16 
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*make-bid
+ 15 17 998 985 980 979 -->
+
+ The bid selected is 1spade (I3 ^bid B2 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (999: I3 ^bid B2)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Updates sent by SOAR:
+spade: M3
+hcp_high: 23
+hcp_low: 11
+Updates sent by SOAR:
+spade: M3
+hcp_high: 23
+hcp_low: 11
+Updates sent by SOAR:
+spade: M3
+hcp_high: 23
+hcp_low: 11
+north made bid 1S
+
+
+Asking east for bid
+Soar said:
+--- Input Phase --- 
+=>WM: (729: B1 ^last-bid 1S)
+=>WM: (728: I2 ^bidhistory B1)
+=>WM: (727: I2 ^oview O1)
+=>WM: (726: I2 ^tview T1)
+=>WM: (725: R4 ^tr_stopper_cl_ha -1)
+=>WM: (724: R4 ^tr_stopper_cl_di -1)
+=>WM: (723: R4 ^tr_stopper_cl_he -1)
+=>WM: (722: R4 ^tr_stopper_cl_sp -1)
+=>WM: (721: R4 ^tr_stopper_di_cl -1)
+=>WM: (720: R4 ^tr_stopper_di_ha -1)
+=>WM: (719: R4 ^tr_stopper_di_he -1)
+=>WM: (718: R4 ^tr_stopper_di_sp -1)
+=>WM: (717: R4 ^tr_stopper_he_cl -1)
+=>WM: (716: R4 ^tr_stopper_he_di -1)
+=>WM: (715: R4 ^tr_stopper_he_ha -1)
+=>WM: (714: R4 ^tr_stopper_he_sp -1)
+=>WM: (713: R4 ^tr_stopper_sp_cl -1)
+=>WM: (712: R4 ^tr_stopper_sp_di -1)
+=>WM: (711: R4 ^tr_stopper_sp_he -1)
+=>WM: (710: R4 ^tr_stopper_sp_ha -1)
+=>WM: (709: R4 ^losers_cl_ha -1)
+=>WM: (708: R4 ^losers_cl_di -1)
+=>WM: (707: R4 ^losers_cl_he -1)
+=>WM: (706: R4 ^losers_cl_sp -1)
+=>WM: (705: R4 ^losers_di_ha -1)
+=>WM: (704: R4 ^losers_di_cl -1)
+=>WM: (703: R4 ^losers_di_he -1)
+=>WM: (702: R4 ^losers_di_sp -1)
+=>WM: (701: R4 ^losers_he_ha -1)
+=>WM: (700: R4 ^losers_he_cl -1)
+=>WM: (699: R4 ^losers_he_di -1)
+=>WM: (698: R4 ^losers_he_sp -1)
+=>WM: (697: R4 ^losers_sp_ha -1)
+=>WM: (696: R4 ^losers_sp_cl -1)
+=>WM: (695: R4 ^losers_sp_di -1)
+=>WM: (694: R4 ^losers_sp_he -1)
+=>WM: (693: R4 ^dp_cl_ha -1)
+=>WM: (692: R4 ^dp_cl_di -1)
+=>WM: (691: R4 ^dp_cl_he -1)
+=>WM: (690: R4 ^dp_cl_sp -1)
+=>WM: (689: R4 ^dp_di_ha -1)
+=>WM: (688: R4 ^dp_di_cl -1)
+=>WM: (687: R4 ^dp_di_he -1)
+=>WM: (686: R4 ^dp_di_sp -1)
+=>WM: (685: R4 ^dp_he_ha -1)
+=>WM: (684: R4 ^dp_he_cl -1)
+=>WM: (683: R4 ^dp_he_di -1)
+=>WM: (682: R4 ^dp_he_sp -1)
+=>WM: (681: R4 ^dp_sp_ha -1)
+=>WM: (680: R4 ^dp_sp_cl -1)
+=>WM: (679: R4 ^dp_sp_di -1)
+=>WM: (678: R4 ^dp_sp_he -1)
+=>WM: (677: C7 ^unlos_high 50.)
+=>WM: (676: C7 ^unlos_low -1.)
+=>WM: (675: C7 ^quality -1.)
+=>WM: (674: C7 ^stopper -1.)
+=>WM: (673: C7 ^intermediate_high 50.)
+=>WM: (672: C7 ^intermediate_low -1.)
+=>WM: (671: C7 ^biddable -1)
+=>WM: (670: C7 ^shortest -1)
+=>WM: (669: C7 ^longest -1)
+=>WM: (668: C7 ^num_high 14)
+=>WM: (667: C7 ^num_low -1)
+=>WM: (666: C7 ^rkcb -1)
+=>WM: (665: C7 ^ten -1)
+=>WM: (664: C7 ^jack -1)
+=>WM: (663: C7 ^queen -1)
+=>WM: (662: C7 ^king -1)
+=>WM: (661: C7 ^ace -1)
+=>WM: (660: C7 ^honors_high 50)
+=>WM: (659: C7 ^honors_low -1)
+=>WM: (658: C7 ^hc_high 50)
+=>WM: (657: C7 ^hc_low -1)
+=>WM: (656: C7 ^controls_high 50)
+=>WM: (655: C7 ^controls_low -1)
+=>WM: (654: C7 ^hcp_high 23)
+=>WM: (653: C7 ^hcp_low -1)
+=>WM: (652: R4 ^club C7)
+=>WM: (651: D4 ^unlos_high 50.)
+=>WM: (650: D4 ^unlos_low -1.)
+=>WM: (649: D4 ^quality -1.)
+=>WM: (648: D4 ^stopper -1.)
+=>WM: (647: D4 ^intermediate_high 50.)
+=>WM: (646: D4 ^intermediate_low -1.)
+=>WM: (645: D4 ^biddable -1)
+=>WM: (644: D4 ^shortest -1)
+=>WM: (643: D4 ^longest -1)
+=>WM: (642: D4 ^num_high 14)
+=>WM: (641: D4 ^num_low -1)
+=>WM: (640: D4 ^rkcb -1)
+=>WM: (639: D4 ^ten -1)
+=>WM: (638: D4 ^jack -1)
+=>WM: (637: D4 ^queen -1)
+=>WM: (636: D4 ^king -1)
+=>WM: (635: D4 ^ace -1)
+=>WM: (634: D4 ^honors_high 50)
+=>WM: (633: D4 ^honors_low -1)
+=>WM: (632: D4 ^hc_high 50)
+=>WM: (631: D4 ^hc_low -1)
+=>WM: (630: D4 ^controls_high 50)
+=>WM: (629: D4 ^controls_low -1)
+=>WM: (628: D4 ^hcp_high 23)
+=>WM: (627: D4 ^hcp_low -1)
+=>WM: (626: R4 ^dia D4)
+=>WM: (625: H4 ^unlos_high 50.)
+=>WM: (624: H4 ^unlos_low -1.)
+=>WM: (623: H4 ^quality -1.)
+=>WM: (622: H4 ^stopper -1.)
+=>WM: (621: H4 ^intermediate_high 50.)
+=>WM: (620: H4 ^intermediate_low -1.)
+=>WM: (619: H4 ^biddable -1)
+=>WM: (618: H4 ^shortest -1)
+=>WM: (617: H4 ^longest -1)
+=>WM: (616: H4 ^num_high 14)
+=>WM: (615: H4 ^num_low -1)
+=>WM: (614: H4 ^rkcb -1)
+=>WM: (613: H4 ^ten -1)
+=>WM: (612: H4 ^jack -1)
+=>WM: (611: H4 ^queen -1)
+=>WM: (610: H4 ^king -1)
+=>WM: (609: H4 ^ace -1)
+=>WM: (608: H4 ^honors_high 50)
+=>WM: (607: H4 ^honors_low -1)
+=>WM: (606: H4 ^hc_high 50)
+=>WM: (605: H4 ^hc_low -1)
+=>WM: (604: H4 ^controls_high 50)
+=>WM: (603: H4 ^controls_low -1)
+=>WM: (602: H4 ^hcp_high 23)
+=>WM: (601: H4 ^hcp_low -1)
+=>WM: (600: R4 ^heart H4)
+=>WM: (599: S8 ^unlos_high 50.)
+=>WM: (598: S8 ^unlos_low -1.)
+=>WM: (597: S8 ^quality -1.)
+=>WM: (596: S8 ^stopper -1.)
+=>WM: (595: S8 ^intermediate_high 50.)
+=>WM: (594: S8 ^intermediate_low -1.)
+=>WM: (593: S8 ^biddable -1)
+=>WM: (592: S8 ^shortest -1)
+=>WM: (591: S8 ^longest -1)
+=>WM: (590: S8 ^num_high 50)
+=>WM: (589: S8 ^num_low 5)
+=>WM: (588: S8 ^rkcb -1)
+=>WM: (587: S8 ^ten -1)
+=>WM: (586: S8 ^jack -1)
+=>WM: (585: S8 ^queen -1)
+=>WM: (584: S8 ^king -1)
+=>WM: (583: S8 ^ace -1)
+=>WM: (582: S8 ^honors_high 50)
+=>WM: (581: S8 ^honors_low -1)
+=>WM: (580: S8 ^hc_high 50)
+=>WM: (579: S8 ^hc_low -1)
+=>WM: (578: S8 ^controls_high 50)
+=>WM: (577: S8 ^controls_low -1)
+=>WM: (576: S8 ^hcp_high 23)
+=>WM: (575: S8 ^hcp_low -1)
+=>WM: (574: R4 ^spade S8)
+=>WM: (573: R4 ^ratio_high 50.)
+=>WM: (572: R4 ^ratio_low -1.)
+=>WM: (571: R4 ^lmin_high 50)
+=>WM: (570: R4 ^lmin_low -1)
+=>WM: (569: R4 ^lmaj_high 50)
+=>WM: (568: R4 ^lmaj_low -1)
+=>WM: (567: R4 ^num_suits -1)
+=>WM: (566: R4 ^intermediate_ha_high 50.)
+=>WM: (565: R4 ^intermediate_low -1.)
+=>WM: (564: R4 ^balanced_high 50)
+=>WM: (563: R4 ^balanced_low -1)
+=>WM: (562: R4 ^tens -1)
+=>WM: (561: R4 ^jacks -1)
+=>WM: (560: R4 ^queens -1)
+=>WM: (559: R4 ^kings -1)
+=>WM: (558: R4 ^aces -1)
+=>WM: (557: R4 ^honors_high 50)
+=>WM: (556: R4 ^honors_low -1)
+=>WM: (555: R4 ^hc_high 50)
+=>WM: (554: R4 ^hc_low -1)
+=>WM: (553: R4 ^controls_high 50)
+=>WM: (552: R4 ^controls_low -1)
+=>WM: (551: R4 ^hcp_high 23)
+=>WM: (550: R4 ^hcp_low 11)
+=>WM: (549: I2 ^rview R4)
+=>WM: (548: L1 ^tr_stopper_cl_ha -1)
+=>WM: (547: L1 ^tr_stopper_cl_di -1)
+=>WM: (546: L1 ^tr_stopper_cl_he -1)
+=>WM: (545: L1 ^tr_stopper_cl_sp -1)
+=>WM: (544: L1 ^tr_stopper_di_cl -1)
+=>WM: (543: L1 ^tr_stopper_di_ha -1)
+=>WM: (542: L1 ^tr_stopper_di_he -1)
+=>WM: (541: L1 ^tr_stopper_di_sp -1)
+=>WM: (540: L1 ^tr_stopper_he_cl -1)
+=>WM: (539: L1 ^tr_stopper_he_di -1)
+=>WM: (538: L1 ^tr_stopper_he_ha -1)
+=>WM: (537: L1 ^tr_stopper_he_sp -1)
+=>WM: (536: L1 ^tr_stopper_sp_cl -1)
+=>WM: (535: L1 ^tr_stopper_sp_di -1)
+=>WM: (534: L1 ^tr_stopper_sp_he -1)
+=>WM: (533: L1 ^tr_stopper_sp_ha -1)
+=>WM: (532: L1 ^losers_cl_ha -1)
+=>WM: (531: L1 ^losers_cl_di -1)
+=>WM: (530: L1 ^losers_cl_he -1)
+=>WM: (529: L1 ^losers_cl_sp -1)
+=>WM: (528: L1 ^losers_di_ha -1)
+=>WM: (527: L1 ^losers_di_cl -1)
+=>WM: (526: L1 ^losers_di_he -1)
+=>WM: (525: L1 ^losers_di_sp -1)
+=>WM: (524: L1 ^losers_he_ha -1)
+=>WM: (523: L1 ^losers_he_cl -1)
+=>WM: (522: L1 ^losers_he_di -1)
+=>WM: (521: L1 ^losers_he_sp -1)
+=>WM: (520: L1 ^losers_sp_ha -1)
+=>WM: (519: L1 ^losers_sp_cl -1)
+=>WM: (518: L1 ^losers_sp_di -1)
+=>WM: (517: L1 ^losers_sp_he -1)
+=>WM: (516: L1 ^dp_cl_ha -1)
+=>WM: (515: L1 ^dp_cl_di -1)
+=>WM: (514: L1 ^dp_cl_he -1)
+=>WM: (513: L1 ^dp_cl_sp -1)
+=>WM: (512: L1 ^dp_di_ha -1)
+=>WM: (511: L1 ^dp_di_cl -1)
+=>WM: (510: L1 ^dp_di_he -1)
+=>WM: (509: L1 ^dp_di_sp -1)
+=>WM: (508: L1 ^dp_he_ha -1)
+=>WM: (507: L1 ^dp_he_cl -1)
+=>WM: (506: L1 ^dp_he_di -1)
+=>WM: (505: L1 ^dp_he_sp -1)
+=>WM: (504: L1 ^dp_sp_ha -1)
+=>WM: (503: L1 ^dp_sp_cl -1)
+=>WM: (502: L1 ^dp_sp_di -1)
+=>WM: (501: L1 ^dp_sp_he -1)
+=>WM: (500: C6 ^unlos_high 50.)
+=>WM: (499: C6 ^unlos_low -1.)
+=>WM: (498: C6 ^quality -1.)
+=>WM: (497: C6 ^stopper -1.)
+=>WM: (496: C6 ^intermediate_high 50.)
+=>WM: (495: C6 ^intermediate_low -1.)
+=>WM: (494: C6 ^biddable -1)
+=>WM: (493: C6 ^shortest -1)
+=>WM: (492: C6 ^longest -1)
+=>WM: (491: C6 ^num_high 50)
+=>WM: (490: C6 ^num_low -1)
+=>WM: (489: C6 ^rkcb -1)
+=>WM: (488: C6 ^ten -1)
+=>WM: (487: C6 ^jack -1)
+=>WM: (486: C6 ^queen -1)
+=>WM: (485: C6 ^king -1)
+=>WM: (484: C6 ^ace -1)
+=>WM: (483: C6 ^honors_high 50)
+=>WM: (482: C6 ^honors_low -1)
+=>WM: (481: C6 ^hc_high 50)
+=>WM: (480: C6 ^hc_low -1)
+=>WM: (479: C6 ^controls_high 50)
+=>WM: (478: C6 ^controls_low -1)
+=>WM: (477: C6 ^hcp_high 17)
+=>WM: (476: C6 ^hcp_low -1)
+=>WM: (475: L1 ^club C6)
+=>WM: (474: D3 ^unlos_high 50.)
+=>WM: (473: D3 ^unlos_low -1.)
+=>WM: (472: D3 ^quality -1.)
+=>WM: (471: D3 ^stopper -1.)
+=>WM: (470: D3 ^intermediate_high 50.)
+=>WM: (469: D3 ^intermediate_low -1.)
+=>WM: (468: D3 ^biddable -1)
+=>WM: (467: D3 ^shortest -1)
+=>WM: (466: D3 ^longest -1)
+=>WM: (465: D3 ^num_high 50)
+=>WM: (464: D3 ^num_low -1)
+=>WM: (463: D3 ^rkcb -1)
+=>WM: (462: D3 ^ten -1)
+=>WM: (461: D3 ^jack -1)
+=>WM: (460: D3 ^queen -1)
+=>WM: (459: D3 ^king -1)
+=>WM: (458: D3 ^ace -1)
+=>WM: (457: D3 ^honors_high 50)
+=>WM: (456: D3 ^honors_low -1)
+=>WM: (455: D3 ^hc_high 50)
+=>WM: (454: D3 ^hc_low -1)
+=>WM: (453: D3 ^controls_high 50)
+=>WM: (452: D3 ^controls_low -1)
+=>WM: (451: D3 ^hcp_high 17)
+=>WM: (450: D3 ^hcp_low -1)
+=>WM: (449: L1 ^dia D3)
+=>WM: (448: H3 ^unlos_high 50.)
+=>WM: (447: H3 ^unlos_low -1.)
+=>WM: (446: H3 ^quality -1.)
+=>WM: (445: H3 ^stopper -1.)
+=>WM: (444: H3 ^intermediate_high 50.)
+=>WM: (443: H3 ^intermediate_low -1.)
+=>WM: (442: H3 ^biddable -1)
+=>WM: (441: H3 ^shortest -1)
+=>WM: (440: H3 ^longest -1)
+=>WM: (439: H3 ^num_high 50)
+=>WM: (438: H3 ^num_low -1)
+=>WM: (437: H3 ^rkcb -1)
+=>WM: (436: H3 ^ten -1)
+=>WM: (435: H3 ^jack -1)
+=>WM: (434: H3 ^queen -1)
+=>WM: (433: H3 ^king -1)
+=>WM: (432: H3 ^ace -1)
+=>WM: (431: H3 ^honors_high 50)
+=>WM: (430: H3 ^honors_low -1)
+=>WM: (429: H3 ^hc_high 50)
+=>WM: (428: H3 ^hc_low -1)
+=>WM: (427: H3 ^controls_high 50)
+=>WM: (426: H3 ^controls_low -1)
+=>WM: (425: H3 ^hcp_high 17)
+=>WM: (424: H3 ^hcp_low -1)
+=>WM: (423: L1 ^heart H3)
+=>WM: (422: S7 ^unlos_high 50.)
+=>WM: (421: S7 ^unlos_low -1.)
+=>WM: (420: S7 ^quality -1.)
+=>WM: (419: S7 ^stopper -1.)
+=>WM: (418: S7 ^intermediate_high 50.)
+=>WM: (417: S7 ^intermediate_low -1.)
+=>WM: (416: S7 ^biddable -1)
+=>WM: (415: S7 ^shortest -1)
+=>WM: (414: S7 ^longest -1)
+=>WM: (413: S7 ^num_high 14)
+=>WM: (412: S7 ^num_low -1)
+=>WM: (411: S7 ^rkcb -1)
+=>WM: (410: S7 ^ten -1)
+=>WM: (409: S7 ^jack -1)
+=>WM: (408: S7 ^queen -1)
+=>WM: (407: S7 ^king -1)
+=>WM: (406: S7 ^ace -1)
+=>WM: (405: S7 ^honors_high 50)
+=>WM: (404: S7 ^honors_low -1)
+=>WM: (403: S7 ^hc_high 50)
+=>WM: (402: S7 ^hc_low -1)
+=>WM: (401: S7 ^controls_high 50)
+=>WM: (400: S7 ^controls_low -1)
+=>WM: (399: S7 ^hcp_high 17)
+=>WM: (398: S7 ^hcp_low -1)
+=>WM: (397: L1 ^spade S7)
+=>WM: (396: L1 ^ratio_high 50.)
+=>WM: (395: L1 ^ratio_low -1.)
+=>WM: (394: L1 ^lmin_high 50)
+=>WM: (393: L1 ^lmin_low -1)
+=>WM: (392: L1 ^lmaj_high 50)
+=>WM: (391: L1 ^lmaj_low -1)
+=>WM: (390: L1 ^num_suits -1)
+=>WM: (389: L1 ^intermediate_ha_high 50.)
+=>WM: (388: L1 ^intermediate_low -1.)
+=>WM: (387: L1 ^balanced_high 50)
+=>WM: (386: L1 ^balanced_low -1)
+=>WM: (385: L1 ^tens -1)
+=>WM: (384: L1 ^jacks -1)
+=>WM: (383: L1 ^queens -1)
+=>WM: (382: L1 ^kings -1)
+=>WM: (381: L1 ^aces -1)
+=>WM: (380: L1 ^honors_high 50)
+=>WM: (379: L1 ^honors_low -1)
+=>WM: (378: L1 ^hc_high 50)
+=>WM: (377: L1 ^hc_low -1)
+=>WM: (376: L1 ^controls_high 50)
+=>WM: (375: L1 ^controls_low -1)
+=>WM: (374: L1 ^hcp_high 17)
+=>WM: (373: L1 ^hcp_low -1)
+=>WM: (372: I2 ^lview L1)
+=>WM: (371: P1 ^tr_stopper_cl_ha -1)
+=>WM: (370: P1 ^tr_stopper_cl_di -1)
+=>WM: (369: P1 ^tr_stopper_cl_he -1)
+=>WM: (368: P1 ^tr_stopper_cl_sp -1)
+=>WM: (367: P1 ^tr_stopper_di_cl -1)
+=>WM: (366: P1 ^tr_stopper_di_ha -1)
+=>WM: (365: P1 ^tr_stopper_di_he -1)
+=>WM: (364: P1 ^tr_stopper_di_sp -1)
+=>WM: (363: P1 ^tr_stopper_he_cl -1)
+=>WM: (362: P1 ^tr_stopper_he_di -1)
+=>WM: (361: P1 ^tr_stopper_he_ha -1)
+=>WM: (360: P1 ^tr_stopper_he_sp -1)
+=>WM: (359: P1 ^tr_stopper_sp_cl -1)
+=>WM: (358: P1 ^tr_stopper_sp_di -1)
+=>WM: (357: P1 ^tr_stopper_sp_he -1)
+=>WM: (356: P1 ^tr_stopper_sp_ha -1)
+=>WM: (355: P1 ^losers_cl_ha -1)
+=>WM: (354: P1 ^losers_cl_di -1)
+=>WM: (353: P1 ^losers_cl_he -1)
+=>WM: (352: P1 ^losers_cl_sp -1)
+=>WM: (351: P1 ^losers_di_ha -1)
+=>WM: (350: P1 ^losers_di_cl -1)
+=>WM: (349: P1 ^losers_di_he -1)
+=>WM: (348: P1 ^losers_di_sp -1)
+=>WM: (347: P1 ^losers_he_ha -1)
+=>WM: (346: P1 ^losers_he_cl -1)
+=>WM: (345: P1 ^losers_he_di -1)
+=>WM: (344: P1 ^losers_he_sp -1)
+=>WM: (343: P1 ^losers_sp_ha -1)
+=>WM: (342: P1 ^losers_sp_cl -1)
+=>WM: (341: P1 ^losers_sp_di -1)
+=>WM: (340: P1 ^losers_sp_he -1)
+=>WM: (339: P1 ^dp_cl_ha -1)
+=>WM: (338: P1 ^dp_cl_di -1)
+=>WM: (337: P1 ^dp_cl_he -1)
+=>WM: (336: P1 ^dp_cl_sp -1)
+=>WM: (335: P1 ^dp_di_ha -1)
+=>WM: (334: P1 ^dp_di_cl -1)
+=>WM: (333: P1 ^dp_di_he -1)
+=>WM: (332: P1 ^dp_di_sp -1)
+=>WM: (331: P1 ^dp_he_ha -1)
+=>WM: (330: P1 ^dp_he_cl -1)
+=>WM: (329: P1 ^dp_he_di -1)
+=>WM: (328: P1 ^dp_he_sp -1)
+=>WM: (327: P1 ^dp_sp_ha -1)
+=>WM: (326: P1 ^dp_sp_cl -1)
+=>WM: (325: P1 ^dp_sp_di -1)
+=>WM: (324: P1 ^dp_sp_he -1)
+=>WM: (323: C5 ^unlos_high 50.)
+=>WM: (322: C5 ^unlos_low -1.)
+=>WM: (321: C5 ^quality -1.)
+=>WM: (320: C5 ^stopper -1.)
+=>WM: (319: C5 ^intermediate_high 50.)
+=>WM: (318: C5 ^intermediate_low -1.)
+=>WM: (317: C5 ^biddable -1)
+=>WM: (316: C5 ^shortest -1)
+=>WM: (315: C5 ^longest -1)
+=>WM: (314: C5 ^num_high 50)
+=>WM: (313: C5 ^num_low -1)
+=>WM: (312: C5 ^rkcb -1)
+=>WM: (311: C5 ^ten -1)
+=>WM: (310: C5 ^jack -1)
+=>WM: (309: C5 ^queen -1)
+=>WM: (308: C5 ^king -1)
+=>WM: (307: C5 ^ace -1)
+=>WM: (306: C5 ^honors_high 50)
+=>WM: (305: C5 ^honors_low -1)
+=>WM: (304: C5 ^hc_high 50)
+=>WM: (303: C5 ^hc_low -1)
+=>WM: (302: C5 ^controls_high 50)
+=>WM: (301: C5 ^controls_low -1)
+=>WM: (300: C5 ^hcp_high 17)
+=>WM: (299: C5 ^hcp_low -1)
+=>WM: (298: P1 ^club C5)
+=>WM: (297: D2 ^unlos_high 50.)
+=>WM: (296: D2 ^unlos_low -1.)
+=>WM: (295: D2 ^quality -1.)
+=>WM: (294: D2 ^stopper -1.)
+=>WM: (293: D2 ^intermediate_high 50.)
+=>WM: (292: D2 ^intermediate_low -1.)
+=>WM: (291: D2 ^biddable -1)
+=>WM: (290: D2 ^shortest -1)
+=>WM: (289: D2 ^longest -1)
+=>WM: (288: D2 ^num_high 50)
+=>WM: (287: D2 ^num_low -1)
+=>WM: (286: D2 ^rkcb -1)
+=>WM: (285: D2 ^ten -1)
+=>WM: (284: D2 ^jack -1)
+=>WM: (283: D2 ^queen -1)
+=>WM: (282: D2 ^king -1)
+=>WM: (281: D2 ^ace -1)
+=>WM: (280: D2 ^honors_high 50)
+=>WM: (279: D2 ^honors_low -1)
+=>WM: (278: D2 ^hc_high 50)
+=>WM: (277: D2 ^hc_low -1)
+=>WM: (276: D2 ^controls_high 50)
+=>WM: (275: D2 ^controls_low -1)
+=>WM: (274: D2 ^hcp_high 17)
+=>WM: (273: D2 ^hcp_low -1)
+=>WM: (272: P1 ^dia D2)
+=>WM: (271: H2 ^unlos_high 50.)
+=>WM: (270: H2 ^unlos_low -1.)
+=>WM: (269: H2 ^quality -1.)
+=>WM: (268: H2 ^stopper -1.)
+=>WM: (267: H2 ^intermediate_high 50.)
+=>WM: (266: H2 ^intermediate_low -1.)
+=>WM: (265: H2 ^biddable -1)
+=>WM: (264: H2 ^shortest -1)
+=>WM: (263: H2 ^longest -1)
+=>WM: (262: H2 ^num_high 50)
+=>WM: (261: H2 ^num_low -1)
+=>WM: (260: H2 ^rkcb -1)
+=>WM: (259: H2 ^ten -1)
+=>WM: (258: H2 ^jack -1)
+=>WM: (257: H2 ^queen -1)
+=>WM: (256: H2 ^king -1)
+=>WM: (255: H2 ^ace -1)
+=>WM: (254: H2 ^honors_high 50)
+=>WM: (253: H2 ^honors_low -1)
+=>WM: (252: H2 ^hc_high 50)
+=>WM: (251: H2 ^hc_low -1)
+=>WM: (250: H2 ^controls_high 50)
+=>WM: (249: H2 ^controls_low -1)
+=>WM: (248: H2 ^hcp_high 17)
+=>WM: (247: H2 ^hcp_low -1)
+=>WM: (246: P1 ^heart H2)
+=>WM: (245: S6 ^unlos_high 50.)
+=>WM: (244: S6 ^unlos_low -1.)
+=>WM: (243: S6 ^quality -1.)
+=>WM: (242: S6 ^stopper -1.)
+=>WM: (241: S6 ^intermediate_high 50.)
+=>WM: (240: S6 ^intermediate_low -1.)
+=>WM: (239: S6 ^biddable -1)
+=>WM: (238: S6 ^shortest -1)
+=>WM: (237: S6 ^longest -1)
+=>WM: (236: S6 ^num_high 14)
+=>WM: (235: S6 ^num_low -1)
+=>WM: (234: S6 ^rkcb -1)
+=>WM: (233: S6 ^ten -1)
+=>WM: (232: S6 ^jack -1)
+=>WM: (231: S6 ^queen -1)
+=>WM: (230: S6 ^king -1)
+=>WM: (229: S6 ^ace -1)
+=>WM: (228: S6 ^honors_high 50)
+=>WM: (227: S6 ^honors_low -1)
+=>WM: (226: S6 ^hc_high 50)
+=>WM: (225: S6 ^hc_low -1)
+=>WM: (224: S6 ^controls_high 50)
+=>WM: (223: S6 ^controls_low -1)
+=>WM: (222: S6 ^hcp_high 17)
+=>WM: (221: S6 ^hcp_low -1)
+=>WM: (220: P1 ^spade S6)
+=>WM: (219: P1 ^ratio_high 50.)
+=>WM: (218: P1 ^ratio_low -1.)
+=>WM: (217: P1 ^lmin_high 50)
+=>WM: (216: P1 ^lmin_low -1)
+=>WM: (215: P1 ^lmaj_high 50)
+=>WM: (214: P1 ^lmaj_low -1)
+=>WM: (213: P1 ^num_suits -1)
+=>WM: (212: P1 ^intermediate_ha_high 50.)
+=>WM: (211: P1 ^intermediate_low -1.)
+=>WM: (210: P1 ^balanced_high 50)
+=>WM: (209: P1 ^balanced_low -1)
+=>WM: (208: P1 ^tens -1)
+=>WM: (207: P1 ^jacks -1)
+=>WM: (206: P1 ^queens -1)
+=>WM: (205: P1 ^kings -1)
+=>WM: (204: P1 ^aces -1)
+=>WM: (203: P1 ^honors_high 50)
+=>WM: (202: P1 ^honors_low -1)
+=>WM: (201: P1 ^hc_high 50)
+=>WM: (200: P1 ^hc_low -1)
+=>WM: (199: P1 ^controls_high 50)
+=>WM: (198: P1 ^controls_low -1)
+=>WM: (197: P1 ^hcp_high 17)
+=>WM: (196: P1 ^hcp_low -1)
+=>WM: (195: I2 ^pview P1)
+=>WM: (194: M1 ^tr_stopper_cl_ha 0)
+=>WM: (193: M1 ^tr_stopper_cl_di 1)
+=>WM: (192: M1 ^tr_stopper_cl_he 1)
+=>WM: (191: M1 ^tr_stopper_cl_sp 3)
+=>WM: (190: M1 ^tr_stopper_di_cl 2)
+=>WM: (189: M1 ^tr_stopper_di_ha 0)
+=>WM: (188: M1 ^tr_stopper_di_he 1)
+=>WM: (187: M1 ^tr_stopper_di_sp 3)
+=>WM: (186: M1 ^tr_stopper_he_cl 2)
+=>WM: (185: M1 ^tr_stopper_he_di 1)
+=>WM: (184: M1 ^tr_stopper_he_ha 0)
+=>WM: (183: M1 ^tr_stopper_he_sp 3)
+=>WM: (182: M1 ^tr_stopper_sp_cl 2)
+=>WM: (181: M1 ^tr_stopper_sp_di 1)
+=>WM: (180: M1 ^tr_stopper_sp_he 1)
+=>WM: (179: M1 ^tr_stopper_sp_ha 0)
+=>WM: (178: M1 ^losers_cl_ha 0)
+=>WM: (177: M1 ^losers_cl_di 0)
+=>WM: (176: M1 ^losers_cl_he 0)
+=>WM: (175: M1 ^losers_cl_sp 0)
+=>WM: (174: M1 ^losers_di_ha 0)
+=>WM: (173: M1 ^losers_di_cl 0)
+=>WM: (172: M1 ^losers_di_he 0)
+=>WM: (171: M1 ^losers_di_sp 0)
+=>WM: (170: M1 ^losers_he_ha 0)
+=>WM: (169: M1 ^losers_he_cl 0)
+=>WM: (168: M1 ^losers_he_di 0)
+=>WM: (167: M1 ^losers_he_sp 0)
+=>WM: (166: M1 ^losers_sp_ha 0)
+=>WM: (165: M1 ^losers_sp_cl 0)
+=>WM: (164: M1 ^losers_sp_di 0)
+=>WM: (163: M1 ^losers_sp_he 0)
+=>WM: (162: M1 ^dp_cl_ha 0)
+=>WM: (161: M1 ^dp_cl_di 0)
+=>WM: (160: M1 ^dp_cl_he 0)
+=>WM: (159: M1 ^dp_cl_sp 0)
+=>WM: (158: M1 ^dp_di_ha 2)
+=>WM: (157: M1 ^dp_di_cl 2)
+=>WM: (156: M1 ^dp_di_he 0)
+=>WM: (155: M1 ^dp_di_sp 0)
+=>WM: (154: M1 ^dp_he_ha 2)
+=>WM: (153: M1 ^dp_he_cl 2)
+=>WM: (152: M1 ^dp_he_di 0)
+=>WM: (151: M1 ^dp_he_sp 0)
+=>WM: (150: M1 ^dp_sp_ha 2)
+=>WM: (149: M1 ^dp_sp_cl 2)
+=>WM: (148: M1 ^dp_sp_di 0)
+=>WM: (147: M1 ^dp_sp_he 0)
+=>WM: (146: C4 ^unlos_high 1.)
+=>WM: (145: C4 ^unlos_low 1.)
+=>WM: (144: C4 ^quality 0.)
+=>WM: (143: C4 ^stopper 0.)
+=>WM: (142: C4 ^intermediate_high 0.)
+=>WM: (141: C4 ^intermediate_low 0.)
+=>WM: (140: C4 ^biddable -3)
+=>WM: (139: C4 ^shortest 1)
+=>WM: (138: C4 ^longest 1)
+=>WM: (137: C4 ^num_high 1)
+=>WM: (136: C4 ^num_low 1)
+=>WM: (135: C4 ^rkcb 5)
+=>WM: (134: C4 ^ten 0)
+=>WM: (133: C4 ^jack 0)
+=>WM: (132: C4 ^queen 0)
+=>WM: (131: C4 ^king 0)
+=>WM: (130: C4 ^ace 0)
+=>WM: (129: C4 ^honors_high 0)
+=>WM: (128: C4 ^honors_low 0)
+=>WM: (127: C4 ^hc_high 0)
+=>WM: (126: C4 ^hc_low 0)
+=>WM: (125: C4 ^controls_high 0)
+=>WM: (124: C4 ^controls_low 0)
+=>WM: (123: C4 ^hcp_high 0)
+=>WM: (122: C4 ^hcp_low 0)
+=>WM: (121: M1 ^club C4)
+=>WM: (120: D1 ^unlos_high 2.)
+=>WM: (119: D1 ^unlos_low 2.)
+=>WM: (118: D1 ^quality 3.)
+=>WM: (117: D1 ^stopper 4.)
+=>WM: (116: D1 ^intermediate_high 1.)
+=>WM: (115: D1 ^intermediate_low 1.)
+=>WM: (114: D1 ^biddable 1)
+=>WM: (113: D1 ^shortest 0)
+=>WM: (112: D1 ^longest 0)
+=>WM: (111: D1 ^num_high 4)
+=>WM: (110: D1 ^num_low 4)
+=>WM: (109: D1 ^rkcb 6)
+=>WM: (108: D1 ^ten 0)
+=>WM: (107: D1 ^jack 0)
+=>WM: (106: D1 ^queen 0)
+=>WM: (105: D1 ^king 1)
+=>WM: (104: D1 ^ace 1)
+=>WM: (103: D1 ^honors_high 2)
+=>WM: (102: D1 ^honors_low 2)
+=>WM: (101: D1 ^hc_high 2)
+=>WM: (100: D1 ^hc_low 2)
+=>WM: (99: D1 ^controls_high 3)
+=>WM: (98: D1 ^controls_low 3)
+=>WM: (97: D1 ^hcp_high 7)
+=>WM: (96: D1 ^hcp_low 7)
+=>WM: (95: M1 ^dia D1)
+=>WM: (94: H1 ^unlos_high 3.5)
+=>WM: (93: H1 ^unlos_low 3.5)
+=>WM: (92: H1 ^quality 0.)
+=>WM: (91: H1 ^stopper 2.)
+=>WM: (90: H1 ^intermediate_high 3.)
+=>WM: (89: H1 ^intermediate_low 3.)
+=>WM: (88: H1 ^biddable 0)
+=>WM: (87: H1 ^shortest 0)
+=>WM: (86: H1 ^longest 1)
+=>WM: (85: H1 ^num_high 4)
+=>WM: (84: H1 ^num_low 4)
+=>WM: (83: H1 ^rkcb 5)
+=>WM: (82: H1 ^ten 1)
+=>WM: (81: H1 ^jack 0)
+=>WM: (80: H1 ^queen 1)
+=>WM: (79: H1 ^king 0)
+=>WM: (78: H1 ^ace 0)
+=>WM: (77: H1 ^honors_high 2)
+=>WM: (76: H1 ^honors_low 2)
+=>WM: (75: H1 ^hc_high 1)
+=>WM: (74: H1 ^hc_low 1)
+=>WM: (73: H1 ^controls_high 0)
+=>WM: (72: H1 ^controls_low 0)
+=>WM: (71: H1 ^hcp_high 2)
+=>WM: (70: H1 ^hcp_low 2)
+=>WM: (69: M1 ^heart H1)
+=>WM: (68: S5 ^unlos_high 3.)
+=>WM: (67: S5 ^unlos_low 3.)
+=>WM: (66: S5 ^quality 0.)
+=>WM: (65: S5 ^stopper 3.)
+=>WM: (64: S5 ^intermediate_high 1.)
+=>WM: (63: S5 ^intermediate_low 1.)
+=>WM: (62: S5 ^biddable 0)
+=>WM: (61: S5 ^shortest 0)
+=>WM: (60: S5 ^longest 1)
+=>WM: (59: S5 ^num_high 4)
+=>WM: (58: S5 ^num_low 4)
+=>WM: (57: S5 ^rkcb 5)
+=>WM: (56: S5 ^ten 0)
+=>WM: (55: S5 ^jack 0)
+=>WM: (54: S5 ^queen 0)
+=>WM: (53: S5 ^king 0)
+=>WM: (52: S5 ^ace 1)
+=>WM: (51: S5 ^honors_high 1)
+=>WM: (50: S5 ^honors_low 1)
+=>WM: (49: S5 ^hc_high 1)
+=>WM: (48: S5 ^hc_low 1)
+=>WM: (47: S5 ^controls_high 2)
+=>WM: (46: S5 ^controls_low 2)
+=>WM: (45: S5 ^hcp_high 4)
+=>WM: (44: S5 ^hcp_low 4)
+=>WM: (43: M1 ^spade S5)
+=>WM: (42: M1 ^ratio_high 0.8461538461538462)
+=>WM: (41: M1 ^ratio_low 0.8461538461538462)
+=>WM: (40: M1 ^lmin_high 4)
+=>WM: (39: M1 ^lmin_low 4)
+=>WM: (38: M1 ^lmaj_high 4)
+=>WM: (37: M1 ^lmaj_low 4)
+=>WM: (36: M1 ^num_suits 3)
+=>WM: (35: M1 ^intermediate_ha_high 5.)
+=>WM: (34: M1 ^intermediate_low 5.)
+=>WM: (33: M1 ^balanced_high 4)
+=>WM: (32: M1 ^balanced_low 4)
+=>WM: (31: M1 ^tens 1)
+=>WM: (30: M1 ^jacks 0)
+=>WM: (29: M1 ^queens 1)
+=>WM: (28: M1 ^kings 1)
+=>WM: (27: M1 ^aces 2)
+=>WM: (26: M1 ^honors_high 5)
+=>WM: (25: M1 ^honors_low 5)
+=>WM: (24: M1 ^hc_high 4)
+=>WM: (23: M1 ^hc_low 4)
+=>WM: (22: M1 ^controls_high 5)
+=>WM: (21: M1 ^controls_low 5)
+=>WM: (20: M1 ^hcp_high 13)
+=>WM: (19: M1 ^hcp_low 13)
+=>WM: (18: I2 ^myview M1)
+
+--- END Input Phase --- 
+
+Soar said:
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing get*input*from*program
+ 15 16 728 727 726 549 372 195 18 -->
+ (S1 ^bidhistory B1 +)
+ (S1 ^oview O1 +)
+ (S1 ^tview T1 +)
+ (S1 ^rview R4 +)
+ (S1 ^lview L1 +)
+ (S1 ^pview P1 +)
+ (S1 ^myview M1 +)
+
+Firing propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+
+Firing elaborate*top-state*top-state
+ 2 -->
+ (S1 ^top-state S1 +)
+ inner elaboration loop at bottom goal.
+=>WM: (739: S1 ^operator O2 +)
+=>WM: (738: S1 ^top-state S1)
+=>WM: (737: O2 ^name initialize-bidder)
+=>WM: (736: S1 ^bidhistory B1)
+=>WM: (735: S1 ^oview O1)
+=>WM: (734: S1 ^tview T1)
+=>WM: (733: S1 ^rview R4)
+=>WM: (732: S1 ^lview L1)
+=>WM: (731: S1 ^pview P1)
+=>WM: (730: S1 ^myview M1)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (740: S1 ^operator O2)
+
+     1:    O: O2 (initialize-bidder)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*initialize-bidder
+ 740 737 -->
+ (N1 ^child 1Mfollowup +  :O )
+ (N1 ^child opening +  :O )
+ (N1 ^status visited +  :O )
+ (N1 ^name top-node +  :O )
+ (S1 ^node N1 +  :O )
+ (S1 ^name bidder +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (746: N1 ^child opening)
+=>WM: (745: N1 ^child 1Mfollowup)
+=>WM: (744: N1 ^status visited)
+=>WM: (743: N1 ^name top-node)
+=>WM: (742: S1 ^node N1)
+=>WM: (741: S1 ^name bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing move*deeper*into*network
+ 741 742 744 746 -->
+ (C8 ^name opening +)
+ (S1 ^node C8 +)
+
+Firing move*deeper*into*network
+ 741 742 744 745 -->
+ (C9 ^name 1Mfollowup +)
+ (S1 ^node C9 +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+	--- Change Working Memory (IE) ---
+=>WM: (750: C9 ^name 1Mfollowup)
+=>WM: (749: S1 ^node C8)
+=>WM: (748: S1 ^node C9)
+=>WM: (747: C8 ^name opening)
+<=WM: (739: S1 ^operator O2 +)
+<=WM: (740: S1 ^operator O2)
+<=WM: (737: O2 ^name initialize-bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening*pattern
+ 741 749 747 -->
+ (C8 ^pattern * +)
+
+Firing expand*1Mfollowup*pattern
+ 741 748 750 -->
+ (C9 ^pattern |PASS 1M *| +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (752: C9 ^pattern |PASS 1M *|)
+=>WM: (751: C8 ^pattern *)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*pattern*check
+ 741 749 751 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+
+Firing propose*pattern*check
+ 741 748 752 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (760: S1 ^operator O4 +)
+=>WM: (759: S1 ^operator O3 +)
+=>WM: (758: O4 ^node-being-checked C9)
+=>WM: (757: O4 ^pattern |PASS 1M *|)
+=>WM: (756: O4 ^name pattern-check-operator)
+=>WM: (755: O3 ^node-being-checked C8)
+=>WM: (754: O3 ^pattern *)
+=>WM: (753: O3 ^name pattern-check-operator)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+--- Input Phase --- 
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (761: S1 ^operator O3)
+
+     2:    O: O3 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 761 753 755 754 747 15 17 -->
+ (P2 ^node C8 +  :O )
+ (P2 ^pattern * +  :O )
+ (I3 ^pattern-check P2 +  :O )
+ (S1 ^node-being-checked C8 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (765: P2 ^node C8)
+=>WM: (764: P2 ^pattern *)
+=>WM: (763: I3 ^pattern-check P2)
+=>WM: (762: S1 ^node-being-checked C8)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands1
+Checking pattern for opening
+Soar said:
+--- Input Phase --- 
+=>WM: (767: P2 ^status complete)
+=>WM: (766: C8 ^pattern-checked false)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 749 751 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+<=WM: (759: S1 ^operator O3 +)
+<=WM: (761: S1 ^operator O3)
+<=WM: (755: O3 ^node-being-checked C8)
+<=WM: (754: O3 ^pattern *)
+<=WM: (753: O3 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (768: S1 ^operator O4)
+
+     3:    O: O4 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 768 756 758 757 750 15 17 -->
+ (P3 ^node C9 +  :O )
+ (P3 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P3 +  :O )
+ (S1 ^node-being-checked C9 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (772: P3 ^node C9)
+=>WM: (771: P3 ^pattern |PASS 1M *|)
+=>WM: (770: I3 ^pattern-check P3)
+=>WM: (769: S1 ^node-being-checked C9)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for 1Mfollowup
+Soar said:
+--- Input Phase --- 
+=>WM: (774: P3 ^status complete)
+=>WM: (773: C9 ^pattern-checked false)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 748 752 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+<=WM: (760: S1 ^operator O4 +)
+<=WM: (768: S1 ^operator O4)
+<=WM: (758: O4 ^node-being-checked C9)
+<=WM: (757: O4 ^pattern |PASS 1M *|)
+<=WM: (756: O4 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (792: S12 ^id world)
+=>WM: (791: S11 ^spatial-scene S12)
+=>WM: (790: S11 ^command C12)
+=>WM: (789: S9 ^svs S11)
+=>WM: (788: S9 ^quiescence t)
+=>WM: (787: S9 ^choices none)
+=>WM: (786: S9 ^impasse no-change)
+=>WM: (785: S9 ^attribute state)
+=>WM: (784: S10 ^result R7)
+=>WM: (783: S10 ^command C11)
+=>WM: (782: S9 ^smem S10)
+=>WM: (781: E2 ^present-id 1)
+=>WM: (780: E2 ^result R6)
+=>WM: (779: E2 ^command C10)
+=>WM: (778: S9 ^epmem E2)
+=>WM: (777: S9 ^reward-link R5)
+=>WM: (776: S9 ^superstate S1)
+=>WM: (775: S9 ^type state)
+
+     4:    ==>S: S9 (state no-change)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (IE) For State At Depth 2 ---
+
+--- Inner Elaboration Phase, active level 2 (S9) ---
+
+Firing elaborate*state*top-state
+ (776: S9 ^superstate S1)
+ 738 -->
+ (S9 ^top-state S1 +)
+
+Firing propose*pass*if*no*change
+ (788: S9 ^quiescence t)
+ (786: S9 ^impasse no-change)
+ (785: S9 ^attribute state)
+ -->
+ (O5 ^bid PASS +)
+ (O5 ^name suggest-pass-bid +)
+ (S9 ^operator O5 +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (796: S9 ^operator O5 +)
+=>WM: (795: O5 ^bid PASS)
+=>WM: (794: O5 ^name suggest-pass-bid)
+=>WM: (793: S9 ^top-state S1)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+--- Input Phase --- 
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (797: S9 ^operator O5)
+
+     5:       O: O5 (suggest-pass-bid)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 2 ---
+
+--- Inner Elaboration Phase, active level 2 (S9) ---
+
+Firing apply*pass*if*no*change
+ (797: S9 ^operator O5)
+ (794: O5 ^name suggest-pass-bid)
+ (795: O5 ^bid PASS)
+ (776: S9 ^superstate S1)
+ 15 17 -->
+
+ The bid selected is PASS  (B2 ^meaning M2 +  :O )
+ (B2 ^short-form PASS +  :O )
+ (I3 ^bid B2 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (800: B2 ^meaning M2)
+=>WM: (799: B2 ^short-form PASS)
+=>WM: (798: I3 ^bid B2)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Updates sent by SOAR:
+Updates sent by SOAR:
+Updates sent by SOAR:
+east made bid PASS
+
+
+Asking south for bid
+Soar said:
+--- Input Phase --- 
+=>WM: (729: B1 ^last-bid PASS)
+=>WM: (728: I2 ^bidhistory B1)
+=>WM: (727: I2 ^oview O1)
+=>WM: (726: I2 ^tview T1)
+=>WM: (725: R4 ^tr_stopper_cl_ha -1)
+=>WM: (724: R4 ^tr_stopper_cl_di -1)
+=>WM: (723: R4 ^tr_stopper_cl_he -1)
+=>WM: (722: R4 ^tr_stopper_cl_sp -1)
+=>WM: (721: R4 ^tr_stopper_di_cl -1)
+=>WM: (720: R4 ^tr_stopper_di_ha -1)
+=>WM: (719: R4 ^tr_stopper_di_he -1)
+=>WM: (718: R4 ^tr_stopper_di_sp -1)
+=>WM: (717: R4 ^tr_stopper_he_cl -1)
+=>WM: (716: R4 ^tr_stopper_he_di -1)
+=>WM: (715: R4 ^tr_stopper_he_ha -1)
+=>WM: (714: R4 ^tr_stopper_he_sp -1)
+=>WM: (713: R4 ^tr_stopper_sp_cl -1)
+=>WM: (712: R4 ^tr_stopper_sp_di -1)
+=>WM: (711: R4 ^tr_stopper_sp_he -1)
+=>WM: (710: R4 ^tr_stopper_sp_ha -1)
+=>WM: (709: R4 ^losers_cl_ha -1)
+=>WM: (708: R4 ^losers_cl_di -1)
+=>WM: (707: R4 ^losers_cl_he -1)
+=>WM: (706: R4 ^losers_cl_sp -1)
+=>WM: (705: R4 ^losers_di_ha -1)
+=>WM: (704: R4 ^losers_di_cl -1)
+=>WM: (703: R4 ^losers_di_he -1)
+=>WM: (702: R4 ^losers_di_sp -1)
+=>WM: (701: R4 ^losers_he_ha -1)
+=>WM: (700: R4 ^losers_he_cl -1)
+=>WM: (699: R4 ^losers_he_di -1)
+=>WM: (698: R4 ^losers_he_sp -1)
+=>WM: (697: R4 ^losers_sp_ha -1)
+=>WM: (696: R4 ^losers_sp_cl -1)
+=>WM: (695: R4 ^losers_sp_di -1)
+=>WM: (694: R4 ^losers_sp_he -1)
+=>WM: (693: R4 ^dp_cl_ha -1)
+=>WM: (692: R4 ^dp_cl_di -1)
+=>WM: (691: R4 ^dp_cl_he -1)
+=>WM: (690: R4 ^dp_cl_sp -1)
+=>WM: (689: R4 ^dp_di_ha -1)
+=>WM: (688: R4 ^dp_di_cl -1)
+=>WM: (687: R4 ^dp_di_he -1)
+=>WM: (686: R4 ^dp_di_sp -1)
+=>WM: (685: R4 ^dp_he_ha -1)
+=>WM: (684: R4 ^dp_he_cl -1)
+=>WM: (683: R4 ^dp_he_di -1)
+=>WM: (682: R4 ^dp_he_sp -1)
+=>WM: (681: R4 ^dp_sp_ha -1)
+=>WM: (680: R4 ^dp_sp_cl -1)
+=>WM: (679: R4 ^dp_sp_di -1)
+=>WM: (678: R4 ^dp_sp_he -1)
+=>WM: (677: C7 ^unlos_high 50.)
+=>WM: (676: C7 ^unlos_low -1.)
+=>WM: (675: C7 ^quality -1.)
+=>WM: (674: C7 ^stopper -1.)
+=>WM: (673: C7 ^intermediate_high 50.)
+=>WM: (672: C7 ^intermediate_low -1.)
+=>WM: (671: C7 ^biddable -1)
+=>WM: (670: C7 ^shortest -1)
+=>WM: (669: C7 ^longest -1)
+=>WM: (668: C7 ^num_high 50)
+=>WM: (667: C7 ^num_low -1)
+=>WM: (666: C7 ^rkcb -1)
+=>WM: (665: C7 ^ten -1)
+=>WM: (664: C7 ^jack -1)
+=>WM: (663: C7 ^queen -1)
+=>WM: (662: C7 ^king -1)
+=>WM: (661: C7 ^ace -1)
+=>WM: (660: C7 ^honors_high 50)
+=>WM: (659: C7 ^honors_low -1)
+=>WM: (658: C7 ^hc_high 50)
+=>WM: (657: C7 ^hc_low -1)
+=>WM: (656: C7 ^controls_high 50)
+=>WM: (655: C7 ^controls_low -1)
+=>WM: (654: C7 ^hcp_high 27)
+=>WM: (653: C7 ^hcp_low -1)
+=>WM: (652: R4 ^club C7)
+=>WM: (651: D4 ^unlos_high 50.)
+=>WM: (650: D4 ^unlos_low -1.)
+=>WM: (649: D4 ^quality -1.)
+=>WM: (648: D4 ^stopper -1.)
+=>WM: (647: D4 ^intermediate_high 50.)
+=>WM: (646: D4 ^intermediate_low -1.)
+=>WM: (645: D4 ^biddable -1)
+=>WM: (644: D4 ^shortest -1)
+=>WM: (643: D4 ^longest -1)
+=>WM: (642: D4 ^num_high 50)
+=>WM: (641: D4 ^num_low -1)
+=>WM: (640: D4 ^rkcb -1)
+=>WM: (639: D4 ^ten -1)
+=>WM: (638: D4 ^jack -1)
+=>WM: (637: D4 ^queen -1)
+=>WM: (636: D4 ^king -1)
+=>WM: (635: D4 ^ace -1)
+=>WM: (634: D4 ^honors_high 50)
+=>WM: (633: D4 ^honors_low -1)
+=>WM: (632: D4 ^hc_high 50)
+=>WM: (631: D4 ^hc_low -1)
+=>WM: (630: D4 ^controls_high 50)
+=>WM: (629: D4 ^controls_low -1)
+=>WM: (628: D4 ^hcp_high 27)
+=>WM: (627: D4 ^hcp_low -1)
+=>WM: (626: R4 ^dia D4)
+=>WM: (625: H4 ^unlos_high 50.)
+=>WM: (624: H4 ^unlos_low -1.)
+=>WM: (623: H4 ^quality -1.)
+=>WM: (622: H4 ^stopper -1.)
+=>WM: (621: H4 ^intermediate_high 50.)
+=>WM: (620: H4 ^intermediate_low -1.)
+=>WM: (619: H4 ^biddable -1)
+=>WM: (618: H4 ^shortest -1)
+=>WM: (617: H4 ^longest -1)
+=>WM: (616: H4 ^num_high 50)
+=>WM: (615: H4 ^num_low -1)
+=>WM: (614: H4 ^rkcb -1)
+=>WM: (613: H4 ^ten -1)
+=>WM: (612: H4 ^jack -1)
+=>WM: (611: H4 ^queen -1)
+=>WM: (610: H4 ^king -1)
+=>WM: (609: H4 ^ace -1)
+=>WM: (608: H4 ^honors_high 50)
+=>WM: (607: H4 ^honors_low -1)
+=>WM: (606: H4 ^hc_high 50)
+=>WM: (605: H4 ^hc_low -1)
+=>WM: (604: H4 ^controls_high 50)
+=>WM: (603: H4 ^controls_low -1)
+=>WM: (602: H4 ^hcp_high 27)
+=>WM: (601: H4 ^hcp_low -1)
+=>WM: (600: R4 ^heart H4)
+=>WM: (599: S8 ^unlos_high 50.)
+=>WM: (598: S8 ^unlos_low -1.)
+=>WM: (597: S8 ^quality -1.)
+=>WM: (596: S8 ^stopper -1.)
+=>WM: (595: S8 ^intermediate_high 50.)
+=>WM: (594: S8 ^intermediate_low -1.)
+=>WM: (593: S8 ^biddable -1)
+=>WM: (592: S8 ^shortest -1)
+=>WM: (591: S8 ^longest -1)
+=>WM: (590: S8 ^num_high 14)
+=>WM: (589: S8 ^num_low -1)
+=>WM: (588: S8 ^rkcb -1)
+=>WM: (587: S8 ^ten -1)
+=>WM: (586: S8 ^jack -1)
+=>WM: (585: S8 ^queen -1)
+=>WM: (584: S8 ^king -1)
+=>WM: (583: S8 ^ace -1)
+=>WM: (582: S8 ^honors_high 50)
+=>WM: (581: S8 ^honors_low -1)
+=>WM: (580: S8 ^hc_high 50)
+=>WM: (579: S8 ^hc_low -1)
+=>WM: (578: S8 ^controls_high 50)
+=>WM: (577: S8 ^controls_low -1)
+=>WM: (576: S8 ^hcp_high 27)
+=>WM: (575: S8 ^hcp_low -1)
+=>WM: (574: R4 ^spade S8)
+=>WM: (573: R4 ^ratio_high 50.)
+=>WM: (572: R4 ^ratio_low -1.)
+=>WM: (571: R4 ^lmin_high 50)
+=>WM: (570: R4 ^lmin_low -1)
+=>WM: (569: R4 ^lmaj_high 50)
+=>WM: (568: R4 ^lmaj_low -1)
+=>WM: (567: R4 ^num_suits -1)
+=>WM: (566: R4 ^intermediate_ha_high 50.)
+=>WM: (565: R4 ^intermediate_low -1.)
+=>WM: (564: R4 ^balanced_high 50)
+=>WM: (563: R4 ^balanced_low -1)
+=>WM: (562: R4 ^tens -1)
+=>WM: (561: R4 ^jacks -1)
+=>WM: (560: R4 ^queens -1)
+=>WM: (559: R4 ^kings -1)
+=>WM: (558: R4 ^aces -1)
+=>WM: (557: R4 ^honors_high 50)
+=>WM: (556: R4 ^honors_low -1)
+=>WM: (555: R4 ^hc_high 50)
+=>WM: (554: R4 ^hc_low -1)
+=>WM: (553: R4 ^controls_high 50)
+=>WM: (552: R4 ^controls_low -1)
+=>WM: (551: R4 ^hcp_high 27)
+=>WM: (550: R4 ^hcp_low -1)
+=>WM: (549: I2 ^rview R4)
+=>WM: (548: L1 ^tr_stopper_cl_ha -1)
+=>WM: (547: L1 ^tr_stopper_cl_di -1)
+=>WM: (546: L1 ^tr_stopper_cl_he -1)
+=>WM: (545: L1 ^tr_stopper_cl_sp -1)
+=>WM: (544: L1 ^tr_stopper_di_cl -1)
+=>WM: (543: L1 ^tr_stopper_di_ha -1)
+=>WM: (542: L1 ^tr_stopper_di_he -1)
+=>WM: (541: L1 ^tr_stopper_di_sp -1)
+=>WM: (540: L1 ^tr_stopper_he_cl -1)
+=>WM: (539: L1 ^tr_stopper_he_di -1)
+=>WM: (538: L1 ^tr_stopper_he_ha -1)
+=>WM: (537: L1 ^tr_stopper_he_sp -1)
+=>WM: (536: L1 ^tr_stopper_sp_cl -1)
+=>WM: (535: L1 ^tr_stopper_sp_di -1)
+=>WM: (534: L1 ^tr_stopper_sp_he -1)
+=>WM: (533: L1 ^tr_stopper_sp_ha -1)
+=>WM: (532: L1 ^losers_cl_ha -1)
+=>WM: (531: L1 ^losers_cl_di -1)
+=>WM: (530: L1 ^losers_cl_he -1)
+=>WM: (529: L1 ^losers_cl_sp -1)
+=>WM: (528: L1 ^losers_di_ha -1)
+=>WM: (527: L1 ^losers_di_cl -1)
+=>WM: (526: L1 ^losers_di_he -1)
+=>WM: (525: L1 ^losers_di_sp -1)
+=>WM: (524: L1 ^losers_he_ha -1)
+=>WM: (523: L1 ^losers_he_cl -1)
+=>WM: (522: L1 ^losers_he_di -1)
+=>WM: (521: L1 ^losers_he_sp -1)
+=>WM: (520: L1 ^losers_sp_ha -1)
+=>WM: (519: L1 ^losers_sp_cl -1)
+=>WM: (518: L1 ^losers_sp_di -1)
+=>WM: (517: L1 ^losers_sp_he -1)
+=>WM: (516: L1 ^dp_cl_ha -1)
+=>WM: (515: L1 ^dp_cl_di -1)
+=>WM: (514: L1 ^dp_cl_he -1)
+=>WM: (513: L1 ^dp_cl_sp -1)
+=>WM: (512: L1 ^dp_di_ha -1)
+=>WM: (511: L1 ^dp_di_cl -1)
+=>WM: (510: L1 ^dp_di_he -1)
+=>WM: (509: L1 ^dp_di_sp -1)
+=>WM: (508: L1 ^dp_he_ha -1)
+=>WM: (507: L1 ^dp_he_cl -1)
+=>WM: (506: L1 ^dp_he_di -1)
+=>WM: (505: L1 ^dp_he_sp -1)
+=>WM: (504: L1 ^dp_sp_ha -1)
+=>WM: (503: L1 ^dp_sp_cl -1)
+=>WM: (502: L1 ^dp_sp_di -1)
+=>WM: (501: L1 ^dp_sp_he -1)
+=>WM: (500: C6 ^unlos_high 50.)
+=>WM: (499: C6 ^unlos_low -1.)
+=>WM: (498: C6 ^quality -1.)
+=>WM: (497: C6 ^stopper -1.)
+=>WM: (496: C6 ^intermediate_high 50.)
+=>WM: (495: C6 ^intermediate_low -1.)
+=>WM: (494: C6 ^biddable -1)
+=>WM: (493: C6 ^shortest -1)
+=>WM: (492: C6 ^longest -1)
+=>WM: (491: C6 ^num_high 50)
+=>WM: (490: C6 ^num_low -1)
+=>WM: (489: C6 ^rkcb -1)
+=>WM: (488: C6 ^ten -1)
+=>WM: (487: C6 ^jack -1)
+=>WM: (486: C6 ^queen -1)
+=>WM: (485: C6 ^king -1)
+=>WM: (484: C6 ^ace -1)
+=>WM: (483: C6 ^honors_high 50)
+=>WM: (482: C6 ^honors_low -1)
+=>WM: (481: C6 ^hc_high 50)
+=>WM: (480: C6 ^hc_low -1)
+=>WM: (479: C6 ^controls_high 50)
+=>WM: (478: C6 ^controls_low -1)
+=>WM: (477: C6 ^hcp_high 27)
+=>WM: (476: C6 ^hcp_low -1)
+=>WM: (475: L1 ^club C6)
+=>WM: (474: D3 ^unlos_high 50.)
+=>WM: (473: D3 ^unlos_low -1.)
+=>WM: (472: D3 ^quality -1.)
+=>WM: (471: D3 ^stopper -1.)
+=>WM: (470: D3 ^intermediate_high 50.)
+=>WM: (469: D3 ^intermediate_low -1.)
+=>WM: (468: D3 ^biddable -1)
+=>WM: (467: D3 ^shortest -1)
+=>WM: (466: D3 ^longest -1)
+=>WM: (465: D3 ^num_high 50)
+=>WM: (464: D3 ^num_low -1)
+=>WM: (463: D3 ^rkcb -1)
+=>WM: (462: D3 ^ten -1)
+=>WM: (461: D3 ^jack -1)
+=>WM: (460: D3 ^queen -1)
+=>WM: (459: D3 ^king -1)
+=>WM: (458: D3 ^ace -1)
+=>WM: (457: D3 ^honors_high 50)
+=>WM: (456: D3 ^honors_low -1)
+=>WM: (455: D3 ^hc_high 50)
+=>WM: (454: D3 ^hc_low -1)
+=>WM: (453: D3 ^controls_high 50)
+=>WM: (452: D3 ^controls_low -1)
+=>WM: (451: D3 ^hcp_high 27)
+=>WM: (450: D3 ^hcp_low -1)
+=>WM: (449: L1 ^dia D3)
+=>WM: (448: H3 ^unlos_high 50.)
+=>WM: (447: H3 ^unlos_low -1.)
+=>WM: (446: H3 ^quality -1.)
+=>WM: (445: H3 ^stopper -1.)
+=>WM: (444: H3 ^intermediate_high 50.)
+=>WM: (443: H3 ^intermediate_low -1.)
+=>WM: (442: H3 ^biddable -1)
+=>WM: (441: H3 ^shortest -1)
+=>WM: (440: H3 ^longest -1)
+=>WM: (439: H3 ^num_high 50)
+=>WM: (438: H3 ^num_low -1)
+=>WM: (437: H3 ^rkcb -1)
+=>WM: (436: H3 ^ten -1)
+=>WM: (435: H3 ^jack -1)
+=>WM: (434: H3 ^queen -1)
+=>WM: (433: H3 ^king -1)
+=>WM: (432: H3 ^ace -1)
+=>WM: (431: H3 ^honors_high 50)
+=>WM: (430: H3 ^honors_low -1)
+=>WM: (429: H3 ^hc_high 50)
+=>WM: (428: H3 ^hc_low -1)
+=>WM: (427: H3 ^controls_high 50)
+=>WM: (426: H3 ^controls_low -1)
+=>WM: (425: H3 ^hcp_high 27)
+=>WM: (424: H3 ^hcp_low -1)
+=>WM: (423: L1 ^heart H3)
+=>WM: (422: S7 ^unlos_high 50.)
+=>WM: (421: S7 ^unlos_low -1.)
+=>WM: (420: S7 ^quality -1.)
+=>WM: (419: S7 ^stopper -1.)
+=>WM: (418: S7 ^intermediate_high 50.)
+=>WM: (417: S7 ^intermediate_low -1.)
+=>WM: (416: S7 ^biddable -1)
+=>WM: (415: S7 ^shortest -1)
+=>WM: (414: S7 ^longest -1)
+=>WM: (413: S7 ^num_high 14)
+=>WM: (412: S7 ^num_low -1)
+=>WM: (411: S7 ^rkcb -1)
+=>WM: (410: S7 ^ten -1)
+=>WM: (409: S7 ^jack -1)
+=>WM: (408: S7 ^queen -1)
+=>WM: (407: S7 ^king -1)
+=>WM: (406: S7 ^ace -1)
+=>WM: (405: S7 ^honors_high 50)
+=>WM: (404: S7 ^honors_low -1)
+=>WM: (403: S7 ^hc_high 50)
+=>WM: (402: S7 ^hc_low -1)
+=>WM: (401: S7 ^controls_high 50)
+=>WM: (400: S7 ^controls_low -1)
+=>WM: (399: S7 ^hcp_high 27)
+=>WM: (398: S7 ^hcp_low -1)
+=>WM: (397: L1 ^spade S7)
+=>WM: (396: L1 ^ratio_high 50.)
+=>WM: (395: L1 ^ratio_low -1.)
+=>WM: (394: L1 ^lmin_high 50)
+=>WM: (393: L1 ^lmin_low -1)
+=>WM: (392: L1 ^lmaj_high 50)
+=>WM: (391: L1 ^lmaj_low -1)
+=>WM: (390: L1 ^num_suits -1)
+=>WM: (389: L1 ^intermediate_ha_high 50.)
+=>WM: (388: L1 ^intermediate_low -1.)
+=>WM: (387: L1 ^balanced_high 50)
+=>WM: (386: L1 ^balanced_low -1)
+=>WM: (385: L1 ^tens -1)
+=>WM: (384: L1 ^jacks -1)
+=>WM: (383: L1 ^queens -1)
+=>WM: (382: L1 ^kings -1)
+=>WM: (381: L1 ^aces -1)
+=>WM: (380: L1 ^honors_high 50)
+=>WM: (379: L1 ^honors_low -1)
+=>WM: (378: L1 ^hc_high 50)
+=>WM: (377: L1 ^hc_low -1)
+=>WM: (376: L1 ^controls_high 50)
+=>WM: (375: L1 ^controls_low -1)
+=>WM: (374: L1 ^hcp_high 27)
+=>WM: (373: L1 ^hcp_low -1)
+=>WM: (372: I2 ^lview L1)
+=>WM: (371: P1 ^tr_stopper_cl_ha -1)
+=>WM: (370: P1 ^tr_stopper_cl_di -1)
+=>WM: (369: P1 ^tr_stopper_cl_he -1)
+=>WM: (368: P1 ^tr_stopper_cl_sp -1)
+=>WM: (367: P1 ^tr_stopper_di_cl -1)
+=>WM: (366: P1 ^tr_stopper_di_ha -1)
+=>WM: (365: P1 ^tr_stopper_di_he -1)
+=>WM: (364: P1 ^tr_stopper_di_sp -1)
+=>WM: (363: P1 ^tr_stopper_he_cl -1)
+=>WM: (362: P1 ^tr_stopper_he_di -1)
+=>WM: (361: P1 ^tr_stopper_he_ha -1)
+=>WM: (360: P1 ^tr_stopper_he_sp -1)
+=>WM: (359: P1 ^tr_stopper_sp_cl -1)
+=>WM: (358: P1 ^tr_stopper_sp_di -1)
+=>WM: (357: P1 ^tr_stopper_sp_he -1)
+=>WM: (356: P1 ^tr_stopper_sp_ha -1)
+=>WM: (355: P1 ^losers_cl_ha -1)
+=>WM: (354: P1 ^losers_cl_di -1)
+=>WM: (353: P1 ^losers_cl_he -1)
+=>WM: (352: P1 ^losers_cl_sp -1)
+=>WM: (351: P1 ^losers_di_ha -1)
+=>WM: (350: P1 ^losers_di_cl -1)
+=>WM: (349: P1 ^losers_di_he -1)
+=>WM: (348: P1 ^losers_di_sp -1)
+=>WM: (347: P1 ^losers_he_ha -1)
+=>WM: (346: P1 ^losers_he_cl -1)
+=>WM: (345: P1 ^losers_he_di -1)
+=>WM: (344: P1 ^losers_he_sp -1)
+=>WM: (343: P1 ^losers_sp_ha -1)
+=>WM: (342: P1 ^losers_sp_cl -1)
+=>WM: (341: P1 ^losers_sp_di -1)
+=>WM: (340: P1 ^losers_sp_he -1)
+=>WM: (339: P1 ^dp_cl_ha -1)
+=>WM: (338: P1 ^dp_cl_di -1)
+=>WM: (337: P1 ^dp_cl_he -1)
+=>WM: (336: P1 ^dp_cl_sp -1)
+=>WM: (335: P1 ^dp_di_ha -1)
+=>WM: (334: P1 ^dp_di_cl -1)
+=>WM: (333: P1 ^dp_di_he -1)
+=>WM: (332: P1 ^dp_di_sp -1)
+=>WM: (331: P1 ^dp_he_ha -1)
+=>WM: (330: P1 ^dp_he_cl -1)
+=>WM: (329: P1 ^dp_he_di -1)
+=>WM: (328: P1 ^dp_he_sp -1)
+=>WM: (327: P1 ^dp_sp_ha -1)
+=>WM: (326: P1 ^dp_sp_cl -1)
+=>WM: (325: P1 ^dp_sp_di -1)
+=>WM: (324: P1 ^dp_sp_he -1)
+=>WM: (323: C5 ^unlos_high 50.)
+=>WM: (322: C5 ^unlos_low -1.)
+=>WM: (321: C5 ^quality -1.)
+=>WM: (320: C5 ^stopper -1.)
+=>WM: (319: C5 ^intermediate_high 50.)
+=>WM: (318: C5 ^intermediate_low -1.)
+=>WM: (317: C5 ^biddable -1)
+=>WM: (316: C5 ^shortest -1)
+=>WM: (315: C5 ^longest -1)
+=>WM: (314: C5 ^num_high 14)
+=>WM: (313: C5 ^num_low -1)
+=>WM: (312: C5 ^rkcb -1)
+=>WM: (311: C5 ^ten -1)
+=>WM: (310: C5 ^jack -1)
+=>WM: (309: C5 ^queen -1)
+=>WM: (308: C5 ^king -1)
+=>WM: (307: C5 ^ace -1)
+=>WM: (306: C5 ^honors_high 50)
+=>WM: (305: C5 ^honors_low -1)
+=>WM: (304: C5 ^hc_high 50)
+=>WM: (303: C5 ^hc_low -1)
+=>WM: (302: C5 ^controls_high 50)
+=>WM: (301: C5 ^controls_low -1)
+=>WM: (300: C5 ^hcp_high 23)
+=>WM: (299: C5 ^hcp_low -1)
+=>WM: (298: P1 ^club C5)
+=>WM: (297: D2 ^unlos_high 50.)
+=>WM: (296: D2 ^unlos_low -1.)
+=>WM: (295: D2 ^quality -1.)
+=>WM: (294: D2 ^stopper -1.)
+=>WM: (293: D2 ^intermediate_high 50.)
+=>WM: (292: D2 ^intermediate_low -1.)
+=>WM: (291: D2 ^biddable -1)
+=>WM: (290: D2 ^shortest -1)
+=>WM: (289: D2 ^longest -1)
+=>WM: (288: D2 ^num_high 14)
+=>WM: (287: D2 ^num_low -1)
+=>WM: (286: D2 ^rkcb -1)
+=>WM: (285: D2 ^ten -1)
+=>WM: (284: D2 ^jack -1)
+=>WM: (283: D2 ^queen -1)
+=>WM: (282: D2 ^king -1)
+=>WM: (281: D2 ^ace -1)
+=>WM: (280: D2 ^honors_high 50)
+=>WM: (279: D2 ^honors_low -1)
+=>WM: (278: D2 ^hc_high 50)
+=>WM: (277: D2 ^hc_low -1)
+=>WM: (276: D2 ^controls_high 50)
+=>WM: (275: D2 ^controls_low -1)
+=>WM: (274: D2 ^hcp_high 23)
+=>WM: (273: D2 ^hcp_low -1)
+=>WM: (272: P1 ^dia D2)
+=>WM: (271: H2 ^unlos_high 50.)
+=>WM: (270: H2 ^unlos_low -1.)
+=>WM: (269: H2 ^quality -1.)
+=>WM: (268: H2 ^stopper -1.)
+=>WM: (267: H2 ^intermediate_high 50.)
+=>WM: (266: H2 ^intermediate_low -1.)
+=>WM: (265: H2 ^biddable -1)
+=>WM: (264: H2 ^shortest -1)
+=>WM: (263: H2 ^longest -1)
+=>WM: (262: H2 ^num_high 14)
+=>WM: (261: H2 ^num_low -1)
+=>WM: (260: H2 ^rkcb -1)
+=>WM: (259: H2 ^ten -1)
+=>WM: (258: H2 ^jack -1)
+=>WM: (257: H2 ^queen -1)
+=>WM: (256: H2 ^king -1)
+=>WM: (255: H2 ^ace -1)
+=>WM: (254: H2 ^honors_high 50)
+=>WM: (253: H2 ^honors_low -1)
+=>WM: (252: H2 ^hc_high 50)
+=>WM: (251: H2 ^hc_low -1)
+=>WM: (250: H2 ^controls_high 50)
+=>WM: (249: H2 ^controls_low -1)
+=>WM: (248: H2 ^hcp_high 23)
+=>WM: (247: H2 ^hcp_low -1)
+=>WM: (246: P1 ^heart H2)
+=>WM: (245: S6 ^unlos_high 50.)
+=>WM: (244: S6 ^unlos_low -1.)
+=>WM: (243: S6 ^quality -1.)
+=>WM: (242: S6 ^stopper -1.)
+=>WM: (241: S6 ^intermediate_high 50.)
+=>WM: (240: S6 ^intermediate_low -1.)
+=>WM: (239: S6 ^biddable -1)
+=>WM: (238: S6 ^shortest -1)
+=>WM: (237: S6 ^longest -1)
+=>WM: (236: S6 ^num_high 50)
+=>WM: (235: S6 ^num_low 5)
+=>WM: (234: S6 ^rkcb -1)
+=>WM: (233: S6 ^ten -1)
+=>WM: (232: S6 ^jack -1)
+=>WM: (231: S6 ^queen -1)
+=>WM: (230: S6 ^king -1)
+=>WM: (229: S6 ^ace -1)
+=>WM: (228: S6 ^honors_high 50)
+=>WM: (227: S6 ^honors_low -1)
+=>WM: (226: S6 ^hc_high 50)
+=>WM: (225: S6 ^hc_low -1)
+=>WM: (224: S6 ^controls_high 50)
+=>WM: (223: S6 ^controls_low -1)
+=>WM: (222: S6 ^hcp_high 23)
+=>WM: (221: S6 ^hcp_low -1)
+=>WM: (220: P1 ^spade S6)
+=>WM: (219: P1 ^ratio_high 50.)
+=>WM: (218: P1 ^ratio_low -1.)
+=>WM: (217: P1 ^lmin_high 50)
+=>WM: (216: P1 ^lmin_low -1)
+=>WM: (215: P1 ^lmaj_high 50)
+=>WM: (214: P1 ^lmaj_low -1)
+=>WM: (213: P1 ^num_suits -1)
+=>WM: (212: P1 ^intermediate_ha_high 50.)
+=>WM: (211: P1 ^intermediate_low -1.)
+=>WM: (210: P1 ^balanced_high 50)
+=>WM: (209: P1 ^balanced_low -1)
+=>WM: (208: P1 ^tens -1)
+=>WM: (207: P1 ^jacks -1)
+=>WM: (206: P1 ^queens -1)
+=>WM: (205: P1 ^kings -1)
+=>WM: (204: P1 ^aces -1)
+=>WM: (203: P1 ^honors_high 50)
+=>WM: (202: P1 ^honors_low -1)
+=>WM: (201: P1 ^hc_high 50)
+=>WM: (200: P1 ^hc_low -1)
+=>WM: (199: P1 ^controls_high 50)
+=>WM: (198: P1 ^controls_low -1)
+=>WM: (197: P1 ^hcp_high 23)
+=>WM: (196: P1 ^hcp_low 11)
+=>WM: (195: I2 ^pview P1)
+=>WM: (194: M1 ^tr_stopper_cl_ha 0)
+=>WM: (193: M1 ^tr_stopper_cl_di 0)
+=>WM: (192: M1 ^tr_stopper_cl_he 0)
+=>WM: (191: M1 ^tr_stopper_cl_sp 1)
+=>WM: (190: M1 ^tr_stopper_di_cl 0)
+=>WM: (189: M1 ^tr_stopper_di_ha 0)
+=>WM: (188: M1 ^tr_stopper_di_he 0)
+=>WM: (187: M1 ^tr_stopper_di_sp 1)
+=>WM: (186: M1 ^tr_stopper_he_cl 0)
+=>WM: (185: M1 ^tr_stopper_he_di 0)
+=>WM: (184: M1 ^tr_stopper_he_ha 0)
+=>WM: (183: M1 ^tr_stopper_he_sp 1)
+=>WM: (182: M1 ^tr_stopper_sp_cl 0)
+=>WM: (181: M1 ^tr_stopper_sp_di 0)
+=>WM: (180: M1 ^tr_stopper_sp_he 0)
+=>WM: (179: M1 ^tr_stopper_sp_ha 0)
+=>WM: (178: M1 ^losers_cl_ha 0)
+=>WM: (177: M1 ^losers_cl_di 0)
+=>WM: (176: M1 ^losers_cl_he 0)
+=>WM: (175: M1 ^losers_cl_sp 0)
+=>WM: (174: M1 ^losers_di_ha 0)
+=>WM: (173: M1 ^losers_di_cl 0)
+=>WM: (172: M1 ^losers_di_he 0)
+=>WM: (171: M1 ^losers_di_sp 0)
+=>WM: (170: M1 ^losers_he_ha 0)
+=>WM: (169: M1 ^losers_he_cl 0)
+=>WM: (168: M1 ^losers_he_di 0)
+=>WM: (167: M1 ^losers_he_sp 0)
+=>WM: (166: M1 ^losers_sp_ha 0)
+=>WM: (165: M1 ^losers_sp_cl 0)
+=>WM: (164: M1 ^losers_sp_di 0)
+=>WM: (163: M1 ^losers_sp_he 0)
+=>WM: (162: M1 ^dp_cl_ha 1)
+=>WM: (161: M1 ^dp_cl_di 0)
+=>WM: (160: M1 ^dp_cl_he 0)
+=>WM: (159: M1 ^dp_cl_sp 1)
+=>WM: (158: M1 ^dp_di_ha 1)
+=>WM: (157: M1 ^dp_di_cl 0)
+=>WM: (156: M1 ^dp_di_he 0)
+=>WM: (155: M1 ^dp_di_sp 1)
+=>WM: (154: M1 ^dp_he_ha 1)
+=>WM: (153: M1 ^dp_he_cl 0)
+=>WM: (152: M1 ^dp_he_di 0)
+=>WM: (151: M1 ^dp_he_sp 1)
+=>WM: (150: M1 ^dp_sp_ha 0)
+=>WM: (149: M1 ^dp_sp_cl 0)
+=>WM: (148: M1 ^dp_sp_di 0)
+=>WM: (147: M1 ^dp_sp_he 0)
+=>WM: (146: C4 ^unlos_high 3.)
+=>WM: (145: C4 ^unlos_low 3.)
+=>WM: (144: C4 ^quality 0.)
+=>WM: (143: C4 ^stopper 1.)
+=>WM: (142: C4 ^intermediate_high 2.)
+=>WM: (141: C4 ^intermediate_low 2.)
+=>WM: (140: C4 ^biddable -1)
+=>WM: (139: C4 ^shortest 0)
+=>WM: (138: C4 ^longest 1)
+=>WM: (137: C4 ^num_high 3)
+=>WM: (136: C4 ^num_low 3)
+=>WM: (135: C4 ^rkcb 4)
+=>WM: (134: C4 ^ten 1)
+=>WM: (133: C4 ^jack 1)
+=>WM: (132: C4 ^queen 0)
+=>WM: (131: C4 ^king 0)
+=>WM: (130: C4 ^ace 0)
+=>WM: (129: C4 ^honors_high 2)
+=>WM: (128: C4 ^honors_low 2)
+=>WM: (127: C4 ^hc_high 0)
+=>WM: (126: C4 ^hc_low 0)
+=>WM: (125: C4 ^controls_high 0)
+=>WM: (124: C4 ^controls_low 0)
+=>WM: (123: C4 ^hcp_high 1)
+=>WM: (122: C4 ^hcp_low 1)
+=>WM: (121: M1 ^club C4)
+=>WM: (120: D1 ^unlos_high 4.)
+=>WM: (119: D1 ^unlos_low 4.)
+=>WM: (118: D1 ^quality 0.)
+=>WM: (117: D1 ^stopper 1.)
+=>WM: (116: D1 ^intermediate_high 0.)
+=>WM: (115: D1 ^intermediate_low 0.)
+=>WM: (114: D1 ^biddable 0)
+=>WM: (113: D1 ^shortest 0)
+=>WM: (112: D1 ^longest 0)
+=>WM: (111: D1 ^num_high 4)
+=>WM: (110: D1 ^num_low 4)
+=>WM: (109: D1 ^rkcb 4)
+=>WM: (108: D1 ^ten 0)
+=>WM: (107: D1 ^jack 1)
+=>WM: (106: D1 ^queen 0)
+=>WM: (105: D1 ^king 0)
+=>WM: (104: D1 ^ace 0)
+=>WM: (103: D1 ^honors_high 1)
+=>WM: (102: D1 ^honors_low 1)
+=>WM: (101: D1 ^hc_high 0)
+=>WM: (100: D1 ^hc_low 0)
+=>WM: (99: D1 ^controls_high 0)
+=>WM: (98: D1 ^controls_low 0)
+=>WM: (97: D1 ^hcp_high 1)
+=>WM: (96: D1 ^hcp_low 1)
+=>WM: (95: M1 ^dia D1)
+=>WM: (94: H1 ^unlos_high 4.)
+=>WM: (93: H1 ^unlos_low 4.)
+=>WM: (92: H1 ^quality 0.)
+=>WM: (91: H1 ^stopper 1.)
+=>WM: (90: H1 ^intermediate_high 0.5)
+=>WM: (89: H1 ^intermediate_low 0.5)
+=>WM: (88: H1 ^biddable 0)
+=>WM: (87: H1 ^shortest 0)
+=>WM: (86: H1 ^longest 1)
+=>WM: (85: H1 ^num_high 4)
+=>WM: (84: H1 ^num_low 4)
+=>WM: (83: H1 ^rkcb 4)
+=>WM: (82: H1 ^ten 0)
+=>WM: (81: H1 ^jack 1)
+=>WM: (80: H1 ^queen 0)
+=>WM: (79: H1 ^king 0)
+=>WM: (78: H1 ^ace 0)
+=>WM: (77: H1 ^honors_high 1)
+=>WM: (76: H1 ^honors_low 1)
+=>WM: (75: H1 ^hc_high 0)
+=>WM: (74: H1 ^hc_low 0)
+=>WM: (73: H1 ^controls_high 0)
+=>WM: (72: H1 ^controls_low 0)
+=>WM: (71: H1 ^hcp_high 1)
+=>WM: (70: H1 ^hcp_low 1)
+=>WM: (69: M1 ^heart H1)
+=>WM: (68: S5 ^unlos_high 2.)
+=>WM: (67: S5 ^unlos_low 2.)
+=>WM: (66: S5 ^quality 0.)
+=>WM: (65: S5 ^stopper 0.)
+=>WM: (64: S5 ^intermediate_high 0.5)
+=>WM: (63: S5 ^intermediate_low 0.5)
+=>WM: (62: S5 ^biddable -2)
+=>WM: (61: S5 ^shortest 1)
+=>WM: (60: S5 ^longest 0)
+=>WM: (59: S5 ^num_high 2)
+=>WM: (58: S5 ^num_low 2)
+=>WM: (57: S5 ^rkcb 4)
+=>WM: (56: S5 ^ten 0)
+=>WM: (55: S5 ^jack 0)
+=>WM: (54: S5 ^queen 0)
+=>WM: (53: S5 ^king 0)
+=>WM: (52: S5 ^ace 0)
+=>WM: (51: S5 ^honors_high 0)
+=>WM: (50: S5 ^honors_low 0)
+=>WM: (49: S5 ^hc_high 0)
+=>WM: (48: S5 ^hc_low 0)
+=>WM: (47: S5 ^controls_high 0)
+=>WM: (46: S5 ^controls_low 0)
+=>WM: (45: S5 ^hcp_high 0)
+=>WM: (44: S5 ^hcp_low 0)
+=>WM: (43: M1 ^spade S5)
+=>WM: (42: M1 ^ratio_high 0.6666666666666666)
+=>WM: (41: M1 ^ratio_low 0.6666666666666666)
+=>WM: (40: M1 ^lmin_high 4)
+=>WM: (39: M1 ^lmin_low 4)
+=>WM: (38: M1 ^lmaj_high 4)
+=>WM: (37: M1 ^lmaj_low 4)
+=>WM: (36: M1 ^num_suits 2)
+=>WM: (35: M1 ^intermediate_ha_high 3.)
+=>WM: (34: M1 ^intermediate_low 3.)
+=>WM: (33: M1 ^balanced_high 1)
+=>WM: (32: M1 ^balanced_low 1)
+=>WM: (31: M1 ^tens 1)
+=>WM: (30: M1 ^jacks 3)
+=>WM: (29: M1 ^queens 0)
+=>WM: (28: M1 ^kings 0)
+=>WM: (27: M1 ^aces 0)
+=>WM: (26: M1 ^honors_high 4)
+=>WM: (25: M1 ^honors_low 4)
+=>WM: (24: M1 ^hc_high 0)
+=>WM: (23: M1 ^hc_low 0)
+=>WM: (22: M1 ^controls_high 0)
+=>WM: (21: M1 ^controls_low 0)
+=>WM: (20: M1 ^hcp_high 3)
+=>WM: (19: M1 ^hcp_low 3)
+=>WM: (18: I2 ^myview M1)
+
+--- END Input Phase --- 
+
+Soar said:
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing get*input*from*program
+ 15 16 728 727 726 549 372 195 18 -->
+ (S1 ^bidhistory B1 +)
+ (S1 ^oview O1 +)
+ (S1 ^tview T1 +)
+ (S1 ^rview R4 +)
+ (S1 ^lview L1 +)
+ (S1 ^pview P1 +)
+ (S1 ^myview M1 +)
+
+Firing propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+
+Firing elaborate*top-state*top-state
+ 2 -->
+ (S1 ^top-state S1 +)
+ inner elaboration loop at bottom goal.
+=>WM: (739: S1 ^operator O2 +)
+=>WM: (738: S1 ^top-state S1)
+=>WM: (737: O2 ^name initialize-bidder)
+=>WM: (736: S1 ^bidhistory B1)
+=>WM: (735: S1 ^oview O1)
+=>WM: (734: S1 ^tview T1)
+=>WM: (733: S1 ^rview R4)
+=>WM: (732: S1 ^lview L1)
+=>WM: (731: S1 ^pview P1)
+=>WM: (730: S1 ^myview M1)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (740: S1 ^operator O2)
+
+     1:    O: O2 (initialize-bidder)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*initialize-bidder
+ 740 737 -->
+ (N1 ^child 1Mfollowup +  :O )
+ (N1 ^child opening +  :O )
+ (N1 ^status visited +  :O )
+ (N1 ^name top-node +  :O )
+ (S1 ^node N1 +  :O )
+ (S1 ^name bidder +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (746: N1 ^child opening)
+=>WM: (745: N1 ^child 1Mfollowup)
+=>WM: (744: N1 ^status visited)
+=>WM: (743: N1 ^name top-node)
+=>WM: (742: S1 ^node N1)
+=>WM: (741: S1 ^name bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing move*deeper*into*network
+ 741 742 744 746 -->
+ (C8 ^name opening +)
+ (S1 ^node C8 +)
+
+Firing move*deeper*into*network
+ 741 742 744 745 -->
+ (C9 ^name 1Mfollowup +)
+ (S1 ^node C9 +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*initialize-bidder
+ 2 -->
+ (O2 ^name initialize-bidder +)
+ (S1 ^operator O2 +)
+	--- Change Working Memory (IE) ---
+=>WM: (750: C9 ^name 1Mfollowup)
+=>WM: (749: S1 ^node C8)
+=>WM: (748: S1 ^node C9)
+=>WM: (747: C8 ^name opening)
+<=WM: (739: S1 ^operator O2 +)
+<=WM: (740: S1 ^operator O2)
+<=WM: (737: O2 ^name initialize-bidder)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*opening*pattern
+ 741 749 747 -->
+ (C8 ^pattern * +)
+
+Firing expand*1Mfollowup*pattern
+ 741 748 750 -->
+ (C9 ^pattern |PASS 1M *| +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (752: C9 ^pattern |PASS 1M *|)
+=>WM: (751: C8 ^pattern *)
+	--- Firing Productions (IE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*pattern*check
+ 741 749 751 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+
+Firing propose*pattern*check
+ 741 748 752 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (IE) ---
+=>WM: (760: S1 ^operator O4 +)
+=>WM: (759: S1 ^operator O3 +)
+=>WM: (758: O4 ^node-being-checked C9)
+=>WM: (757: O4 ^pattern |PASS 1M *|)
+=>WM: (756: O4 ^name pattern-check-operator)
+=>WM: (755: O3 ^node-being-checked C8)
+=>WM: (754: O3 ^pattern *)
+=>WM: (753: O3 ^name pattern-check-operator)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+--- Input Phase --- 
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (761: S1 ^operator O4)
+
+     2:    O: O4 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 761 756 758 757 750 15 17 -->
+ (P2 ^node C9 +  :O )
+ (P2 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P2 +  :O )
+ (S1 ^node-being-checked C9 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (765: P2 ^node C9)
+=>WM: (764: P2 ^pattern |PASS 1M *|)
+=>WM: (763: I3 ^pattern-check P2)
+=>WM: (762: S1 ^node-being-checked C9)
+
+--- END Application Phase ---
+
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands1
+Checking pattern for 1Mfollowup
+Soar said:
+--- Input Phase --- 
+=>WM: (771: P2 ^status complete)
+=>WM: (770: C9 ^pattern-checked true)
+=>WM: (769: C9 ^OM heart)
+=>WM: (768: C9 ^m club)
+=>WM: (767: C9 ^m dia)
+=>WM: (766: C9 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand-1Mfollowup
+ 741 748 770 750 -->
+ (C9 ^child simple-raise-major-opening +)
+ (C9 ^child jump-shift-over-1M-opening +)
+ (C9 ^child 2H-over-1S +)
+ (C9 ^child 2m-over-1M +)
+ (C9 ^child 1N-over-1M +)
+ (C9 ^child 1S-over-1H +)
+ (C9 ^child too-weak-to-bid +)
+ (C9 ^status visited +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 748 752 -->
+ (O4 ^node-being-checked C9 +)
+ (O4 ^pattern |PASS 1M *| +)
+ (O4 ^name pattern-check-operator +)
+ (S1 ^operator O4 =)
+ (S1 ^operator O4 +)
+=>WM: (779: C9 ^child too-weak-to-bid)
+=>WM: (778: C9 ^child 1S-over-1H)
+=>WM: (777: C9 ^child 1N-over-1M)
+=>WM: (776: C9 ^child 2m-over-1M)
+=>WM: (775: C9 ^child 2H-over-1S)
+=>WM: (774: C9 ^child jump-shift-over-1M-opening)
+=>WM: (773: C9 ^child simple-raise-major-opening)
+=>WM: (772: C9 ^status visited)
+<=WM: (760: S1 ^operator O4 +)
+<=WM: (761: S1 ^operator O4)
+<=WM: (758: O4 ^node-being-checked C9)
+<=WM: (757: O4 ^pattern |PASS 1M *|)
+<=WM: (756: O4 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing move*deeper*into*network
+ 741 748 772 779 -->
+ (C10 ^name too-weak-to-bid +)
+ (S1 ^node C10 +)
+
+Firing move*deeper*into*network
+ 741 748 772 778 -->
+ (C11 ^name 1S-over-1H +)
+ (S1 ^node C11 +)
+
+Firing move*deeper*into*network
+ 741 748 772 777 -->
+ (C12 ^name 1N-over-1M +)
+ (S1 ^node C12 +)
+
+Firing move*deeper*into*network
+ 741 748 772 776 -->
+ (C13 ^name 2m-over-1M +)
+ (S1 ^node C13 +)
+
+Firing move*deeper*into*network
+ 741 748 772 775 -->
+ (C14 ^name 2H-over-1S +)
+ (S1 ^node C14 +)
+
+Firing move*deeper*into*network
+ 741 748 772 774 -->
+ (C15 ^name jump-shift-over-1M-opening +)
+ (S1 ^node C15 +)
+
+Firing move*deeper*into*network
+ 741 748 772 773 -->
+ (C16 ^name simple-raise-major-opening +)
+ (S1 ^node C16 +)
+ inner elaboration loop at bottom goal.
+=>WM: (793: C16 ^name simple-raise-major-opening)
+=>WM: (792: S1 ^node C10)
+=>WM: (791: S1 ^node C11)
+=>WM: (790: S1 ^node C12)
+=>WM: (789: S1 ^node C13)
+=>WM: (788: S1 ^node C14)
+=>WM: (787: S1 ^node C15)
+=>WM: (786: S1 ^node C16)
+=>WM: (785: C15 ^name jump-shift-over-1M-opening)
+=>WM: (784: C14 ^name 2H-over-1S)
+=>WM: (783: C13 ^name 2m-over-1M)
+=>WM: (782: C12 ^name 1N-over-1M)
+=>WM: (781: C11 ^name 1S-over-1H)
+=>WM: (780: C10 ^name too-weak-to-bid)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*too-weak-to-bid*pattern
+ 741 792 780 -->
+ (C10 ^pattern |PASS 1M *| +)
+
+Firing expand*1S-over-1H*pattern
+ 741 791 781 -->
+ (C11 ^pattern |PASS 1H *| +)
+
+Firing expand*1N-over-1M*pattern
+ 741 790 782 -->
+ (C12 ^pattern |PASS 1M *| +)
+
+Firing expand*2m-over-1M*pattern
+ 741 789 783 -->
+ (C13 ^pattern |PASS 1M *| +)
+
+Firing expand*2H-over-1S*pattern
+ 741 788 784 -->
+ (C14 ^pattern |PASS 1S *| +)
+
+Firing expand*jump-shift-over-1M-opening*pattern
+ 741 787 785 -->
+ (C15 ^pattern |PASS 1M *| +)
+
+Firing expand*simple-raise-major-opening*pattern
+ 741 786 793 -->
+ (C16 ^pattern |PASS 1M *| +)
+ inner elaboration loop at bottom goal.
+=>WM: (800: C16 ^pattern |PASS 1M *|)
+=>WM: (799: C15 ^pattern |PASS 1M *|)
+=>WM: (798: C14 ^pattern |PASS 1S *|)
+=>WM: (797: C13 ^pattern |PASS 1M *|)
+=>WM: (796: C12 ^pattern |PASS 1M *|)
+=>WM: (795: C11 ^pattern |PASS 1H *|)
+=>WM: (794: C10 ^pattern |PASS 1M *|)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*pattern*check
+ 741 792 794 -->
+ (O5 ^node-being-checked C10 +)
+ (O5 ^pattern |PASS 1M *| +)
+ (O5 ^name pattern-check-operator +)
+ (S1 ^operator O5 =)
+ (S1 ^operator O5 +)
+
+Firing propose*pattern*check
+ 741 791 795 -->
+ (O6 ^node-being-checked C11 +)
+ (O6 ^pattern |PASS 1H *| +)
+ (O6 ^name pattern-check-operator +)
+ (S1 ^operator O6 =)
+ (S1 ^operator O6 +)
+
+Firing propose*pattern*check
+ 741 790 796 -->
+ (O7 ^node-being-checked C12 +)
+ (O7 ^pattern |PASS 1M *| +)
+ (O7 ^name pattern-check-operator +)
+ (S1 ^operator O7 =)
+ (S1 ^operator O7 +)
+
+Firing propose*pattern*check
+ 741 789 797 -->
+ (O8 ^node-being-checked C13 +)
+ (O8 ^pattern |PASS 1M *| +)
+ (O8 ^name pattern-check-operator +)
+ (S1 ^operator O8 =)
+ (S1 ^operator O8 +)
+
+Firing propose*pattern*check
+ 741 788 798 -->
+ (O9 ^node-being-checked C14 +)
+ (O9 ^pattern |PASS 1S *| +)
+ (O9 ^name pattern-check-operator +)
+ (S1 ^operator O9 =)
+ (S1 ^operator O9 +)
+
+Firing propose*pattern*check
+ 741 787 799 -->
+ (O10 ^node-being-checked C15 +)
+ (O10 ^pattern |PASS 1M *| +)
+ (O10 ^name pattern-check-operator +)
+ (S1 ^operator O10 =)
+ (S1 ^operator O10 +)
+
+Firing propose*pattern*check
+ 741 786 800 -->
+ (O11 ^node-being-checked C16 +)
+ (O11 ^pattern |PASS 1M *| +)
+ (O11 ^name pattern-check-operator +)
+ (S1 ^operator O11 =)
+ (S1 ^operator O11 +)
+ inner elaboration loop at bottom goal.
+=>WM: (828: S1 ^operator O11 +)
+=>WM: (827: S1 ^operator O10 +)
+=>WM: (826: S1 ^operator O9 +)
+=>WM: (825: S1 ^operator O8 +)
+=>WM: (824: S1 ^operator O7 +)
+=>WM: (823: S1 ^operator O6 +)
+=>WM: (822: S1 ^operator O5 +)
+=>WM: (821: O11 ^node-being-checked C16)
+=>WM: (820: O11 ^pattern |PASS 1M *|)
+=>WM: (819: O11 ^name pattern-check-operator)
+=>WM: (818: O10 ^node-being-checked C15)
+=>WM: (817: O10 ^pattern |PASS 1M *|)
+=>WM: (816: O10 ^name pattern-check-operator)
+=>WM: (815: O9 ^node-being-checked C14)
+=>WM: (814: O9 ^pattern |PASS 1S *|)
+=>WM: (813: O9 ^name pattern-check-operator)
+=>WM: (812: O8 ^node-being-checked C13)
+=>WM: (811: O8 ^pattern |PASS 1M *|)
+=>WM: (810: O8 ^name pattern-check-operator)
+=>WM: (809: O7 ^node-being-checked C12)
+=>WM: (808: O7 ^pattern |PASS 1M *|)
+=>WM: (807: O7 ^name pattern-check-operator)
+=>WM: (806: O6 ^node-being-checked C11)
+=>WM: (805: O6 ^pattern |PASS 1H *|)
+=>WM: (804: O6 ^name pattern-check-operator)
+=>WM: (803: O5 ^node-being-checked C10)
+=>WM: (802: O5 ^pattern |PASS 1M *|)
+=>WM: (801: O5 ^name pattern-check-operator)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (829: S1 ^operator O10)
+
+     3:    O: O10 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 829 816 818 817 785 15 17 -->
+ (P3 ^node C15 +  :O )
+ (P3 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P3 +  :O )
+ (S1 ^node-being-checked C15 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (833: P3 ^node C15)
+=>WM: (832: P3 ^pattern |PASS 1M *|)
+=>WM: (831: I3 ^pattern-check P3)
+=>WM: (830: S1 ^node-being-checked C15)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for jump-shift-over-1M-opening
+Soar said:
+--- Input Phase --- 
+=>WM: (839: P3 ^status complete)
+=>WM: (838: C15 ^pattern-checked true)
+=>WM: (837: C15 ^OM heart)
+=>WM: (836: C15 ^m club)
+=>WM: (835: C15 ^m dia)
+=>WM: (834: C15 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 787 799 -->
+ (O10 ^node-being-checked C15 +)
+ (O10 ^pattern |PASS 1M *| +)
+ (O10 ^name pattern-check-operator +)
+ (S1 ^operator O10 =)
+ (S1 ^operator O10 +)
+<=WM: (827: S1 ^operator O10 +)
+<=WM: (829: S1 ^operator O10)
+<=WM: (818: O10 ^node-being-checked C15)
+<=WM: (817: O10 ^pattern |PASS 1M *|)
+<=WM: (816: O10 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (840: S1 ^operator O5)
+
+     4:    O: O5 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 840 801 803 802 780 15 17 -->
+ (P4 ^node C10 +  :O )
+ (P4 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P4 +  :O )
+ (S1 ^node-being-checked C10 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (844: P4 ^node C10)
+=>WM: (843: P4 ^pattern |PASS 1M *|)
+=>WM: (842: I3 ^pattern-check P4)
+=>WM: (841: S1 ^node-being-checked C10)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for too-weak-to-bid
+Soar said:
+--- Input Phase --- 
+=>WM: (850: P4 ^status complete)
+=>WM: (849: C10 ^pattern-checked true)
+=>WM: (848: C10 ^OM heart)
+=>WM: (847: C10 ^m club)
+=>WM: (846: C10 ^m dia)
+=>WM: (845: C10 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing expand*too-weak-to-bid
+ 741 792 849 780 730 20 -->
+ (M2 ^hcp_high 5 +)
+ (B2 ^meaning M2 +)
+ (B2 ^short-form PASS +)
+ (C10 ^bid B2 +)
+ (C10 ^status visited +)
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 792 794 -->
+ (O5 ^node-being-checked C10 +)
+ (O5 ^pattern |PASS 1M *| +)
+ (O5 ^name pattern-check-operator +)
+ (S1 ^operator O5 =)
+ (S1 ^operator O5 +)
+=>WM: (855: M2 ^hcp_high 5)
+=>WM: (854: B2 ^meaning M2)
+=>WM: (853: B2 ^short-form PASS)
+=>WM: (852: C10 ^bid B2)
+=>WM: (851: C10 ^status visited)
+<=WM: (822: S1 ^operator O5 +)
+<=WM: (840: S1 ^operator O5)
+<=WM: (803: O5 ^node-being-checked C10)
+<=WM: (802: O5 ^pattern |PASS 1M *|)
+<=WM: (801: O5 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing propose*make-bid
+ 792 852 -->
+ (O12 ^bid B2 +)
+ (S1 ^operator O12 <)
+ (S1 ^operator O12 +)
+ inner elaboration loop at bottom goal.
+=>WM: (857: S1 ^operator O12 +)
+=>WM: (856: O12 ^bid B2)
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (858: S1 ^operator O7)
+
+     5:    O: O7 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 858 807 809 808 782 15 17 -->
+ (P5 ^node C12 +  :O )
+ (P5 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P5 +  :O )
+ (S1 ^node-being-checked C12 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (862: P5 ^node C12)
+=>WM: (861: P5 ^pattern |PASS 1M *|)
+=>WM: (860: I3 ^pattern-check P5)
+=>WM: (859: S1 ^node-being-checked C12)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for 1N-over-1M
+Soar said:
+--- Input Phase --- 
+=>WM: (868: P5 ^status complete)
+=>WM: (867: C12 ^pattern-checked true)
+=>WM: (866: C12 ^OM heart)
+=>WM: (865: C12 ^m club)
+=>WM: (864: C12 ^m dia)
+=>WM: (863: C12 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 790 796 -->
+ (O7 ^node-being-checked C12 +)
+ (O7 ^pattern |PASS 1M *| +)
+ (O7 ^name pattern-check-operator +)
+ (S1 ^operator O7 =)
+ (S1 ^operator O7 +)
+<=WM: (824: S1 ^operator O7 +)
+<=WM: (858: S1 ^operator O7)
+<=WM: (809: O7 ^node-being-checked C12)
+<=WM: (808: O7 ^pattern |PASS 1M *|)
+<=WM: (807: O7 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (869: S1 ^operator O6)
+
+     6:    O: O6 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 869 804 806 805 781 15 17 -->
+ (P6 ^node C11 +  :O )
+ (P6 ^pattern |PASS 1H *| +  :O )
+ (I3 ^pattern-check P6 +  :O )
+ (S1 ^node-being-checked C11 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (873: P6 ^node C11)
+=>WM: (872: P6 ^pattern |PASS 1H *|)
+=>WM: (871: I3 ^pattern-check P6)
+=>WM: (870: S1 ^node-being-checked C11)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for 1S-over-1H
+Soar said:
+--- Input Phase --- 
+=>WM: (879: P6 ^status complete)
+=>WM: (878: C11 ^pattern-checked true)
+=>WM: (877: C11 ^m club)
+=>WM: (876: C11 ^m dia)
+=>WM: (875: C11 ^M heart)
+=>WM: (874: C11 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 791 795 -->
+ (O6 ^node-being-checked C11 +)
+ (O6 ^pattern |PASS 1H *| +)
+ (O6 ^name pattern-check-operator +)
+ (S1 ^operator O6 =)
+ (S1 ^operator O6 +)
+<=WM: (823: S1 ^operator O6 +)
+<=WM: (869: S1 ^operator O6)
+<=WM: (806: O6 ^node-being-checked C11)
+<=WM: (805: O6 ^pattern |PASS 1H *|)
+<=WM: (804: O6 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (880: S1 ^operator O11)
+
+     7:    O: O11 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 880 819 821 820 793 15 17 -->
+ (P7 ^node C16 +  :O )
+ (P7 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P7 +  :O )
+ (S1 ^node-being-checked C16 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (884: P7 ^node C16)
+=>WM: (883: P7 ^pattern |PASS 1M *|)
+=>WM: (882: I3 ^pattern-check P7)
+=>WM: (881: S1 ^node-being-checked C16)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for simple-raise-major-opening
+Soar said:
+--- Input Phase --- 
+=>WM: (890: P7 ^status complete)
+=>WM: (889: C16 ^pattern-checked true)
+=>WM: (888: C16 ^OM heart)
+=>WM: (887: C16 ^m club)
+=>WM: (886: C16 ^m dia)
+=>WM: (885: C16 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 786 800 -->
+ (O11 ^node-being-checked C16 +)
+ (O11 ^pattern |PASS 1M *| +)
+ (O11 ^name pattern-check-operator +)
+ (S1 ^operator O11 =)
+ (S1 ^operator O11 +)
+<=WM: (828: S1 ^operator O11 +)
+<=WM: (880: S1 ^operator O11)
+<=WM: (821: O11 ^node-being-checked C16)
+<=WM: (820: O11 ^pattern |PASS 1M *|)
+<=WM: (819: O11 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (891: S1 ^operator O8)
+
+     8:    O: O8 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 891 810 812 811 783 15 17 -->
+ (P8 ^node C13 +  :O )
+ (P8 ^pattern |PASS 1M *| +  :O )
+ (I3 ^pattern-check P8 +  :O )
+ (S1 ^node-being-checked C13 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (895: P8 ^node C13)
+=>WM: (894: P8 ^pattern |PASS 1M *|)
+=>WM: (893: I3 ^pattern-check P8)
+=>WM: (892: S1 ^node-being-checked C13)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for 2m-over-1M
+Soar said:
+--- Input Phase --- 
+=>WM: (901: P8 ^status complete)
+=>WM: (900: C13 ^pattern-checked true)
+=>WM: (899: C13 ^OM heart)
+=>WM: (898: C13 ^m club)
+=>WM: (897: C13 ^m dia)
+=>WM: (896: C13 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 789 797 -->
+ (O8 ^node-being-checked C13 +)
+ (O8 ^pattern |PASS 1M *| +)
+ (O8 ^name pattern-check-operator +)
+ (S1 ^operator O8 =)
+ (S1 ^operator O8 +)
+<=WM: (825: S1 ^operator O8 +)
+<=WM: (891: S1 ^operator O8)
+<=WM: (812: O8 ^node-being-checked C13)
+<=WM: (811: O8 ^pattern |PASS 1M *|)
+<=WM: (810: O8 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (902: S1 ^operator O9)
+
+     9:    O: O9 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 902 813 815 814 784 15 17 -->
+ (P9 ^node C14 +  :O )
+ (P9 ^pattern |PASS 1S *| +  :O )
+ (I3 ^pattern-check P9 +  :O )
+ (S1 ^node-being-checked C14 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (906: P9 ^node C14)
+=>WM: (905: P9 ^pattern |PASS 1S *|)
+=>WM: (904: I3 ^pattern-check P9)
+=>WM: (903: S1 ^node-being-checked C14)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for 2H-over-1S
+Soar said:
+--- Input Phase --- 
+=>WM: (912: P9 ^status complete)
+=>WM: (911: C14 ^pattern-checked true)
+=>WM: (910: C14 ^m club)
+=>WM: (909: C14 ^m dia)
+=>WM: (908: C14 ^M heart)
+=>WM: (907: C14 ^M spade)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 788 798 -->
+ (O9 ^node-being-checked C14 +)
+ (O9 ^pattern |PASS 1S *| +)
+ (O9 ^name pattern-check-operator +)
+ (S1 ^operator O9 =)
+ (S1 ^operator O9 +)
+<=WM: (826: S1 ^operator O9 +)
+<=WM: (902: S1 ^operator O9)
+<=WM: (815: O9 ^node-being-checked C14)
+<=WM: (814: O9 ^pattern |PASS 1S *|)
+<=WM: (813: O9 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (913: S1 ^operator O3)
+
+    10:    O: O3 (pattern-check-operator)
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*pattern*check
+ 741 913 753 755 754 747 15 17 -->
+ (P10 ^node C8 +  :O )
+ (P10 ^pattern * +  :O )
+ (I3 ^pattern-check P10 +  :O )
+ (S1 ^node-being-checked C8 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (917: P10 ^node C8)
+=>WM: (916: P10 ^pattern *)
+=>WM: (915: I3 ^pattern-check P10)
+=>WM: (914: S1 ^node-being-checked C8)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Checking pattern for opening
+Soar said:
+--- Input Phase --- 
+=>WM: (919: P10 ^status complete)
+=>WM: (918: C8 ^pattern-checked false)
+
+--- END Input Phase --- 
+
+--- Proposal Phase ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+Retracting propose*pattern*check
+ 741 749 751 -->
+ (O3 ^node-being-checked C8 +)
+ (O3 ^pattern * +)
+ (O3 ^name pattern-check-operator +)
+ (S1 ^operator O3 =)
+ (S1 ^operator O3 +)
+<=WM: (759: S1 ^operator O3 +)
+<=WM: (913: S1 ^operator O3)
+<=WM: (755: O3 ^node-being-checked C8)
+<=WM: (754: O3 ^pattern *)
+<=WM: (753: O3 ^name pattern-check-operator)
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+ inner elaboration loop at bottom goal.
+
+--- END Proposal Phase ---
+
+--- Decision Phase ---
+=>WM: (920: S1 ^operator O12)
+
+    11:    O: O12 
+--- END Decision Phase ---
+
+--- Application Phase ---
+	--- Firing Productions (PE) For State At Depth 1 ---
+
+--- Inner Elaboration Phase, active level 1 (S1) ---
+
+Firing apply*make-bid
+ 15 17 920 856 854 853 -->
+
+ The bid selected is PASS (I3 ^bid B2 +  :O )
+ inner elaboration loop at bottom goal.
+	--- Change Working Memory (PE) ---
+=>WM: (921: I3 ^bid B2)
+
+--- END Application Phase ---
+
+Soar said:
+--- Output Phase ---
+
+Soar said:
+--- END Output Phase ---
+
+commands2
+Updates sent by SOAR:
+hcp_high: 5
+Updates sent by SOAR:
+hcp_high: 5
+Updates sent by SOAR:
+hcp_high: 5
+south made bid PASS
+
+

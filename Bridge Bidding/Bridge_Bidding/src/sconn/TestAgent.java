@@ -24,8 +24,9 @@ public class TestAgent {
 		a.ExecuteCommandLine("watch --fullwmes");
 		
 		a.ExecuteCommandLine("sp {out (state <s> ^io.input-link <in> ^io.output-link <out>) \n" +
-				"(<in> ^pi <pival> ^iden.integer <intval> ^iden.pi <pistring>) \n" +
+				"(<in> ^pi <pival> ^{<attr> << iden ide >>}.integer <intval> ^<attr>.pi <pistring>) \n" +
 				"--> \n" +
+				"(write (crlf) | its | <attr>)" +
 				"(<out> ^misery <one>) \n" +
 				"(<one> ^mulval (* <pival> <intval>)) \n" +
 				"(<one> ^testattr (concat 1 <pistring>))}");
@@ -58,9 +59,6 @@ public class TestAgent {
 				System.out.println(id.GetChild(j).GetAttribute() + ": " + id.GetChild(j).GetValueAsString());
 			id.AddStatusComplete();
 		}
-		
-		a.RunSelf(5, smlRunStepSize.sml_PHASE);
-		System.out.println(a.ExecuteCommandLine("print --depth 10 s1"));
 		
 		k.Shutdown();
 	}

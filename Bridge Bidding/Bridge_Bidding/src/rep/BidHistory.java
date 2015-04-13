@@ -106,7 +106,7 @@ public class BidHistory {
 						return false;
 					i++;
 				}
-			} else {
+			} else if(i < bids_made) {
 				String previousBidString = this.getBid(i).toString();
 				if(Character.isDigit(bidInPattern.charAt(0))) {
 					if(!(bidInPattern.charAt(0) == previousBidString.charAt(0)))
@@ -161,6 +161,9 @@ public class BidHistory {
 				}
 				
 				i++;
+			} else {
+				// Pattern has more bids than actually made, doesn't match
+				return false;
 			}
 		}
 		
@@ -183,7 +186,7 @@ public class BidHistory {
 	private Bid getBid(int seq_num) {
 		if(seq_num >= bids_made) return null;
 		
-		int player_to_get_bid_from = this.turn + 40 - (seq_num + 1);
+		int player_to_get_bid_from = (this.turn + 40 - (seq_num + 1)) % 4;
 		int bid_index_in_player_bids = seq_num/4;
 		
 		return this.bids.get(players[player_to_get_bid_from]).get(bid_index_in_player_bids);

@@ -422,13 +422,14 @@ public class HandView implements Cloneable {
 		spade.CreateIntWME("rkcb", rkcb_spade);
 		spade.CreateIntWME("num_low", num_spade_low);
 		spade.CreateIntWME("num_high", num_spade_high);
+		spade.CreateIntWME("dp", this.dp_sp_ha);
 		spade.CreateIntWME("longest", this.longest_sp);
 		spade.CreateIntWME("shortest", this.shortest_sp);
 		spade.CreateIntWME("biddable", this.biddable_sp);
 		spade.CreateFloatWME("intermediate_low", this.intermediate_sp_low);
 		spade.CreateFloatWME("intermediate_high", this.intermediate_sp_high);
 		spade.CreateFloatWME("stopper", this.stopper_sp);
-		spade.CreateFloatWME("quality", this.quality_sp);
+		spade.CreateIntWME("quality", this.quality_sp);
 		spade.CreateFloatWME("unlos_low", this.unlos_sp_low);
 		spade.CreateFloatWME("unlos_high", this.unlos_sp_high);
 
@@ -449,13 +450,14 @@ public class HandView implements Cloneable {
 		heart.CreateIntWME("rkcb", rkcb_heart);
 		heart.CreateIntWME("num_low", num_heart_low);
 		heart.CreateIntWME("num_high", num_heart_high);
+		spade.CreateIntWME("dp", this.dp_he_ha);
 		heart.CreateIntWME("longest", this.longest_he);
 		heart.CreateIntWME("shortest", this.shortest_he);
 		heart.CreateIntWME("biddable", this.biddable_he);
 		heart.CreateFloatWME("intermediate_low", this.intermediate_he_low);
 		heart.CreateFloatWME("intermediate_high", this.intermediate_he_high);
 		heart.CreateFloatWME("stopper", this.stopper_he);
-		heart.CreateFloatWME("quality", this.quality_he);
+		heart.CreateIntWME("quality", this.quality_he);
 		heart.CreateFloatWME("unlos_low", this.unlos_he_low);
 		heart.CreateFloatWME("unlos_high", this.unlos_he_high);
 
@@ -476,13 +478,14 @@ public class HandView implements Cloneable {
 		dia.CreateIntWME("rkcb", rkcb_dia);
 		dia.CreateIntWME("num_low", num_dia_low);
 		dia.CreateIntWME("num_high", num_dia_high);
+		spade.CreateIntWME("dp", this.dp_di_ha);
 		dia.CreateIntWME("longest", this.longest_di);
 		dia.CreateIntWME("shortest", this.shortest_di);
 		dia.CreateIntWME("biddable", this.biddable_di);
 		dia.CreateFloatWME("intermediate_low", this.intermediate_di_low);
 		dia.CreateFloatWME("intermediate_high", this.intermediate_di_high);
 		dia.CreateFloatWME("stopper", this.stopper_di);
-		dia.CreateFloatWME("quality", this.quality_di);
+		dia.CreateIntWME("quality", this.quality_di);
 		dia.CreateFloatWME("unlos_low", this.unlos_di_low);
 		dia.CreateFloatWME("unlos_high", this.unlos_di_high);
 
@@ -503,13 +506,14 @@ public class HandView implements Cloneable {
 		club.CreateIntWME("rkcb", rkcb_club);
 		club.CreateIntWME("num_low", num_club_low);
 		club.CreateIntWME("num_high", num_club_high);
+		spade.CreateIntWME("dp", this.dp_cl_ha);
 		club.CreateIntWME("longest", this.longest_cl);
 		club.CreateIntWME("shortest", this.shortest_cl);
 		club.CreateIntWME("biddable", this.biddable_cl);
 		club.CreateFloatWME("intermediate_low", this.intermediate_cl_low);
 		club.CreateFloatWME("intermediate_high", this.intermediate_cl_high);
 		club.CreateFloatWME("stopper", this.stopper_cl);
-		club.CreateFloatWME("quality", this.quality_cl);
+		club.CreateIntWME("quality", this.quality_cl);
 		club.CreateFloatWME("unlos_low", this.unlos_cl_low);
 		club.CreateFloatWME("unlos_high", this.unlos_cl_high);
 		
@@ -571,7 +575,7 @@ public class HandView implements Cloneable {
 		
 		for(int i=0; i<numUpdates; ++i) {
 			WMElement feature = iden.GetChild(i);
-			System.out.println(feature.GetAttribute() + ": " + feature.GetValueAsString());
+			if(!feature.GetValueType().equals("id")) System.out.println(feature.GetAttribute() + ": " + feature.GetValueAsString());
 
 			boolean returned = false;
 			if(feature.GetValueType().equalsIgnoreCase("double"))
@@ -584,6 +588,7 @@ public class HandView implements Cloneable {
 				
 				for(int j=0; j<numSuitUpdates; ++j) {
 					WMElement suit_feature = suit.GetChild(j);
+					System.out.println(suit.GetAttribute() + "." +suit_feature.GetAttribute() + ": " + suit_feature.GetValueAsString());
 					
 					boolean suit_returned = false;
 					if(suit_feature.GetValueType().equals("int"))
@@ -735,6 +740,7 @@ public class HandView implements Cloneable {
 			return false;
 	}
 	
+	// TODO: Infer as much as possible
 	private boolean updateFeature(String feature, long val) {
 		int value = (int) val;
 		
@@ -1200,6 +1206,8 @@ public class HandView implements Cloneable {
 					this.updateFeature("heart longest", 0);
 					this.updateFeature("dia longest", 0);
 					this.updateFeature("club longest", 0);
+					
+					this.updateFeature("spade num_low", 4);
 				}
 				
 				return true;
@@ -1445,6 +1453,8 @@ public class HandView implements Cloneable {
 					this.updateFeature("spade longest", 0);
 					this.updateFeature("dia longest", 0);
 					this.updateFeature("club longest", 0);
+					
+					this.updateFeature("heart num_low", 4);
 				}
 				
 				return true;
@@ -1691,6 +1701,8 @@ public class HandView implements Cloneable {
 					this.updateFeature("spade longest", 0);
 					this.updateFeature("heart longest", 0);
 					this.updateFeature("club longest", 0);
+					
+					this.updateFeature("dia num_low", 4);
 				}
 				
 				return true;
@@ -1936,6 +1948,8 @@ public class HandView implements Cloneable {
 					this.updateFeature("spade longest", 0);
 					this.updateFeature("heart longest", 0);
 					this.updateFeature("dia longest", 0);
+					
+					this.updateFeature("club num_low", 4);
 				}
 				
 				return true;

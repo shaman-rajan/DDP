@@ -19,6 +19,8 @@ public class Auction {
 		Bid bid = nextPlayer.askForBid();
 		this.makeBid(nextPos, bid);
 		System.out.println(Deal.getPosition(nextPos) + " made bid " + bid);
+		System.out.println();
+		System.out.println();
 	}
 
 	public boolean makeBid(int player, Bid bid) {

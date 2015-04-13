@@ -773,137 +773,140 @@ public class Hand implements Cloneable {
 		// TODO: losers
 		
 		// Quality
-		boolean flag = false;
+		boolean flag = false, flag_ak = false;
 		if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.KING)) {
+			flag_ak = true;
 			if(num_spade > 8)
-				quality_sp = 9;
+				this.quality_sp = 9;
 			else if(num_spade > 7  && (this.contains(Suit.SPADE, Value.QUEEN) || this.contains(Suit.SPADE, Value.JACK)))
-				quality_sp = 9;
+				this.quality_sp = 9;
 			else if(num_spade > 6 && this.contains(Suit.SPADE, Value.QUEEN))
-				quality_sp = 8;
+				this.quality_sp = 8;
 			else if(num_spade > 5 && this.contains(Suit.SPADE, Value.QUEEN) && this.contains(Suit.SPADE, Value.TEN))
-				quality_sp = 7;
+				this.quality_sp = 7;
 			else flag = true;
-		} 
-		if(flag) {
+		} else if(!flag_ak || (flag_ak && flag)) {
 			if(num_spade > 5 && (points_spade >= 8 || honors_spade > 3))
-				quality_sp = 6;
+				this.quality_sp = 6;
 			else if(num_spade > 6)
-				quality_sp = 5;
+				this.quality_sp = 5;
 			else if(num_spade > 5 && (points_spade > 4 || honors_spade > 2))
-				quality_sp = 5;
+				this.quality_sp = 5;
 			else if(num_spade > 5)
-				quality_sp = 4;
+				this.quality_sp = 4;
 			else if(num_spade > 4 && (points_spade > 4 || honors_spade > 2))
-				quality_sp = 4;
+				this.quality_sp = 4;
 			else if(num_spade > 4)
-				quality_sp = 3;
+				this.quality_sp = 3;
 			else if(num_spade > 3 && (points_spade > 4 || honors_spade > 2))
-				quality_sp = 3;
+				this.quality_sp = 3;
 			else if(num_spade > 3)
-				quality_sp = 2;
+				this.quality_sp = 2;
 			else if(num_spade > 2)
-				quality_sp = 1;
-			else quality_sp = 0;
-		}
+				this.quality_sp = 1;
+			else this.quality_sp = 0;
+		} 
 		
+		flag = false; flag_ak = false;
 		if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.KING)) {
+			flag_ak = true;
 			if(num_heart > 8) 
-				quality_he = 9;
+				this.quality_he = 9;
 			else if(num_heart > 7  && (this.contains(Suit.HEART, Value.QUEEN) || this.contains(Suit.HEART, Value.JACK)))
-				quality_he = 9;
+				this.quality_he = 9;
 			else if(num_heart > 6 && this.contains(Suit.HEART, Value.QUEEN))
-				quality_he = 8;
+				this.quality_he = 8;
 			else if(num_heart > 5 && this.contains(Suit.HEART, Value.QUEEN) && this.contains(Suit.HEART, Value.TEN))
-				quality_he = 7;
+				this.quality_he = 7;
 			else flag = true;
-		} 
-		if(flag) {
+		} else if(!flag_ak || (flag_ak && flag)) {
 			if(num_heart > 5 && (points_heart >= 8 || honors_heart > 3))
-				quality_he = 6;
+				this.quality_he = 6;
 			else if(num_heart > 6)
-				quality_he = 5;
+				this.quality_he = 5;
 			else if(num_heart > 5 && (points_heart > 4 || honors_heart > 2))
-				quality_he = 5;
+				this.quality_he = 5;
 			else if(num_heart > 5)
-				quality_he = 4;
+				this.quality_he = 4;
 			else if(num_heart > 4 && (points_heart > 4 || honors_heart > 2))
-				quality_he = 4;
+				this.quality_he = 4;
 			else if(num_heart > 4)
-				quality_he = 3;
+				this.quality_he = 3;
 			else if(num_heart > 3 && (points_heart > 4 || honors_heart > 2))
-				quality_he = 3;
+				this.quality_he = 3;
 			else if(num_heart > 3)
-				quality_he = 2;
+				this.quality_he = 2;
 			else if(num_heart > 2)
-				quality_he = 1;
-			else quality_he = 0;
+				this.quality_he = 1;
+			else this.quality_he = 0;
 		}
 		
+		flag = false; flag_ak = false;
 		if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.KING)) {
+			flag_ak = true;
 			if(num_dia > 8) 
-				quality_di = 9;
+				this.quality_di = 9;
 			else if(num_dia > 7  && (this.contains(Suit.DIAMOND, Value.QUEEN) || this.contains(Suit.DIAMOND, Value.JACK)))
-				quality_di = 9;
+				this.quality_di = 9;
 			else if(num_dia > 6 && this.contains(Suit.DIAMOND, Value.QUEEN))
-				quality_di = 8;
+				this.quality_di = 8;
 			else if(num_dia > 5 && this.contains(Suit.DIAMOND, Value.QUEEN) && this.contains(Suit.DIAMOND, Value.TEN))
-				quality_di = 7;
+				this.quality_di = 7;
 			else flag = true;
-		} 
-		if(flag) {
+		} else if(!flag_ak || (flag_ak && flag)) {
 			if(num_dia > 5 && (points_dia >= 8 || honors_dia > 3))
-				quality_di = 6;
+				this.quality_di = 6;
 			else if(num_dia > 6)
-				quality_di = 5;
+				this.quality_di = 5;
 			else if(num_dia > 5 && (points_dia > 4 || honors_dia > 2))
-				quality_di = 5;
+				this.quality_di = 5;
 			else if(num_dia > 5)
-				quality_di = 4;
+				this.quality_di = 4;
 			else if(num_dia > 4 && (points_dia > 4 || honors_dia > 2))
-				quality_di = 4;
+				this.quality_di = 4;
 			else if(num_dia > 4)
-				quality_di = 3;
+				this.quality_di = 3;
 			else if(num_dia > 3 && (points_dia > 4 || honors_dia > 2))
-				quality_di = 3;
+				this.quality_di = 3;
 			else if(num_dia > 3)
-				quality_di = 2;
+				this.quality_di = 2;
 			else if(num_dia > 2)
-				quality_di = 1;
-			else quality_di = 0;
+				this.quality_di = 1;
+			else this.quality_di = 0;
 		}
 
+		flag = false; flag_ak = false;
 		if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.KING)) {
+			flag_ak = true;
 			if(num_club > 8) 
-				quality_cl = 9;
+				this.quality_cl = 9;
 			else if(num_club > 7  && (this.contains(Suit.CLUB, Value.QUEEN) || this.contains(Suit.CLUB, Value.JACK)))
-				quality_cl = 9;
+				this.quality_cl = 9;
 			else if(num_club > 6 && this.contains(Suit.CLUB, Value.QUEEN))
-				quality_cl = 8;
+				this.quality_cl = 8;
 			else if(num_club > 5 && this.contains(Suit.CLUB, Value.QUEEN) && this.contains(Suit.CLUB, Value.TEN))
-				quality_cl = 7;
+				this.quality_cl = 7;
 			else flag = true;
-		} 
-		if(flag) {
+		} else if(!flag_ak || (flag_ak && flag)) {
 			if(num_club > 5 && (points_club >= 8 || honors_club > 3))
-				quality_cl = 6;
+				this.quality_cl = 6;
 			else if(num_club > 6)
-				quality_cl = 5;
+				this.quality_cl = 5;
 			else if(num_club > 5 && (points_club > 4 || honors_club > 2))
-				quality_cl = 5;
+				this.quality_cl = 5;
 			else if(num_club > 5)
-				quality_cl = 4;
+				this.quality_cl = 4;
 			else if(num_club > 4 && (points_club > 4 || honors_club > 2))
-				quality_cl = 4;
+				this.quality_cl = 4;
 			else if(num_club > 4)
-				quality_cl = 3;
+				this.quality_cl = 3;
 			else if(num_club > 3 && (points_club > 4 || honors_club > 2))
-				quality_cl = 3;
+				this.quality_cl = 3;
 			else if(num_club > 3)
-				quality_cl = 2;
+				this.quality_cl = 2;
 			else if(num_club > 2)
-				quality_cl = 1;
-			else quality_cl = 0;
+				this.quality_cl = 1;
+			else this.quality_cl = 0;
 		}
 
 		// Ratio
@@ -916,240 +919,114 @@ public class Hand implements Cloneable {
 		ratio = (suitsForRatio.get(2).hcp + suitsForRatio.get(3).hcp) * 1.0 / points_hc;
 		
 		// Unlos
-		
+		this.unlos_sp = calculateUnlos(this.getSuit(Suit.SPADE), Suit.SPADE);
+		this.unlos_he = calculateUnlos(this.getSuit(Suit.HEART), Suit.HEART);
+		this.unlos_di = calculateUnlos(this.getSuit(Suit.DIAMOND), Suit.DIAMOND);
+		this.unlos_cl = calculateUnlos(this.getSuit(Suit.CLUB), Suit.CLUB);
+	}
+	
+	private double calculateUnlos(List<Card> cards, Suit suit) {
 		double temp_unlos = 0;
 		
-		if(this.num_spade == 0) {
+		if(cards.size() == 0) {
 			temp_unlos = 0;
-		} else if(this.num_spade == 1) {
-			if(this.contains(Suit.SPADE, Value.ACE)) temp_unlos = 0;
-			else temp_unlos = 1;
-		} else if(this.num_spade == 2) {
-			if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.KING)) temp_unlos = 0;
-			else if(this.contains(Suit.SPADE, Value.ACE) && this.contains(Suit.SPADE, Value.QUEEN)) temp_unlos = 0.5;
-			else if(this.contains(Suit.SPADE, Value.ACE)) temp_unlos = 1;
-			else if(this.contains(Suit.SPADE, Value.KING)) temp_unlos = 1.5;
-			else temp_unlos = 2;
-		} else if(this.num_spade == 3) {
-			if(this.contains(Suit.SPADE, Value.ACE)) {
-				if(this.contains(Suit.SPADE, Value.KING)) {
-					if(this.contains(Suit.SPADE, Value.QUEEN)) temp_unlos = 0;
-					else if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 0.75;
-					else temp_unlos = 1;
-				} else if(this.contains(Suit.SPADE, Value.QUEEN)) {
-					if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1;
-					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.25;
-					else temp_unlos = 1.5;
-				} else if(this.contains(Suit.SPADE, Value.JACK)) {
-					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1.25;
-					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.5;
-					else temp_unlos = 1.75;
-				} else {
-					temp_unlos = 2;
-				}
-			} else if(this.contains(Suit.SPADE, Value.KING)) {
-				if(this.contains(Suit.SPADE, Value.QUEEN)) {
-					if(this.contains(Suit.SPADE, Value.JACK)) temp_unlos = 1;
-					else if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1;
-					else temp_unlos = 1.25;
-				} else if(this.contains(Suit.SPADE, Value.JACK)) {
-					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 1.5;
-					else if(this.contains(Suit.SPADE, Value.NINE)) temp_unlos = 1.75;
-					else temp_unlos = 2;
-				} else if(this.contains(Suit.SPADE, Value.TEN) && this.contains(Suit.SPADE, Value.NINE))
-					temp_unlos = 2.25;
-				else
-					temp_unlos = 2.5;
-			} else if(this.contains(Suit.SPADE, Value.QUEEN)) {
-				if(this.contains(Suit.SPADE, Value.JACK)) {
-					if(this.contains(Suit.SPADE, Value.TEN)) temp_unlos = 2;
-					else temp_unlos = 2.25;
-				} else if(this.contains(Suit.SPADE, Value.TEN) && this.contains(Suit.SPADE, Value.NINE))
-					temp_unlos = 2.5;
-				else 
-					temp_unlos = 2.75;
-			} else
-				temp_unlos = 3;
-		} else {
-			temp_unlos = 0;
-			// TODO: If length > 3
-		} this.unlos_sp = temp_unlos;
+		} 
 		
-		if(this.num_heart == 0) {
-			temp_unlos = 0;
-		} else if(this.num_heart == 1) {
-			if(this.contains(Suit.HEART, Value.ACE)) temp_unlos = 0;
+		else if(cards.size() == 1) {
+			if(suitHasCard(cards, Value.ACE)) temp_unlos = 0;
 			else temp_unlos = 1;
-		} else if(this.num_heart == 2) {
-			if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.KING)) temp_unlos = 0;
-			else if(this.contains(Suit.HEART, Value.ACE) && this.contains(Suit.HEART, Value.QUEEN)) temp_unlos = 0.5;
-			else if(this.contains(Suit.HEART, Value.ACE)) temp_unlos = 1;
-			else if(this.contains(Suit.HEART, Value.KING)) temp_unlos = 1.5;
+		} 
+		
+		else if(cards.size() == 2) {
+			if(suitHasCard(cards, Value.ACE) && suitHasCard(cards, Value.KING)) temp_unlos = 0;
+			else if(suitHasCard(cards, Value.ACE) && suitHasCard(cards, Value.QUEEN)) temp_unlos = 0.5;
+			else if(suitHasCard(cards, Value.ACE)) temp_unlos = 1;
+			else if(suitHasCard(cards, Value.KING)) temp_unlos = 1.5;
 			else temp_unlos = 2;
-		} else if(this.num_heart == 3) {
-			if(this.contains(Suit.HEART, Value.ACE)) {
-				if(this.contains(Suit.HEART, Value.KING)) {
-					if(this.contains(Suit.HEART, Value.QUEEN)) temp_unlos = 0;
-					else if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 0.75;
+		} 
+		
+		else if(cards.size() == 3) {
+			if(suitHasCard(cards, Value.ACE)) {
+				if(suitHasCard(cards, Value.KING)) {
+					if(suitHasCard(cards, Value.QUEEN)) temp_unlos = 0;
+					else if(suitHasCard(cards, Value.JACK)) temp_unlos = 0.5;
+					else if(suitHasCard(cards, Value.TEN)) temp_unlos = 0.75;
 					else temp_unlos = 1;
-				} else if(this.contains(Suit.HEART, Value.QUEEN)) {
-					if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1;
-					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.25;
+				} else if(suitHasCard(cards, Value.QUEEN)) {
+					if(suitHasCard(cards, Value.JACK)) temp_unlos = 0.5;
+					else if(suitHasCard(cards, Value.TEN)) temp_unlos = 1;
+					else if(suitHasCard(cards, Value.NINE)) temp_unlos = 1.25;
 					else temp_unlos = 1.5;
-				} else if(this.contains(Suit.HEART, Value.JACK)) {
-					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1.25;
-					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.5;
+				} else if(suitHasCard(cards, Value.JACK)) {
+					if(suitHasCard(cards, Value.TEN)) temp_unlos = 1.25;
+					else if(suitHasCard(cards, Value.NINE)) temp_unlos = 1.5;
 					else temp_unlos = 1.75;
 				} else {
 					temp_unlos = 2;
 				}
-			} else if(this.contains(Suit.HEART, Value.KING)) {
-				if(this.contains(Suit.HEART, Value.QUEEN)) {
-					if(this.contains(Suit.HEART, Value.JACK)) temp_unlos = 1;
-					else if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1;
+			} else if(suitHasCard(cards, Value.KING)) {
+				if(suitHasCard(cards, Value.QUEEN)) {
+					if(suitHasCard(cards, Value.JACK)) temp_unlos = 1;
+					else if(suitHasCard(cards, Value.TEN)) temp_unlos = 1;
 					else temp_unlos = 1.25;
-				} else if(this.contains(Suit.HEART, Value.JACK)) {
-					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 1.5;
-					else if(this.contains(Suit.HEART, Value.NINE)) temp_unlos = 1.75;
+				} else if(suitHasCard(cards, Value.JACK)) {
+					if(suitHasCard(cards, Value.TEN)) temp_unlos = 1.5;
+					else if(suitHasCard(cards, Value.NINE)) temp_unlos = 1.75;
 					else temp_unlos = 2;
-				} else if(this.contains(Suit.HEART, Value.TEN) && this.contains(Suit.HEART, Value.NINE))
+				} else if(suitHasCard(cards, Value.TEN) && suitHasCard(cards, Value.NINE))
 					temp_unlos = 2.25;
 				else
 					temp_unlos = 2.5;
-			} else if(this.contains(Suit.HEART, Value.QUEEN)) {
-				if(this.contains(Suit.HEART, Value.JACK)) {
-					if(this.contains(Suit.HEART, Value.TEN)) temp_unlos = 2;
+			} else if(suitHasCard(cards, Value.QUEEN)) {
+				if(suitHasCard(cards, Value.JACK)) {
+					if(suitHasCard(cards, Value.TEN)) temp_unlos = 2;
 					else temp_unlos = 2.25;
-				} else if(this.contains(Suit.HEART, Value.TEN) && this.contains(Suit.HEART, Value.NINE))
+				} else if(suitHasCard(cards, Value.TEN) && suitHasCard(cards, Value.NINE))
 					temp_unlos = 2.5;
 				else 
 					temp_unlos = 2.75;
 			} else 
 				temp_unlos = 3;
-		} else {
-			temp_unlos = 0;
-			// TODO: If length > 3
-		} this.unlos_he = temp_unlos;
-	
-		if(this.num_dia == 0) {
-			temp_unlos = 0;
-		} else if(this.num_dia == 1) {
-			if(this.contains(Suit.DIAMOND, Value.ACE)) temp_unlos = 0;
-			else temp_unlos = 1;
-		} else if(this.num_dia == 2) {
-			if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.KING)) temp_unlos = 0;
-			else if(this.contains(Suit.DIAMOND, Value.ACE) && this.contains(Suit.DIAMOND, Value.QUEEN)) temp_unlos = 0.5;
-			else if(this.contains(Suit.DIAMOND, Value.ACE)) temp_unlos = 1;
-			else if(this.contains(Suit.DIAMOND, Value.KING)) temp_unlos = 1.5;
-			else temp_unlos = 2;
-		} else if(this.num_dia == 3) {
-			if(this.contains(Suit.DIAMOND, Value.ACE)) {
-				if(this.contains(Suit.DIAMOND, Value.KING)) {
-					if(this.contains(Suit.DIAMOND, Value.QUEEN)) temp_unlos = 0;
-					else if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 0.75;
-					else temp_unlos = 1;
-				} else if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
-					if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1;
-					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.25;
-					else temp_unlos = 1.5;
-				} else if(this.contains(Suit.DIAMOND, Value.JACK)) {
-					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1.25;
-					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.5;
-					else temp_unlos = 1.75;
-				} else {
-					temp_unlos = 2;
-				}
-			} else if(this.contains(Suit.DIAMOND, Value.KING)) {
-				if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
-					if(this.contains(Suit.DIAMOND, Value.JACK)) temp_unlos = 1;
-					else if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1;
-					else temp_unlos = 1.25;
-				} else if(this.contains(Suit.DIAMOND, Value.JACK)) {
-					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 1.5;
-					else if(this.contains(Suit.DIAMOND, Value.NINE)) temp_unlos = 1.75;
-					else temp_unlos = 2;
-				} else if(this.contains(Suit.DIAMOND, Value.TEN) && this.contains(Suit.DIAMOND, Value.NINE))
-					temp_unlos = 2.25;
-				else
-					temp_unlos = 2.5;
-			} else if(this.contains(Suit.DIAMOND, Value.QUEEN)) {
-				if(this.contains(Suit.DIAMOND, Value.JACK)) {
-					if(this.contains(Suit.DIAMOND, Value.TEN)) temp_unlos = 2;
-					else temp_unlos = 2.25;
-				} else if(this.contains(Suit.DIAMOND, Value.TEN) && this.contains(Suit.DIAMOND, Value.NINE))
-					temp_unlos = 2.5;
-				else 
-					temp_unlos = 2.75;
-			} else
-				temp_unlos = 3;
-		} else {
-			temp_unlos = 0;
-			// TODO: If length > 3
-		} this.unlos_di = temp_unlos;
+		} 
 		
-		if(this.num_club == 0) {
-			temp_unlos = 0;
-		} else if(this.num_club == 1) {
-			if(this.contains(Suit.CLUB, Value.ACE)) temp_unlos = 0;
-			else temp_unlos = 1;
-		} else if(this.num_club == 2) {
-			if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.KING)) temp_unlos = 0;
-			else if(this.contains(Suit.CLUB, Value.ACE) && this.contains(Suit.CLUB, Value.QUEEN)) temp_unlos = 0.5;
-			else if(this.contains(Suit.CLUB, Value.ACE)) temp_unlos = 1;
-			else if(this.contains(Suit.CLUB, Value.KING)) temp_unlos = 1.5;
-			else temp_unlos = 2;
-		} else if(this.num_club == 3) {
-			if(this.contains(Suit.CLUB, Value.ACE)) {
-				if(this.contains(Suit.CLUB, Value.KING)) {
-					if(this.contains(Suit.CLUB, Value.QUEEN)) temp_unlos = 0;
-					else if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 0.75;
-					else temp_unlos = 1;
-				} else if(this.contains(Suit.CLUB, Value.QUEEN)) {
-					if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 0.5;
-					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1;
-					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.25;
-					else temp_unlos = 1.5;
-				} else if(this.contains(Suit.CLUB, Value.JACK)) {
-					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1.25;
-					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.5;
-					else temp_unlos = 1.75;
-				} else {
-					temp_unlos = 2;
-				}
-			} else if(this.contains(Suit.CLUB, Value.KING)) {
-				if(this.contains(Suit.CLUB, Value.QUEEN)) {
-					if(this.contains(Suit.CLUB, Value.JACK)) temp_unlos = 1;
-					else if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1;
-					else temp_unlos = 1.25;
-				} else if(this.contains(Suit.CLUB, Value.JACK)) {
-					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 1.5;
-					else if(this.contains(Suit.CLUB, Value.NINE)) temp_unlos = 1.75;
-					else temp_unlos = 2;
-				} else if(this.contains(Suit.CLUB, Value.TEN) && this.contains(Suit.CLUB, Value.NINE))
-					temp_unlos = 2.25;
-				else
-					temp_unlos = 2.5;
-			} else if(this.contains(Suit.CLUB, Value.QUEEN)) {
-				if(this.contains(Suit.CLUB, Value.JACK)) {
-					if(this.contains(Suit.CLUB, Value.TEN)) temp_unlos = 2;
-					else temp_unlos = 2.25;
-				} else if(this.contains(Suit.CLUB, Value.TEN) && this.contains(Suit.CLUB, Value.NINE))
-					temp_unlos = 2.5;
-				else 
-					temp_unlos = 2.75;
-			} else
-				temp_unlos = 3;
-		} else {
-			temp_unlos = 0;
-			// TODO: If length > 3
-		} this.unlos_cl = temp_unlos;
+		else { 
+			// Suit length > 3
+			if(cards.get(3).compareTo(new Card(suit, Value.EIGHT)) > 0 &&
+					cards.get(2).getValue().ordinal() == cards.get(3).getValue().ordinal() + 1)
+				temp_unlos = 0;
+			else temp_unlos = 0.5;
+			temp_unlos -= 0.25 * cards.size();
+			temp_unlos += 1.5;
+			temp_unlos += calculateUnlos(cards.subList(0,3), suit);
+		}
+		
+		return temp_unlos;
+	}
+
+	/*
+	 * Check if the given number is present in the cards given
+	 * Ideal usage: All the cards given should belong to the same suit
+	 */
+	private boolean suitHasCard(List<Card> cards, Value value) {
+		for(Card card : cards)
+			if(card.getValue().equals(value))
+				return true;
+		return false;
+	}
+	
+	/*
+	 * Returns sorted list of cards in the specified suit
+	 */
+	public List<Card> getSuit(Suit suit) {
+		ArrayList<Card> list = new ArrayList<>();
+		
+		for(Card c : this.cards)
+			if(c.getSuit().equals(suit))
+				list.add(c);
+		
+		Collections.sort(list, Collections.reverseOrder());
+		
+		return list;
 	}
 	
 	public String toString() {
