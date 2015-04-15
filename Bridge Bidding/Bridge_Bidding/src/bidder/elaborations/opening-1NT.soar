@@ -1,9 +1,13 @@
+#################### Pattern checking ####################
+
 sp {expand*opening-1NT*pattern
     (state <s> ^name bidder ^node <n>)
     (<n> ^name opening-1NT)
 -->
     (<n> ^pattern *)
 }
+
+################### Constraint checking ###################
 
 sp {expand*opening-1NT
    (state <s> ^name bidder ^node <n> ^myview <v>)

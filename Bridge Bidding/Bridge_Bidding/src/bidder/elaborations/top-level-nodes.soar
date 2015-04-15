@@ -1,3 +1,5 @@
+#################### Pattern checking ####################
+
 sp {expand*opening*pattern
     (state <s> ^name bidder ^node <n>)
     (<n> ^name opening)
@@ -11,6 +13,22 @@ sp {expand*1Mfollowup*pattern
 -->
     (<n> ^pattern |PASS 1M *|)
 }
+
+sp {expand*1M2Mfollowup*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1M2Mfollowup)
+-->
+    (<n> ^pattern |PASS 2M PASS 1M *|)
+}
+
+sp {expand*1NTfollowup*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1NTfollowup)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+################### Constraint checking ###################
 
 sp {expand*opening
     (state <s> ^name bidder ^node <n>)
@@ -31,7 +49,7 @@ sp {expand*opening
          ^child opening-4M)
 }
 
-sp {expand-1Mfollowup
+sp {expand*1Mfollowup
     (state <s> ^name bidder ^node <n>)
     (<n> ^name 1Mfollowup
          ^pattern-checked true)
@@ -43,5 +61,31 @@ sp {expand-1Mfollowup
          ^child 2m-over-1M
          ^child 2H-over-1S
          ^child jump-shift-over-1M-opening
-         ^child simple-raise-major-opening)
+         ^child simple-raise-major-opening
+         ^child 2N-over-1M-opening
+         ^child jump-raise-over-1M-opening
+         ^child 3N-over-1M-opening
+         ^child game-raise-over-1M-opening
+         ^child splinter-over-1M-opening)
+}
+
+sp {expand*1M2Mfollowup
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1M2Mfollowup
+         ^pattern-checked true)
+-->
+    (<n> ^status visited)
+}
+
+sp {expand*1NTfollowup
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1NTfollowup
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child stayman-1NT-initiate
+         ^child transfer-to-heart
+         ^child transfer-to-spade
+         ^child minor-suit-transfer
+         ^child simple-invitation-in-NT)
 }

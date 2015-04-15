@@ -1,0 +1,94 @@
+#################### Pattern checking ####################
+
+sp {expand*stayman-1NT-initiate*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-1NT-initiate)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*transfer-to-heart*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name transfer-to-heart)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*transfer-to-spade*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name transfer-to-spade)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*minor-suit-transfer*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name minor-suit-transfer)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+################### Constraint checking ###################
+
+sp {expand*stayman-1NT-initiate
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name stayman-1NT-initiate
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 8}
+         ^lmaj_low {<lmaj_low> >= 4}
+         ^balanced_low {<bl> >= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2C ^meaning <mean>)
+    (<mean> ^hcp_low 8
+            ^lmaj_low 4
+            ^balanced_low 1)
+}
+
+sp {expand*transfer-to-heart
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-heart
+         ^pattern-checked true)
+    (<v> ^heart.num_low {<hnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2D ^meaning <mean>)
+    (<mean> ^heart.num_low 5)
+}
+
+sp {expand*transfer-to-spade
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-spade
+         ^pattern-checked true)
+    (<v> ^spade.num_low {<hnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^spade.num_low 5)
+}
+
+sp {expand*minor-suit-transfer
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name minor-suit-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_high {<hcp_high> <= 7} 
+         ^lmin_low {<lmin_low> >= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^lmin_low 6)
+}
+
+sp {expand*simple-invitation-in-NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name simple-invitation-in-NT
+         ^pattern-checked true)
+    (<v> ^lmaj_high {<lmaj_high> <= 3}
+         ^lmin_high {<lmin_high> <= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^lmaj_high 3
+            ^lmin_high 5)
+}
+        

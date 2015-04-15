@@ -1,9 +1,4 @@
-#{bid-rule
-#    :name "1 major opening bid"
-#    :patt-prio 100
-#    :patt (*)
-#    :hand-info ((100 (HCP low 11 high 22) (firstbid ?x low 1)))}
-
+#################### Pattern checking ####################
 
 sp {expand*opening-1M*pattern
     (state <s> ^name bidder ^node <n>)
@@ -11,6 +6,8 @@ sp {expand*opening-1M*pattern
 -->
     (<n> ^pattern *)
 }
+
+################### Constraint checking ###################
 
 sp {expand*opening-1M
    (state <s> ^name bidder ^node <n> ^myview <v>)

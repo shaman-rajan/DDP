@@ -284,9 +284,56 @@ sp {expand*game-raise-over-1M-opening
             ^<major>.num_low 5)
 }
 
-#sp {expand*splinter-over-1M-opening
-#    (state <s> ^name bidder ^node <n> ^myview <v>)
-#    (<n> ^name splinter-over-1M-opening
-#         ^pattern-checked true
-#         ^M <major>)
-#    (<v>
+sp {expand*splinter-over-1M-opening*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name splinter-over-1M-opening
+         ^pattern-checked true
+         ^M spade)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^hcp_high {<hcp_high> <= 15}
+         ^<suit>.num_high {<snh> <= 1}
+         ^spade.num_low {<spnl> >= 4})
+-->
+    (<n> ^status visited ^bi <b>)
+    (<b> ^short-form (concat 4 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^hcp_high 15
+            ^<suit>.num_high 1
+            ^spade.num_low 4)
+}
+
+sp {expand*splinter-over-1M-opening*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name splinter-over-1M-opening
+         ^pattern-checked true
+         ^M heart)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^hcp_high {<hcp_high> <= 15}
+         ^spade.num_high {<snh> <= 1}
+         ^heart.num_low {<spnl> >= 4})
+-->
+    (<n> ^status visited ^bi <b>)
+    (<b> ^short-form 3S ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^hcp_high 15
+            ^spade.num_high 1
+            ^heart.num_low 4)
+}
+
+sp {expand*splinter-over-1M-opening*3
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name splinter-over-1M-opening
+         ^pattern-checked true
+         ^M heart)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^hcp_high {<hcp_high> <= 15}
+         ^{<suit> << dia club >>}.num_high {<snh> <= 1}
+         ^heart.num_low {<spnl> >= 4})
+-->
+    (<n> ^status visited ^bi <b>)
+    (<b> ^short-form (concat 4 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^hcp_high 15
+            ^<suit>.num_high 1
+            ^heart.num_low 4)
+}
