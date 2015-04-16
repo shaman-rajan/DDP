@@ -14,5 +14,6 @@ source opening-4level.soar
 source 1Mfollowup.soar
 source 1M2Mfollowup.soar
 source 1NTfollowup.soar
+source stayman-responses.soar
 
 source top-state.soar

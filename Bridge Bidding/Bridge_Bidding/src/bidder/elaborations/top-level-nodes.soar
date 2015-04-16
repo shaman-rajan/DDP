@@ -28,6 +28,20 @@ sp {expand*1NTfollowup*pattern
     (<n> ^pattern |PASS 1N *|)
 }
 
+sp {expand*stayman-responses*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses)
+-->
+    (<n> ^pattern |PASS 2C PASS 1N *|)
+}
+
+sp {expand*stayman-responses-level2*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses-level2)
+-->
+    (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
+}
+
 ################### Constraint checking ###################
 
 sp {expand*opening
@@ -87,5 +101,31 @@ sp {expand*1NTfollowup
          ^child transfer-to-heart
          ^child transfer-to-spade
          ^child minor-suit-transfer
-         ^child simple-invitation-in-NT)
+         ^child simple-invitation-in-NT
+         ^child simple-invitation-in-minor
+         ^child slam-invitation-in-major
+         ^child 3N-over-1N
+         ^child gerber
+         ^child game-major-over-1NT
+         ^child slam-invitation-4NT
+         ^child game-minor-over-1NT)
+}
+
+sp {expand*stayman-responses
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child stayman-2D-response
+         ^child stayman-2H-response
+         ^child stayman-2S-response)
+}
+
+sp {expand*stayman-responses-level2
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses-level2
+         ^pattern-checked true)
+-->
+    (<n> ^status visited)
 }

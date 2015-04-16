@@ -15,5 +15,7 @@ sp {apply*initialize-bidder
          ^child opening
          ^child 1Mfollowup
          ^child 1M2Mfollowup
-         ^child 1NTfollowup)
+         ^child 1NTfollowup
+         ^child stayman-responses
+         ^child stayman-responses-level2)
 }

@@ -28,6 +28,62 @@ sp {expand*minor-suit-transfer*pattern
     (<n> ^pattern |PASS 1N *|)
 }
 
+sp {expand*simple-invitation-in-NT*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name simple-invitation-in-NT)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*simple-invitation-in-minor*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name simple-invitation-in-minor)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*slam-invitation-in-major*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name slam-invitation-in-major)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*3N-over-1N*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 3N-over-1N)
+-->
+    (<n> ^pattern |PASS 1N *|)
+} 
+
+sp {expand*gerber*pattern #want slam
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name gerber)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*game-major-over-1NT*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name game-major-over-1NT)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*slam-invitation-4NT*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name slam-invitation-4NT)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
+sp {expand*game-minor-over-1NT*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name game-minor-over-1NT)
+-->
+    (<n> ^pattern |PASS 1N *|)
+}
+
 ################### Constraint checking ###################
 
 sp {expand*stayman-1NT-initiate
@@ -92,3 +148,103 @@ sp {expand*simple-invitation-in-NT
             ^lmin_high 5)
 }
         
+sp {expand*simple-invitation-in-minor
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name simple-invitation-in-minor
+         ^pattern-checked true
+         ^m <minor>)
+    (<v> ^lmaj_high {<lmaj_high> <= 3}
+         ^<minor>.num_low {<mnl> >= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <minor>) ^meaning <mean>)
+    (<mean> ^lmaj_high 3
+            ^<minor>.num_low 6)
+}
+
+sp {expand*slam-invitation-in-major
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name slam-invitation-in-major
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^<major>.num_low {<mnl> >= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
+    (<mean> ^<major>.num_low 6)
+}
+
+sp {expand*3N-over-1N
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name 3N-over-1N
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^hcp_high {<hcp_high> <= 14}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^hcp_low 11
+            ^hcp_high 14
+            ^lmaj_high 3)
+}
+
+sp {expand*gerber
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name gerber
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 20})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 4C ^meaning <mean>)
+    (<mean> ^hcp_low 20)
+}
+
+sp {expand*game-major-over-1NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name game-major-over-1NT
+         ^pattern-checked true
+         ^M <major>)
+    (<v> ^hcp_low {<hcp_low> >= 5}
+         ^hcp_high {<hcp_high> <= 8}
+         ^<major>.num_low {<mnl> >= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
+    (<mean> ^hcp_low 5
+            ^hcp_high 8
+            ^<major>.num_low 6)
+}
+
+sp {expand*slam-invitation-4NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name slam-invitation-4NT
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 14}
+         ^hcp_high {<hcp_high> <= 15}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 4N ^meaning <mean>)
+    (<mean> ^hcp_low 14
+            ^hcp_high 15
+            ^lmaj_high 3)
+}
+
+sp {expand*game-minor-over-1NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name game-minor-over-1NT
+         ^pattern-checked true
+         ^m <minor>)
+    (<v> ^<minor>.num_low {<mnl> >= 6}
+         ^<minor>.hcp_low {<hcp_low> >= 6}
+         ^<minor>.hcp_high {<hcp_high> <= 9}
+         ^ratio_low {<rl> >= 0.8})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 5 <minor>) ^meaning <mean>)
+    (<mean> ^<minor>.num_low 6
+            ^<minor>.hcp_low 6
+            ^<minor>.hcp_high 9
+            ^ratio_low 0.8)
+}
