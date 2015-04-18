@@ -63,11 +63,25 @@ sp {expand*stayman-4M-over-2D*pattern #GF
     (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
 }
 
-sp {expand*stayman-4N-over-2D*pattern #GF
+sp {expand*stayman-4N-over-2D*pattern 
     (state <s> ^name bidder ^node <n>)
     (<n> ^name stayman-4N-over-2D)
 -->
     (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
+}
+
+sp {expand*stayman-2N-over-2M*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-2N-over-2M)
+-->
+    (<n> ^pattern |PASS 2M PASS 2C PASS 1N *|)
+}
+
+sp {expand*stayman-2S-over-2H*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-2S-over-2H)
+-->
+    (<n> ^pattern |PASS 2H PASS 2C PASS 1N *|)
 }
 
 ################### Constraint checking ###################
@@ -111,7 +125,7 @@ sp {expand*stayman-2M-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-2M-over-2D
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^<major>.num_low {<mnl> >= 5})
 -->
     (<n> ^status visited ^bid <b>)
@@ -134,7 +148,7 @@ sp {expand*stayman-3m-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-3m-over-2D
          ^pattern-checked true
-         ^m <minor>)
+         ^minor <minor>)
     (<v> ^<minor>.num_low {<mnl> >= 6})
 -->
     (<n> ^status visited ^bid <b>)
@@ -146,7 +160,7 @@ sp {expand*stayman-3M-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-3M-over-2D
          ^pattern-checked true
-         ^m <major>)
+         ^major <major>)
     (<v> ^<major>.num_low {<mnl> >= 5}
          ^hcp_high {<hcp_high> <= 9})
 -->
@@ -173,7 +187,7 @@ sp {expand*stayman-4M-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-4M-over-2D
          ^pattern-checked true
-         ^m <major>)
+         ^major <major>)
     (<v> ^<major>.num_low {<mnl> >= 5}
          ^hcp_low {<hcp_low> >= 10})
 -->
@@ -187,7 +201,7 @@ sp {expand*stayman-4N-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-4N-over-2D
          ^pattern-checked true
-         ^m <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 14}
          ^hcp_high {<hcp_high> <= 15})
 -->
@@ -195,4 +209,27 @@ sp {expand*stayman-4N-over-2D
     (<b> ^short-form 4N ^meaning <mean>)
     (<mean> ^hcp_low 14
             ^hcp_high 15)
+}
+
+sp {expand*stayman-2S-over-2H
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name stayman-2S-over-2H
+         ^pattern-checked true)
+    (<v> ^spade.num_low {<snl> >= 4})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^spade.num_low 4)
+}
+
+sp {expand*stayman-2N-over-2M
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name stayman-2N-over-2M
+         ^pattern-checked true
+         ^major <major>)
+    (<v> ^<major>.num_high {<mnh> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^<major>.num_high 3)
 }

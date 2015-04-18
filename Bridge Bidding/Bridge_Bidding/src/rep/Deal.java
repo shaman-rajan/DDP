@@ -113,8 +113,8 @@ public class Deal {
 		return -1;
 	}
 	
-	public void askForNextBid() {
-		this.auction.askForNextBid();
+	public Bid askForNextBid() {
+		return this.auction.askForNextBid();
 	}
 	
 	public Player getNorth() {

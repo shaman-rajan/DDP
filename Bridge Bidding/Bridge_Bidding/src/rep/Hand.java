@@ -44,6 +44,9 @@ public class Hand implements Cloneable {
 	
 		quality_sp = quality_he = quality_di = quality_cl = 0;
 		ratio = 0;
+		
+		unlos_sp = unlos_he = unlos_di = unlos_cl = 0;
+		total_points_sp = total_points_he = total_points_di = total_points_cl = 0;
 	}
 	
 	public Hand(Card c) {
@@ -187,6 +190,8 @@ public class Hand implements Cloneable {
 	 */
 	public double unlos_sp, unlos_he, unlos_di, unlos_cl;
 	
+	public int total_points_sp, total_points_he, total_points_di, total_points_cl;
+	
 	// Calculation function
 	private void calculateFeatureValues() {
 		
@@ -231,6 +236,8 @@ public class Hand implements Cloneable {
 		ratio = 0;
 		
 		unlos_sp = unlos_he = unlos_di = unlos_cl = 0;
+		
+		total_points_sp = total_points_he = total_points_di = total_points_cl = 0;
 		
 		/*
 		 * HC Cards and Points (full hand)
@@ -530,8 +537,8 @@ public class Hand implements Cloneable {
 		if(num_club < min) min= num_club;
 		if(num_spade == max) longest_sp = 1;
 		if(num_heart == max) longest_he = 1;
-		if(num_dia == max) longest_cl = 1;
-		if(num_club == max) longest_di = 1;
+		if(num_dia == max) longest_di = 1;
+		if(num_club == max) longest_cl = 1;
 		if(num_spade == min) shortest_sp = 1;
 		if(num_heart == min) shortest_he = 1;
 		if(num_dia == min) shortest_di = 1;
@@ -923,6 +930,11 @@ public class Hand implements Cloneable {
 		this.unlos_he = calculateUnlos(this.getSuit(Suit.HEART), Suit.HEART);
 		this.unlos_di = calculateUnlos(this.getSuit(Suit.DIAMOND), Suit.DIAMOND);
 		this.unlos_cl = calculateUnlos(this.getSuit(Suit.CLUB), Suit.CLUB);
+		
+		this.total_points_sp = this.points_hc + dp_sp_ha;
+		this.total_points_he = this.points_hc + dp_he_ha;
+		this.total_points_di = this.points_hc + dp_di_ha;
+		this.total_points_cl = this.points_hc + dp_cl_ha;
 	}
 	
 	private double calculateUnlos(List<Card> cards, Suit suit) {

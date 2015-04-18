@@ -1,0 +1,284 @@
+#################### Pattern checking ####################
+
+sp {expand*bids-over-1C*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name bids-over-1C)
+-->
+    (<n> ^pattern |PASS 1C *|)
+}
+
+sp {expand*bids-over-1D*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name bids-over-1D)
+-->
+    (<n> ^pattern |PASS 1D *|)
+}
+
+################### Constraint checking ###################
+
+	#2H/2S: 17+ HCP, 5+ in bid suit.
+	#2NT: 10-11 HCP, no 4 card major.
+	#3C/1D: 17+ HCP, 5+ Clubs.
+	#3NT: 12-13 HCP, no four card major.
+
+sp {expand*bids-over-1C*D
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^balanced_low {<blow> >= 2}
+         ^hcp_low {<hcp_low> >= 6}
+         ^club.num_high {<cnh> <= 4}
+         ^dia.num_low {<dnl> >= 4}
+         -^{<major> << spade heart >>}.num_high {<mnh> > <dnl>})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1D ^meaning <mean>)
+    (<mean> ^balanced_low 2
+            ^hcp_low 6
+            ^club.num_high 4
+            ^dia.num_low 4
+            ^dia.longest 1)
+}
+
+# Bid heart if more hearts than spades, or if 4-4
+sp {expand*bids-over-1C*H*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_low {<hnl> >= 4}
+         ^spade.num_high {<snh> < <hnl>}
+         ^heart.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1H ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^heart.num_low 4
+            ^spade.num_high 4
+            ^heart.longest 1)
+}
+
+sp {expand*bids-over-1C*H*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_low {<hnl> >= 4}
+         ^spade.num_high {<snh> <= 4}
+         ^heart.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1H ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^heart.num_low 4
+            ^spade.num_high 4
+            ^heart.longest 1)
+}
+
+# Bid spade if < 4 hearts and > 4 spades, or if 5-5
+sp {expand*bids-over-1C*S*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_high {<hnh> <= 3}
+         ^spade.num_low 4
+         ^spade.num_high 4
+         ^spade.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1S ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^spade.num_low 4
+            ^spade.longest 1)
+}
+
+sp {expand*bids-over-1C*S*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^spade.num_low {<snl> >= 5}
+         ^spade.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1S ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^spade.num_low 4
+            ^spade.longest 1)
+}
+
+sp {expand*bids-over-1C*NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<v> ^balanced_high {<bhigh> <= 1}
+         ^hcp_low {<hcp_low> >= 6}
+         ^hcp_high {<hcp_high> <= 9}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 6
+            ^hcp_high 9
+            ^lmaj_high 3)
+}
+
+sp {expand*bids-over-1C*C*2level
+    (state <s> ^name bidder ^noe <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<n> ^club.num_low {<cnl> >= 5}
+         ^club.total_points_low {<ctpl> >= 6}
+         ^club.total_points_high {<ctph> <= 12})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2C ^meaning <mean>)
+    (<mean> ^club.num_low 5
+            ^club.total_points_low 6
+            ^club.total_points_high 12)
+}
+
+sp {expand*bids-over-1C*C*3level # Forcing to 3N or 4m at least
+    (state <s> ^name bidder ^noe <n> ^myview <v>)
+    (<n> ^name bids-over-1C
+         ^pattern-checked true)
+    (<n> ^club.num_low {<cnl> >= 5}
+         ^club.total_points_low {<ctpl> >= 13})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3C ^meaning <mean>)
+    (<mean> ^club.num_low 5
+            ^club.total_points_low 13)
+}
+
+# Bid heart if more hearts than spades, or if 4-4
+sp {expand*bids-over-1D*H*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_low {<hnl> >= 4}
+         ^spade.num_high {<snh> < <hnl>}
+         ^heart.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1H ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^heart.num_low 4
+            ^spade.num_high 4
+            ^heart.longest 1)
+}
+
+sp {expand*bids-over-1D*H*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_low {<hnl> >= 4}
+         ^spade.num_high {<snh> <= 4}
+         ^heart.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1H ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^heart.num_low 4
+            ^spade.num_high 4
+            ^heart.longest 1)
+}
+
+# Bid spade if < 4 hearts and > 4 spades, or if 5-5
+sp {expand*bids-over-1D*S*1
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^heart.num_high {<hnh> <= 3}
+         ^spade.num_low 4
+         ^spade.num_high 4
+         ^spade.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1S ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^spade.num_low 4
+            ^spade.longest 1)
+}
+
+sp {expand*bids-over-1D*S*2
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^spade.num_low {<snl> >= 5}
+         ^spade.longest 1)
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1S ^meaning <mean>)
+    (<mean> ^hcp_low 6
+            ^spade.num_low 4
+            ^spade.longest 1)
+}
+
+sp {expand*bids-over-1D*NT
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^balanced_high {<bhigh> <= 1}
+         ^hcp_low {<hcp_low> >= 6}
+         ^hcp_high {<hcp_high> <= 9}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 1N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 6
+            ^hcp_high 9
+            ^lmaj_high 3)
+}
+
+sp {expand*bids-over-1D*C
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 10}
+         ^club.num_low {<cnl> >= 5}
+         ^dia.num_high {<dnh> <= 3}
+         -^{<maj> << spade heart >>}.num_high {<mnh> >= <cnl>})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2C ^meaning <mean>)
+    (<mean> ^hcp_low 10
+            ^club.num_low 5
+            ^dia.num_high 3
+            ^club.longest 1)
+}
+
+sp {expand*bids-over-1D*D*2level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^dia.num_low {<cnl> >= 4}
+         ^dia.total_points_low {<ctpl> >= 6}
+         ^dia.total_points_high {<ctph> <= 12})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2D ^meaning <mean>)
+    (<mean> ^dia.num_low 4
+            ^dia.total_points_low 6
+            ^dia.total_points_high 12)
+}
+
+sp {expand*bids-over-1D*D*3level # Forcing to 3N or 4m at least
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^dia.num_low {<cnl> >= 4}
+         ^dia.total_points_low {<ctpl> >= 13})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2D ^meaning <mean>)
+    (<mean> ^dia.num_low 4
+            ^dia.total_points_low 13)
+}

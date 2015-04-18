@@ -7,10 +7,12 @@ source top-level-nodes.soar
 
 source opening-1NT.soar
 source opening-1M.soar
+source opening-1mi.soar
 source opening-2level.soar
 source opening-3level.soar
 source opening-4level.soar
 
+source 1mifollowup.soar
 source 1Mfollowup.soar
 source 1M2Mfollowup.soar
 source 1NTfollowup.soar

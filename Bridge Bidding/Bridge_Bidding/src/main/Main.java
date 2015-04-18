@@ -24,21 +24,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		Deal d = new Deal();
-		
-		HandView h = new HandView(null);
-		h.points_hc_low = 11;
-		h.lmaj_low = 5;
-		
-		while(!h.matchesHand(d.getNorth().getHand()) && !inp.equals("no")) {
-			System.out.println("Did not match HCP: " + d.getNorth().getHand().points_hc + " NumSpade: " + d.getNorth().getHand().num_spade);
-			//inp = s.next();
-			d = new Deal();
-		}
-		
-		d.askForNextBid();
-		d.askForNextBid();
-		d.askForNextBid();
+		GUI.createAndShowGUI();
 		
 		//TestAgent.createAndRunAgent();
 	}

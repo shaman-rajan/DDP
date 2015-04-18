@@ -113,6 +113,7 @@ public class BidHistory {
 						return false;
 					else {
 						switch(bidInPattern.charAt(1)) {
+						
 						case 'M':
 							if(M == 0 && (previousBidString.charAt(1) == 'S' || previousBidString.charAt(1) == 'H')) {
 								M = previousBidString.charAt(1);
@@ -123,6 +124,7 @@ public class BidHistory {
 							else
 								return false;
 							break;
+						
 						case 'm':
 							if(m == 0 && (previousBidString.charAt(1) == 'D' || previousBidString.charAt(1) == 'C')) {
 								m = previousBidString.charAt(1);
@@ -133,6 +135,7 @@ public class BidHistory {
 							else
 								return false;
 							break;
+						
 						case 'O':
 							if(OM == 0 && (previousBidString.charAt(1) == 'S' || previousBidString.charAt(1) == 'H')) {
 								OM = previousBidString.charAt(1);
@@ -143,6 +146,7 @@ public class BidHistory {
 							else
 								return false;
 							break;
+						
 						case 'o':
 							if(om == 0 && (previousBidString.charAt(1) == 'D' || previousBidString.charAt(1) == 'C')) {
 								om = previousBidString.charAt(1);
@@ -153,6 +157,10 @@ public class BidHistory {
 							else
 								return false;
 							break;
+							
+						default:
+							if(!(previousBidString.charAt(1) == bidInPattern.charAt(1)))
+								return false;
 						}
 					}
 				} else {
@@ -167,15 +175,15 @@ public class BidHistory {
 			}
 		}
 		
-		if(M != 0) iden.CreateStringWME("M", completeSuitName(M));
+		if(M != 0) iden.CreateStringWME("major", completeSuitName(M));
 		else {
-			iden.CreateStringWME("M", "spade");
-			iden.CreateStringWME("M", "heart");
+			iden.CreateStringWME("major", "spade");
+			iden.CreateStringWME("major", "heart");
 		}
-		if(m != 0) iden.CreateStringWME("m", completeSuitName(m));
+		if(m != 0) iden.CreateStringWME("minor", completeSuitName(m));
 		else {
-			iden.CreateStringWME("m", "dia");
-			iden.CreateStringWME("m", "club");
+			iden.CreateStringWME("minor", "dia");
+			iden.CreateStringWME("minor", "club");
 		}
 		if(OM != 0) iden.CreateStringWME("OM", completeSuitName(OM));
 		if(om != 0) iden.CreateStringWME("om", completeSuitName(om));

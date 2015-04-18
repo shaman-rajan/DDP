@@ -118,7 +118,7 @@ sp {expand*1N-over-1M
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name 1N-over-1M
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 6}
          ^hcp_high {<hcp_high> <= 10}
          ^<major>.num_high {<mnh> <= 2})
@@ -135,8 +135,8 @@ sp {expand*2m-over-1M
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name 2m-over-1M
          ^pattern-checked true
-         ^M <major>
-         ^m <minor>)
+         ^major <major>
+         ^minor <minor>)
     (<v> ^hcp_low {<hcp_low> >= 11}
          ^<minor>.longest 1)
 -->
@@ -165,7 +165,7 @@ sp {expand*jump-shift-over-1M-opening*1
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name jump-shift-over-1M-opening
          ^pattern-checked true
-         ^M spade)
+         ^major spade)
     (<v> ^hcp_low {<hcp_low> >= 17}
          ^{<suit> <> spade}.num_low {<snl> >= 5})
 -->
@@ -179,7 +179,7 @@ sp {expand*jump-shift-over-1M-opening*2
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name jump-shift-over-1M-opening
          ^pattern-checked true
-         ^M heart)
+         ^major heart)
     (<v> ^hcp_low {<hcp_low> >= 17}
          ^spade.num_low {<snl> >= 5})
 -->
@@ -193,7 +193,7 @@ sp {expand*jump-shift-over-1M-opening*3
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name jump-shift-over-1M-opening
          ^pattern-checked true
-         ^M heart)
+         ^major heart)
     (<v> ^hcp_low {<hcp_low> >= 17}
          ^{<suit> << dia club >>}.num_low {<snl> >= 5})
 -->
@@ -207,14 +207,14 @@ sp {expand*simple-raise-major-opening
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name simple-raise-major-opening
          ^pattern-checked true
-         ^M <major>)
-    (<v> ^<major>.hcp_low {<mhcp_low> >= 6}
+         ^major <major>)
+    (<v> ^hcp_low {<mhcp_low> >= 6}
          ^hcp_high {<hcp_high> <= 10}
          ^<major>.num_low {<mnum_low> >= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 2 <major>) ^meaning <mean>)
-    (<mean> ^<major>.hcp_low 6
+    (<mean> ^hcp_low 6
             ^hcp_high 10
             ^<major>.num_low 3)
 }
@@ -223,7 +223,7 @@ sp {expand*2N-over-1M-opening
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name 2N-over-1M-opening
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 13}
          ^<major>.num_low {<mnl> >= 3})
 -->
@@ -237,7 +237,7 @@ sp {expand*jump-raise-over-1M-opening
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name jump-raise-over-1M-opening
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 10}
          ^hcp_high {<hcp_high> <= 12}
          ^<major>.num_low {<mnl> >= 3})
@@ -253,7 +253,7 @@ sp {expand*3N-over-1M-opening
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name 3N-over-1M-opening
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 15}
          ^hcp_high {<hcp_high> >= 17}
          ^balanced_high {<balh> <= 1}
@@ -273,7 +273,7 @@ sp {expand*game-raise-over-1M-opening
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name game-raise-over-1M-opening
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_high {<hcp_high> <= 10}
          ^<major>.num_low {<mnl> >= 5}
          ^<major>.dp {<mdp> >= 3})
@@ -288,7 +288,7 @@ sp {expand*splinter-over-1M-opening*1
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name splinter-over-1M-opening
          ^pattern-checked true
-         ^M spade)
+         ^major spade)
     (<v> ^hcp_low {<hcp_low> >= 11}
          ^hcp_high {<hcp_high> <= 15}
          ^<suit>.num_high {<snh> <= 1}
@@ -306,7 +306,7 @@ sp {expand*splinter-over-1M-opening*2
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name splinter-over-1M-opening
          ^pattern-checked true
-         ^M heart)
+         ^major heart)
     (<v> ^hcp_low {<hcp_low> >= 11}
          ^hcp_high {<hcp_high> <= 15}
          ^spade.num_high {<snh> <= 1}
@@ -324,7 +324,7 @@ sp {expand*splinter-over-1M-opening*3
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name splinter-over-1M-opening
          ^pattern-checked true
-         ^M heart)
+         ^major heart)
     (<v> ^hcp_low {<hcp_low> >= 11}
          ^hcp_high {<hcp_high> <= 15}
          ^{<suit> << dia club >>}.num_high {<snh> <= 1}

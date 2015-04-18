@@ -12,7 +12,6 @@
     <member path="bidder/elaborations/elaborations_source.soar" />
     <member path="bidder/elaborations/expand-node.soar" />
     <member path="bidder/elaborations/input-views.soar" />
-    <member path="bidder/elaborations/opening-1M.soar" />
     <member path="bidder/elaborations/opening-1NT.soar" />
     <member path="bidder/elaborations/opening-2level.soar" />
     <member path="bidder/elaborations/opening-3level.soar" />
@@ -20,6 +19,9 @@
     <member path="bidder/elaborations/stayman-responses.soar" />
     <member path="bidder/elaborations/top-level-nodes.soar" />
     <member path="bidder/elaborations/top-state.soar" />
+    <member path="bidder/elaborations/opening-1mi.soar" />
+    <member path="bidder/elaborations/opening-1M.soar" />
+    <member path="bidder/elaborations/1mifollowup.soar" />
   </members>
 </soaragent>
 

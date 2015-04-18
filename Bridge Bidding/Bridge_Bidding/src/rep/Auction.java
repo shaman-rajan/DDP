@@ -13,7 +13,7 @@ public class Auction {
 		return this.bid_history.getTurn();
 	}
 
-	public void askForNextBid() {
+	public Bid askForNextBid() {
 		int nextPos = this.getNextTurn();
 		Player nextPlayer = this.deal.getPlayer(nextPos);
 		Bid bid = nextPlayer.askForBid();
@@ -21,6 +21,8 @@ public class Auction {
 		System.out.println(Deal.getPosition(nextPos) + " made bid " + bid);
 		System.out.println();
 		System.out.println();
+		
+		return bid;
 	}
 
 	public boolean makeBid(int player, Bid bid) {

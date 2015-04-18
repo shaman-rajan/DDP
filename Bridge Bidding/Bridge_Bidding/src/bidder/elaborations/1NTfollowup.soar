@@ -152,7 +152,7 @@ sp {expand*simple-invitation-in-minor
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name simple-invitation-in-minor
          ^pattern-checked true
-         ^m <minor>)
+         ^minor <minor>)
     (<v> ^lmaj_high {<lmaj_high> <= 3}
          ^<minor>.num_low {<mnl> >= 6})
 -->
@@ -166,7 +166,7 @@ sp {expand*slam-invitation-in-major
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name slam-invitation-in-major
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^<major>.num_low {<mnl> >= 6})
 -->
     (<n> ^status visited ^bid <b>)
@@ -204,7 +204,7 @@ sp {expand*game-major-over-1NT
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name game-major-over-1NT
          ^pattern-checked true
-         ^M <major>)
+         ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 5}
          ^hcp_high {<hcp_high> <= 8}
          ^<major>.num_low {<mnl> >= 6})
@@ -235,7 +235,7 @@ sp {expand*game-minor-over-1NT
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name game-minor-over-1NT
          ^pattern-checked true
-         ^m <minor>)
+         ^minor <minor>)
     (<v> ^<minor>.num_low {<mnl> >= 6}
          ^<minor>.hcp_low {<hcp_low> >= 6}
          ^<minor>.hcp_high {<hcp_high> <= 9}

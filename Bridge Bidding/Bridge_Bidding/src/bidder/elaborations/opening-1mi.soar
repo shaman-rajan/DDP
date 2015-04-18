@@ -1,0 +1,77 @@
+#################### Pattern checking ####################
+
+sp {expand*opening-1m*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name opening-1m)
+-->
+    (<n> ^pattern *)
+}
+
+################### Constraint checking ###################
+
+sp {expand*opening-1m*1
+   (state <s> ^name bidder ^node <n> ^myview <v>)
+   (<n> ^name opening-1m
+        ^pattern-checked true
+        ^minor <minor>
+        ^minor {<> <minor2> <minor>})
+   -(<v> ^balanced_high {<bal> <= 1} 
+         ^hcp_low {<hcp> >= 15} 
+         ^hcp_high {<hcp> <= 17})
+    (<v> ^hcp_low {<hcp> >= 13} 
+         ^hcp_high {<hcp> <= 22}
+         ^<minor>.num_low <minlow>
+         ^<minor2>.num_high {<min2high> < <minlow>})     
+-->
+   (<n> ^status visited ^bid <b>)
+   (<b> ^short-form (concat 1 <minor>) ^meaning <mean>)
+   (<mean> ^hcp_low 13
+           ^hcp_high 22)
+   # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*opening-1m*2
+   (state <s> ^name bidder ^node <n> ^myview <v>)
+   (<n> ^name opening-1m
+        ^pattern-checked true
+        ^minor <minor>
+        ^minor {<> <minor2> <minor>})
+   -(<v> ^balanced_high {<bal> <= 1} 
+         ^hcp_low {<hcp> >= 15} 
+         ^hcp_high {<hcp> <= 17})
+    (<v> ^hcp_low {<hcp> >= 13} 
+         ^hcp_high {<hcp> <= 22}
+         ^<minor>.num_low <minlow>
+         ^<minor2>.num_low {<min2low> <minlow>}
+         ^<minor>.hcp_low <minhcp>
+         ^<minor2>.hcp_low {<min2hcp> < <minhcp>})     
+-->
+   (<n> ^status visited ^bid <b>)
+   (<b> ^short-form (concat 1 <minor>) ^meaning <mean>)
+   (<mean> ^hcp_low 13
+           ^hcp_high 22)
+   # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*opening-1m*3
+   (state <s> ^name bidder ^node <n> ^myview <v>)
+   (<n> ^name opening-1m
+        ^pattern-checked true
+        ^minor <minor>
+        ^minor {<> <minor2> <minor>})
+   -(<v> ^balanced_high {<bal> <= 1} 
+         ^hcp_low {<hcp> >= 15} 
+         ^hcp_high {<hcp> <= 17})
+    (<v> ^hcp_low {<hcp> >= 13} 
+         ^hcp_high {<hcp> <= 22}
+         ^<minor>.num_low <minlow>
+         ^<minor2>.num_low {<min2low> <minlow>}
+         ^<minor>.hcp_low <minhcp>
+         ^<minor2>.hcp_low {<min2hcp> <minhcp>})     
+-->
+   (<n> ^status visited ^bid <b>)
+   (<b> ^short-form 1C ^meaning <mean>)
+   (<mean> ^hcp_low 13
+           ^hcp_high 22)
+   # No children as of now, otherwise would add the children attribute
+}

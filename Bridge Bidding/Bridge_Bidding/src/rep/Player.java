@@ -1,5 +1,8 @@
 package rep;
 
+import java.util.List;
+
+import rep.Card.Suit;
 import sconn.BiddingAgent;
 import sml.Identifier;
 import sml.WMElement;
@@ -186,5 +189,63 @@ public class Player {
 	
 	public String toString() {
 		return this.position + ": " + this.hand.toString();
+	}
+
+	public String createStringForGUI(Suit suit) {
+		return convertSuitListToString(this.getHand().getSuit(suit));
+	}
+
+	private String convertSuitListToString(List<Card> cards) {
+		String ret = "";
+		
+		for(Card c : cards) {
+			switch (c.getValue()) {
+			case ACE:
+				ret += "A";
+				break;
+			case KING:
+				ret += "K";
+				break;
+			case QUEEN:
+				ret += "Q";
+				break;
+			case JACK:
+				ret += "J";
+				break;
+			case TEN:
+				ret += "10";
+				break;
+			case NINE:
+				ret += "9";
+				break;
+			case EIGHT:
+				ret += "8";
+				break;
+			case SEVEN:
+				ret += "7";
+				break;
+			case SIX:
+				ret += "6";
+				break;
+			case FIVE:
+				ret += "5";
+				break;
+			case FOUR:
+				ret += "4";
+				break;
+			case THREE:
+				ret += "3";
+				break;
+			case TWO:
+				ret += "2";
+				break;
+			default:
+				break;
+			}
+			
+			ret += " ";
+		}
+		
+		return ret;
 	}
 }

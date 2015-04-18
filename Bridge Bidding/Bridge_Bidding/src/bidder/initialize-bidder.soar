@@ -13,6 +13,7 @@ sp {apply*initialize-bidder
    (<s> ^name bidder ^node <n>)
    (<n> ^name top-node ^status visited
          ^child opening
+         ^child 1mfollowup
          ^child 1Mfollowup
          ^child 1M2Mfollowup
          ^child 1NTfollowup

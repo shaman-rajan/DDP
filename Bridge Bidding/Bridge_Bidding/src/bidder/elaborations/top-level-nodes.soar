@@ -7,6 +7,13 @@ sp {expand*opening*pattern
     (<n> ^pattern *)
 }
 
+sp {expand*1mfollowup*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1mfollowup)
+-->
+    (<n> ^pattern |PASS 1m *|)
+}
+
 sp {expand*1Mfollowup*pattern
     (state <s> ^name bidder ^node <n>)
     (<n> ^name 1Mfollowup)
@@ -50,8 +57,9 @@ sp {expand*opening
          ^pattern-checked true)
 -->
     (<n> ^status visited
-         ^child opening-1NT
+         ^child opening-1m
          ^child opening-1M
+         ^child opening-1NT
          ^child opening-2C
          ^child opening-2H
          ^child opening-2S
@@ -61,6 +69,16 @@ sp {expand*opening
          ^child opening-3N
          ^child opening-4m
          ^child opening-4M)
+}
+
+sp {expand*1mfollowup
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name 1mfollowup
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child bids-over-1C
+         ^child bids-over-1D)
 }
 
 sp {expand*1Mfollowup

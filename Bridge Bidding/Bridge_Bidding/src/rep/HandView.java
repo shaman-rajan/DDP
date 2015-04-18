@@ -5,7 +5,7 @@ import sml.WMElement;
 
 public class HandView implements Cloneable {
 	
-	private static final int MAXVALUE = 50;
+	private static final int MAXVALUE = 100;
 	private static final int TOTALPOINTS = 40;
 	private static final int TOTALPOINTS_SUIT = 10;
 	private static final int NUMCARDSINHAND = 13;
@@ -85,6 +85,11 @@ public class HandView implements Cloneable {
 					unlos_he_low, unlos_he_high, 
 					unlos_di_low, unlos_di_high,
 					unlos_cl_low, unlos_cl_high;
+	
+	public int total_points_sp_low, total_points_sp_high,
+				total_points_he_low, total_points_he_high,
+				total_points_di_low, total_points_di_high,
+				total_points_cl_low, total_points_cl_high;
 	
 	public HandView(Hand fullHand, Player p) {
 		this.player = p;
@@ -239,6 +244,11 @@ public class HandView implements Cloneable {
 		this.unlos_he_low = this.unlos_he_high = fullHand.unlos_he;
 		this.unlos_di_low = this.unlos_di_high = fullHand.unlos_di;
 		this.unlos_cl_low = this.unlos_cl_high = fullHand.unlos_cl;
+		
+		this.total_points_sp_low = this.total_points_sp_high = fullHand.total_points_sp;
+		this.total_points_he_low = this.total_points_he_high =  fullHand.total_points_he;
+		this.total_points_di_low = this.total_points_di_high = fullHand.total_points_di;
+		this.total_points_cl_low = this.total_points_cl_high = fullHand.total_points_cl;
 	}
 	
 	public HandView(HandView hv, Player p) {
@@ -364,6 +374,15 @@ public class HandView implements Cloneable {
 		unlos_di_high = MAXVALUE;
 		unlos_cl_low = -1;
 		unlos_cl_high = MAXVALUE;
+		
+		total_points_sp_low = -1;
+		total_points_sp_high = MAXVALUE;		
+		total_points_he_low = -1;
+		total_points_he_high = MAXVALUE;
+		total_points_di_low = -1;
+		total_points_di_high = MAXVALUE;
+		total_points_cl_low = -1;
+		total_points_cl_high = MAXVALUE;
 	}
 	
 	/*
@@ -432,6 +451,8 @@ public class HandView implements Cloneable {
 		spade.CreateIntWME("quality", this.quality_sp);
 		spade.CreateFloatWME("unlos_low", this.unlos_sp_low);
 		spade.CreateFloatWME("unlos_high", this.unlos_sp_high);
+		spade.CreateIntWME("total_points_low", this.total_points_sp_low);
+		spade.CreateIntWME("total_points_high", this.total_points_sp_high);
 
 		Identifier heart = view.CreateIdWME("heart");
 		heart.CreateIntWME("hcp_low", points_heart_low);
@@ -450,7 +471,7 @@ public class HandView implements Cloneable {
 		heart.CreateIntWME("rkcb", rkcb_heart);
 		heart.CreateIntWME("num_low", num_heart_low);
 		heart.CreateIntWME("num_high", num_heart_high);
-		spade.CreateIntWME("dp", this.dp_he_ha);
+		heart.CreateIntWME("dp", this.dp_he_ha);
 		heart.CreateIntWME("longest", this.longest_he);
 		heart.CreateIntWME("shortest", this.shortest_he);
 		heart.CreateIntWME("biddable", this.biddable_he);
@@ -460,7 +481,9 @@ public class HandView implements Cloneable {
 		heart.CreateIntWME("quality", this.quality_he);
 		heart.CreateFloatWME("unlos_low", this.unlos_he_low);
 		heart.CreateFloatWME("unlos_high", this.unlos_he_high);
-
+		heart.CreateIntWME("total_points_low", this.total_points_he_low);
+		heart.CreateIntWME("total_points_high", this.total_points_he_high);
+		
 		Identifier dia = view.CreateIdWME("dia");
 		dia.CreateIntWME("hcp_low", points_dia_low);
 		dia.CreateIntWME("hcp_high", points_dia_high);
@@ -478,7 +501,7 @@ public class HandView implements Cloneable {
 		dia.CreateIntWME("rkcb", rkcb_dia);
 		dia.CreateIntWME("num_low", num_dia_low);
 		dia.CreateIntWME("num_high", num_dia_high);
-		spade.CreateIntWME("dp", this.dp_di_ha);
+		dia.CreateIntWME("dp", this.dp_di_ha);
 		dia.CreateIntWME("longest", this.longest_di);
 		dia.CreateIntWME("shortest", this.shortest_di);
 		dia.CreateIntWME("biddable", this.biddable_di);
@@ -488,7 +511,9 @@ public class HandView implements Cloneable {
 		dia.CreateIntWME("quality", this.quality_di);
 		dia.CreateFloatWME("unlos_low", this.unlos_di_low);
 		dia.CreateFloatWME("unlos_high", this.unlos_di_high);
-
+		dia.CreateIntWME("total_points_low", this.total_points_di_low);
+		dia.CreateIntWME("total_points_high", this.total_points_di_high);
+		
 		Identifier club = view.CreateIdWME("club");
 		club.CreateIntWME("hcp_low", points_club_low);
 		club.CreateIntWME("hcp_high", points_club_high);
@@ -506,7 +531,7 @@ public class HandView implements Cloneable {
 		club.CreateIntWME("rkcb", rkcb_club);
 		club.CreateIntWME("num_low", num_club_low);
 		club.CreateIntWME("num_high", num_club_high);
-		spade.CreateIntWME("dp", this.dp_cl_ha);
+		club.CreateIntWME("dp", this.dp_cl_ha);
 		club.CreateIntWME("longest", this.longest_cl);
 		club.CreateIntWME("shortest", this.shortest_cl);
 		club.CreateIntWME("biddable", this.biddable_cl);
@@ -516,6 +541,8 @@ public class HandView implements Cloneable {
 		club.CreateIntWME("quality", this.quality_cl);
 		club.CreateFloatWME("unlos_low", this.unlos_cl_low);
 		club.CreateFloatWME("unlos_high", this.unlos_cl_high);
+		club.CreateIntWME("total_points_low", this.total_points_cl_low);
+		club.CreateIntWME("total_points_high", this.total_points_cl_high);
 		
 		view.CreateIntWME("dp_sp_he", this.dp_sp_he); 
 		view.CreateIntWME("dp_sp_di", this.dp_sp_di);
@@ -733,7 +760,11 @@ public class HandView implements Cloneable {
 			(this.unlos_sp_low <= hand.unlos_sp && this.unlos_sp_high >= hand.unlos_sp) &&
 			(this.unlos_he_low <= hand.unlos_he && this.unlos_he_high >= hand.unlos_he) &&
 			(this.unlos_di_low <= hand.unlos_di && this.unlos_di_high >= hand.unlos_di) &&
-			(this.unlos_cl_low <= hand.unlos_cl && this.unlos_cl_high >= hand.unlos_cl)
+			(this.unlos_cl_low <= hand.unlos_cl && this.unlos_cl_high >= hand.unlos_cl) &&
+			(this.total_points_sp_low <= hand.total_points_sp && this.total_points_sp_high >= hand.total_points_sp) &&
+			(this.total_points_he_low <= hand.total_points_he && this.total_points_he_high >= hand.total_points_he) &&
+			(this.total_points_di_low <= hand.total_points_di && this.total_points_di_high >= hand.total_points_di) &&
+			(this.total_points_cl_low <= hand.total_points_cl && this.total_points_cl_high >= hand.total_points_cl)
 		)
 			return true;
 		else
@@ -1274,6 +1305,29 @@ public class HandView implements Cloneable {
 			}
 		}
 		
+		if(feature.equals("spade dp")) {
+			if(this.dp_sp_ha == -1) {
+				this.dp_sp_ha = value;
+				return true;
+			} else if(this.dp_sp_ha == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("spade total_points_low")) {
+			if(this.dp_sp_ha < value) {
+				this.dp_sp_ha = value;
+				
+				// TODO: Infer
+				
+				return true;
+			} else
+				return false;
+		}
+		
 		/*
 		 * Heart updates
 		 */
@@ -1520,6 +1574,29 @@ public class HandView implements Cloneable {
 				this.contradiction();
 				return false;
 			}
+		}
+		
+		if(feature.equals("heart dp")) {
+			if(this.dp_he_ha == -1) {
+				this.dp_he_ha = value;
+				return true;
+			} else if(this.dp_he_ha == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("heart total_points_low")) {
+			if(this.dp_he_ha < value) {
+				this.dp_he_ha = value;
+				
+				// TODO: Infer
+				
+				return true;
+			} else
+				return false;
 		}
 		
 		/*
@@ -1769,6 +1846,29 @@ public class HandView implements Cloneable {
 			}
 		}
 		
+		if(feature.equals("dia dp")) {
+			if(this.dp_di_ha == -1) {
+				this.dp_di_ha = value;
+				return true;
+			} else if(this.dp_di_ha == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("dia total_points_low")) {
+			if(this.dp_di_ha < value) {
+				this.dp_di_ha = value;
+				
+				// TODO: Infer
+				
+				return true;
+			} else
+				return false;
+		}
+		
 		/*
 		 * Club updates
 		 */
@@ -2014,6 +2114,29 @@ public class HandView implements Cloneable {
 				this.contradiction();
 				return false;
 			}
+		}
+		
+		if(feature.equals("club dp")) {
+			if(this.dp_cl_ha == -1) {
+				this.dp_cl_ha = value;
+				return true;
+			} else if(this.dp_cl_ha == value)
+				return false;
+			else {
+				this.contradiction();
+				return false;
+			}
+		}
+		
+		if(feature.equals("club total_points_low")) {
+			if(this.dp_cl_ha < value) {
+				this.dp_cl_ha = value;
+				
+				// TODO: Infer
+				
+				return true;
+			} else
+				return false;
 		}
 		
 		/* TODO: view.CreateIntWME("dp_sp_he", this.dp_sp_he); 
