@@ -42,11 +42,18 @@ sp {expand*stayman-responses*pattern
     (<n> ^pattern |PASS 2C PASS 1N *|)
 }
 
-sp {expand*stayman-responses-level2*pattern
+sp {expand*stayman-responses-to-2D*pattern
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name stayman-responses-level2)
+    (<n> ^name stayman-responses-to-2D)
 -->
     (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
+}
+
+sp {expand*stayman-responses-to-2M*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses-to-2M)
+-->
+    (<n> ^pattern |PASS 2M PASS 2C PASS 1N *|)
 }
 
 ################### Constraint checking ###################
@@ -140,10 +147,27 @@ sp {expand*stayman-responses
          ^child stayman-2S-response)
 }
 
-sp {expand*stayman-responses-level2
+sp {expand*stayman-responses-to-2D
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name stayman-responses-level2
+    (<n> ^name stayman-responses-to-2D
          ^pattern-checked true)
 -->
-    (<n> ^status visited)
+    (<n> ^status visited
+         ^child stayman-2M-over-2D
+         ^child stayman-2N-over-2D
+         ^child stayman-3m-over-2D
+         ^child stayman-3M-over-2D
+         ^child stayman-3N-over-2D
+         ^child stayman-4M-over-2D
+         ^child stayman-4N-over-2D)
+}
+
+sp {expand*stayman-responses-to-2M
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-responses-to-2M
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child stayman-2N-over-2M
+         ^child stayman-2S-over-2H)
 }
