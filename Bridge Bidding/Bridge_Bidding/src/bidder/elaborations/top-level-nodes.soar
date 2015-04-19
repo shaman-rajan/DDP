@@ -85,7 +85,8 @@ sp {expand*1mfollowup
 -->
     (<n> ^status visited
          ^child bids-over-1C
-         ^child bids-over-1D)
+         ^child bids-over-1D
+         ^child bids-over-1m)
 }
 
 sp {expand*1Mfollowup

@@ -18,5 +18,6 @@ sp {apply*initialize-bidder
          ^child 1M2Mfollowup
          ^child 1NTfollowup
          ^child stayman-responses
-         ^child stayman-responses-level2)
+         ^child stayman-responses-to-2D
+         ^child stayman-responses-to-2M)
 }

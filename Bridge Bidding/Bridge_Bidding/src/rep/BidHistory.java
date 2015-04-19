@@ -101,11 +101,15 @@ public class BidHistory {
 		int i = 0;
 		for(String bidInPattern : patternBids) {
 			if(bidInPattern.charAt(0) == '*') {
-				while(i < this.bids_made) {
-					if(!this.getBid(i).toString().equals("PASS"))
-						return false;
-					i++;
-				}
+				if(bidInPattern.length() == 1)
+					while(i < this.bids_made) {
+						if(!this.getBid(i).toString().equals("PASS"))
+							return false;
+						i++;
+					}
+				else if(bidInPattern.equals("**"))
+					break; // No need to check rest, everything is accepted
+				else return false;
 			} else if(i < bids_made) {
 				String previousBidString = this.getBid(i).toString();
 				if(Character.isDigit(bidInPattern.charAt(0))) {

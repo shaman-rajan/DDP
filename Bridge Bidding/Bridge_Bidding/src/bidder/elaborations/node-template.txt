@@ -1,27 +1,18 @@
-sp {expand*opening-3m*pattern
+sp {expand**pattern
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name opening-3m)
+    (<n> ^name )
 -->
-    (<n> ^pattern *)
+    (<n> ^pattern )
 }
 
-sp {expand*opening-3m
+sp {expand*
     (state <s> ^name bidder ^node <n> ^myview <v>)
-    (<n> ^name opening-3m
-         ^pattern-checked true
-         ^m <minor>)
-    (<v> ^hcp_low {<hcp_low> >= 5}
-         ^hcp_high {<hcp_high> <= 10}
-         ^<minor>.num_low 7
-         ^<minor>.num_high 7
-         ^lmaj_high {<lmaj_high> <= 3})
+    (<n> ^name 
+         ^pattern-checked true)
+    (<v> )
 -->
     (<n> ^status visited ^bid <b>)
-    (<b> ^short-form (concat 3 <minor>) ^meaning <mean>)
-    (<mean> ^hcp_low 5
-            ^hcp_high 10
-            ^<minor>.num_low 7
-            ^<minor>.num_high 7
-            ^lmaj_high 3)
+    (<b> ^short-form  ^meaning <mean>)
+    (<mean> )
     # No children as of now, otherwise would add the children attribute
 }

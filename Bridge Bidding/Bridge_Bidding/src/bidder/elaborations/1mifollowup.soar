@@ -14,12 +14,14 @@ sp {expand*bids-over-1D*pattern
     (<n> ^pattern |PASS 1D *|)
 }
 
-################### Constraint checking ###################
+sp {expand*bids-over-1m*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name bids-over-1m)
+-->
+    (<n> ^pattern |PASS 1m *|)
+}
 
-	#2H/2S: 17+ HCP, 5+ in bid suit.
-	#2NT: 10-11 HCP, no 4 card major.
-	#3C/1D: 17+ HCP, 5+ Clubs.
-	#3NT: 12-13 HCP, no four card major.
+################### Constraint checking ###################
 
 sp {expand*bids-over-1C*D
     (state <s> ^name bidder ^node <n> ^myview <v>)
@@ -270,6 +272,19 @@ sp {expand*bids-over-1D*D*2level
             ^dia.total_points_high 12)
 }
 
+sp {expand*bids-over-1D*C*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1D
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 17}
+         ^club.num_low {<cnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3C ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^club.num_low 5)
+}
+
 sp {expand*bids-over-1D*D*3level # Forcing to 3N or 4m at least
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name bids-over-1D
@@ -278,7 +293,55 @@ sp {expand*bids-over-1D*D*3level # Forcing to 3N or 4m at least
          ^dia.total_points_low {<ctpl> >= 13})
 -->
     (<n> ^status visited ^bid <b>)
-    (<b> ^short-form 2D ^meaning <mean>)
+    (<b> ^short-form 3D ^meaning <mean>)
     (<mean> ^dia.num_low 4
             ^dia.total_points_low 13)
+}
+
+sp {expand*bids-over-1m*M*2level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1m
+         ^pattern-checked true
+         ^major <major>)
+    (<v> ^hcp_low {<hcp_low> >= 17}
+         ^<major>.num_low {<mnl> >= 5})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 2 <major>) ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^<major>.num_low 5)
+}
+
+sp {expand*bids-over-1m*NT*2level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1m
+         ^pattern-checked true)
+    (<v> ^balanced_high {<bhigh> <= 1}
+         ^hcp_low {<hcp_low> >= 10}
+         ^hcp_high {<hcp_high> <= 11}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 10
+            ^hcp_high 11
+            ^lmaj_high 3)
+}
+
+sp {expand*bids-over-1m*NT*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name bids-over-1m
+         ^pattern-checked true)
+    (<v> ^balanced_high {<bhigh> <= 1}
+         ^hcp_low {<hcp_low> >= 12}
+         ^hcp_high {<hcp_high> <= 13}
+         ^lmaj_high {<lmaj_high> <= 3})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 12
+            ^hcp_high 13
+            ^lmaj_high 3)
 }

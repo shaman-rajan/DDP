@@ -20,6 +20,7 @@ sp {expand*opening-1m*1
          ^hcp_high {<hcp> <= 17})
     (<v> ^hcp_low {<hcp> >= 13} 
          ^hcp_high {<hcp> <= 22}
+         ^lmaj_high {<lmaj_high> <= 4}
          ^<minor>.num_low <minlow>
          ^<minor2>.num_high {<min2high> < <minlow>})     
 -->
@@ -41,6 +42,7 @@ sp {expand*opening-1m*2
          ^hcp_high {<hcp> <= 17})
     (<v> ^hcp_low {<hcp> >= 13} 
          ^hcp_high {<hcp> <= 22}
+         ^lmaj_high {<lmaj_high> <= 4}
          ^<minor>.num_low <minlow>
          ^<minor2>.num_low {<min2low> <minlow>}
          ^<minor>.hcp_low <minhcp>
@@ -64,6 +66,7 @@ sp {expand*opening-1m*3
          ^hcp_high {<hcp> <= 17})
     (<v> ^hcp_low {<hcp> >= 13} 
          ^hcp_high {<hcp> <= 22}
+         ^lmaj_high {<lmaj_high> <= 4}
          ^<minor>.num_low <minlow>
          ^<minor2>.num_low {<min2low> <minlow>}
          ^<minor>.hcp_low <minhcp>
