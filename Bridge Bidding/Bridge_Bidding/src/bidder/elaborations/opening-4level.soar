@@ -42,8 +42,7 @@ sp {expand*opening-4M
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name opening-4M
          ^pattern-checked true
-         ^major <major>
-         ^major {<other-major> <> <major>})
+         ^major <major> {<> <major> <other-major>})
     (<v> ^hcp_low {<hcp_low> >= 5}
          ^hcp_high {<hcp_high> <= 10}
          ^<major>.num_low 8

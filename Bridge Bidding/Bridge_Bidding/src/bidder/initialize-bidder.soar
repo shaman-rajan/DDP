@@ -19,5 +19,6 @@ sp {apply*initialize-bidder
          ^child 1NTfollowup
          ^child stayman-responses
          ^child stayman-responses-to-2D
-         ^child stayman-responses-to-2M)
+         ^child stayman-responses-to-2M
+         ^child transferfollowup)
 }

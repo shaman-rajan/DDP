@@ -5,6 +5,7 @@ import sml.WMElement;
 
 public class HandView implements Cloneable {
 	
+	private static final int MINVALUE = 0;
 	private static final int MAXVALUE = 100;
 	private static final int TOTALPOINTS = 40;
 	private static final int TOTALPOINTS_SUIT = 10;
@@ -259,48 +260,48 @@ public class HandView implements Cloneable {
 	public HandView(Player p) {
 		this.player = p;
 		
-		points_hc_low = -1;
+		points_hc_low = MINVALUE;
 		points_hc_high = MAXVALUE;
-		points_spade_low = -1;
+		points_spade_low = MINVALUE;
 		points_spade_high = MAXVALUE; 
-		points_heart_low = -1;
+		points_heart_low = MINVALUE;
 		points_heart_high = MAXVALUE; 
-		points_dia_low = -1;
+		points_dia_low = MINVALUE;
 		points_dia_high = MAXVALUE; 		
-		points_club_low = -1;
+		points_club_low = MINVALUE;
 		points_club_high = MAXVALUE; 
 				
-		controls_low = -1;
+		controls_low = MINVALUE;
 		controls_high = MAXVALUE;
-		controls_spade_low = -1;
+		controls_spade_low = MINVALUE;
 		controls_spade_high = MAXVALUE;
-		controls_heart_low = -1;
+		controls_heart_low = MINVALUE;
 		controls_heart_high = MAXVALUE;
-		controls_dia_low = -1;
+		controls_dia_low = MINVALUE;
 		controls_dia_high = MAXVALUE;
-		controls_club_low = -1;
+		controls_club_low = MINVALUE;
 		controls_club_high = MAXVALUE;
 		
-		highCards_low = -1;
+		highCards_low = MINVALUE;
 		highCards_high = MAXVALUE;
-		highCards_spade_low = -1;
+		highCards_spade_low = MINVALUE;
 		highCards_spade_high = MAXVALUE;
-		highCards_heart_low = -1;
+		highCards_heart_low = MINVALUE;
 		highCards_heart_high = MAXVALUE;
-		highCards_dia_low = -1;
+		highCards_dia_low = MINVALUE;
 		highCards_dia_high = MAXVALUE;
-		highCards_club_low = -1;
+		highCards_club_low = MINVALUE;
 		highCards_club_high = MAXVALUE;		
 		
-		honors_low = -1;
+		honors_low = MINVALUE;
 		honors_high = MAXVALUE;
-		honors_spade_low = -1;
+		honors_spade_low = MINVALUE;
 		honors_spade_high = MAXVALUE;		
-		honors_heart_low = -1;
+		honors_heart_low = MINVALUE;
 		honors_heart_high = MAXVALUE;
-		honors_dia_low = -1;
+		honors_dia_low = MINVALUE;
 		honors_dia_high = MAXVALUE;
-		honors_club_low = -1;
+		honors_club_low = MINVALUE;
 		honors_club_high = MAXVALUE;
 
 		aces = ace_spade = ace_heart = ace_dia = ace_club = -1;
@@ -310,16 +311,16 @@ public class HandView implements Cloneable {
 		tens = ten_spade = ten_heart = ten_dia = ten_club = -1;
 		rkcb_spade = rkcb_heart = rkcb_dia = rkcb_club = -1;
 		
-		num_spade_low = -1;
+		num_spade_low = MINVALUE;
 		num_spade_high = MAXVALUE;		
-		num_heart_low = -1;
+		num_heart_low = MINVALUE;
 		num_heart_high = MAXVALUE;
-		num_dia_low = -1;
+		num_dia_low = MINVALUE;
 		num_dia_high = MAXVALUE;
-		num_club_low = -1;
+		num_club_low = MINVALUE;
 		num_club_high = MAXVALUE;
 
-		balanced_low = -1;
+		balanced_low = MINVALUE;
 		balanced_high = MAXVALUE;
 		
 		dp_sp_he = dp_sp_di = dp_sp_cl = dp_sp_ha =
@@ -329,7 +330,7 @@ public class HandView implements Cloneable {
 		
 		num_suits = -1;
 		
-		lmaj_low = lmin_low = -1;
+		lmaj_low = lmin_low = MINVALUE;
 		lmaj_high = lmin_high = MAXVALUE;
 		
 		longest_sp = longest_he = longest_di = longest_cl = -1;
@@ -338,15 +339,15 @@ public class HandView implements Cloneable {
 		
 		biddable_sp = biddable_he = biddable_di = biddable_cl = -1;
 		
-		intermediate_ha_low = -1;
+		intermediate_ha_low = MINVALUE;
 		intermediate_ha_high = MAXVALUE;
-		intermediate_sp_low = -1;
+		intermediate_sp_low = MINVALUE;
 		intermediate_sp_high = MAXVALUE;		
-		intermediate_he_low = -1;
+		intermediate_he_low = MINVALUE;
 		intermediate_he_high = MAXVALUE;
-		intermediate_di_low = -1;
+		intermediate_di_low = MINVALUE;
 		intermediate_di_high = MAXVALUE;
-		intermediate_cl_low = -1;
+		intermediate_cl_low = MINVALUE;
 		intermediate_cl_high = MAXVALUE;
 
 		stopper_sp = stopper_he = stopper_di = stopper_cl = -1;
@@ -363,25 +364,25 @@ public class HandView implements Cloneable {
 		
 		quality_sp = quality_he = quality_di = quality_cl = -1;
 		
-		ratio_low = -1;
+		ratio_low = MINVALUE;
 		ratio_high = MAXVALUE;
 		
-		unlos_sp_low = -1;
+		unlos_sp_low = MINVALUE;
 		unlos_sp_high = MAXVALUE;		
-		unlos_he_low = -1;
+		unlos_he_low = MINVALUE;
 		unlos_he_high = MAXVALUE;
-		unlos_di_low = -1;
+		unlos_di_low = MINVALUE;
 		unlos_di_high = MAXVALUE;
-		unlos_cl_low = -1;
+		unlos_cl_low = MINVALUE;
 		unlos_cl_high = MAXVALUE;
 		
-		total_points_sp_low = -1;
+		total_points_sp_low = MINVALUE;
 		total_points_sp_high = MAXVALUE;		
-		total_points_he_low = -1;
+		total_points_he_low = MINVALUE;
 		total_points_he_high = MAXVALUE;
-		total_points_di_low = -1;
+		total_points_di_low = MINVALUE;
 		total_points_di_high = MAXVALUE;
-		total_points_cl_low = -1;
+		total_points_cl_low = MINVALUE;
 		total_points_cl_high = MAXVALUE;
 	}
 	

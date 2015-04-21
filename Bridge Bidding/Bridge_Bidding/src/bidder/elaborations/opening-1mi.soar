@@ -13,8 +13,7 @@ sp {expand*opening-1m*1
    (state <s> ^name bidder ^node <n> ^myview <v>)
    (<n> ^name opening-1m
         ^pattern-checked true
-        ^minor <minor>
-        ^minor {<> <minor2> <minor>})
+        ^minor <minor> {<> <minor> <minor2>})
    -(<v> ^balanced_high {<bal> <= 1} 
          ^hcp_low {<hcp> >= 15} 
          ^hcp_high {<hcp> <= 17})
@@ -27,7 +26,8 @@ sp {expand*opening-1m*1
    (<n> ^status visited ^bid <b>)
    (<b> ^short-form (concat 1 <minor>) ^meaning <mean>)
    (<mean> ^hcp_low 13
-           ^hcp_high 22)
+           ^hcp_high 22
+           ^<minor>.num_low 3)
    # No children as of now, otherwise would add the children attribute
 }
 
@@ -35,8 +35,7 @@ sp {expand*opening-1m*2
    (state <s> ^name bidder ^node <n> ^myview <v>)
    (<n> ^name opening-1m
         ^pattern-checked true
-        ^minor <minor>
-        ^minor {<> <minor2> <minor>})
+        ^minor <minor> {<> <minor> <minor2>})
    -(<v> ^balanced_high {<bal> <= 1} 
          ^hcp_low {<hcp> >= 15} 
          ^hcp_high {<hcp> <= 17})
@@ -51,7 +50,8 @@ sp {expand*opening-1m*2
    (<n> ^status visited ^bid <b>)
    (<b> ^short-form (concat 1 <minor>) ^meaning <mean>)
    (<mean> ^hcp_low 13
-           ^hcp_high 22)
+           ^hcp_high 22
+           ^<minor>.num_low 3)
    # No children as of now, otherwise would add the children attribute
 }
 
@@ -59,8 +59,7 @@ sp {expand*opening-1m*3
    (state <s> ^name bidder ^node <n> ^myview <v>)
    (<n> ^name opening-1m
         ^pattern-checked true
-        ^minor <minor>
-        ^minor {<> <minor2> <minor>})
+        ^minor <minor> {<> <minor> <minor2>})
    -(<v> ^balanced_high {<bal> <= 1} 
          ^hcp_low {<hcp> >= 15} 
          ^hcp_high {<hcp> <= 17})
@@ -75,6 +74,7 @@ sp {expand*opening-1m*3
    (<n> ^status visited ^bid <b>)
    (<b> ^short-form 1C ^meaning <mean>)
    (<mean> ^hcp_low 13
-           ^hcp_high 22)
+           ^hcp_high 22
+           ^<minor>.num_low 3)
    # No children as of now, otherwise would add the children attribute
 }
