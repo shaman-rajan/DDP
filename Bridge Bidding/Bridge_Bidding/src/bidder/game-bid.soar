@@ -1,0 +1,54 @@
+sp {propose*game-bid*major
+    (state <s> ^impasse no-change 
+               ^attribute state
+               ^quiescence t
+               ^superstate <super>)
+    (<super> ^tview <tv>)
+    (<tv> ^game_forced 1
+          ^trump {<trump> << spade heart >>})
+-->
+    (<s> ^operator <o> +
+         ^operator <o> > =)
+    (<o> ^name game-bid ^bid <b>)
+    (<b> ^short-form (concat 4 <trump>) ^meaning <mean>)
+}
+
+sp {propose*game-bid*minor
+    (state <s> ^impasse no-change 
+               ^attribute state
+               ^quiescence t
+               ^superstate <super>)
+    (<super> ^tview <tv>)
+    (<tv> ^game_forced 1
+          ^trump {<trump> << dia club >>})
+-->
+    (<s> ^operator <o> +
+         ^operator <o> > =)
+    (<o> ^name game-bid ^bid <b>)
+    (<b> ^short-form (concat 5 <trump>) ^meaning <mean>)
+}
+
+sp {propose*game-bid*NT
+    (state <s> ^impasse no-change 
+               ^attribute state
+               ^quiescence t
+               ^superstate <super>)
+    (<super> ^tview <tv>)
+    (<tv> ^game_forced 1
+          ^trump N)
+-->
+    (<s> ^operator <o> +
+         ^operator <o> > =)
+    (<o> ^name game-bid ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+}
+
+
+sp {apply*game-bid
+    (state <s> ^operator <o> ^superstate.io.output-link <out>)
+    (<o> ^name game-bid ^bid <b>)
+    (<b> ^short-form <sf>)
+-->
+    (<out> ^bid <b>)
+    (write (crlf) | The bid selected is | <sf>)
+}

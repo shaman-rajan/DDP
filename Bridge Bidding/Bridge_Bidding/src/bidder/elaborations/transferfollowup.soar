@@ -1,5 +1,265 @@
 #################### Pattern checking ####################
 
+sp {expand*transfer-to-heart-response*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name transfer-to-heart-response)
+-->
+    (<n> ^pattern |PASS 2D PASS 1N *|)
+}
 
+sp {expand*transfer-to-spade-response*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name transfer-to-spade-response)
+-->
+    (<n> ^pattern |PASS 2H PASS 1N *|)
+}
+
+sp {expand*after-heart-transfer*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name after-heart-transfer)
+-->
+    (<n> ^pattern |PASS 2H PASS 2D PASS 1N *|)
+}
+
+sp {expand*after-spade-transfer*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name after-spade-transfer)
+-->
+    (<n> ^pattern |PASS 2S PASS 2H PASS 1N *|)
+}
 
 ################### Constraint checking ###################
+
+sp {expand*transfer-to-heart-response*normal
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-heart-response
+         ^pattern-checked true)
+    -(<v> ^heart.num_low {<hnl> >= 4}
+          ^hcp_low {<hcp_low> >= 17})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2H ^meaning <mean>)
+    (<mean> ^team.trump heart)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*transfer-to-heart-response*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-heart-response
+         ^pattern-checked true)
+    (<v> ^heart.num_low {<hnl> >= 4}
+         ^hcp_low {<hcp_low> >= 17})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3H ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^heart.num_low 4
+            ^team.trump heart
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*transfer-to-spade-response*normal
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-spade-response
+         ^pattern-checked true)
+    -(<v> ^spade.num_low {<hnl> >= 4}
+          ^hcp_low {<hcp_low> >= 17})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2S ^meaning <mean>)
+    (<mean> ^team.trump spade)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*transfer-to-spade-response*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name transfer-to-spade-response
+         ^pattern-checked true)
+    (<v> ^spade.num_low {<hnl> >= 4}
+         ^hcp_low {<hcp_low> >= 17})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3S ^meaning <mean>)
+    (<mean> ^hcp_low 17
+            ^spade.num_low 4
+            ^team.trump spade
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*pass
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_high {<hcp_high> <= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form PASS ^meaning <mean>)
+    (<mean> ^hcp_high 6)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*pass
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_high {<hcp_high> <= 6})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3S ^meaning <mean>)
+    (<mean> ^hcp_high 6)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^heart.num_low {<hnl> >= 6}
+         ^heart.dp {<hdp> <= 9})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3H ^meaning <mean>)
+    (<mean> ^heart.num_low 6
+            ^hcp_high 9
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*3level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^spade.num_low {<hnl> >= 6}
+         ^spade.dp {<sdp> <= 9})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3S ^meaning <mean>)
+    (<mean> ^spade.num_low 6
+            ^hcp_high 9
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*NTinvite
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 7}
+         ^hcp_high {<hcp_high> <= 10}
+         ^balanced_high {<bhigh> <= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 7
+            ^hcp_high 10
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*NTinvite
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 7}
+         ^hcp_high {<hcp_high> <= 10}
+         ^balanced_high {<bhigh> <= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 2N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 7
+            ^hcp_high 10
+            ^team.invited true)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*newsuit
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^{<> heart <suit>}.num_low {<snl> >= 4}
+         ^hcp_low {<hcp_low> >= 9})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 9
+            ^<suit>.num_low 4
+            ^team.game_forced 1)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*newsuit
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^{<> spade <suit>}.num_low {<snl> >= 4}
+         ^hcp_low {<hcp_low> >= 9})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
+    (<mean> ^hcp_low 9
+            ^<suit>.num_low 4
+            ^team.game_forced 1)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*NTgame
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^balanced_high {<bhigh> <= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 11
+            ^team.game_forced 1)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*NTgame
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^hcp_low {<hcp_low> >= 11}
+         ^balanced_high {<bhigh> <= 1})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^balanced_high 1
+            ^hcp_low 11
+            ^team.game_forced 1)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-heart-transfer*4level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-heart-transfer
+         ^pattern-checked true)
+    (<v> ^heart.num_low {<hnl> >= 6}
+         ^heart.dp {<hdp> >= 10})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 4H ^meaning <mean>)
+    (<mean> ^heart.num_low 6
+            ^heart.dp 10)
+    # No children as of now, otherwise would add the children attribute
+}
+
+sp {expand*after-spade-transfer*4level
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name after-spade-transfer
+         ^pattern-checked true)
+    (<v> ^spade.num_low {<hnl> >= 6}
+         ^spade.dp {<sdp> >= 9})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form 3S ^meaning <mean>)
+    (<mean> ^spade.num_low 6
+            ^hcp_high 9)
+    # No children as of now, otherwise would add the children attribute
+}

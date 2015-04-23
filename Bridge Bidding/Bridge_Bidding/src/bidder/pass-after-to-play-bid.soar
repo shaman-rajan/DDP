@@ -1,0 +1,17 @@
+sp {propose*to-play-bid
+    (state <s> ^name bidder ^tview <tv>)
+    (<tv> ^to_play true)
+-->
+    (<s> ^operator <o> +
+         ^operator <o> > =)
+    (<o> ^name to-play-bid)
+}
+
+sp {apply*to-play-bid
+    (state <s> ^operator <o> ^io.output-link <out>)
+    (<o> ^name to-play-bid)
+-->
+    (<out> ^bid <b>)
+    (<b> ^short-form PASS ^meaning <m>)
+    (write (crlf) | The bid selected is PASS |)
+}

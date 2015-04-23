@@ -195,7 +195,7 @@ public class BidHistory {
 		return true;
 	}
 	
-	private Bid getBid(int seq_num) {
+	public Bid getBid(int seq_num) {
 		if(seq_num >= bids_made) return null;
 		
 		int player_to_get_bid_from = (this.turn + 40 - (seq_num + 1)) % 4;

@@ -43,8 +43,8 @@ public class Player {
 		this.leftOppView = new HandView(this);
 		this.rightOppView = new HandView(this);
 		
-		this.teamView = new TeamView(hand);
-		this.opponentsView = new TeamView();
+		this.teamView = new TeamView(selfView, partnerView, this);
+		this.opponentsView = new TeamView(leftOppView, rightOppView, this);
 	}
 	
 	public Bid askForBid() {
@@ -138,15 +138,22 @@ public class Player {
 
 	public boolean updateViews(Identifier iden, int bidder) {
 		HandView toUpdate;
-		if(this.posCode == (bidder+2) % 4)
+		TeamView teamToUpdate;
+		if(this.posCode == (bidder+2) % 4) {
 			toUpdate = partnerView;
-		else if(this.posCode == (bidder+1) % 4)
+			teamToUpdate = teamView;
+		}
+		else if(this.posCode == (bidder+1) % 4) {
 			toUpdate = rightOppView;
-		else if(this.posCode == (bidder+3) % 4)
+			teamToUpdate = opponentsView;
+		}
+		else if(this.posCode == (bidder+3) % 4) {
 			toUpdate = leftOppView;
+			teamToUpdate = opponentsView;
+		}
 		else return false;
 		
-		if(toUpdate.updateView(iden))
+		if(toUpdate.updateView(iden, teamToUpdate))
 			return true;
 		else return false;
 	}

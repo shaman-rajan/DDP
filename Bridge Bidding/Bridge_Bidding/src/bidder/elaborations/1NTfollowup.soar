@@ -91,14 +91,12 @@ sp {expand*stayman-1NT-initiate
     (<n> ^name stayman-1NT-initiate
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 8}
-         ^lmaj_low {<lmaj_low> >= 4}
-         ^balanced_low {<bl> >= 1})
+         ^lmaj_low 4)
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2C ^meaning <mean>)
     (<mean> ^hcp_low 8
-            ^lmaj_low 4
-            ^balanced_low 1)
+            ^lmaj_low 4)
 }
 
 sp {expand*transfer-to-heart
@@ -145,7 +143,8 @@ sp {expand*simple-invitation-in-NT
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^lmaj_high 3
-            ^lmin_high 5)
+            ^lmin_high 5
+            ^team.invited true)
 }
         
 sp {expand*simple-invitation-in-minor
@@ -167,11 +166,14 @@ sp {expand*slam-invitation-in-major
     (<n> ^name slam-invitation-in-major
          ^pattern-checked true
          ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 6})
+    (<v> ^<major>.num_low {<mnl> >= 6}
+         ^hcp_low {<hcp_low> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 6)
+    (<mean> ^<major>.num_low 6
+            ^team.game_forced 1
+            ^team.suggestedTrump <major>)
 }
 
 sp {expand*3N-over-1N

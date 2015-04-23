@@ -56,16 +56,16 @@ sp {expand*stayman-responses-to-2M*pattern
     (<n> ^pattern |PASS 2M PASS 2C PASS 1N *|)
 }
 
-sp {expand*transferfollowup*pattern*1
+sp {expand*heart-transferfollowup*pattern
     (state <s> ^name bidder ^ node <n>)
-    (<n> ^name transferfollowup)
+    (<n> ^name heart-transferfollowup)
 -->
     (<n> ^pattern |2D PASS 1N *|)
 }
 
-sp {expand*transferfollowup*pattern*2
+sp {expand*spade-transferfollowup*pattern*2
     (state <s> ^name bidder ^ node <n>)
-    (<n> ^name transferfollowup)
+    (<n> ^name spade-transferfollowup)
 -->
     (<n> ^pattern |2H PASS 1N *|)
 }
@@ -184,13 +184,26 @@ sp {expand*stayman-responses-to-2M
 -->
     (<n> ^status visited
          ^child stayman-2N-over-2M
-         ^child stayman-2S-over-2H)
+         ^child stayman-2S-over-2H
+         ^child stayman-3M-over-2M)
 }
 
-sp {expand*transferfollowup
+sp {expand*heart-transferfollowup
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name transferfollowup
+    (<n> ^name heart-transferfollowup
          ^pattern-checked true)
 -->
-    (<n> ^status visited)
+    (<n> ^status visited
+         ^child transfer-to-heart-response
+         ^child after-heart-response)
+}
+
+sp {expand*spade-transferfollowup
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name spade-transferfollowup
+         ^pattern-checked true)
+-->
+    (<n> ^status visited
+         ^child transfer-to-spade-response
+         ^child after-spade-response)
 }

@@ -3,9 +3,16 @@
   <startfile path="bidder.soar" />
   <members>
     <member path="bidder.soar" />
-    <member path="bidder" />
     <member path="bidder/elaborations" />
     <member path="bidder/all" />
+    <member path="bidder/_firstload.soar" />
+    <member path="bidder/bidder_source.soar" />
+    <member path="bidder/check-pattern.soar" />
+    <member path="bidder/game-bid.soar" />
+    <member path="bidder/initialize-bidder.soar" />
+    <member path="bidder/make-bid.soar" />
+    <member path="bidder/pass-after-to-play-bid.soar" />
+    <member path="bidder/pass-if-no-change.soar" />
   </members>
 </soaragent>
 

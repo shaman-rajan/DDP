@@ -3,7 +3,8 @@ sp {propose*pass*if*no*change
                ^attribute state
                ^quiescence t)
 -->
-    (<s> ^operator <o>)
+    (<s> ^operator <o> +
+         ^operator <o> < =)
     (<o> ^name suggest-pass-bid ^bid PASS)
 }
 

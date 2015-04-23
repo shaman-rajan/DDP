@@ -12,6 +12,8 @@ public class HandView implements Cloneable {
 	private static final int NUMCARDSINHAND = 13;
 	private static final int NUMCARDSINSUIT = 13;
 	
+	private TeamView teamToUpdate;
+	
 	// Player who owns this view
 	private Player player;
 	
@@ -597,7 +599,9 @@ public class HandView implements Cloneable {
 		view.CreateIntWME("tr_stopper_cl_ha", this.tr_stopper_cl_cl);
 	}
 	
-	public boolean updateView(Identifier iden) {
+	public boolean updateView(Identifier iden, TeamView team) {
+		this.teamToUpdate = team;
+		
 		System.out.println("Updates sent by SOAR:");
 		int numUpdates = iden.GetNumberChildren();
 		
@@ -608,21 +612,38 @@ public class HandView implements Cloneable {
 			boolean returned = false;
 			if(feature.GetValueType().equalsIgnoreCase("double"))
 				returned = this.updateFeature(feature.GetAttribute(), feature.ConvertToFloatElement().GetValue());
+			
 			else if(feature.GetValueType().equals("int"))
 				returned = this.updateFeature(feature.GetAttribute(), feature.ConvertToIntElement().GetValue());
+			
 			else if(feature.GetValueType().equals("id")) {
 				Identifier suit = feature.ConvertToIdentifier();
-				int numSuitUpdates = suit.GetNumberChildren();
+				int numSubUpdates = suit.GetNumberChildren();			
 				
-				for(int j=0; j<numSuitUpdates; ++j) {
-					WMElement suit_feature = suit.GetChild(j);
-					System.out.println(suit.GetAttribute() + "." +suit_feature.GetAttribute() + ": " + suit_feature.GetValueAsString());
-					
-					boolean suit_returned = false;
-					if(suit_feature.GetValueType().equals("int"))
-						suit_returned = this.updateFeature("spade " + suit_feature.GetAttribute(), suit_feature.ConvertToIntElement().GetValue());
-					else if(suit_feature.GetValueType().equals("double"))
-						suit_returned = this.updateFeature("spade " + suit_feature.GetAttribute(), suit_feature.ConvertToFloatElement().GetValue());
+				if(suit.GetAttribute().equals("team")) {
+					// It's a team update
+					for(int j=0; j<numSubUpdates; ++j) {
+						WMElement team_feature = suit.GetChild(j);
+						System.out.println(suit.GetAttribute() + "." + team_feature.GetAttribute() + ": " + team_feature.GetValueAsString());
+						
+						boolean update_result_returned = false;
+						if(team_feature.GetValueType().equals("int"))
+							update_result_returned = teamToUpdate.updateFeature(team_feature.GetAttribute(), team_feature.ConvertToIntElement().GetValue());
+						else if(team_feature.GetValueType().equals("string"))
+							update_result_returned = teamToUpdate.updateFeature(team_feature.GetAttribute(), team_feature.ConvertToStringElement().GetValue());
+					}
+				} else {
+					// It's a suit update
+					for(int j=0; j<numSubUpdates; ++j) {
+						WMElement suit_feature = suit.GetChild(j);
+						System.out.println(suit.GetAttribute() + "." + suit_feature.GetAttribute() + ": " + suit_feature.GetValueAsString());
+						
+						boolean update_result_returned = false;
+						if(suit_feature.GetValueType().equals("int"))
+							update_result_returned = this.updateFeature(suit.GetAttribute() + " " + suit_feature.GetAttribute(), suit_feature.ConvertToIntElement().GetValue());
+						else if(suit_feature.GetValueType().equals("double"))
+							update_result_returned = this.updateFeature(suit.GetAttribute() + " " + suit_feature.GetAttribute(), suit_feature.ConvertToFloatElement().GetValue());
+					}
 				}
 			}
 		}
@@ -1202,6 +1223,7 @@ public class HandView implements Cloneable {
 		
 		if(feature.equals("spade num_low"))
 			if(this.num_spade_low < value) {
+				this.num_spade_low = value;
 				
 				this.updateFeature("heart num_high", NUMCARDSINHAND - this.num_spade_low);
 				this.updateFeature("dia num_high", NUMCARDSINHAND - this.num_spade_low);
@@ -1211,7 +1233,6 @@ public class HandView implements Cloneable {
 				if(!this.equals(this.player.getLeftOppView())) this.player.getLeftOppView().updateFeature("spade num_high", NUMCARDSINSUIT - this.num_spade_low);
 				if(!this.equals(this.player.getRightOppView())) this.player.getRightOppView().updateFeature("spade num_high", NUMCARDSINSUIT - this.num_spade_low);
 				
-				this.num_spade_low = value;
 				return true;
 			} else return false;
 		

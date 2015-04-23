@@ -21,8 +21,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import rep.Bid;
+import rep.BidHistory;
 import rep.Card.Suit;
 import rep.Deal;
+import rep.HandView;
 import rep.Player;
 
 public class GUI {
@@ -51,7 +53,7 @@ public class GUI {
 		JMenu fileMenu = new JMenu("File");
 		
 		// Create new deal option in the file menu and add functionality to it
-		JMenuItem newDeal = fileMenu.add("Create new deal");
+		final JMenuItem newDeal = fileMenu.add("Create new deal");
 		newDeal.addActionListener( new ActionListener() {
 
 			@Override
@@ -59,7 +61,19 @@ public class GUI {
 				dealPanel.removeAll();
 				auctionPanel.removeAll();
 				currentCell = 0;
+				
+				HandView hv = new HandView(null);
+				hv.points_hc_low = 15;
+				hv.points_hc_high = 17;
+				hv.balanced_high = 1;
+				
 				currentDeal = new Deal();
+				
+				while(!(hv.matchesHand(currentDeal.getNorth().getHand()) ||
+						hv.matchesHand(currentDeal.getEast().getHand()) ||
+						hv.matchesHand(currentDeal.getSouth().getHand()) ||
+						hv.matchesHand(currentDeal.getWest().getHand())))
+					currentDeal = new Deal();
 				
 				dealPanel.add(new JLabel(""));
 				
@@ -128,7 +142,7 @@ public class GUI {
 		});
 		
 		// Create generate next bid option in file menu and add functionality to it
-		JMenuItem nextBid = fileMenu.add("Next bid");
+		final JMenuItem nextBid = fileMenu.add("Next bid");
 		nextBid.addActionListener( new ActionListener() {
 			
 			@Override
@@ -144,6 +158,17 @@ public class GUI {
 				auctionPanel.add(newBidLabel, row_num);
 				
 				statusBar.setText("Current cell: " + currentCell);
+				
+				BidHistory bh = currentDeal.getAuction().getBidHistory(); 
+				if(bh.getNumBidsMade() >= 4) {
+					if(bh.getBid(0).pass &&
+							bh.getBid(1).pass &&
+							bh.getBid(2).pass) {
+						statusBar.setText("Auction completed");
+						nextBid.setEnabled(false);
+					}
+					
+				}
 				mainFrame.pack();
 			}
 		});

@@ -246,7 +246,9 @@ sp {expand*jump-raise-over-1M-opening
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
     (<mean> ^hcp_low 10
             ^hcp_high 12
-            ^<major>.num_low 3)
+            ^<major>.num_low 3
+            ^team.trump <major>
+            ^team.invited true)
 }
     
 sp {expand*3N-over-1M-opening

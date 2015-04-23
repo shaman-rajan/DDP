@@ -70,6 +70,13 @@ sp {expand*stayman-4N-over-2D*pattern
     (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
 }
 
+sp {expand*stayman-2S-over-2H*pattern
+    (state <s> ^name bidder ^node <n>)
+    (<n> ^name stayman-2S-over-2H)
+-->
+    (<n> ^pattern |PASS 2H PASS 2C PASS 1N *|)
+}
+
 sp {expand*stayman-2N-over-2M*pattern
     (state <s> ^name bidder ^node <n>)
     (<n> ^name stayman-2N-over-2M)
@@ -77,11 +84,11 @@ sp {expand*stayman-2N-over-2M*pattern
     (<n> ^pattern |PASS 2M PASS 2C PASS 1N *|)
 }
 
-sp {expand*stayman-2S-over-2H*pattern
+sp {expand*stayman-3M-over-2M*pattern
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name stayman-2S-over-2H)
+    (<n> ^name stayman-3M-over-2M)
 -->
-    (<n> ^pattern |PASS 2H PASS 2C PASS 1N *|)
+    (<n> ^pattern |PASS 2M PASS 2C PASS 1N *|)
 }
 
 ################### Constraint checking ###################
@@ -130,7 +137,8 @@ sp {expand*stayman-2M-over-2D
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 2 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 5)
+    (<mean> ^<major>.num_low 5
+            ^team.to_play true)
 }
 
 sp {expand*stayman-2N-over-2D
@@ -161,13 +169,15 @@ sp {expand*stayman-3M-over-2D
     (<n> ^name stayman-3M-over-2D
          ^pattern-checked true
          ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 5}
+    (<v> ^<major>.num_low {<mnl> >= 4}
          ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 5
-            ^hcp_high 9)
+    (<mean> ^<major>.num_low 4
+            ^hcp_high 9
+            ^team.trump <major>
+            ^team.game_forced 1)
 }
 
 sp {expand*stayman-3N-over-2D
@@ -188,12 +198,12 @@ sp {expand*stayman-4M-over-2D
     (<n> ^name stayman-4M-over-2D
          ^pattern-checked true
          ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 5}
+    (<v> ^<major>.num_low {<mnl> >= 4}
          ^hcp_low {<hcp_low> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 5
+    (<mean> ^<major>.num_low 4
             ^hcp_low 10)
 }
 
@@ -232,4 +242,18 @@ sp {expand*stayman-2N-over-2M
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^<major>.num_high 3)
+}
+
+sp {expand*stayman-3M-over-2M
+    (state <s> ^name bidder ^node <n> ^myview <v>)
+    (<n> ^name stayman-3M-over-2M
+         ^pattern-checked true
+         ^major <major>)
+    (<v> ^<major>.num_low {<mnl> >= 4})
+-->
+    (<n> ^status visited ^bid <b>)
+    (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
+    (<mean> ^<major>.num_low 4
+            ^team.game_forced 1
+            ^team.trump <major>)
 }
