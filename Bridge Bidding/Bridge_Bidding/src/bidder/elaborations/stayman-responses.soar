@@ -176,7 +176,6 @@ sp {expand*stayman-3M-over-2D
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
     (<mean> ^<major>.num_low 4
             ^hcp_high 9
-            ^team.trump <major>
             ^team.game_forced 1)
 }
 

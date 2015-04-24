@@ -6,6 +6,7 @@ import sml.Identifier;
 public class TeamView implements Cloneable {
 	
 	private Player player;
+	private HandView p1view, p2view;
 	
 	private final int MINVALUE = 0;
 	private final int MAXVALUE = 100;
@@ -68,6 +69,8 @@ public class TeamView implements Cloneable {
 	
 	public TeamView(HandView hv1, HandView hv2, Player p) {
 		this.player = p;
+		this.p1view = hv1;
+		this.p2view = hv2;
 		
 		points_hc_low = hv1.points_hc_low + hv2.points_hc_low;
 		points_hc_high = hv1.points_hc_high + hv2.points_hc_high;
@@ -332,6 +335,98 @@ public class TeamView implements Cloneable {
 		view.CreateStringWME("to_play", Boolean.toString(toPlay));
 		view.CreateStringWME("slam_poss", Boolean.toString(slamPoss));
 		view.CreateStringWME("invited", Boolean.toString(invited));
+	}
+	
+	public void updateHandFeatures() {
+		points_hc_low = this.p1view.points_hc_low + this.p2view.points_hc_low;
+		points_hc_high = this.p1view.points_hc_high + this.p2view.points_hc_high;
+		points_spade_low = this.p1view.points_spade_low + this.p2view.points_spade_low;
+		points_spade_high = this.p1view.points_spade_high + this.p2view.points_spade_high; 
+		points_heart_low = this.p1view.points_heart_low + this.p2view.points_heart_low;
+		points_heart_high = this.p1view.points_heart_high + this.p2view.points_heart_high; 
+		points_dia_low = this.p1view.points_dia_low + this.p2view.points_dia_low;
+		points_dia_high = this.p1view.points_dia_high + this.p2view.points_dia_high; 		
+		points_club_low = this.p1view.points_club_low + this.p2view.points_club_low;
+		points_club_high = this.p1view.points_club_high + this.p2view.points_club_high; 
+				
+		controls_low = this.p1view.controls_low + this.p2view.controls_low;
+		controls_high = this.p1view.controls_high + this.p2view.controls_high;
+		controls_spade_low = this.p1view.controls_spade_low + this.p2view.controls_spade_low;
+		controls_spade_high = this.p1view.controls_spade_high + this.p2view.controls_spade_high; 
+		controls_heart_low = this.p1view.controls_heart_low + this.p2view.controls_heart_low;
+		controls_heart_high = this.p1view.controls_heart_high + this.p2view.controls_heart_high; 
+		controls_dia_low = this.p1view.controls_dia_low + this.p2view.controls_dia_low;
+		controls_dia_high = this.p1view.controls_dia_high + this.p2view.controls_dia_high; 		
+		controls_club_low = this.p1view.controls_club_low + this.p2view.controls_club_low;
+		controls_club_high = this.p1view.controls_club_high + this.p2view.controls_club_high; 
+		
+		highCards_low = this.p1view.highCards_low + this.p2view.highCards_low;
+		highCards_high = this.p1view.highCards_high + this.p2view.highCards_high;
+		highCards_spade_low = this.p1view.highCards_spade_low + this.p2view.highCards_spade_low;
+		highCards_spade_high = this.p1view.highCards_spade_high + this.p2view.highCards_spade_high; 
+		highCards_heart_low = this.p1view.highCards_heart_low + this.p2view.highCards_heart_low;
+		highCards_heart_high = this.p1view.highCards_heart_high + this.p2view.highCards_heart_high; 
+		highCards_dia_low = this.p1view.highCards_dia_low + this.p2view.highCards_dia_low;
+		highCards_dia_high = this.p1view.highCards_dia_high + this.p2view.highCards_dia_high; 		
+		highCards_club_low = this.p1view.highCards_club_low + this.p2view.highCards_club_low;
+		highCards_club_high = this.p1view.highCards_club_high + this.p2view.highCards_club_high; 
+		
+		honors_low = this.p1view.honors_low + this.p2view.honors_low;
+		honors_high = this.p1view.honors_high + this.p2view.honors_high;
+		honors_spade_low = this.p1view.honors_spade_low + this.p2view.honors_spade_low;
+		honors_spade_high = this.p1view.honors_spade_high + this.p2view.honors_spade_high; 
+		honors_heart_low = this.p1view.honors_heart_low + this.p2view.honors_heart_low;
+		honors_heart_high = this.p1view.honors_heart_high + this.p2view.honors_heart_high; 
+		honors_dia_low = this.p1view.honors_dia_low + this.p2view.honors_dia_low;
+		honors_dia_high = this.p1view.honors_dia_high + this.p2view.honors_dia_high; 		
+		honors_club_low = this.p1view.honors_club_low + this.p2view.honors_club_low;
+		honors_club_high = this.p1view.honors_club_high + this.p2view.honors_club_high; 
+		
+		aces = (this.p1view.aces != -1 && this.p2view.aces != -1) ? this.p1view.aces + this.p2view.aces : -1;
+		ace_spade = (this.p1view.ace_spade != -1 && this.p2view.ace_spade != -1) ? ((this.p1view.ace_spade == 1 || this.p2view.ace_spade == 1) ? 1 : 0): -1;
+		king_spade = (this.p1view.king_spade != -1 && this.p2view.king_spade != -1) ? ((this.p1view.king_spade == 1 || this.p2view.king_spade == 1) ? 1 : 0): -1;
+		queen_spade = (this.p1view.queen_spade != -1 && this.p2view.queen_spade != -1) ? ((this.p1view.queen_spade == 1 || this.p2view.queen_spade == 1) ? 1 : 0): -1;
+		jack_spade = (this.p1view.jack_spade != -1 && this.p2view.jack_spade != -1) ? ((this.p1view.jack_spade == 1 || this.p2view.jack_spade == 1) ? 1 : 0): -1;
+		ten_spade = (this.p1view.ten_spade != -1 && this.p2view.ten_spade != -1) ? ((this.p1view.ten_spade == 1 || this.p2view.ten_spade == 1) ? 1 : 0): -1;
+		
+		aces = (this.p1view.aces != -1 && this.p2view.aces != -1) ? this.p1view.aces + this.p2view.aces : -1;
+		kings = (this.p1view.kings != -1 && this.p2view.kings != -1) ? this.p1view.kings + this.p2view.kings : -1;
+		queens = (this.p1view.queens != -1 && this.p2view.queens != -1) ? this.p1view.queens + this.p2view.queens : -1;
+		jacks = (this.p1view.jacks != -1 && this.p2view.jacks != -1) ? this.p1view.jacks + this.p2view.jacks : -1;
+		tens = (this.p1view.tens != -1 && this.p2view.tens != -1) ? this.p1view.tens + this.p2view.tens : -1;
+		
+		ace_spade = (this.p1view.ace_spade != -1 && this.p2view.ace_spade != -1) ? ((this.p1view.ace_spade == 1 || this.p2view.ace_spade == 1) ? 1 : 0): -1;
+		king_spade = (this.p1view.king_spade != -1 && this.p2view.king_spade != -1) ? ((this.p1view.king_spade == 1 || this.p2view.king_spade == 1) ? 1 : 0): -1;
+		queen_spade = (this.p1view.queen_spade != -1 && this.p2view.queen_spade != -1) ? ((this.p1view.queen_spade == 1 || this.p2view.queen_spade == 1) ? 1 : 0): -1;
+		jack_spade = (this.p1view.jack_spade != -1 && this.p2view.jack_spade != -1) ? ((this.p1view.jack_spade == 1 || this.p2view.jack_spade == 1) ? 1 : 0): -1;
+		ten_spade = (this.p1view.ten_spade != -1 && this.p2view.ten_spade != -1) ? ((this.p1view.ten_spade == 1 || this.p2view.ten_spade == 1) ? 1 : 0): -1;
+		
+		ace_heart = (this.p1view.ace_heart != -1 && this.p2view.ace_heart != -1) ? ((this.p1view.ace_heart == 1 || this.p2view.ace_heart == 1) ? 1 : 0): -1;
+		king_heart = (this.p1view.king_heart != -1 && this.p2view.king_heart != -1) ? ((this.p1view.king_heart == 1 || this.p2view.king_heart == 1) ? 1 : 0): -1;
+		queen_heart = (this.p1view.queen_heart != -1 && this.p2view.queen_heart != -1) ? ((this.p1view.queen_heart == 1 || this.p2view.queen_heart == 1) ? 1 : 0): -1;
+		jack_heart = (this.p1view.jack_heart != -1 && this.p2view.jack_heart != -1) ? ((this.p1view.jack_heart == 1 || this.p2view.jack_heart == 1) ? 1 : 0): -1;
+		ten_heart = (this.p1view.ten_heart != -1 && this.p2view.ten_heart != -1) ? ((this.p1view.ten_heart == 1 || this.p2view.ten_heart == 1) ? 1 : 0): -1;
+		
+		ace_dia = (this.p1view.ace_dia != -1 && this.p2view.ace_dia != -1) ? ((this.p1view.ace_dia == 1 || this.p2view.ace_dia == 1) ? 1 : 0): -1;
+		king_dia = (this.p1view.king_dia != -1 && this.p2view.king_dia != -1) ? ((this.p1view.king_dia == 1 || this.p2view.king_dia == 1) ? 1 : 0): -1;
+		queen_dia = (this.p1view.queen_dia != -1 && this.p2view.queen_dia != -1) ? ((this.p1view.queen_dia == 1 || this.p2view.queen_dia == 1) ? 1 : 0): -1;
+		jack_dia = (this.p1view.jack_dia != -1 && this.p2view.jack_dia != -1) ? ((this.p1view.jack_dia == 1 || this.p2view.jack_dia == 1) ? 1 : 0): -1;
+		ten_dia = (this.p1view.ten_dia != -1 && this.p2view.ten_dia != -1) ? ((this.p1view.ten_dia == 1 || this.p2view.ten_dia == 1) ? 1 : 0): -1;
+		
+		ace_club = (this.p1view.ace_club != -1 && this.p2view.ace_club != -1) ? ((this.p1view.ace_club == 1 || this.p2view.ace_club == 1) ? 1 : 0): -1;
+		king_club = (this.p1view.king_club != -1 && this.p2view.king_club != -1) ? ((this.p1view.king_club == 1 || this.p2view.king_club == 1) ? 1 : 0): -1;
+		queen_club = (this.p1view.queen_club != -1 && this.p2view.queen_club != -1) ? ((this.p1view.queen_club == 1 || this.p2view.queen_club == 1) ? 1 : 0): -1;
+		jack_club = (this.p1view.jack_club != -1 && this.p2view.jack_club != -1) ? ((this.p1view.jack_club == 1 || this.p2view.jack_club == 1) ? 1 : 0): -1;
+		ten_club = (this.p1view.ten_club != -1 && this.p2view.ten_club != -1) ? ((this.p1view.ten_club == 1 || this.p2view.ten_club == 1) ? 1 : 0): -1;
+		
+		num_spade_low = this.p1view.num_spade_low + this.p2view.num_spade_low;
+		num_spade_high = this.p1view.num_spade_high + this.p2view.num_spade_high; 
+		num_heart_low = this.p1view.num_heart_low + this.p2view.num_heart_low;
+		num_heart_high = this.p1view.num_heart_high + this.p2view.num_heart_high; 
+		num_dia_low = this.p1view.num_dia_low + this.p2view.num_dia_low;
+		num_dia_high = this.p1view.num_dia_high + this.p2view.num_dia_high; 		
+		num_club_low = this.p1view.num_club_low + this.p2view.num_club_low;
+		num_club_high = this.p1view.num_club_high + this.p2view.num_club_high; 		
 	}
 	
 	public boolean updateFeature(String feature, long val) {

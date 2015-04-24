@@ -20,5 +20,8 @@ sp {apply*initialize-bidder
          ^child stayman-responses
          ^child stayman-responses-to-2D
          ^child stayman-responses-to-2M
-         ^child transferfollowup)
+         ^child heart-transferresponse
+         ^child spade-transferresponse
+         ^child after-heart-transfer
+         ^child after-spade-transfer)
 }

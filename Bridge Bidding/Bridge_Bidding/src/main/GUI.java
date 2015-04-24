@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -34,6 +36,7 @@ public class GUI {
 	static JPanel auctionPanel;
 	static Deal currentDeal;
 	static int currentCell;
+	static JButton nextBidButton;
 	
 	public static void createAndShowGUI() {
 		
@@ -67,13 +70,16 @@ public class GUI {
 				hv.points_hc_high = 17;
 				hv.balanced_high = 1;
 				
+				HandView hv2 = new HandView(null);
+				hv2.lmaj_low = 5;
+				
 				currentDeal = new Deal();
 				
-				while(!(hv.matchesHand(currentDeal.getNorth().getHand()) ||
-						hv.matchesHand(currentDeal.getEast().getHand()) ||
-						hv.matchesHand(currentDeal.getSouth().getHand()) ||
-						hv.matchesHand(currentDeal.getWest().getHand())))
+				while(!hv.matchesHand(currentDeal.getNorth().getHand()) ||
+						!hv2.matchesHand(currentDeal.getSouth().getHand()))
 					currentDeal = new Deal();
+				
+				nextBidButton.setEnabled(true);
 				
 				dealPanel.add(new JLabel(""));
 				
@@ -128,6 +134,8 @@ public class GUI {
 				currentCell = Deal.getPosition(currentDeal.getDealer()) - 1 + 4;
 				for(int i=0; i<currentCell-4; ++i) auctionPanel.add(new JLabel(" "), row_num);
 				
+				
+				
 				mainFrame.pack();
 			}
 
@@ -139,38 +147,6 @@ public class GUI {
 				cardPanel.add(new JLabel("C: " + p.createStringForGUI(Suit.CLUB)));
 			}
 			
-		});
-		
-		// Create generate next bid option in file menu and add functionality to it
-		final JMenuItem nextBid = fileMenu.add("Next bid");
-		nextBid.addActionListener( new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Bid b = currentDeal.askForNextBid();
-				JLabel newBidLabel = new JLabel("  " + b.toString() + "  ");
-				newBidLabel.setHorizontalAlignment(JLabel.CENTER);
-				
-				currentCell++;
-				GridBagConstraints row_num = new GridBagConstraints();
-				row_num.anchor = GridBagConstraints.CENTER;
-				row_num.gridy = currentCell/4;
-				auctionPanel.add(newBidLabel, row_num);
-				
-				statusBar.setText("Current cell: " + currentCell);
-				
-				BidHistory bh = currentDeal.getAuction().getBidHistory(); 
-				if(bh.getNumBidsMade() >= 4) {
-					if(bh.getBid(0).pass &&
-							bh.getBid(1).pass &&
-							bh.getBid(2).pass) {
-						statusBar.setText("Auction completed");
-						nextBid.setEnabled(false);
-					}
-					
-				}
-				mainFrame.pack();
-			}
 		});
 		
 		// Add quit option
@@ -201,9 +177,42 @@ public class GUI {
 		auctionPanel = new JPanel();
 		auctionPanel.setLayout(new GridBagLayout());
 		dealPanel.setBorder(BorderFactory.createEmptyBorder(10, 40, 10, 10));
-		mainPane.add(auctionPanel, BorderLayout.EAST);
+		mainPane.add(auctionPanel, BorderLayout.CENTER);
 		
-		mainFrame.setSize(300,300);
+		// Create generate next bid button and add functionality to it
+		nextBidButton = new JButton("Next bid");
+		nextBidButton.setPreferredSize(new Dimension(85, 30));
+		nextBidButton.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Bid b = currentDeal.askForNextBid();
+				JLabel newBidLabel = new JLabel("  " + b.toString() + "  ");
+				newBidLabel.setHorizontalAlignment(JLabel.CENTER);
+				
+				currentCell++;
+				GridBagConstraints row_num = new GridBagConstraints();
+				row_num.anchor = GridBagConstraints.CENTER;
+				row_num.gridy = currentCell/4;
+				auctionPanel.add(newBidLabel, row_num);
+				
+				statusBar.setText("Current cell: " + currentCell);
+				
+				BidHistory bh = currentDeal.getAuction().getBidHistory(); 
+				if(bh.getNumBidsMade() >= 4) {
+					if(bh.getBid(0).pass &&
+							bh.getBid(1).pass &&
+							bh.getBid(2).pass) {
+						statusBar.setText("Auction completed");
+						nextBidButton.setEnabled(false);
+					}
+					
+				}
+				mainFrame.pack();
+			}
+		});	mainPane.add(nextBidButton, BorderLayout.EAST);
+		
+		mainFrame.pack();
 		
 		mainFrame.setVisible(true);
 	}

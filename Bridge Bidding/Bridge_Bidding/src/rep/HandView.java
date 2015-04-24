@@ -648,6 +648,10 @@ public class HandView implements Cloneable {
 			}
 		}
 		
+		// TeamView features automatically updated from the HandView features 
+		this.player.getTeamView().updateHandFeatures();
+		this.player.getOpponentsView().updateHandFeatures();
+		
 		return true;
 	}
 	

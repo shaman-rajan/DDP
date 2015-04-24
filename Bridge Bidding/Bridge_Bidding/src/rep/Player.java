@@ -94,10 +94,31 @@ public class Player {
 						WMElement child = command.GetChild(j);
 						if(child.GetAttribute().equals("short-form")) {
 							String bidString = child.GetValueAsString();
-							// System.out.println("Bid string returned by SOAR: " + bidString);
 							bid_returned = new Bid(bidString);
+							BidHistory bh = this.deal.getAuction().getBidHistory();
+							if((bh.getNumBidsMade() > 0 && !(bid_returned.compareTo(bh.getBid(0)) == 1)) ||
+									(bh.getNumBidsMade() > 1 && !(bid_returned.compareTo(bh.getBid(1)) == 1)) ||
+									(bh.getNumBidsMade() > 2 && !(bid_returned.compareTo(bh.getBid(2)) == 1)))
+								bid_returned = new Bid("PASS");
 						} else {
-							this.deal.updateViews(child.ConvertToIdentifier(), this.position);
+							Identifier meaning = child.ConvertToIdentifier();
+							// Update others' views
+							this.deal.updateViews(meaning, this.position);
+							// Update my own team view (with trump, GF, etc.)
+							int numUpdates = meaning.GetNumberChildren();
+							for(int k=0; k<numUpdates; ++k)
+								if(meaning.GetChild(k).GetAttribute().equals("team")) {
+									Identifier teamUpdates = meaning.GetChild(k).ConvertToIdentifier();
+									int numTeamUpdates = teamUpdates.GetNumberChildren();
+									for(int l=0; l<numTeamUpdates; ++l) {
+										WMElement update = teamUpdates.GetChild(l);
+										System.out.println("team." + update.GetAttribute() + ": " + update.GetValueAsString());
+										if(update.GetValueType().equals("int"))
+											this.teamView.updateFeature(update.GetAttribute(), update.ConvertToIntElement().GetValue());
+										else if(update.GetValueType().equals("string"))
+											this.teamView.updateFeature(update.GetAttribute(), update.ConvertToStringElement().GetValue());
+									}
+								}
 						}
 					}
 					is_output_a_bid = true;

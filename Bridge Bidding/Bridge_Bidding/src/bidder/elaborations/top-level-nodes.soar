@@ -58,16 +58,16 @@ sp {expand*stayman-responses-to-2M*pattern
 
 sp {expand*heart-transferfollowup*pattern
     (state <s> ^name bidder ^ node <n>)
-    (<n> ^name heart-transferfollowup)
+    (<n> ^name heart-transferresponse)
 -->
-    (<n> ^pattern |2D PASS 1N *|)
+    (<n> ^pattern |PASS 2D PASS 1N *|)
 }
 
 sp {expand*spade-transferfollowup*pattern*2
     (state <s> ^name bidder ^ node <n>)
-    (<n> ^name spade-transferfollowup)
+    (<n> ^name spade-transferresponse)
 -->
-    (<n> ^pattern |2H PASS 1N *|)
+    (<n> ^pattern |PASS 2H PASS 1N *|)
 }
 
 ################### Constraint checking ###################
@@ -188,22 +188,20 @@ sp {expand*stayman-responses-to-2M
          ^child stayman-3M-over-2M)
 }
 
-sp {expand*heart-transferfollowup
+sp {expand*heart-transferresponse
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name heart-transferfollowup
+    (<n> ^name heart-transferresponse
          ^pattern-checked true)
 -->
     (<n> ^status visited
-         ^child transfer-to-heart-response
-         ^child after-heart-response)
+         ^child transfer-to-heart-response)
 }
 
-sp {expand*spade-transferfollowup
+sp {expand*spade-transferresponse
     (state <s> ^name bidder ^node <n>)
-    (<n> ^name spade-transferfollowup
+    (<n> ^name spade-transferresponse
          ^pattern-checked true)
 -->
     (<n> ^status visited
-         ^child transfer-to-spade-response
-         ^child after-spade-response)
+         ^child transfer-to-spade-response)
 }

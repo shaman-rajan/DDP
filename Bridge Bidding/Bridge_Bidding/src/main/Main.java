@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+import rep.Bid;
+import rep.BidHistory;
 import rep.Deal;
 import rep.HandView;
 import sconn.TestAgent;

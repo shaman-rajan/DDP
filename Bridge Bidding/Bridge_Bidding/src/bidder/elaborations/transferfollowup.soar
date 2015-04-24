@@ -147,14 +147,14 @@ sp {expand*after-heart-transfer*NTinvite
     (<n> ^name after-heart-transfer
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 7}
-         ^hcp_high {<hcp_high> <= 10}
+         ^hcp_high {<hcp_high> <= 9}
          ^balanced_high {<bhigh> <= 1})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 7
-            ^hcp_high 10
+            ^hcp_high 9
             ^team.invited true)
     # No children as of now, otherwise would add the children attribute
 }
@@ -164,14 +164,14 @@ sp {expand*after-spade-transfer*NTinvite
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 7}
-         ^hcp_high {<hcp_high> <= 10}
+         ^hcp_high {<hcp_high> <= 9}
          ^balanced_high {<bhigh> <= 1})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 7
-            ^hcp_high 10
+            ^hcp_high 9
             ^team.invited true)
     # No children as of now, otherwise would add the children attribute
 }
@@ -210,13 +210,13 @@ sp {expand*after-heart-transfer*NTgame
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name after-heart-transfer
          ^pattern-checked true)
-    (<v> ^hcp_low {<hcp_low> >= 11}
+    (<v> ^hcp_low {<hcp_low> >= 10}
          ^balanced_high {<bhigh> <= 1})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^balanced_high 1
-            ^hcp_low 11
+            ^hcp_low 10
             ^team.game_forced 1)
     # No children as of now, otherwise would add the children attribute
 }
@@ -225,13 +225,13 @@ sp {expand*after-spade-transfer*NTgame
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
-    (<v> ^hcp_low {<hcp_low> >= 11}
+    (<v> ^hcp_low {<hcp_low> >= 10}
          ^balanced_high {<bhigh> <= 1})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^balanced_high 1
-            ^hcp_low 11
+            ^hcp_low 10
             ^team.game_forced 1)
     # No children as of now, otherwise would add the children attribute
 }
