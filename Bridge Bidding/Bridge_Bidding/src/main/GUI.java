@@ -75,8 +75,7 @@ public class GUI {
 				
 				currentDeal = new Deal();
 				
-				while(!hv.matchesHand(currentDeal.getNorth().getHand()) ||
-						!hv2.matchesHand(currentDeal.getSouth().getHand()))
+				while(!hv.matchesHand(currentDeal.getNorth().getHand()))
 					currentDeal = new Deal();
 				
 				nextBidButton.setEnabled(true);

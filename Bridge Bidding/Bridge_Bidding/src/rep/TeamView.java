@@ -54,12 +54,19 @@ public class TeamView implements Cloneable {
 				num_dia_low, num_dia_high,
 				num_club_low, num_club_high;
 	
+	public int total_points_sp_low, total_points_sp_high,
+	total_points_he_low, total_points_he_high,
+	total_points_di_low, total_points_di_high,
+	total_points_cl_low, total_points_cl_high;
+
+	
 	public BidSuit trumpDecided;
 	public BidSuit trumpSuggested;
 	public int gameForced;
 	public boolean toPlay;
 	public boolean slamPoss;
 	public boolean invited;
+	public boolean invite_response;
 	
 	
 	public TeamView(TeamView hv, Player p) {
@@ -162,12 +169,22 @@ public class TeamView implements Cloneable {
 		num_club_low = hv1.num_club_low + hv2.num_club_low;
 		num_club_high = hv1.num_club_high + hv2.num_club_high; 
 		
+		total_points_sp_low = hv1.total_points_sp_low + hv2.total_points_sp_low;
+		total_points_sp_high = hv1.total_points_sp_high + hv2.total_points_sp_high; 
+		total_points_he_low = hv1.total_points_he_low + hv2.total_points_he_low;
+		total_points_he_high = hv1.total_points_he_high + hv2.total_points_he_high; 
+		total_points_di_low = hv1.total_points_di_low + hv2.total_points_di_low;
+		total_points_di_high = hv1.total_points_di_high + hv2.total_points_di_high; 		
+		total_points_cl_low = hv1.total_points_cl_low + hv2.total_points_cl_low;
+		total_points_cl_high = hv1.total_points_cl_high + hv2.total_points_cl_high; 
+		
 		trumpDecided = null;
 		trumpSuggested = null;
 		gameForced = -1;
 		toPlay = false;
 		slamPoss = false;
 		invited = false;
+		invite_response = false;
 	}
 	
 	public TeamView(Player p) {
@@ -232,12 +249,22 @@ public class TeamView implements Cloneable {
 		num_club_low = MINVALUE;
 		num_club_high = MAXVALUE;
 
+		total_points_sp_low = MINVALUE;
+		total_points_sp_high = MAXVALUE;		
+		total_points_he_low = MINVALUE;
+		total_points_he_high = MAXVALUE;
+		total_points_di_low = MINVALUE;
+		total_points_di_high = MAXVALUE;
+		total_points_cl_low = MINVALUE;
+		total_points_cl_high = MAXVALUE;
+		
 		trumpDecided = null;
 		trumpSuggested = null;
 		gameForced = -1;
 		toPlay = false;
 		slamPoss = false;
 		invited = false;
+		invite_response = false;
 	}
 	
 	public void addToSoarIdentifier(Identifier view) {
@@ -276,6 +303,8 @@ public class TeamView implements Cloneable {
 		spade.CreateIntWME("ten", ten_spade);
 		spade.CreateIntWME("num_low", num_spade_low);
 		spade.CreateIntWME("num_high", num_spade_high);
+		spade.CreateIntWME("total_points_low", total_points_sp_low);
+		spade.CreateIntWME("total_points_high", total_points_sp_high);
 		
 		Identifier heart = view.CreateIdWME("heart");
 		heart.CreateIntWME("hcp_low", points_heart_low);
@@ -293,6 +322,8 @@ public class TeamView implements Cloneable {
 		heart.CreateIntWME("ten", ten_heart);
 		heart.CreateIntWME("num_low", num_heart_low);
 		heart.CreateIntWME("num_high", num_heart_high);
+		heart.CreateIntWME("total_points_low", total_points_he_low);
+		heart.CreateIntWME("total_points_high", total_points_he_high);
 		
 		Identifier dia = view.CreateIdWME("dia");
 		dia.CreateIntWME("hcp_low", points_dia_low);
@@ -310,6 +341,8 @@ public class TeamView implements Cloneable {
 		dia.CreateIntWME("ten", ten_dia);
 		dia.CreateIntWME("num_low", num_dia_low);
 		dia.CreateIntWME("num_high", num_dia_high);
+		dia.CreateIntWME("total_points_low", total_points_di_low);
+		dia.CreateIntWME("total_points_high", total_points_di_high);
 		
 		Identifier club = view.CreateIdWME("club");
 		club.CreateIntWME("hcp_low", points_club_low);
@@ -327,6 +360,8 @@ public class TeamView implements Cloneable {
 		club.CreateIntWME("ten", ten_club);
 		club.CreateIntWME("num_low", num_club_low);
 		club.CreateIntWME("num_high", num_club_high);
+		club.CreateIntWME("total_points_low", total_points_cl_low);
+		club.CreateIntWME("total_points_high", total_points_cl_high);
 		
 		if(trumpDecided != null) view.CreateStringWME("trump", trumpDecided.toString().toLowerCase());
 		if(trumpSuggested != null) view.CreateStringWME("trump_suggested", trumpSuggested.toString().toLowerCase());
@@ -335,8 +370,13 @@ public class TeamView implements Cloneable {
 		view.CreateStringWME("to_play", Boolean.toString(toPlay));
 		view.CreateStringWME("slam_poss", Boolean.toString(slamPoss));
 		view.CreateStringWME("invited", Boolean.toString(invited));
+		view.CreateStringWME("invite_response", Boolean.toString(invite_response));
 	}
 	
+	/*
+	 * Updates team features from the 2 handviews
+	 * IMPORTANT: To be called at every step of updation
+	 */
 	public void updateHandFeatures() {
 		points_hc_low = this.p1view.points_hc_low + this.p2view.points_hc_low;
 		points_hc_high = this.p1view.points_hc_high + this.p2view.points_hc_high;
@@ -424,9 +464,67 @@ public class TeamView implements Cloneable {
 		num_heart_low = this.p1view.num_heart_low + this.p2view.num_heart_low;
 		num_heart_high = this.p1view.num_heart_high + this.p2view.num_heart_high; 
 		num_dia_low = this.p1view.num_dia_low + this.p2view.num_dia_low;
-		num_dia_high = this.p1view.num_dia_high + this.p2view.num_dia_high; 		
+		num_dia_high = this.p1view.num_dia_high + this.p2view.num_dia_high;	
 		num_club_low = this.p1view.num_club_low + this.p2view.num_club_low;
-		num_club_high = this.p1view.num_club_high + this.p2view.num_club_high; 		
+		num_club_high = this.p1view.num_club_high + this.p2view.num_club_high;
+		
+		total_points_sp_low = p1view.total_points_sp_low + p2view.total_points_sp_low;
+		total_points_sp_high = p1view.total_points_sp_high + p2view.total_points_sp_high; 
+		total_points_he_low = p1view.total_points_he_low + p2view.total_points_he_low;
+		total_points_he_high = p1view.total_points_he_high + p2view.total_points_he_high; 
+		total_points_di_low = p1view.total_points_di_low + p2view.total_points_di_low;
+		total_points_di_high = p1view.total_points_di_high + p2view.total_points_di_high; 		
+		total_points_cl_low = p1view.total_points_cl_low + p2view.total_points_cl_low;
+		total_points_cl_high = p1view.total_points_cl_high + p2view.total_points_cl_high; 
+		
+		// Hand(s) features done, now check invitation
+		if(invited) {
+			if(!this.player.getDeal().getAuction().getBidHistory().hasGameBeenBid()) {
+				if(this.trumpDecided == BidSuit.NOTRUMP || trumpDecided == null) {
+					if(this.points_hc_low >= 26)
+						invite_response = true;
+					else invite_response = false;
+					trumpDecided = BidSuit.NOTRUMP;
+				} else {
+					int num_trump, points;
+					if(this.trumpDecided == BidSuit.SPADE) {
+						num_trump = this.num_spade_low;
+						points = this.total_points_sp_low;
+					} else if(this.trumpDecided == BidSuit.HEART) {
+						num_trump = this.num_heart_low;
+						points = this.total_points_he_low;
+					} else if(this.trumpDecided == BidSuit.DIAMOND) {
+						num_trump = this.num_dia_low;
+						points = this.total_points_di_low;
+					} else {
+						num_trump = this.num_club_low;
+						points = this.total_points_cl_low;
+					}
+					
+					if(points + num_trump >= 33)
+						invite_response = true;
+					else invite_response = false;
+				}
+			} else {
+				if(this.trumpDecided == BidSuit.NOTRUMP || trumpDecided == null) {
+					// Pointless bidding, since game already bid
+				} else {
+					int num_trump;
+					if(this.trumpDecided == BidSuit.SPADE)
+						num_trump = this.num_spade_low;
+					else if(this.trumpDecided == BidSuit.HEART)
+						num_trump = this.num_heart_low;
+					else if(this.trumpDecided == BidSuit.DIAMOND)
+						num_trump = this.num_dia_low;
+					else
+						num_trump = this.num_club_low;
+					
+					if(num_trump >= 8)
+						invite_response = true;
+					else invite_response = false;
+				}
+			}
+		}
 	}
 	
 	public boolean updateFeature(String feature, long val) {
@@ -1046,15 +1144,10 @@ public class TeamView implements Cloneable {
 			else return false;
 		
 		if(feature.equals("invited"))
-			if(invited == false) {
-				if(value.equals("true")) {
-					invited = true;
-					// TODO: Check if game is possible, and set something
-				}
+			if(!Boolean.toString(invited).toLowerCase().equals(value)) {
+				this.invited = Boolean.parseBoolean(value);
 				return true;
-			} else if(value.equals("false"))
-				this.contradiction();
-			else return false;
+			} else return false;
 		
 		return false;
 	}

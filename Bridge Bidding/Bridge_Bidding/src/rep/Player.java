@@ -1,5 +1,6 @@
 package rep;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import rep.Card.Suit;
@@ -15,24 +16,30 @@ public class Player {
 	private int posCode;
 	private String position;
 	
+	public List<Convention> conventionsUsed;
+	
 	// Information about all hands that this player has
 	private HandView selfView, partnerView, leftOppView, rightOppView;
 	private TeamView teamView, opponentsView;
 	
-	public Player(Hand h, int pos, Deal d) {
+	public Player(Hand h, int pos, Deal d, List<Convention> conventions) {
 		hand = h;
 		posCode = pos;
 		position = Deal.getPosition(posCode);
 		deal = d;
+		if(conventions != null) conventionsUsed = conventions;
+		else conventionsUsed = new LinkedList<Convention>();
 		
 		initializeViews();
 	}
 
-	public Player(Hand h, String pos, Deal d) {
+	public Player(Hand h, String pos, Deal d, List<Convention> conventions) {
 		hand = h;
 		position = pos;
 		posCode = Deal.getPosition(position);
 		deal = d;
+		if(conventions != null) conventionsUsed = conventions;
+		else conventionsUsed = new LinkedList<Convention>();
 		
 		initializeViews();
 	}
@@ -93,6 +100,7 @@ public class Player {
 					for(int j=0; j<children; ++j) {
 						WMElement child = command.GetChild(j);
 						if(child.GetAttribute().equals("short-form")) {
+							// This is the bid
 							String bidString = child.GetValueAsString();
 							bid_returned = new Bid(bidString);
 							BidHistory bh = this.deal.getAuction().getBidHistory();
@@ -101,6 +109,7 @@ public class Player {
 									(bh.getNumBidsMade() > 2 && !(bid_returned.compareTo(bh.getBid(2)) == 1)))
 								bid_returned = new Bid("PASS");
 						} else {
+							// This is the meaning
 							Identifier meaning = child.ConvertToIdentifier();
 							// Update others' views
 							this.deal.updateViews(meaning, this.position);
@@ -119,6 +128,8 @@ public class Player {
 											this.teamView.updateFeature(update.GetAttribute(), update.ConvertToStringElement().GetValue());
 									}
 								}
+							
+							this.teamView.updateHandFeatures();
 						}
 					}
 					is_output_a_bid = true;
@@ -130,19 +141,26 @@ public class Player {
 					if(command.GetParameterValue("status") == null || 
 							!command.GetParameterValue("status").equals("complete")) {
 						
-						WMElement child_pattern = command.GetChild(0);
-						WMElement child_node = command.GetChild(1);
-						
-						if(child_pattern.GetAttribute().equals("node")) {
-							WMElement temp = child_node;
-							child_node = child_pattern;
-							child_pattern = temp;
+						int num_child = command.GetNumberChildren();
+
+						WMElement child_pattern = null, child_node = null, child_convention = null;
+						for(int j=0; j<num_child; ++j) {
+							WMElement child = command.GetChild(j);
+							if(child.GetAttribute().equals("pattern"))
+								child_pattern = child;
+							else if(child.GetAttribute().equals("node"))
+								child_node = child;
+							else if(child.GetAttribute().equals("convention"))
+								child_convention = child;
 						}
 						
 						Identifier node = child_node.ConvertToIdentifier();
 						System.out.println("Checking pattern for " + node.GetParameterValue("name"));
 						
-						if(this.deal.getAuction().getBidHistory().matchPattern(child_pattern.GetValueAsString(), node))
+						String pattern = child_pattern.GetValueAsString();
+						String convention = child_convention != null ? child_convention.GetValueAsString() : "";
+						if(this.deal.getAuction().getBidHistory().matchPattern(pattern, node) &&
+								this.usesConvention(convention))
 							node.CreateStringWME("pattern-checked", "true");
 						else
 							node.CreateStringWME("pattern-checked", "false");
@@ -176,6 +194,16 @@ public class Player {
 		
 		if(toUpdate.updateView(iden, teamToUpdate))
 			return true;
+		else return false;
+	}
+	
+	public void addConvention(Convention c) {
+		if(!this.conventionsUsed.contains(c))
+			this.conventionsUsed.add(c);
+	}
+	
+	public boolean usesConvention(String s) {
+		if(s.equals("") || this.conventionsUsed.contains(Convention.valueOf(s))) return true;
 		else return false;
 	}
 	

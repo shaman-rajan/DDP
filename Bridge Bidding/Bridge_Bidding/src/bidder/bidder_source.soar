@@ -8,6 +8,7 @@ popd
 source initialize-bidder.soar
 source make-bid.soar
 source pass-if-no-change.soar
+source invite-response.soar
 source game-bid.soar
 source pass-after-to-play-bid.soar
 source check-pattern.soar

@@ -107,7 +107,7 @@ sp {expand*after-spade-transfer*pass
     (<v> ^hcp_high {<hcp_high> <= 6})
 -->
     (<n> ^status visited ^bid <b>)
-    (<b> ^short-form 3S ^meaning <mean>)
+    (<b> ^short-form PASS ^meaning <mean>)
     (<mean> ^hcp_high 6)
     # No children as of now, otherwise would add the children attribute
 }
@@ -117,12 +117,12 @@ sp {expand*after-heart-transfer*3level
     (<n> ^name after-heart-transfer
          ^pattern-checked true)
     (<v> ^heart.num_low {<hnl> >= 6}
-         ^heart.dp {<hdp> <= 9})
+         ^heart.total_points_high {<htph> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3H ^meaning <mean>)
     (<mean> ^heart.num_low 6
-            ^hcp_high 9
+            ^heart.total_points_high 9
             ^team.invited true)
     # No children as of now, otherwise would add the children attribute
 }
@@ -132,12 +132,12 @@ sp {expand*after-spade-transfer*3level
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
     (<v> ^spade.num_low {<hnl> >= 6}
-         ^spade.dp {<sdp> <= 9})
+         ^spade.total_points_high {<stph> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3S ^meaning <mean>)
     (<mean> ^spade.num_low 6
-            ^hcp_high 9
+            ^spade.total_points_high 9
             ^team.invited true)
     # No children as of now, otherwise would add the children attribute
 }
@@ -148,11 +148,11 @@ sp {expand*after-heart-transfer*NTinvite
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 7}
          ^hcp_high {<hcp_high> <= 9}
-         ^balanced_high {<bhigh> <= 1})
+         ^balanced_high {<bhigh> <= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
-    (<mean> ^balanced_high 1
+    (<mean> ^balanced_high 3
             ^hcp_low 7
             ^hcp_high 9
             ^team.invited true)
@@ -165,11 +165,11 @@ sp {expand*after-spade-transfer*NTinvite
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 7}
          ^hcp_high {<hcp_high> <= 9}
-         ^balanced_high {<bhigh> <= 1})
+         ^balanced_high {<bhigh> <= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
-    (<mean> ^balanced_high 1
+    (<mean> ^balanced_high 3
             ^hcp_low 7
             ^hcp_high 9
             ^team.invited true)
@@ -217,7 +217,8 @@ sp {expand*after-heart-transfer*NTgame
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 10
-            ^team.game_forced 1)
+            #inviting because game already bid. Now opener will have to bid 4M if he wants
+            ^team.invited 1)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -232,7 +233,8 @@ sp {expand*after-spade-transfer*NTgame
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 10
-            ^team.game_forced 1)
+            #inviting because game already bid. Now opener will have to bid 4S if he wants
+            ^team.invited 1)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -241,12 +243,12 @@ sp {expand*after-heart-transfer*4level
     (<n> ^name after-heart-transfer
          ^pattern-checked true)
     (<v> ^heart.num_low {<hnl> >= 6}
-         ^heart.dp {<hdp> >= 10})
+         ^heart.total_points_low {<htpl> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 4H ^meaning <mean>)
     (<mean> ^heart.num_low 6
-            ^heart.dp 10)
+            ^heart.total_points_low 10)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -255,7 +257,7 @@ sp {expand*after-spade-transfer*4level
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
     (<v> ^spade.num_low {<hnl> >= 6}
-         ^spade.dp {<sdp> >= 9})
+         ^spade.total_points_low {<stpl> >= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3S ^meaning <mean>)

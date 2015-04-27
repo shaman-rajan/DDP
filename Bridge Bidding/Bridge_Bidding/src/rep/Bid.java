@@ -96,4 +96,10 @@ public class Bid implements Comparable<Bid> {
 		return this.bidValue.getLevel() + "" + s_BidSuit;
 	}
 	
+	public boolean isGameBid() {
+		if(this.bidSuit == BidSuit.NOTRUMP && this.bidValue == BidValue.THREE) return true;
+		else if((this.bidSuit == BidSuit.SPADE || this.bidSuit == BidSuit.HEART) && this.bidValue == BidValue.FOUR) return true;
+		else if(this.bidValue == BidValue.FIVE) return true;
+		else return false;
+	}
 }

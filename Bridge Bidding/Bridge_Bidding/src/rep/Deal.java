@@ -20,10 +20,10 @@ public class Deal {
 	private Auction auction;
 	
 	public Deal(Hand n, Hand s, Hand e, Hand w, String dealer) {
-		north = new Player(n, 0, this);
-		east = new Player(e, 1, this);
-		south = new Player(s, 2, this);
-		west = new Player(w, 3, this);
+		north = new Player(n, 0, this, null);
+		east = new Player(e, 1, this, null);
+		south = new Player(s, 2, this, null);
+		west = new Player(w, 3, this, null);
 		n_s = null;
 		e_w = null;
 		this.dealer = dealer;
@@ -55,10 +55,10 @@ public class Deal {
 		Hand s = new Hand(cards.subList(26, 39));
 		Hand w = new Hand(cards.subList(39, 52));
 		
-		north = new Player(n, 0, this);
-		east = new Player(e, 1, this);
-		south = new Player(s, 2, this);
-		west = new Player(w, 3, this);
+		north = new Player(n, 0, this, null);
+		east = new Player(e, 1, this, null);
+		south = new Player(s, 2, this, null);
+		west = new Player(w, 3, this, null);
 		n_s = null;
 		e_w = null;
 		dealer = "north";

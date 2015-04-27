@@ -15,6 +15,7 @@ public class BidHistory {
 	 */
 	private int turn;
 	private HashMap<String, Integer> player_map;
+	private boolean gameBid;
 
 	/*
 	 * Hashmap of bids made by each player
@@ -43,6 +44,7 @@ public class BidHistory {
 		
 		historyAsString = "";
 		bids_made = 0;
+		gameBid = false;
 	}
 	
 	private int nextTurn() {
@@ -60,6 +62,8 @@ public class BidHistory {
 		
 		this.historyAsString = b.toString() + " " + historyAsString;
 		this.bids_made++;
+		
+		if(b.isGameBid()) this.gameBid = true;
 	}
 	
 	public Bid removeLastBid() {
@@ -101,6 +105,7 @@ public class BidHistory {
 		int i = 0;
 		for(String bidInPattern : patternBids) {
 			if(bidInPattern.charAt(0) == '*') {
+				// Trailing part of pattern, check for passes or ignore rest
 				if(bidInPattern.length() == 1)
 					while(i < this.bids_made) {
 						if(!this.getBid(i).toString().equals("PASS"))
@@ -110,7 +115,12 @@ public class BidHistory {
 				else if(bidInPattern.equals("**"))
 					break; // No need to check rest, everything is accepted
 				else return false;
+			} else if(bidInPattern.charAt(0) == '-') {
+				// Skip the bid
+				i++;
+				continue;
 			} else if(i < bids_made) {
+				// Some bid. See if matches with situation or no
 				String previousBidString = this.getBid(i).toString();
 				if(Character.isDigit(bidInPattern.charAt(0))) {
 					if(!(bidInPattern.charAt(0) == previousBidString.charAt(0)))
@@ -220,4 +230,7 @@ public class BidHistory {
 		return "null";
 	}
 
+	public boolean hasGameBeenBid() {
+		return this.gameBid;
+	}
 }

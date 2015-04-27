@@ -185,7 +185,9 @@ sp {expand*stayman-responses-to-2M
     (<n> ^status visited
          ^child stayman-2N-over-2M
          ^child stayman-2S-over-2H
-         ^child stayman-3M-over-2M)
+         ^child stayman-3M-over-2M
+         ^child stayman-3N-over-2M
+         ^child stayman-4M-over-2M)
 }
 
 sp {expand*heart-transferresponse
