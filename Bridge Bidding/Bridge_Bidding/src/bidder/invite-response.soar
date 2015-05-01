@@ -1,13 +1,13 @@
 sp {invite-response*game
     (state <s> ^name bidder ^tview <tv>)
-    (<tv> ^invited true ^invite-response true)
+    (<tv> ^invited true ^invite_response true)
 -->
     (<tv> ^game_forced 1)
 }
 
 sp {propose*invite-response*to-play-operator
     (state <s> ^name bidder ^tview <tv>)
-    (<tv> ^invited true ^invite-response false)
+    (<tv> ^invited true ^invite_response false)
 -->
     (<s> ^operator <o> +
          ^operator <o> > =)

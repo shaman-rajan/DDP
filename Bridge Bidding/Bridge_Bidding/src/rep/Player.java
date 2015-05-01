@@ -82,6 +82,7 @@ public class Player {
 		
 		boolean is_output_a_bid = false;
 		Bid bid_returned = null;
+		String bidMessage = "";
 		while(!is_output_a_bid) {
 			
 			// Run till next output (either the pattern or the bid)
@@ -113,7 +114,7 @@ public class Player {
 							Identifier meaning = child.ConvertToIdentifier();
 							// Update others' views
 							this.deal.updateViews(meaning, this.position);
-							// Update my own team view (with trump, GF, etc.)
+							// Update my own teamview (with trump, GF, etc.)
 							int numUpdates = meaning.GetNumberChildren();
 							for(int k=0; k<numUpdates; ++k)
 								if(meaning.GetChild(k).GetAttribute().equals("team")) {
@@ -127,7 +128,9 @@ public class Player {
 										else if(update.GetValueType().equals("string"))
 											this.teamView.updateFeature(update.GetAttribute(), update.ConvertToStringElement().GetValue());
 									}
-								}
+								} 
+							
+							bidMessage = meaning.GetParameterValue("message");
 							
 							this.teamView.updateHandFeatures();
 						}
@@ -171,6 +174,7 @@ public class Player {
 			}
 		}
 		
+		bid_returned.addMessage(bidMessage);
 		return bid_returned;
 	}
 	

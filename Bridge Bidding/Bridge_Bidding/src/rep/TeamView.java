@@ -487,18 +487,15 @@ public class TeamView implements Cloneable {
 					trumpDecided = BidSuit.NOTRUMP;
 				} else {
 					int num_trump, points;
+					points = this.points_hc_low;
 					if(this.trumpDecided == BidSuit.SPADE) {
 						num_trump = this.num_spade_low;
-						points = this.total_points_sp_low;
 					} else if(this.trumpDecided == BidSuit.HEART) {
 						num_trump = this.num_heart_low;
-						points = this.total_points_he_low;
 					} else if(this.trumpDecided == BidSuit.DIAMOND) {
 						num_trump = this.num_dia_low;
-						points = this.total_points_di_low;
 					} else {
 						num_trump = this.num_club_low;
-						points = this.total_points_cl_low;
 					}
 					
 					if(points + num_trump >= 33)

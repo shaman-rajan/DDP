@@ -14,5 +14,6 @@ sp {apply*pass*if*no*change
 -->
     (<out> ^bid <b>)
     (<b> ^short-form PASS ^meaning <m>)
+    (<m> ^message |Passing since hand too weak to make a bid|)
     (write (crlf) | The bid selected is PASS |)
 }

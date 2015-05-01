@@ -96,7 +96,8 @@ sp {expand*stayman-1NT-initiate
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2C ^meaning <mean>)
     (<mean> ^hcp_low 8
-            ^lmaj_low 4)
+            ^lmaj_low 4
+            ^message |Initiating stayman|)
 }
 
 sp {expand*transfer-to-heart
@@ -107,7 +108,8 @@ sp {expand*transfer-to-heart
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2D ^meaning <mean>)
-    (<mean> ^heart.num_low 5)
+    (<mean> ^heart.num_low 5
+            ^message |Transferring to heart|)
 }
 
 sp {expand*transfer-to-spade
@@ -118,7 +120,8 @@ sp {expand*transfer-to-spade
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2H ^meaning <mean>)
-    (<mean> ^spade.num_low 5)
+    (<mean> ^spade.num_low 5
+            ^message |Transferring to spade|)
 }
 
 sp {expand*minor-suit-transfer
@@ -130,7 +133,8 @@ sp {expand*minor-suit-transfer
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2S ^meaning <mean>)
-    (<mean> ^lmin_low 6)
+    (<mean> ^lmin_low 6
+            ^message |Transferring to minor|)
 }
 
 sp {expand*simple-invitation-in-NT
@@ -144,7 +148,8 @@ sp {expand*simple-invitation-in-NT
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^lmaj_high 3
             ^lmin_high 5
-            ^team.invited true)
+            ^team.invited true
+            ^message |Inviting partner for game in NT|)
 }
         
 sp {expand*simple-invitation-in-minor
@@ -158,7 +163,10 @@ sp {expand*simple-invitation-in-minor
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <minor>) ^meaning <mean>)
     (<mean> ^lmaj_high 3
-            ^<minor>.num_low 6)
+            ^<minor>.num_low 6
+            ^team.trump <minor>
+            ^team.invited true
+            ^message |Inviting partner for game in minor|)
 }
 
 sp {expand*slam-invitation-in-major
@@ -173,7 +181,8 @@ sp {expand*slam-invitation-in-major
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
     (<mean> ^<major>.num_low 6
             ^team.game_forced 1
-            ^team.suggestedTrump <major>)
+            ^team.trump <major>
+            ^message |Inviting partner for game in major|)
 }
 
 sp {expand*3N-over-1N
@@ -188,7 +197,8 @@ sp {expand*3N-over-1N
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^hcp_low 11
             ^hcp_high 14
-            ^lmaj_high 3)
+            ^lmaj_high 3
+            ^message |Hand is strong enough for bidding a game|)
 }
 
 sp {expand*gerber
@@ -215,7 +225,8 @@ sp {expand*game-major-over-1NT
     (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
     (<mean> ^hcp_low 5
             ^hcp_high 8
-            ^<major>.num_low 6)
+            ^<major>.num_low 6
+            ^message |Hand is strong enough for bidding a game|)
 }
 
 sp {expand*slam-invitation-4NT
@@ -248,5 +259,6 @@ sp {expand*game-minor-over-1NT
     (<mean> ^<minor>.num_low 6
             ^<minor>.hcp_low 6
             ^<minor>.hcp_high 9
-            ^ratio_low 0.8)
+            ^ratio_low 0.8
+            ^message |Hand is strong enough for bidding a game|)
 }

@@ -13,5 +13,6 @@ sp {apply*to-play-bid
 -->
     (<out> ^bid <b>)
     (<b> ^short-form PASS ^meaning <m>)
+    (<m> ^message |Passing, as the partner bid was to-play or invitational (not enough for game) |)
     (write (crlf) | The bid selected is PASS |)
 }

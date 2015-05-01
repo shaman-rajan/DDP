@@ -138,12 +138,14 @@ sp {expand*2m-over-1M
          ^major <major>
          ^minor <minor>)
     (<v> ^hcp_low {<hcp_low> >= 11}
-         ^<minor>.longest 1)
+         ^<minor>.longest 1
+         ^<major>.num_high {<mnh> <= 2})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 2 <minor>) ^meaning <mean>)
     (<mean> ^hcp_low 11
-            ^<minor>.longest 1)
+            ^<minor>.longest 1
+            ^<major>.num_high 2)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -225,12 +227,15 @@ sp {expand*2N-over-1M-opening
          ^pattern-checked true
          ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 13}
-         ^<major>.num_low {<mnl> >= 3})
+         ^<major>.num_low {<mnl> >= 4})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^hcp_low 13
-            ^<major>.num_low 3)
+            ^<major>.num_low 4
+            ^team.trump <major>
+            ^team.invited true
+            ^message (concat |Inviting partner for a game in | <major>))
 }
 
 sp {expand*jump-raise-over-1M-opening
@@ -248,7 +253,8 @@ sp {expand*jump-raise-over-1M-opening
             ^hcp_high 12
             ^<major>.num_low 3
             ^team.trump <major>
-            ^team.invited true)
+            ^team.invited true
+            ^message |Inviting partner for a game|)
 }
     
 sp {expand*3N-over-1M-opening

@@ -6,6 +6,8 @@ public class Bid implements Comparable<Bid> {
 	public boolean dbl;
 	public boolean redbl;
 	
+	public String message;
+	
 	public enum BidSuit {
 		CLUB, DIAMOND, HEART, SPADE, NOTRUMP, NONE
 	}
@@ -56,6 +58,8 @@ public class Bid implements Comparable<Bid> {
 			else if(bid.equals("DBL")) this.dbl = true;
 			else if(bid.equals("REDBL")) this.redbl = true;
 		}
+		
+		this.message = "";
 	}
 	
 	@Override
@@ -101,5 +105,10 @@ public class Bid implements Comparable<Bid> {
 		else if((this.bidSuit == BidSuit.SPADE || this.bidSuit == BidSuit.HEART) && this.bidValue == BidValue.FOUR) return true;
 		else if(this.bidValue == BidValue.FIVE) return true;
 		else return false;
+	}
+
+	public void addMessage(String bidMessage) {
+		if(bidMessage == null || bidMessage.equals("")) this.message = "No message returned by the agent";
+		else this.message = bidMessage;
 	}
 }

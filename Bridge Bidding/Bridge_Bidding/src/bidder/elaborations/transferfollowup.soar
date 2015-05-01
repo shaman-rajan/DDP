@@ -39,7 +39,8 @@ sp {expand*transfer-to-heart-response*normal
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2H ^meaning <mean>)
-    (<mean> ^team.trump heart)
+    (<mean> ^team.trump heart
+            ^message |Completing transfer to heart|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -55,7 +56,8 @@ sp {expand*transfer-to-heart-response*3level
     (<mean> ^hcp_low 17
             ^heart.num_low 4
             ^team.trump heart
-            ^team.invited true)
+            ^team.invited true
+            ^message |Completing transfer to heart, but at 3 level indicating a strong hand|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -68,7 +70,8 @@ sp {expand*transfer-to-spade-response*normal
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2S ^meaning <mean>)
-    (<mean> ^team.trump spade)
+    (<mean> ^team.trump spade
+            ^message |Completing transfer to spade|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -84,7 +87,8 @@ sp {expand*transfer-to-spade-response*3level
     (<mean> ^hcp_low 17
             ^spade.num_low 4
             ^team.trump spade
-            ^team.invited true)
+            ^team.invited true
+            ^message |Completing transfer to spade, but at 3 level indicating a strong hand|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -96,7 +100,8 @@ sp {expand*after-heart-transfer*pass
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form PASS ^meaning <mean>)
-    (<mean> ^hcp_high 6)
+    (<mean> ^hcp_high 6
+            ^message |Too weak to bid higher contract|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -108,7 +113,8 @@ sp {expand*after-spade-transfer*pass
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form PASS ^meaning <mean>)
-    (<mean> ^hcp_high 6)
+    (<mean> ^hcp_high 6
+            ^message |Too weak to bid higher contract|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -123,7 +129,8 @@ sp {expand*after-heart-transfer*3level
     (<b> ^short-form 3H ^meaning <mean>)
     (<mean> ^heart.num_low 6
             ^heart.total_points_high 9
-            ^team.invited true)
+            ^team.invited true
+            ^message |Invite for a game in the bid suit|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -138,7 +145,8 @@ sp {expand*after-spade-transfer*3level
     (<b> ^short-form 3S ^meaning <mean>)
     (<mean> ^spade.num_low 6
             ^spade.total_points_high 9
-            ^team.invited true)
+            ^team.invited true
+            ^message |Invite for a game in the bid suit|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -155,7 +163,8 @@ sp {expand*after-heart-transfer*NTinvite
     (<mean> ^balanced_high 3
             ^hcp_low 7
             ^hcp_high 9
-            ^team.invited true)
+            ^team.invited true
+            ^message |Invite for a game in the suit bid earlier, indicating decently balanced hand|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -172,7 +181,8 @@ sp {expand*after-spade-transfer*NTinvite
     (<mean> ^balanced_high 3
             ^hcp_low 7
             ^hcp_high 9
-            ^team.invited true)
+            ^team.invited true
+            ^message |Invite for a game in the suit bid earlier, indicating decently balanced hand|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -187,7 +197,8 @@ sp {expand*after-heart-transfer*newsuit
     (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
     (<mean> ^hcp_low 9
             ^<suit>.num_low 4
-            ^team.game_forced 1)
+            ^team.game_forced 1
+            ^message |Strong hand, shows 5-4 or 5-5 distribution to partner|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -202,7 +213,8 @@ sp {expand*after-spade-transfer*newsuit
     (<b> ^short-form (concat 3 <suit>) ^meaning <mean>)
     (<mean> ^hcp_low 9
             ^<suit>.num_low 4
-            ^team.game_forced 1)
+            ^team.game_forced 1
+            ^message |Strong hand, shows 5-4 or 5-5 distribution to partner|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -248,7 +260,8 @@ sp {expand*after-heart-transfer*4level
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 4H ^meaning <mean>)
     (<mean> ^heart.num_low 6
-            ^heart.total_points_low 10)
+            ^heart.total_points_low 10
+            ^message |Strong hand, enough for a game contract|)
     # No children as of now, otherwise would add the children attribute
 }
 
@@ -257,11 +270,12 @@ sp {expand*after-spade-transfer*4level
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
     (<v> ^spade.num_low {<hnl> >= 6}
-         ^spade.total_points_low {<stpl> >= 9})
+         ^spade.total_points_low {<stpl> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3S ^meaning <mean>)
     (<mean> ^spade.num_low 6
-            ^hcp_high 9)
+            ^spade.total_points_low 10
+            ^message |Strong hand, enough for a game contract|)
     # No children as of now, otherwise would add the children attribute
 }

@@ -4,13 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -20,12 +20,14 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import rep.Bid;
 import rep.BidHistory;
 import rep.Card.Suit;
 import rep.Deal;
+import rep.Hand;
 import rep.HandView;
 import rep.Player;
 
@@ -38,7 +40,7 @@ public class GUI {
 	static int currentCell;
 	static JButton nextBidButton;
 	
-	public static void createAndShowGUI() {
+	public static void createAndShowGUI(final boolean randomDeal) {
 		
 		// Create the frame
 		mainFrame = new JFrame("Deal");
@@ -73,10 +75,21 @@ public class GUI {
 				HandView hv2 = new HandView(null);
 				hv2.lmaj_low = 5;
 				
-				currentDeal = new Deal();
-				
-				while(!hv.matchesHand(currentDeal.getNorth().getHand()))
+				if(randomDeal) {
 					currentDeal = new Deal();
+					while(!hv.matchesHand(currentDeal.getNorth().getHand()))
+							//!hv2.matchesHand(currentDeal.getSouth().getHand()))
+						currentDeal = new Deal();
+				} else {
+					String inputDeal = JOptionPane.showInputDialog("Enter the deal string");
+					Scanner scan = new Scanner(inputDeal); 
+					Hand north = new Hand(scan.next());
+					Hand east = new Hand(scan.next());
+					Hand south = new Hand(scan.next());
+					Hand west = new Hand(scan.next());
+					
+					currentDeal = new Deal(north, south, east, west, scan.next());
+				}
 				
 				nextBidButton.setEnabled(true);
 				
@@ -131,9 +144,7 @@ public class GUI {
 				row_num.anchor = GridBagConstraints.PAGE_START;
 				
 				currentCell = Deal.getPosition(currentDeal.getDealer()) - 1 + 4;
-				for(int i=0; i<currentCell-4; ++i) auctionPanel.add(new JLabel(" "), row_num);
-				
-				
+				for(int i=0; i<currentCell-4+1; ++i) auctionPanel.add(new JLabel(" "), row_num);
 				
 				mainFrame.pack();
 			}
@@ -207,6 +218,9 @@ public class GUI {
 					}
 					
 				}
+				
+				statusBar.setText(b.message);
+				
 				mainFrame.pack();
 			}
 		});	mainPane.add(nextBidButton, BorderLayout.EAST);

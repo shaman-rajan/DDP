@@ -117,14 +117,16 @@ sp {expand*bids-over-1C*NT
     (<v> ^balanced_high {<bhigh> <= 1}
          ^hcp_low {<hcp_low> >= 6}
          ^hcp_high {<hcp_high> <= 9}
-         ^lmaj_high {<lmaj_high> <= 3})
+         ^lmaj_high {<lmaj_high> <= 3}
+         ^club.num_high {<cnh> <= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 1N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 6
             ^hcp_high 9
-            ^lmaj_high 3)
+            ^lmaj_high 3
+            ^club.num_high 3)
 }
 
 sp {expand*bids-over-1C*C*2level
@@ -230,14 +232,16 @@ sp {expand*bids-over-1D*NT
     (<v> ^balanced_high {<bhigh> <= 1}
          ^hcp_low {<hcp_low> >= 6}
          ^hcp_high {<hcp_high> <= 9}
-         ^lmaj_high {<lmaj_high> <= 3})
+         ^lmaj_high {<lmaj_high> <= 3}
+         ^dia.num_high {<dnh> <= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 1N ^meaning <mean>)
     (<mean> ^balanced_high 1
             ^hcp_low 6
             ^hcp_high 9
-            ^lmaj_high 3)
+            ^lmaj_high 3
+            ^dia.num_high 3)
 }
 
 sp {expand*bids-over-1D*C

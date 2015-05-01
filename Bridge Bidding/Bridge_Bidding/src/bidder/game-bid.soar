@@ -11,6 +11,7 @@ sp {propose*game-bid*major
          ^operator <o> > =)
     (<o> ^name game-bid ^bid <b>)
     (<b> ^short-form (concat 4 <trump>) ^meaning <mean>)
+    (<mean> ^message |Responding to partner's bid by bidding game in the decided suit|) 
 }
 
 sp {propose*game-bid*minor
@@ -26,6 +27,7 @@ sp {propose*game-bid*minor
          ^operator <o> > =)
     (<o> ^name game-bid ^bid <b>)
     (<b> ^short-form (concat 5 <trump>) ^meaning <mean>)
+    (<mean> ^message |Partner made game forcing bid, bidding game in the decided suit|)
 }
 
 sp {propose*game-bid*NT
@@ -41,6 +43,7 @@ sp {propose*game-bid*NT
          ^operator <o> > =)
     (<o> ^name game-bid ^bid <b>)
     (<b> ^short-form 3N ^meaning <mean>)
+    (<mean> ^message |Partner made game forcing bid, bidding game in the decided suit|)
 }
 
 

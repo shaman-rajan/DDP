@@ -11,42 +11,7 @@ public class Hand implements Cloneable {
 	private ArrayList<Card> cards;
 	
 	public Hand() {
-		points_hc = points_club = points_dia = points_heart = points_spade = 0;
-		controls = controls_club = controls_dia = controls_heart = controls_spade = 0;
-		highCards = highCards_club = highCards_dia = highCards_heart = highCards_spade = 0;
-		honors = honors_club = honors_dia = honors_heart = honors_spade = 0;
-		aces = ace_club = ace_dia = ace_heart = ace_spade = 0;
-		kings = king_club = king_dia = king_heart = king_spade = 0;
-		queens = queen_club = queen_dia = queen_heart = queen_spade = 0;
-		jacks = jack_club = jack_dia = jack_heart = jack_spade = 0;
-		tens = ten_club = ten_dia = ten_heart = ten_spade = 0;
-		rkcb_club = rkcb_dia = rkcb_heart = rkcb_spade = 0;
-		num_spade = num_heart = num_dia = num_club = 0;
-		
-		balanced = 0;
-		dp_sp_he = dp_sp_di = dp_sp_cl = dp_sp_ha = 0;
-		dp_he_sp = dp_he_di = dp_he_cl = dp_he_ha = 0;
-		dp_di_sp = dp_di_he = dp_di_cl = dp_di_ha = 0;
-		dp_cl_sp = dp_cl_he = dp_cl_di = dp_cl_ha = 0;
-		num_suits = 0;
-		lmaj = lmin = 0;
-		longest_sp = longest_he = longest_di = longest_cl = 0;
-		shortest_sp = shortest_he = shortest_di = shortest_cl = 0;
-		
-		intermediate_sp = intermediate_he = intermediate_di = intermediate_cl = intermediate_ha = 0;
-		
-		stopper_sp = stopper_he = stopper_di = stopper_cl = 0;
-		
-		tr_stopper_sp_sp = tr_stopper_sp_he = tr_stopper_sp_di = tr_stopper_sp_cl =
-		tr_stopper_he_sp = tr_stopper_he_he = tr_stopper_he_di = tr_stopper_he_cl =
-		tr_stopper_di_sp = tr_stopper_di_he = tr_stopper_di_di = tr_stopper_di_cl =
-		tr_stopper_cl_sp = tr_stopper_cl_he = tr_stopper_cl_di = tr_stopper_cl_cl = 0;
-	
-		quality_sp = quality_he = quality_di = quality_cl = 0;
-		ratio = 0;
-		
-		unlos_sp = unlos_he = unlos_di = unlos_cl = 0;
-		total_points_sp = total_points_he = total_points_di = total_points_cl = 0;
+		cards = new ArrayList<>(13);
 	}
 	
 	public Hand(Card c) {
@@ -62,6 +27,74 @@ public class Hand implements Cloneable {
 			calculateFeatureValues();
 	}
 	
+	/*
+	 * Input: 4 comma separated suits, 
+	 * with each suit containing a list of cards.
+	 * Each card is a number (2-9) or a letter (T,J,Q,K,A)
+	 */
+	public Hand(String allCards) {
+		String[] suitSplit= allCards.split(",");
+		if(suitSplit.length != 4) return;
+		else {
+			this.cards = new ArrayList<>(13);
+			
+			// Spade cards
+			for(int i=0; i<suitSplit[0].length(); ++i) {
+				Value[] values = Value.values();
+				Value v = null;
+				for(int j=0; j<values.length; ++j)
+					if(values[j].getRank() == suitSplit[0].charAt(i)) {
+						v = values[j];
+						break;
+					}
+				if(v != null) this.cards.add(new Card(Suit.SPADE, v));
+				else return;
+			}
+			
+			// Heart cards
+			for(int i=0; i<suitSplit[1].length(); ++i) {
+				Value[] values = Value.values();
+				Value v = null;
+				for(int j=0; j<values.length; ++j)
+					if(values[j].getRank() == suitSplit[1].charAt(i)) {
+						v = values[j];
+						break;
+					}
+				if(v != null) this.cards.add(new Card(Suit.HEART, v));
+				else return;
+			}
+						
+			// Diamond cards
+			for(int i=0; i<suitSplit[2].length(); ++i) {
+				Value[] values = Value.values();
+				Value v = null;
+				for(int j=0; j<values.length; ++j)
+					if(values[j].getRank() == suitSplit[2].charAt(i)) {
+						v = values[j];
+						break;
+					}
+				if(v != null) this.cards.add(new Card(Suit.DIAMOND, v));
+				else return;
+			}
+			
+			// Club cards
+			for(int i=0; i<suitSplit[3].length(); ++i) {
+				Value[] values = Value.values();
+				Value v = null;
+				for(int j=0; j<values.length; ++j)
+					if(values[j].getRank() == suitSplit[3].charAt(i)) {
+						v = values[j];
+						break;
+					}
+				if(v != null) this.cards.add(new Card(Suit.CLUB, v));
+				else return;
+			}
+			
+			if(isComplete()) calculateFeatureValues();
+			else System.out.println("Cannot continue. Number of cards in hand is " + this.cards.size());
+		}
+	}
+	
 	public void addCard(Card c) {
 		if(cards.size() < 13) {
 			cards.add(c);
@@ -72,7 +105,7 @@ public class Hand implements Cloneable {
 	}
 	
 	public boolean isComplete() {
-		if(cards.size() == 13) return true;
+		if(this.cards.size() == 13) return true;
 		else return false;
 	}
 	
