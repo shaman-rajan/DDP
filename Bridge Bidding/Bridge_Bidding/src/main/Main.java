@@ -26,7 +26,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		GUI.createAndShowGUI(false);
+		GUI.createAndShowGUI();
 		
 		//TestAgent.createAndRunAgent();
 	}

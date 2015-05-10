@@ -133,7 +133,8 @@ sp {expand*minor-suit-transfer
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2S ^meaning <mean>)
-    (<mean> ^lmin_low 6
+    (<mean> ^hcp_high 7
+            ^lmin_low 6
             ^message |Transferring to minor|)
 }
 
@@ -142,12 +143,14 @@ sp {expand*simple-invitation-in-NT
     (<n> ^name simple-invitation-in-NT
          ^pattern-checked true)
     (<v> ^lmaj_high {<lmaj_high> <= 3}
-         ^lmin_high {<lmin_high> <= 5})
+         ^hcp_low {<hcp_low> >= 8}
+         ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
     (<mean> ^lmaj_high 3
-            ^lmin_high 5
+            ^hcp_low 8
+            ^hcp_high 9
             ^team.invited true
             ^message |Inviting partner for game in NT|)
 }
@@ -158,12 +161,16 @@ sp {expand*simple-invitation-in-minor
          ^pattern-checked true
          ^minor <minor>)
     (<v> ^lmaj_high {<lmaj_high> <= 3}
-         ^<minor>.num_low {<mnl> >= 6})
+         ^<minor>.num_low {<mnl> >= 6}
+         ^hcp_low {<hcp_low> >= 8}
+         ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <minor>) ^meaning <mean>)
     (<mean> ^lmaj_high 3
             ^<minor>.num_low 6
+            ^hcp_low 8
+            ^hcp_high 9
             ^team.trump <minor>
             ^team.invited true
             ^message |Inviting partner for game in minor|)
@@ -182,21 +189,21 @@ sp {expand*slam-invitation-in-major
     (<mean> ^<major>.num_low 6
             ^team.game_forced 1
             ^team.trump <major>
-            ^message |Inviting partner for game in major|)
+            ^message |Forcing game and inviting partner for slam in major|)
 }
 
 sp {expand*3N-over-1N
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name 3N-over-1N
          ^pattern-checked true)
-    (<v> ^hcp_low {<hcp_low> >= 11}
-         ^hcp_high {<hcp_high> <= 14}
+    (<v> ^hcp_low {<hcp_low> >= 10}
+         ^hcp_high {<hcp_high> <= 13}
          ^lmaj_high {<lmaj_high> <= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3N ^meaning <mean>)
-    (<mean> ^hcp_low 11
-            ^hcp_high 14
+    (<mean> ^hcp_low 10
+            ^hcp_high 13
             ^lmaj_high 3
             ^message |Hand is strong enough for bidding a game|)
 }
@@ -217,13 +224,13 @@ sp {expand*game-major-over-1NT
     (<n> ^name game-major-over-1NT
          ^pattern-checked true
          ^major <major>)
-    (<v> ^hcp_low {<hcp_low> >= 5}
+    (<v> ^hcp_low {<hcp_low> >= 7}
          ^hcp_high {<hcp_high> <= 8}
          ^<major>.num_low {<mnl> >= 6})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
-    (<mean> ^hcp_low 5
+    (<mean> ^hcp_low 7
             ^hcp_high 8
             ^<major>.num_low 6
             ^message |Hand is strong enough for bidding a game|)
@@ -251,14 +258,12 @@ sp {expand*game-minor-over-1NT
          ^minor <minor>)
     (<v> ^<minor>.num_low {<mnl> >= 6}
          ^<minor>.hcp_low {<hcp_low> >= 6}
-         ^<minor>.hcp_high {<hcp_high> <= 9}
          ^ratio_low {<rl> >= 0.8})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 5 <minor>) ^meaning <mean>)
     (<mean> ^<minor>.num_low 6
             ^<minor>.hcp_low 6
-            ^<minor>.hcp_high 9
             ^ratio_low 0.8
             ^message |Hand is strong enough for bidding a game|)
 }

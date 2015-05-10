@@ -40,7 +40,7 @@ public class GUI {
 	static int currentCell;
 	static JButton nextBidButton;
 	
-	public static void createAndShowGUI(final boolean randomDeal) {
+	public static void createAndShowGUI() {
 		
 		// Create the frame
 		mainFrame = new JFrame("Deal");
@@ -73,12 +73,20 @@ public class GUI {
 				hv.balanced_high = 1;
 				
 				HandView hv2 = new HandView(null);
-				hv2.lmaj_low = 5;
+				hv2.lmaj_low = 4;
+				
+				int dealType = JOptionPane.showConfirmDialog(mainFrame, 
+						"Create a random deal? Enter a manually dealt deal otherwise",
+						"Deal type", JOptionPane.YES_NO_OPTION);
+				boolean randomDeal;
+				
+				if(dealType == JOptionPane.YES_OPTION) randomDeal = true;
+				else randomDeal = false;
 				
 				if(randomDeal) {
 					currentDeal = new Deal();
-					while(!hv.matchesHand(currentDeal.getNorth().getHand()))
-							//!hv2.matchesHand(currentDeal.getSouth().getHand()))
+					//while(!hv.matchesHand(currentDeal.getNorth().getHand()) ||
+					//		!hv2.matchesHand(currentDeal.getSouth().getHand()))
 						currentDeal = new Deal();
 				} else {
 					String inputDeal = JOptionPane.showInputDialog("Enter the deal string");
@@ -199,6 +207,7 @@ public class GUI {
 				Bid b = currentDeal.askForNextBid();
 				JLabel newBidLabel = new JLabel("  " + b.toString() + "  ");
 				newBidLabel.setHorizontalAlignment(JLabel.CENTER);
+				newBidLabel.setToolTipText(b.message);
 				
 				currentCell++;
 				GridBagConstraints row_num = new GridBagConstraints();
@@ -225,7 +234,7 @@ public class GUI {
 			}
 		});	mainPane.add(nextBidButton, BorderLayout.EAST);
 		
-		mainFrame.pack();
+		mainFrame.setSize(300,300);
 		
 		mainFrame.setVisible(true);
 	}

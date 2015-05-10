@@ -65,7 +65,7 @@ sp {expand*transfer-to-spade-response*normal
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name transfer-to-spade-response
          ^pattern-checked true)
-    -(<v> ^spade.num_low {<hnl> >= 4}
+    -(<v> ^spade.num_low {<snl> >= 4}
           ^hcp_low {<hcp_low> >= 17})
 -->
     (<n> ^status visited ^bid <b>)
@@ -123,11 +123,13 @@ sp {expand*after-heart-transfer*3level
     (<n> ^name after-heart-transfer
          ^pattern-checked true)
     (<v> ^heart.num_low {<hnl> >= 6}
+         ^hcp_low {<hcp_low> >= 7}
          ^heart.total_points_high {<htph> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3H ^meaning <mean>)
     (<mean> ^heart.num_low 6
+            ^hcp_low 7
             ^heart.total_points_high 9
             ^team.invited true
             ^message |Invite for a game in the bid suit|)
@@ -139,11 +141,13 @@ sp {expand*after-spade-transfer*3level
     (<n> ^name after-spade-transfer
          ^pattern-checked true)
     (<v> ^spade.num_low {<hnl> >= 6}
+         ^hcp_low {<hcp_low> >= 7}
          ^spade.total_points_high {<stph> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3S ^meaning <mean>)
     (<mean> ^spade.num_low 6
+            hcp_low 7
             ^spade.total_points_high 9
             ^team.invited true
             ^message |Invite for a game in the bid suit|)
@@ -273,7 +277,7 @@ sp {expand*after-spade-transfer*4level
          ^spade.total_points_low {<stpl> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
-    (<b> ^short-form 3S ^meaning <mean>)
+    (<b> ^short-form 4S ^meaning <mean>)
     (<mean> ^spade.num_low 6
             ^spade.total_points_low 10
             ^message |Strong hand, enough for a game contract|)

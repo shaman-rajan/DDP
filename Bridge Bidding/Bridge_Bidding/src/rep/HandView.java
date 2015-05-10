@@ -1344,8 +1344,8 @@ public class HandView implements Cloneable {
 		}
 		
 		if(feature.equals("spade total_points_low")) {
-			if(this.dp_sp_ha < value) {
-				this.dp_sp_ha = value;
+			if(this.total_points_sp_low < value) {
+				this.total_points_sp_low = value;
 				
 				// TODO: Infer
 				
@@ -1615,8 +1615,8 @@ public class HandView implements Cloneable {
 		}
 		
 		if(feature.equals("heart total_points_low")) {
-			if(this.dp_he_ha < value) {
-				this.dp_he_ha = value;
+			if(this.total_points_he_low < value) {
+				this.total_points_he_low = value;
 				
 				// TODO: Infer
 				
@@ -1885,8 +1885,8 @@ public class HandView implements Cloneable {
 		}
 		
 		if(feature.equals("dia total_points_low")) {
-			if(this.dp_di_ha < value) {
-				this.dp_di_ha = value;
+			if(this.total_points_di_low < value) {
+				this.total_points_di_low = value;
 				
 				// TODO: Infer
 				
@@ -2155,8 +2155,8 @@ public class HandView implements Cloneable {
 		}
 		
 		if(feature.equals("club total_points_low")) {
-			if(this.dp_cl_ha < value) {
-				this.dp_cl_ha = value;
+			if(this.total_points_cl_low < value) {
+				this.total_points_cl_low = value;
 				
 				// TODO: Infer
 				

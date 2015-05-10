@@ -210,8 +210,8 @@ sp {expand*simple-raise-major-opening
     (<n> ^name simple-raise-major-opening
          ^pattern-checked true
          ^major <major>)
-    (<v> ^hcp_low {<mhcp_low> >= 6}
-         ^hcp_high {<hcp_high> <= 10}
+    (<v> ^<major>.total_points_low {<mhcp_low> >= 6}
+         ^<major>.total_points_high {<mhcp_high> <= 10}
          ^<major>.num_low {<mnum_low> >= 3})
 -->
     (<n> ^status visited ^bid <b>)
@@ -243,13 +243,13 @@ sp {expand*jump-raise-over-1M-opening
     (<n> ^name jump-raise-over-1M-opening
          ^pattern-checked true
          ^major <major>)
-    (<v> ^hcp_low {<hcp_low> >= 10}
-         ^hcp_high {<hcp_high> <= 12}
+    (<v> ^<major>.total_points_low {<hcp_low> >= 11}
+         ^<major>.total_points_high {<hcp_high> <= 12}
          ^<major>.num_low {<mnl> >= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
-    (<mean> ^hcp_low 10
+    (<mean> ^hcp_low 11
             ^hcp_high 12
             ^<major>.num_low 3
             ^team.trump <major>
@@ -263,7 +263,7 @@ sp {expand*3N-over-1M-opening
          ^pattern-checked true
          ^major <major>)
     (<v> ^hcp_low {<hcp_low> >= 15}
-         ^hcp_high {<hcp_high> >= 17}
+         ^hcp_high {<hcp_high> <= 17}
          ^balanced_high {<balh> <= 1}
          ^<major>.num_low 2
          ^<major>.num_high 2)
@@ -282,13 +282,15 @@ sp {expand*game-raise-over-1M-opening
     (<n> ^name game-raise-over-1M-opening
          ^pattern-checked true
          ^major <major>)
-    (<v> ^hcp_high {<hcp_high> <= 10}
+    (<v> ^hcp_low {<hcp_low> >= 6}
+         ^hcp_high {<hcp_high> <= 10}
          ^<major>.num_low {<mnl> >= 5}
          ^<major>.dp {<mdp> >= 3})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
-    (<mean> ^hcp_high 10
+    (<mean> ^hcp_low 6
+            ^hcp_high 10
             ^<major>.num_low 5)
 }
 
@@ -307,7 +309,8 @@ sp {expand*splinter-over-1M-opening*1
     (<mean> ^hcp_low 11
             ^hcp_high 15
             ^<suit>.num_high 1
-            ^spade.num_low 4)
+            ^spade.num_low 4
+            ^team.trump spade)
 }
 
 sp {expand*splinter-over-1M-opening*2
@@ -325,7 +328,8 @@ sp {expand*splinter-over-1M-opening*2
     (<mean> ^hcp_low 11
             ^hcp_high 15
             ^spade.num_high 1
-            ^heart.num_low 4)
+            ^heart.num_low 4
+            ^team.trump heart)
 }
 
 sp {expand*splinter-over-1M-opening*3
@@ -343,5 +347,6 @@ sp {expand*splinter-over-1M-opening*3
     (<mean> ^hcp_low 11
             ^hcp_high 15
             ^<suit>.num_high 1
-            ^heart.num_low 4)
+            ^heart.num_low 4
+            ^team.trump heart)
 }

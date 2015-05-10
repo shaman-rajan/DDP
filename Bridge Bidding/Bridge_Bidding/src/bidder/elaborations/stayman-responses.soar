@@ -56,13 +56,6 @@ sp {expand*stayman-3N-over-2D*pattern #GF
     (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
 }
 
-sp {expand*stayman-4M-over-2D*pattern #GF
-    (state <s> ^name bidder ^node <n>)
-    (<n> ^name stayman-4M-over-2D)
--->
-    (<n> ^pattern |PASS 2D PASS 2C PASS 1N *|)
-}
-
 sp {expand*stayman-4N-over-2D*pattern 
     (state <s> ^name bidder ^node <n>)
     (<n> ^name stayman-4N-over-2D)
@@ -146,24 +139,37 @@ sp {expand*stayman-2M-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-2M-over-2D
          ^pattern-checked true
-         ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 5})
+         ^major <major>
+         ^major {<> <othermajor> <major>})
+    (<v> ^<major>.num_low {<mnl> >= 5}
+         ^<othermajor>.num_low 4
+         ^<othermajor>.num_high 4)
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 2 <major>) ^meaning <mean>)
     (<mean> ^<major>.num_low 5
-            ^team.to_play true)
+            ^<othermajor>.num_low 4
+            ^<othermajor>.num_high 4
+            ^hcp_high 9
+            ^team.invited true
+            ^team.trump_suggested <major>)
 }
 
 sp {expand*stayman-2N-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-2N-over-2D
          ^pattern-checked true)
-    (<v> ^lmaj_high {<lmaj_high> <= 3})
+    (<v> ^lmaj_high {<lmaj_high> <= 4}
+         ^lmin_high {<lmin_high> <= 5}
+         ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2N ^meaning <mean>)
-    (<mean> ^lmaj_high 3)
+    (<mean> ^lmaj_high 4
+            ^lmin_high 5
+            ^hcp_high 9
+            ^team.invited true
+            ^team.trump notrump)
 }
 
 sp {expand*stayman-3m-over-2D
@@ -171,11 +177,14 @@ sp {expand*stayman-3m-over-2D
     (<n> ^name stayman-3m-over-2D
          ^pattern-checked true
          ^minor <minor>)
-    (<v> ^<minor>.num_low {<mnl> >= 6})
+    (<v> ^<minor>.num_low {<mnl> >= 6}
+         ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <minor>) ^meaning <mean>)
-    (<mean> ^<minor>.num_low 6)
+    (<mean> ^<minor>.num_low 6
+            ^hcp_high 9
+            ^team.to_play true)
 }
 
 sp {expand*stayman-3M-over-2D 
@@ -183,13 +192,14 @@ sp {expand*stayman-3M-over-2D
     (<n> ^name stayman-3M-over-2D
          ^pattern-checked true
          ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 4}
-         ^hcp_high {<hcp_high> <= 9})
+    (<v> ^<major>.num_low {<mnl> >= 5}
+         ^hcp_low {<hcp_low> >= 10})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form (concat 3 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 4
-            ^hcp_high 9
+    (<mean> ^<major>.num_low 5
+            ^hcp_low 10
+            ^team.trump <major>
             ^team.game_forced 1)
 }
 
@@ -197,27 +207,15 @@ sp {expand*stayman-3N-over-2D
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-3N-over-2D
          ^pattern-checked true)
-    (<v> ^hcp_low {<hcp_low> >= 11}
-         ^hcp_high {<hcp_high> <= 14})
+    (<v> ^hcp_low {<hcp_low> >= 10}
+         ^hcp_high {<hcp_high> <= 14}
+         ^lmaj_high {<lmaj_high> <= 4})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3N ^meaning <mean>)
     (<mean> ^hcp_low 11
-            ^hcp_high 14)
-}
-
-sp {expand*stayman-4M-over-2D 
-    (state <s> ^name bidder ^node <n> ^myview <v>)
-    (<n> ^name stayman-4M-over-2D
-         ^pattern-checked true
-         ^major <major>)
-    (<v> ^<major>.num_low {<mnl> >= 4}
-         ^hcp_low {<hcp_low> >= 10})
--->
-    (<n> ^status visited ^bid <b>)
-    (<b> ^short-form (concat 4 <major>) ^meaning <mean>)
-    (<mean> ^<major>.num_low 4
-            ^hcp_low 10)
+            ^hcp_high 14
+            ^lmaj_high 4)
 }
 
 sp {expand*stayman-4N-over-2D  
@@ -225,24 +223,30 @@ sp {expand*stayman-4N-over-2D
     (<n> ^name stayman-4N-over-2D
          ^pattern-checked true
          ^major <major>)
-    (<v> ^hcp_low {<hcp_low> >= 14}
-         ^hcp_high {<hcp_high> <= 15})
+    (<v> ^hcp_low {<hcp_low> >= 15}
+         ^hcp_high {<hcp_high> <= 16}
+         ^lmaj_high {<lmaj_high> <= 4})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 4N ^meaning <mean>)
-    (<mean> ^hcp_low 14
-            ^hcp_high 15)
+    (<mean> ^hcp_low 15
+            ^hcp_high 16
+            ^lmaj_high 4)
 }
 
 sp {expand*stayman-2S-over-2H
     (state <s> ^name bidder ^node <n> ^myview <v>)
     (<n> ^name stayman-2S-over-2H
          ^pattern-checked true)
-    (<v> ^spade.num_low {<snl> >= 4})
+    (<v> ^spade.num_low {<snl> >= 5}
+         ^hcp_high {<hcp_high> <= 9})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 2S ^meaning <mean>)
-    (<mean> ^spade.num_low 4)
+    (<mean> ^spade.num_low 5
+            ^hcp_high 9
+            ^team.invited true
+            ^team.trump_suggested spade)
 }
 
 sp {expand*stayman-2N-over-2M

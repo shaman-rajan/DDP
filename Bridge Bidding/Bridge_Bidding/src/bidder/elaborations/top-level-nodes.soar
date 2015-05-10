@@ -82,6 +82,7 @@ sp {expand*opening
          ^child opening-1M
          ^child opening-1NT
          ^child opening-2C
+         ^child opening-2D
          ^child opening-2H
          ^child opening-2S
          ^child opening-2N
@@ -173,7 +174,6 @@ sp {expand*stayman-responses-to-2D
          ^child stayman-3m-over-2D
          ^child stayman-3M-over-2D
          ^child stayman-3N-over-2D
-         ^child stayman-4M-over-2D
          ^child stayman-4N-over-2D)
 }
 

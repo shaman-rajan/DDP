@@ -66,8 +66,7 @@ sp {expand*bids-over-1C*H*2
          ^pattern-checked true)
     (<v> ^hcp_low {<hcp_low> >= 6}
          ^heart.num_low {<hnl> >= 4}
-         ^spade.num_high {<snh> <= 4}
-         ^heart.longest 1)
+         ^spade.num_high {<snh> <= 4})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 1H ^meaning <mean>)
@@ -294,7 +293,7 @@ sp {expand*bids-over-1D*D*3level # Forcing to 3N or 4m at least
     (<n> ^name bids-over-1D
          ^pattern-checked true)
     (<v> ^dia.num_low {<cnl> >= 4}
-         ^dia.total_points_low {<ctpl> >= 13})
+         ^dia.total_points_low {<dtpl> >= 13})
 -->
     (<n> ^status visited ^bid <b>)
     (<b> ^short-form 3D ^meaning <mean>)
